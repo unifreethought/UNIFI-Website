@@ -11,3 +11,39 @@ require 'application/i18n/' . $config['i18n'];
 if ($config['web'] !== 'enabled') {
 	exit(WEB_ACCESS_DISABLED);
 }
+
+// Include the errors handler
+require 'system/errors/errors.php';
+
+// Check any cookies
+require 'application/helpers/cookie.php';
+// check_cookies();
+
+// Check the url
+require 'application/helpers/url.php';
+// $url = check_url();
+
+// Find what page to load
+if ($url['post'] == true) {
+
+	switch ($url['page']) {
+		case 'new-user':
+		
+		break;
+	}
+
+	exit();
+} else {
+	
+	switch ($url['page']) {
+		
+		case 'about':
+			// ... //
+		break;
+		
+		default:
+			include 'application/helpers/main.php';
+			include 'templates/' . $config['template'] . '/html/main.html';
+	}
+	
+}
