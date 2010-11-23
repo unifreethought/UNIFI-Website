@@ -12,6 +12,7 @@ class MySQL {
 	static private $hostname;
 	static private $username;
 	static private $password;
+	static public $database;
 	static private $connection;
 	static public $query_count = 0;
 	
@@ -28,11 +29,12 @@ class MySQL {
 	// Notes:
 	// ** - You should use my "validation.class.php" script to check the 
 	//       validity of the strings before you use them to connect with.
-	static public function set_vars($hostname, $username, $password) {
+	static public function set_vars($hostname, $username, $password, $database) {
 		// Set the vars.
 		self::$hostname = $hostname;
 		self::$username = $username;
 		self::$password = $password;
+		self::$database = $database;
 		
 		// Set the connection.
 		self::$connection = self::connect(self::$hostname, self::$username, self::$password);
