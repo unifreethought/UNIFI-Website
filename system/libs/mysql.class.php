@@ -13,7 +13,7 @@ class MySQL {
 	static private $username;
 	static private $password;
 	static private $connection;
-	static public $query_count;
+	static public $query_count = 0;
 	
 	
 	/**

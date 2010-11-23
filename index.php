@@ -5,6 +5,9 @@
  * 2010-11-21
  */
 
+// Load some libraries
+require 'system/libs/mysql.class.php';
+
 // Load the config
 require 'application/config/config.php';
 require 'application/i18n/' . $config['i18n'];
@@ -22,6 +25,8 @@ require 'application/helpers/cookie.php';
 // Check the url
 require 'application/helpers/url.php';
 // $url = check_url();
+
+include 'templates/' . $config['template'] . '/html/header.html';
 
 // Find what page to load
 if ($url['post'] == true) {
@@ -47,3 +52,5 @@ if ($url['post'] == true) {
 	}
 	
 }
+
+include 'templates/' . $config['template'] . '/html/footer.html';
