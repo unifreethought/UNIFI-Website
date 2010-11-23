@@ -20,7 +20,7 @@ require 'system/errors/errors.php';
 
 // Check any cookies
 require 'application/helpers/cookie.php';
-// check_cookies();
+$user_id = check_cookies();
 
 // Check the url
 require 'application/helpers/url.php';
