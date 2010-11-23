@@ -1,0 +1,4 @@
+# .htaccess File
+Options -Indexes
+
+DirectoryIndex index.php
