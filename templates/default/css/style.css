@@ -1,0 +1,47 @@
+/**
+ * UNIFI Website
+ * Adam Shannon
+ * 2010-11-21
+ */
+ 
+body {
+	background-color: #CCCCCC;
+}
+
+div#container {
+	border: 1px solid #000000;
+	display: block;
+	height: 99%;
+	margin-left: 5%;
+	width: 90%;
+}
+
+	div#header {
+		border: 5px solid #FFFFFF;
+		background-color: #AA00AA;
+	}
+	
+		div#header h2 {
+			font-family: Sans-Serif;
+			font-size: 2em;
+			text-align: center;
+		}
+	
+	div#nav {
+		height: auto;
+	}
+		
+		div#nav ul {
+			list-style-type: none;
+		}
+		
+			div#nav ul li.nav_item {
+				background-color: #000000;
+				display: inline;
+				margin-right: 10px;
+				padding: 10px;
+			}
+			
+				div#nav ul li.nav_item a, div#nav ul li.nav_item a:visited {
+					color: #FFFFFF;
+				}

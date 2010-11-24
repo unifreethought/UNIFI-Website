@@ -3,4 +3,24 @@
 <head>
 	<title><?php echo SITE_TITLE; ?></title>
 	<meta charset="utf-8" />
+	<link rel="stylesheet" href="<?php echo $css_file; ?>" />
+	
+</head>
+<body>
+
+	<div id="container">
+	
+		<div id="header">
+			<h2><?php echo SITE_TITLE; ?></h2>
+		</div>
+		
+		<div id="nav">
+			<ul>
+				<?php
+				foreach ($nav_items as $item) {
+					echo "<li class='nav_item'><a href='" . $item['href'] . "'>" . $item['name'] . "</a></li>";
+				}
+				?>
+			</ul>
+		</div>
 

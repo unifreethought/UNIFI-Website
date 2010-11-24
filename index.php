@@ -26,6 +26,7 @@ $user_id = check_cookies();
 require 'application/helpers/url.php';
 // $url = check_url();
 
+include 'application/helpers/header.php';
 include 'templates/' . $config['template'] . '/html/header.html';
 
 // Find what page to load
