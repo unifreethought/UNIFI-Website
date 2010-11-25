@@ -60,6 +60,15 @@ function get_more_fb_data($fb_id) {
 	return json_decode(curl_exec($ch), true);
 }
 
+function get_user_id_on_exist($fb_id) {
+	$result = MySQL::search("SELECT `id` FROM `" . MySQL::$database . "`.`users` WHERE `facebook` = '" . MySQL::clean($fb_id) . "' LIMIT 1");
+	if (!empty($result[0]['id'])) {
+		return $result[0]['id'];
+	} else {
+		return false;
+	}
+}
+
 // Both of the following constants are found in:
 // application/config/config.php
 $fb_cookie_response = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
