@@ -1,0 +1,17 @@
+
+		<div id="main">
+			<!-- Print out the blog posts. -->
+			<?php
+				foreach ($posts as $post) {
+					echo "<p class='post'>";
+						echo "<span class='right'>" . Date::parse($post['timestamp']) . "</span>";
+						echo "<h5><a href='?post=" . $post['id'] . "'>" . $post['title'] . "</a></h5>";
+						echo "<span class='author'>" . $authors[$post['author']] . '</span>';
+						echo "<p class='content'>" . $post['content'] . "</p>";
+					echo "</p><hr />";
+				}
+			?>
+			
+			<a href="?older_than=<?php echo $oldest_post;?>"><?php echo BLOG_OLDER_POSTS; ?></a>
+		</div>
+		

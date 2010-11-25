@@ -7,6 +7,7 @@
 
 // Load some libraries
 require 'system/libs/mysql.class.php';
+require 'system/libs/date.class.php';
 
 // Load the config
 require 'application/config/config.php';

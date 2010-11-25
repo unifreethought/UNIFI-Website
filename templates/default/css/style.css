@@ -95,3 +95,35 @@ div#container {
 				div#register form fieldset.left {
 					margin-left: 100px;
 				}
+	
+	div#main {
+		margin-left: 30px;
+	}
+	
+		div#main p.post {
+			margin-left: 10px;
+			width: 90%;
+		}
+		
+			div#main p.post span.right {
+				float: right;
+			}
+			
+			div#main p.post h4 {
+				font-size: 1.3em;
+			}
+				
+				div#main p.post h4 a {
+					color: #000000;
+					font-family: "Ariel";
+				}
+			
+			div#main p.post span.author {
+				
+			}
+			
+			div#main p.post p.content {
+				display: block;
+				margin-left: 10px;
+				text-indent: 10px;	
+			}

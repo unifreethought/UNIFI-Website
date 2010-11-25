@@ -25,3 +25,6 @@ define('REGISTER_GENDER', 'Gender: ');
 define('REGISTER_FEMALE', 'Female');
 define('REGISTER_MALE', 'Male');
 define('REGISTER_TRANSGENDER', 'Transgender');
+
+// Blog
+define('BLOG_OLDER_POSTS', 'Older posts');
