@@ -1,10 +1,9 @@
 <!doctype html>
-<html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
 	<title><?php echo SITE_TITLE; ?></title>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="<?php echo $css_file; ?>" />
-	
 </head>
 <body>
 
@@ -15,6 +14,10 @@
 		</div>
 		
 		<div id="nav">
+			<div class="right">
+				<?php print_fb_button(); ?>
+			</div>
+		
 			<ul>
 				<?php
 				foreach ($nav_items as $item) {

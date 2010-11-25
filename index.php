@@ -18,6 +18,9 @@ if ($config['web'] !== 'enabled') {
 // Include the errors handler
 require 'system/errors/errors.php';
 
+// Load the user stuff. (Facebook)
+require 'application/helpers/user.php';
+
 // Check any cookies
 require 'application/helpers/cookie.php';
 $user_id = check_cookies();
