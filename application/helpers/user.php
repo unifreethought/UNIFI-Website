@@ -78,5 +78,7 @@ if ($fb_cookie_response) {
 	
 	if (!$user_id) {
 		// redirect to a page where you get the details from the user.
+		$show_register_form = true;
+		$fb_data = get_more_fb_data($fb_id);
 	}
 }

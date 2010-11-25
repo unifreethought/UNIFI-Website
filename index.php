@@ -20,10 +20,12 @@ require 'system/errors/errors.php';
 
 // Load the user stuff. (Facebook)
 require 'application/helpers/user.php';
+//echo $fb_id . '<br />';
+//echo $user_id . '<br />';
 
 // Check any cookies
-require 'application/helpers/cookie.php';
-$user_id = check_cookies();
+//require 'application/helpers/cookie.php';
+//$user_id = check_cookies();
 
 // Check the url
 require 'application/helpers/url.php';
@@ -43,16 +45,24 @@ if ($url['post'] == true) {
 
 	exit();
 } else {
+
+	// Special conditional catches
+	if ($show_register_form == true) {
+		require 'application/helpers/register.php';
+		$jump_to_footer = true;
+	}
 	
-	switch ($url['page']) {
+	if (!$jump_to_footer) {
+		switch ($url['page']) {
 		
-		case 'about':
-			// ... //
-		break;
+			case 'about':
+				// ... //
+			break;
 		
-		default:
-			include 'application/helpers/main.php';
-			include 'templates/' . $config['template'] . '/html/main.html';
+			default:
+				include 'application/helpers/main.php';
+				include 'templates/' . $config['template'] . '/html/main.html';
+		}	
 	}
 	
 }
