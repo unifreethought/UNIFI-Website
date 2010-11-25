@@ -163,9 +163,6 @@ class MySQL {
 	 * @return: array
 	 */
 	static public function search($sql) {
-	
-		// Increment the counter
-		self::$query_count += 1;
 		
 		// Perform the query
 		$tmp_query = self::query($sql);
