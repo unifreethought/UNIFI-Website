@@ -27,4 +27,5 @@ define('REGISTER_MALE', 'Male');
 define('REGISTER_TRANSGENDER', 'Transgender');
 
 // Blog
+define('BLOG_AUTHOR_PREFIX', 'By ');
 define('BLOG_OLDER_POSTS', 'Older posts');

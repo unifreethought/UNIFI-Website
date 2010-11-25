@@ -109,21 +109,21 @@ div#container {
 				float: right;
 			}
 			
-			div#main p.post h4 {
+			h5.blog_title {
 				font-size: 1.3em;
+				font-family: "Courier New";
+				margin: 0px 0px 0px 0px;
 			}
 				
-				div#main p.post h4 a {
+				h5.blog_title a {
 					color: #000000;
-					font-family: "Ariel";
 				}
 			
-			div#main p.post span.author {
-				
+			span.author {
+				font-size: 0.75em;
+				margin-left: 15px;
 			}
 			
-			div#main p.post p.content {
-				display: block;
-				margin-left: 10px;
-				text-indent: 10px;	
+			p.blog_content pre {
+				margin-left: 15%;
 			}
