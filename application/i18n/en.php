@@ -11,6 +11,9 @@ define('SITE_TITLE', 'UNI Freethinkers and Inquirers');
 
 define('WEB_ACCESS_DISABLED', 'We\'re sorry, but this website is down.');
 
+// Facebook dialogs
+define('FB_LOGIN_OUT_ALERT', 'Press OK to reload the page and finish loggin in/out.');
+
 // Registration
 define('REGISTER_HEADER', 'Please Register');
 define('REGISTER_MESSAGE', 'It seems like you\'re not registred here.  All it takes is to fill out this form, and then you will just sign in with Facebook from now on.');

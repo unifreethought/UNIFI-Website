@@ -22,7 +22,7 @@ function get_facebook_cookie($app_id, $application_secret) {
 }
 
 function print_fb_button() {
-	echo "<fb:login-button autologoutlink='true'></fb:login-button>";
+	echo "<fb:login-button id='fb_button' autologoutlink='true'></fb:login-button>";
 }
 
 function print_fb_script() {
@@ -30,8 +30,16 @@ function print_fb_script() {
     <div id="fb-root"></div>
     <script>
       window.fbAsyncInit = function() {
-        FB.init({appId: ' . FACEBOOK_APP_ID . ', status: true, cookie: true,
-                 xfbml: true});
+       	  FB.init({appId: ' . FACEBOOK_APP_ID . ', status: true, cookie: true, xfbml: true});
+		  FB.Event.subscribe(\'auth.sessionChange\', function(response) {
+			if (response.session) {
+			  // A user has logged in, and a new cookie has been saved
+			  window.location.reload();
+			} else {
+			  // The user has logged out, and the cookie has been cleared
+			  window.location.reload();
+			}
+		  });
       };
       (function() {
         var e = document.createElement(\'script\');
@@ -41,6 +49,16 @@ function print_fb_script() {
         e.async = true;
         document.getElementById(\'fb-root\').appendChild(e);
       }());
+      
+      /**
+      document.getElementById(\'fb_button\').onclick = function () {
+      	 setTimeout(function () {
+      	 	if (window.confirm(\'' . FB_LOGIN_OUT_ALERT . '\')) {
+      	 		window.location.reload();
+      	 	}
+      	 }, 500);
+      };
+      **/
     </script>';
 }
 
