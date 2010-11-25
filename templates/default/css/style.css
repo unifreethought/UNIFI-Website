@@ -53,7 +53,7 @@ div#container {
 				}
 				
 	div#register {
-		margin-left: 20px;
+		margin-left: 30px;
 	}
 	
 		div#register h3 {
@@ -65,6 +65,33 @@ div#container {
 			margin-left: 15px;
 		}
 		
+		div#register hr {
+			width: 90%;
+		}
+		
 		div#register form {
 			margin-left: 15px;
 		}
+		
+			div#register form input {
+				margin-bottom: 5px;
+			}
+			
+				div#register form input[type=submit] {
+					margin-left: 15%;
+					width: 70px;
+				}
+		
+			div#register form fieldset {
+				border: 0px solid #000000;
+				width: 45%;
+			}
+		
+				div#register form fieldset.right {
+					float: right;
+					margin-right: 50px;
+				}
+			
+				div#register form fieldset.left {
+					margin-left: 100px;
+				}

@@ -16,6 +16,7 @@ define('FB_LOGIN_OUT_ALERT', 'Press OK to reload the page and finish loggin in/o
 
 // Registration
 define('REGISTER_HEADER', 'Please Register');
+define('REGISTER_SUBMIT', 'Register');
 define('REGISTER_MESSAGE', 'It seems like you\'re not registred here.  All it takes is to fill out this form, and then you will just sign in with Facebook from now on.');
 define('REGISTER_FB_ID', 'Facebook ID: ');
 define('REGISTER_FIRST_NAME', 'First Name: ');
