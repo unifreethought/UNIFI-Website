@@ -4,9 +4,13 @@
  * Adam Shannon
  * 2010-11-21
  */
- 
+
+if (empty($url['older_than'])) {
+	$url['older_than'] = @time();
+}
+
 // For now we want the blog posts pulled and displayed.
-$posts = MySQL::search("SELECT * FROM `" . MySQL::$database . "`.`blog-posts` ORDER BY `timestamp` DESC LIMIT 10");
+$posts = MySQL::search("SELECT * FROM `" . MySQL::$database . "`.`blog-posts` WHERE `timestamp` < " . MySQL::clean($url['older_than']) . " ORDER BY `timestamp` DESC LIMIT 10");
 
 // Create an array of authors, organized by their user id.
 $authors = array();

@@ -64,7 +64,7 @@ if ($url['post'] == true) {
 				include 'application/helpers/show_post.php';
 				include 'templates/' . $config['template'] . '/html/show_post.html';
 			break;
-		
+			
 			default:
 				include 'application/helpers/main.php';
 				include 'templates/' . $config['template'] . '/html/main.html';
