@@ -60,6 +60,14 @@ if ($url['post'] == true) {
 				// ... //
 			break;
 			
+			case 'contact':
+			
+			break;
+			
+			case 'events':
+			
+			break;
+			
 			case 'post':
 				include 'application/helpers/show_post.php';
 				include 'templates/' . $config['template'] . '/html/show_post.html';
@@ -68,6 +76,7 @@ if ($url['post'] == true) {
 			default:
 				include 'application/helpers/main.php';
 				include 'templates/' . $config['template'] . '/html/main.html';
+			break;
 		}	
 	}
 	
