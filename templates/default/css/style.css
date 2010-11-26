@@ -98,6 +98,7 @@ div#container {
 	
 	div#main {
 		margin-left: 30px;
+		padding-bottom: 20px;
 	}
 	
 		div#main p.post {
@@ -126,4 +127,13 @@ div#container {
 			
 			p.blog_content pre {
 				margin-left: 15%;
+			}
+			
+		div#main div#comment_reply {
+			margin-left: 0px;
+		}
+		
+			div#main div#comment_reply form textarea {
+				height: 200px;
+				width: 550px;
 			}

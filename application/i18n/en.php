@@ -29,3 +29,5 @@ define('REGISTER_TRANSGENDER', 'Transgender');
 // Blog
 define('BLOG_AUTHOR_PREFIX', 'By ');
 define('BLOG_OLDER_POSTS', 'Older posts');
+define('BLOG_COMMENT_REPLY', 'Leave a reply');
+define('BLOG_COMMENT_SUBMIT', 'Submit');
