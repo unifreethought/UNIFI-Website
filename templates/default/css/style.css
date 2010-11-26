@@ -129,8 +129,14 @@ div#container {
 				margin-left: 15%;
 			}
 			
+		div#main p.comment {
+			margin-left: 10px;
+			width: 90%;
+		}
+			
 		div#main div#comment_reply {
 			margin-left: 0px;
+			width: 90%;
 		}
 		
 			div#main div#comment_reply form textarea {
