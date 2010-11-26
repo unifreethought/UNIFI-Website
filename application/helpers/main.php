@@ -12,8 +12,8 @@ $posts = MySQL::search("SELECT * FROM `" . MySQL::$database . "`.`blog-posts` OR
 $authors = array();
 foreach ($posts as $post) {
 	if (empty($authors[$post['author']]) && $authors[$post['author']] != '0') {
-		$result = MySQL::search("SELECT `first_name`,`last_name` FROM `" . MySQL::$database . "`.`users` WHERE `id` = '" . MySQL::clean($post['author']) . "' LIMIT 1");
-		$authors[$post['author']] = $result[0]['first_name'] . ' ' . $result[0]['last_name'];
+		$result = MySQL::single("SELECT `first_name`,`last_name` FROM `" . MySQL::$database . "`.`users` WHERE `id` = '" . MySQL::clean($post['author']) . "' LIMIT 1");
+		$authors[$post['author']] = $result['first_name'] . ' ' . $result['last_name'];
 	}
 }
 
