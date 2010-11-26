@@ -105,7 +105,7 @@ div#container {
 			width: 90%;
 		}
 		
-			div#main p.post span.right {
+			div#main p.comment span.right, div#main p.post span.right {
 				float: right;
 			}
 			

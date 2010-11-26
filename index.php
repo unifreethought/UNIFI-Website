@@ -30,7 +30,7 @@ require 'application/helpers/user.php';
 
 // Check the url
 require 'application/helpers/url.php';
-// $url = check_url();
+$url = check_url();
 
 include 'application/helpers/header.php';
 include 'templates/' . $config['template'] . '/html/header.html';
@@ -58,6 +58,11 @@ if ($url['post'] == true) {
 		
 			case 'about':
 				// ... //
+			break;
+			
+			case 'post':
+				include 'application/helpers/show_post.php';
+				include 'templates/' . $config['template'] . '/html/show_post.html';
 			break;
 		
 			default:
