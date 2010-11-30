@@ -21,7 +21,7 @@
 			<ul>
 				<?php
 				foreach ($nav_items as $item) {
-					echo "<li class='nav_item'><a href='" . $item['href'] . "'>" . $item['name'] . "</a></li>";
+					echo "<li class='nav_item'><a href='" . $item['href'] . "'>" . Clean::output($item['name']) . "</a></li>";
 				}
 				?>
 			</ul>

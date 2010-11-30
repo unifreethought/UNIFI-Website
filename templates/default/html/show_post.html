@@ -7,7 +7,7 @@
 					echo "<span class='right'>" . Date::parse($post['timestamp']) . "</span>";
 					echo "<h5 class='blog_title'><a href='?post=" . $post['id'] . "'>" . $post['title'] . "</a></h5>";
 					echo "<span class='author'>" . BLOG_AUTHOR_PREFIX . $authors[$post['author']] . '</span>';
-					echo "<p class='blog_content'><pre>" . wordwrap(stripslashes($post['content']), 70) . "</pre></p>";
+					echo "<p class='blog_content'><pre>" . wordwrap(Clean::output($post['content']), 70) . "</pre></p>";
 				echo "</p><hr />";
 			?>
 			
@@ -18,7 +18,7 @@
 					echo "<p class='comment'>";
 						echo "<span class='right'>" . Date::parse($comment['timestamp']) . "</span>";
 						echo "<span class='author'>" . $authors[$comment['author']] . '</span>';
-						echo "<p class='comment_content'><pre>" . wordwrap(stripslashes($comment['content']), 50) . "</pre></p>";
+						echo "<p class='comment_content'><pre>" . wordwrap(Clean::output($comment['content']), 50) . "</pre></p>";
 					echo "</p><hr />";
 				}
 			?>
