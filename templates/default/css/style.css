@@ -101,6 +101,12 @@ div#container {
 		padding-bottom: 20px;
 	}
 	
+		h6 {
+			font-family: Sans-Serif;
+			font-size: 1.5em;
+			margin: 20px 0px 0px 0px;
+		}
+	
 		div#main p.post {
 			margin-left: 10px;
 			width: 90%;

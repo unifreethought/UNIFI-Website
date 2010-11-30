@@ -53,16 +53,13 @@ if ($url['post'] == true) {
 		$jump_to_footer = true;
 	}
 	
+	// Load specific pages.
 	if (!$jump_to_footer) {
+		if (empty($url['page'])) {
+			$url['page'] = 'main';
+		}
+	
 		switch ($url['page']) {
-		
-			case 'about':
-				// ... //
-			break;
-			
-			case 'contact':
-			
-			break;
 			
 			case 'events':
 			
@@ -74,8 +71,18 @@ if ($url['post'] == true) {
 			break;
 			
 			default:
-				include 'application/helpers/main.php';
-				include 'templates/' . $config['template'] . '/html/main.html';
+				include 'application/helpers/detect_page.php';
+				$url_stubs = get_possible_url_stubs();
+				
+				if (in_array($url['page'], $url_stubs)) {
+					// Load that specifc page from the db and display it.
+					include 'application/helpers/load_db_page.php';
+					include 'templates/' . $config['template'] . '/html/load_db_page.html';
+					
+				} else {
+					include 'application/helpers/main.php';
+					include 'templates/' . $config['template'] . '/html/main.html';
+				}
 			break;
 		}	
 	}
