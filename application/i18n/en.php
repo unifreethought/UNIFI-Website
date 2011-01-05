@@ -8,7 +8,9 @@
 define('LANGUAGE_ID', 'English');
 define('BASE_URL', 'http://unifreethought.com');
 define('SITE_TITLE', 'UNI Freethinkers and Inquirers');
+define('ADMIN_TITLE', 'UNIFI -- Admin');
 
+define('ADMIN_ACCESS_DISABLED', 'We\'re sorry, but admin access to the site is down.');
 define('WEB_ACCESS_DISABLED', 'We\'re sorry, but this website is down.');
 
 // Facebook dialogs
