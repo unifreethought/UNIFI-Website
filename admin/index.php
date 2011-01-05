@@ -53,7 +53,8 @@ if ($url['post']) {
 			$can_post = MySQL::single("SELECT `post_to_blog` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
 			if ($can_post['post_to_blog'] == 1) {
 				
-				// Load the posting page(s).
+				include 'application/helpers/post_to_blog.php';
+				include 'templates/' . $config['template'] . '/html/post_to_blog.html';
 				
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
