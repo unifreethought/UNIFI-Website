@@ -36,10 +36,20 @@ if ($url['post']) {
 	include 'templates/' . $config['template'] . '/html/header.html';
 	
 	switch ($url['page']) {
+	
+		case 'post':
+			// Make sure to re-auth the user for posting access.
+			echo 'Post to the blog';
+		break;
 		
-		default:
+		case 'list':
 			include 'application/helpers/list_users.php';
 			include 'templates/' . $config['template'] . '/html/list_users.html';
+		break;
+		
+		default:
+			include 'application/helpers/check_for_admin.php';
+			include 'templates/' . $config['template'] . '/html/check_for_admin.html';
 		break;
 		
 	}

@@ -1,0 +1,17 @@
+/**
+ * UNIFI Website
+ * Adam Shannon
+ * 2010-11-21
+ */
+ 
+body {
+	background-color: #EEEEEE;
+}
+
+div#wrapper {
+	border: 1px solid #000000;
+	margin-left: 5%;
+	margin-top: 25px;
+	padding: 5px;
+	width: 90%;
+}
