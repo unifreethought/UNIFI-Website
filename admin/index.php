@@ -35,11 +35,28 @@ if ($url['post']) {
 	// echo 'HTTP GET REQUEST';
 	include 'templates/' . $config['template'] . '/html/header.html';
 	
+	// Check to see if the $user_id can view the admin dashbord. 
+	$user_id = MySQL::clean($user_id);
+	$can_view_dashbord = MySQL::single("SELECT `access_admin_dashbord` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+	if ($can_view_dashbord['access_admin_dashbord'] != '1') {
+		exit(ADMIN_NOT_AUTHORIZED);
+	}
+	
 	switch ($url['page']) {
 	
 		case 'post':
-			// Make sure to re-auth the user for posting access.
+			
+			// Check the user's auth for posting access
 			echo 'Post to the blog';
+			
+			$can_post = MySQL::single("SELECT `post_to_blog` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+	
+			if ($can_post['post_to_blog'] == 1) {
+				// Load posting scripts/pages
+			} else {
+				exit(ADMIN_NOT_AUTHORIZED);
+			}
+			
 		break;
 		
 		case 'list':
@@ -48,8 +65,7 @@ if ($url['post']) {
 		break;
 		
 		default:
-			include 'application/helpers/check_for_admin.php';
-			include 'templates/' . $config['template'] . '/html/check_for_admin.html';
+			include 'templates/' . $config['template'] . '/html/dashbord.html';
 		break;
 		
 	}

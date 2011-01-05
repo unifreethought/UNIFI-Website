@@ -15,7 +15,6 @@ define('WEB_ACCESS_DISABLED', 'We\'re sorry, but this website is down.');
 
 // Admin Auth Errors
 define('ADMIN_NOT_AUTHORIZED', 'Sorry, but you\'re not authorized to view this page.');
-define('ADMIN_REDIRECT_TO_BLOG_POSTING', 'It looks like you are able to post, redirecting you there...');
 
 define('ADMIN_HEADER', 'UNIFI Admin Dashbord');
 
