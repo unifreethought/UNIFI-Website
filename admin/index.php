@@ -35,24 +35,26 @@ if ($url['post']) {
 	// echo 'HTTP GET REQUEST';
 	include 'templates/' . $config['template'] . '/html/header.html';
 	
-	// Check to see if the $user_id can view the admin dashbord. 
+	// Clean the $user_id for each action. 
 	$user_id = MySQL::clean($user_id);
+	
+	// Do a general check on viewing the dashbord.
 	$can_view_dashbord = MySQL::single("SELECT `access_admin_dashbord` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
-	if ($can_view_dashbord['access_admin_dashbord'] != '1') {
-		exit(ADMIN_NOT_AUTHORIZED);
+	if ($can_view_dashbord['access_admin_dashbord'] == '1') {
+		$view_dashbord = true;
+	} else {
+		$view_dashbord = false;
 	}
 	
 	switch ($url['page']) {
 	
 		case 'post':
-			
-			// Check the user's auth for posting access
-			echo 'Post to the blog';
-			
+		
 			$can_post = MySQL::single("SELECT `post_to_blog` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
-	
 			if ($can_post['post_to_blog'] == 1) {
-				// Load posting scripts/pages
+				
+				// Load the posting page(s).
+				
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -60,12 +62,26 @@ if ($url['post']) {
 		break;
 		
 		case 'list':
-			include 'application/helpers/list_users.php';
-			include 'templates/' . $config['template'] . '/html/list_users.html';
+		
+			$can_list = MySQL::single("SELECT `view_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+			if ($view_dashbord == '1' && $can_list['view_members'] == 1) {
+			
+				include 'application/helpers/list_users.php';
+				include 'templates/' . $config['template'] . '/html/list_users.html';
+			
+			} else {
+			
+				exit(ADMIN_NOT_AUTHORIZED);
+			
+			}
 		break;
 		
 		default:
-			include 'templates/' . $config['template'] . '/html/dashbord.html';
+			
+			if ($view_dashbord) {
+				include 'templates/' . $config['template'] . '/html/dashbord.html';
+			}
+			
 		break;
 		
 	}
