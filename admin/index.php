@@ -53,6 +53,7 @@ if ($url['post']) {
 			$can_post = MySQL::single("SELECT `post_to_blog` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
 			if ($can_post['post_to_blog'] == 1) {
 				
+				// Feature still needed!!
 				include 'application/helpers/post_to_blog.php';
 				include 'templates/' . $config['template'] . '/html/post_to_blog.html';
 				
@@ -67,6 +68,7 @@ if ($url['post']) {
 			$can_list = MySQL::single("SELECT `view_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
 			if ($view_dashbord == '1' && $can_list['view_members'] == 1) {
 			
+				// Feature still needed!!
 				include 'application/helpers/list_users.php';
 				include 'templates/' . $config['template'] . '/html/list_users.html';
 			
@@ -75,6 +77,24 @@ if ($url['post']) {
 				exit(ADMIN_NOT_AUTHORIZED);
 			
 			}
+			
+		break;
+		
+		case 'create_event':
+		
+			$can_create_event = MySQL::single("SELECT `add_events` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+			if ($view_dashbord == '1' && $can_create_event['add_events'] == 1) {
+			
+				// Feature still needed!!
+				include 'application/helpers/create_event.php';
+				include 'templates/' . $config['template'] . '/html/create_event.html';
+			
+			} else {
+			
+				exit(ADMIN_NOT_AUTHORIZED);
+			
+			}
+		
 		break;
 		
 		default:
