@@ -97,6 +97,23 @@ if ($url['post']) {
 		
 		break;
 		
+		case 'list_events':
+		
+			$list_events = MySQL::single("SELECT `list_events` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+			if ($view_dashbord == '1' && $list_events['list_events'] == 1) {
+			
+				// Feature still needed!!
+				include 'application/helpers/list_events.php';
+				include 'templates/' . $config['template'] . '/html/list_events.html';
+			
+			} else {
+			
+				exit(ADMIN_NOT_AUTHORIZED);
+			
+			}
+			
+		break;
+		
 		default:
 			
 			if ($view_dashbord) {
