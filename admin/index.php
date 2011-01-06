@@ -63,7 +63,7 @@ if ($url['post']) {
 			
 		break;
 		
-		case 'list':
+		case 'list_members':
 		
 			$can_list = MySQL::single("SELECT `view_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
 			if ($view_dashbord == '1' && $can_list['view_members'] == 1) {
