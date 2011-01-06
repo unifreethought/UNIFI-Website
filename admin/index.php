@@ -118,6 +118,8 @@ if ($url['post']) {
 			
 			if ($view_dashbord) {
 				include 'templates/' . $config['template'] . '/html/dashbord.html';
+			} else {
+				exit(ADMIN_NOT_AUTHORIZED);
 			}
 			
 		break;
