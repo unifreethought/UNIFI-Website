@@ -20,3 +20,27 @@ div#wrapper {
 	padding: 5px;
 	width: 90%;
 }
+
+table {
+	border: 1px solid #000000;
+	margin: 0px;
+	padding 5px;
+}
+	
+	thead {
+		background-color: #000000;
+		font-weight: bold;
+	}
+	
+	tr {
+		background-color: #FFFFFF;
+	}
+	
+	tr:nth-child(even) {
+		background-color: #CCCCCC;
+	}
+	
+		td {
+			font-size: 0.95em;
+			padding: 3px 0px
+		}

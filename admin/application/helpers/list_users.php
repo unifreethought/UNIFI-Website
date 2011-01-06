@@ -45,5 +45,5 @@ foreach ($raw_user_data as $user) {
 	$users[$user['id']]['recruit_date'] = Date::parse($tmp['recruit_date']);
 }
 
-print_r($users);
+//print_r($users);
 

@@ -38,3 +38,18 @@ define('BLOG_AUTHOR_PREFIX', 'By ');
 define('BLOG_OLDER_POSTS', 'Older posts');
 define('BLOG_COMMENT_REPLY', 'Leave a reply');
 define('BLOG_COMMENT_SUBMIT', 'Submit');
+
+// Listing of Members
+define('LIST_MEMBERS_HEADER', 'User Listing');
+define('LIST_MEMBERS_id', 'id');
+define('LIST_MEMBERS_First', 'First');
+define('LIST_MEMBERS_Last', 'Last');
+define('LIST_MEMBERS_Year', 'Year');
+define('LIST_MEMBERS_Major', 'Major');
+define('LIST_MEMBERS_Dorm', 'Dorm');
+define('LIST_MEMBERS_Phone', 'Phone');
+define('LIST_MEMBERS_Email', 'Email');
+define('LIST_MEMBERS_Texting', 'Texting');
+define('LIST_MEMBERS_Positions', 'Position(s)');
+define('LIST_MEMBERS_Tags', 'Tag(s)');
+define('LIST_MEMBERS_Notes', 'Notes');
