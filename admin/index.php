@@ -80,6 +80,21 @@ if ($url['post']) {
 			
 		break;
 		
+		case 'edit_user':
+		
+			$can_edit = MySQL::single("SELECT `edit_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+			if ($view_dashbord == '1' && $can_edit['edit_members'] == 1) {
+			
+				include 'application/helpers/edit_user.php';
+				include 'templates/' . $config['template'] . '/html/edit_user.html';
+			
+			} else {
+			
+				exit(ADMIN_NOT_AUTHORIZED);
+			
+			}
+		break;
+		
 		case 'create_event':
 		
 			$can_create_event = MySQL::single("SELECT `add_events` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
