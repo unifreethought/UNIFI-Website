@@ -134,6 +134,8 @@ class MySQL {
 			$data[$n++] = $row;
 		}
 		
+		mysql_free_result($query);
+		
 		return $data;
 	}
 	
