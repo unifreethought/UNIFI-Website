@@ -2,7 +2,12 @@
 	<div id="wrapper">
 		Edit User
 		
-		<!-- <br /><br /> <pre><?php //print_r($user_info); ?></pre> -->
+		<p>
+			Below are the values for a user, feel free to edit them as needed and 
+			the site will handle the data. Thanks :)
+		</p>
+		
+		<?php // print_r($user_info); ?>
 		
 		<!--
 		<?php
@@ -29,4 +34,120 @@
 			print_r($tags);
 			*/
 		?>
+		
+		<!-- The form with the user's details -->
+		<form action="submit_user" method="POST" />
+			<input type="hidden" name="type_of_user_change" value="edit_user" />
+			<input type="hidden" name="id" value="<?php echo $user_info['id']; ?>" />
+			
+			<label>
+				First Name: <input type="text" name="first_name" value="<?php echo $user_info['first_name']; ?>" /><br />
+			</label>
+			
+			<label>
+				Last Name: <input type="text" name="last_name" value="<?php echo $user_info['last_name']; ?>" /><br />
+			</label>
+			
+			<label>
+				Year: 
+					<select name="year">
+						<?php
+						foreach ($years as $year) {
+							echo "<option value='{$year['id']}' id='year{$year['id']}'>{$year['desc']}</option>";
+						}
+						?>
+					</select><br />
+					
+					<script>
+						document.getElementById("year<?php echo $user_info['numeric']['year']; ?>").selected = 'selected';
+					</script>
+			</label>			
+			
+			<label>
+				Major:
+					<select name="major">
+						<?php
+						foreach ($majors as $major) {
+							echo "<option value='{$major['id']}' id='major{$major['id']}'>{$major['desc']}</option>";
+						}
+						?>
+					</select><br />
+					
+					<script>
+						document.getElementById("major<?php echo $user_info['numeric']['major']; ?>").selected = 'selected';
+					</script>
+			</label>
+			
+			<label>
+				Dorm:
+					<select name="dorm">
+						<?php
+						foreach ($dorms as $dorm) {
+							echo "<option value='{$dorm['id']}' id='dorm{$dorm['id']}'>{$dorm['desc']}</option>";
+						}
+						?>
+					</select><br />
+					
+					<script>
+						document.getElementById("dorm<?php echo $user_info['numeric']['dorm']; ?>").selected = 'selected';
+					</script>
+			</label>
+			
+			<label>
+				Recruit Place:
+					<select name="recruit_place">
+						<?php
+						foreach ($recruit_places as $recruit_place) {
+							echo "<option value='{$recruit_place['id']}' id='recruit_place{$recruit_place['id']}'>{$recruit_place['desc']}</option>";
+						}
+						?>
+					</select><br />
+					
+					<script>
+						document.getElementById("recruit_place<?php echo $user_info['numeric']['recruit_place']; ?>").selected = 'selected';
+					</script>
+			</label>
+			
+			<label>
+				Texting:
+					<select name="texting">
+						<option value="0" id='texting0'>No</option>
+						<option value="1" id='texting1'>Yes</option>
+					</select><br />
+					
+					<script>
+						document.getElementById("texting<?php echo $user_info['numeric']['texting']; ?>").selected = 'selected';
+					</script>
+			</label>
+			
+			<label>
+				Position(s):
+				
+				<br />
+			</label>
+			
+			<label>
+				Tag(s):
+				
+				<br />
+			</label>
+			
+			<label>
+				Hometown: <input type="text" name="hometown" value="<?php echo $user_info['hometown']; ?>" /><br />
+			</label>
+			
+			<label>
+				Phone: <input type="text" name="phone" value="<?php echo $user_info['phone']; ?>" /><br />
+			</label>
+			
+			<label>
+				Email: <input type="text" name="email" value="<?php echo $user_info['email']; ?>" /><br />
+			</label>
+			
+			<label>
+				<textarea rows="12" cols="60" name="notes"><?php echo $user_info['notes']; ?></textarea><br />
+			</label>
+			
+			<input type="submit" value="Submit" />
+		</form>
 	</div>

@@ -33,6 +33,16 @@ $user_info['texting'] = User_Parse::parse_texting($tmp['texting']);
 $user_info['position'] = User_Parse::parse_position($tmp['position']);
 $user_info['tags'] = User_Parse::parse_tags($tmp['tags']);
 
+// The numeric values for each value
+$user_info['numeric'] = array();
+$user_info['numeric']['year'] = $tmp['year'];
+$user_info['numeric']['major'] = $tmp['major'];
+$user_info['numeric']['dorm'] = $tmp['dorm'];
+$user_info['numeric']['recruit_place'] = $tmp['recruit_place'];
+$user_info['numeric']['texting'] = $tmp['texting'];
+$user_info['numeric']['position'] = $tmp['position'];
+$user_info['numeric']['tags'] = $tmp['tags'];
+
 // Direct Copying of data
 $user_info['hometown'] = $tmp['hometown'];
 $user_info['phone'] = $tmp['phone'];
