@@ -123,11 +123,55 @@
 			<label>
 				Position(s):
 				
+					<fieldset>
+					<?php 
+						//echo $user_info['position']; 
+						//print_r($positions);
+						$look = explode(', ' , User_Encode::encode_positions($user_info['position']));
+						
+						foreach ($positions as $position) {
+							
+							echo $position['desc'] . " <input type='checkbox' name='positions[]' id='position{$position['id']}' value='{$position['id']}'";
+							
+							foreach ($look as $l) {
+								if ($position['id'] == $l) {
+									//echo 'Match: ' . $position['desc'] . ' ' . $l . '<br />';
+									echo " checked='checked' ";
+								}
+							}
+							
+							echo "/> | ";
+						}
+					?>
+					</fieldset>
+					
 				<br />
 			</label>
 			
 			<label>
 				Tag(s):
+				
+					<fieldset>
+					<?php 
+						//echo $user_info['tags']; 
+						//print_r($tags);
+						$look = explode(', ' , User_Encode::encode_tags($user_info['tags']));
+						
+						foreach ($tags as $tag) {
+							
+							echo $tag['desc'] . " <input type='checkbox' name='tags[]' id='tag{$tag['id']}' value='{$tag['id']}'";
+							
+							foreach ($look as $l) {
+								if ($tag['id'] == $l) {
+									//echo 'Match: ' . $tag['desc'] . ' ' . $l . '<br />';
+									echo " checked='checked' ";
+								}
+							}
+							
+							echo "/> | ";
+						}
+					?>
+					</fieldset>
 				
 				<br />
 			</label>
