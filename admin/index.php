@@ -30,7 +30,29 @@ $url = check_url();
 //print_r($url);
 
 if ($url['post']) {
-	echo 'HTTP POST REQUEST';
+	//echo 'HTTP POST REQUEST';
+	
+	// Load the helper to change a user's details.
+	if (!empty($_POST['type_of_user_change']) && $_POST['type_of_user_change'] == 'edit_user') {
+		
+		// First authenticate the user against the db.
+		// echo $user_id;
+		
+		// Then, make sure that the user can edit members.
+		$user_id = MySQL::clean($user_id);
+		$tmp = MySQL::single("SELECT `edit_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+		if ($tmp['edit_members'] != '1') {
+			exit(ADMIN_NOT_AUTHORIZED);
+		}
+		
+		// Finally, submit the change.
+		include 'application/helpers/form_edit_user.php';
+		
+		
+		
+		exit('');
+	}
+	
 } else {
 	// echo 'HTTP GET REQUEST';
 	include 'templates/' . $config['template'] . '/html/header.html';
