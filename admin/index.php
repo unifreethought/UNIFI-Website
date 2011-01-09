@@ -48,8 +48,6 @@ if ($url['post']) {
 		// Finally, submit the change.
 		include 'application/helpers/form_edit_user.php';
 		
-		
-		
 		exit('');
 	}
 	
