@@ -51,6 +51,7 @@ if ($url['post'] == true) {
 	// Special conditional catches
 	if ($show_register_form == true) {
 		require 'application/helpers/register.php';
+		require 'templates/' . $config['template'] . '/html/register.html';
 		$jump_to_footer = true;
 	}
 	
