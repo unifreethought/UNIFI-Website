@@ -33,20 +33,19 @@ require 'application/helpers/user.php';
 require 'application/helpers/url.php';
 $url = check_url();
 
+if ($url['post'] == true) {
+	if ($_POST['page'] == 'new-user') {
+		require 'application/helpers/form_register.php';
+	}
+
+	exit();
+}
+
 include 'application/helpers/header.php';
 include 'templates/' . $config['template'] . '/html/header.html';
 
 // Find what page to load
-if ($url['post'] == true) {
-
-	switch ($url['page']) {
-		case 'new-user':
-		
-		break;
-	}
-
-	exit();
-} else {
+if ($url['get'] == true) {
 
 	// Special conditional catches
 	if ($show_register_form == true) {

@@ -5,7 +5,7 @@
 			
 			<hr />
 			
-			<form action="" method="POST">
+			<form action="index.php" method="POST">
 				<!-- $fb_data :: id, name, first_name, last_name, link, gender, locale -->
 				<?php
 					// This is a security problem, I can fake the fb id (after I login) to become
@@ -112,6 +112,7 @@
 					Email: <input type="text" name="email" value="<?php echo $user_info['email']; ?>" /><br />
 				</label>
 				
+				<input type="hidden" name="page" value="new-user" />
 				<input type="submit" value="<?php echo REGISTER_SUBMIT; ?>" />
 			</form>
 		</div>
