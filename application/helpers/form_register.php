@@ -21,13 +21,11 @@ $email = MySQL::clean($_POST['email']);
 $id = '0';
 // $first_name
 // $last_name
-$salt = '';
-// $email
 $facebook = MySQL::clean($fb_id);
 $cookie = '';
 
-$sql = "INSERT INTO `{$database}`.`users` (`id`, `first_name`, `last_name`, `salt`, `email`, `facebook`, `cookie`) VALUES ";
-$sql .= "('{$id}', '{$first_name}', '{$last_name}', '{$salt}', '{$email}', '{$facebook}', '{$cookie}');";
+$sql = "INSERT INTO `{$database}`.`users` (`id`, `first_name`, `last_name`, `facebook`, `cookie`) VALUES ";
+$sql .= "('{$id}', '{$first_name}', '{$last_name}', '{$facebook}', '{$cookie}');";
 //echo $sql . '<br /><br />';
 MySQL::query($sql);
 
@@ -44,13 +42,13 @@ $recruit_place = '0';
 // $phone
 // $email
 // $texting
-$position = '';
+$positions = '';
 $tags = '';
 $notes = '';
 
 $sql = "INSERT INTO `{$database}`.`user-data` (`id`, `year`, `major`, `hometown`, `dorm`, `recruit_date`, `recruit_place`, `phone`, `email`, `texting`,";
-$sql .= "`position`, `tags`, `notes`) VALUES ('{$tmp_user_id['id']}', '{$year}', '{$major}', '{$hometown}', '{$dorm}', '{$recruit_date}', '{$recruit_place}',";
-$sql .= "'{$phone}', '{$email}', '{$texting}', '{$position}', '{$tags}', '{$notes}');";
+$sql .= "`positions`, `tags`, `notes`) VALUES ('{$tmp_user_id['id']}', '{$year}', '{$major}', '{$hometown}', '{$dorm}', '{$recruit_date}', '{$recruit_place}',";
+$sql .= "'{$phone}', '{$email}', '{$texting}', '{$positions}', '{$tags}', '{$notes}');";
 //echo $sql . '<br /><br />';
 MySQL::query($sql);
 

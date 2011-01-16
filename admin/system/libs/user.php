@@ -89,7 +89,7 @@ class User_Parse {
 	}
 	
 	// Parse the [member] position(s) from the cache and db
-	static function parse_position($positions) {
+	static function parse_positions($positions) {
 		$positions = explode(',', $positions);
 		$msg = '';
 		
@@ -98,7 +98,7 @@ class User_Parse {
 			if (!empty(self::$positions[$item])) {
 				$msg .= self::$positions[$item] . ', ';
 			} else {
-				$tmp = MySQL::single("SELECT `desc` FROM `" . self::$database . "`.`position` WHERE `id` = '{$item}' LIMIT 1");
+				$tmp = MySQL::single("SELECT `desc` FROM `" . self::$database . "`.`positions` WHERE `id` = '{$item}' LIMIT 1");
 				self::$positions[$item] = $tmp['desc'];
 				$msg .= $tmp['desc'] . ', ';
 			}

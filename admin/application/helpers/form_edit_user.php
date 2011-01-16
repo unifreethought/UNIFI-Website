@@ -47,7 +47,7 @@ if (!empty($_POST['tags'])) {
 // Build the query.
 $sql = "UPDATE `{$database}`.`user-data` SET `year` = '{$year}', `major` = '{$major}', `dorm` = '{$dorm}', `recruit_place` = '{$recruit_place}'";
 $sql .= ", `texting` = '{$texting}', `hometown` = '{$hometown}', `phone` = '{$phone}', `email` = '{$email}', `notes` = '{$notes}'";
-$sql .= ", `position` = '{$positions}', `tags` = '{$tags}' WHERE `user-data`.`id` = '{$id}'";
+$sql .= ", `positions` = '{$positions}', `tags` = '{$tags}' WHERE `user-data`.`id` = '{$id}'";
 MySQL::query($sql);
 
 header("Location: {$_SERVER['HTTP_REFERER']}");

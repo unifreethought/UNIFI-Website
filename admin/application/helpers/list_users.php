@@ -30,7 +30,7 @@ foreach ($raw_user_data as $user) {
 	$users[$user['id']]['dorm'] = User_Parse::parse_dorm($tmp['dorm']);
 	$users[$user['id']]['recruit_place'] = User_Parse::parse_recruit_place($tmp['recruit_place']);
 	$users[$user['id']]['texting'] = User_Parse::parse_texting($tmp['texting']);
-	$users[$user['id']]['position'] = User_Parse::parse_position($tmp['position']);
+	$users[$user['id']]['positions'] = User_Parse::parse_positions($tmp['positions']);
 	$users[$user['id']]['tags'] = User_Parse::parse_tags($tmp['tags']);
 	
 	// Direct Copying of data

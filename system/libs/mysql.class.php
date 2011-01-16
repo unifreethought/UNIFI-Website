@@ -150,6 +150,8 @@ class MySQL {
 	
 		// Increment the counter
 		self::$query_count += 1;
+
+		//echo $sql . '<br /><br />';
 	
 		// Send the query back
 		return mysql_query($sql, self::$connection);

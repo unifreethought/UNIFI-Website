@@ -52,6 +52,8 @@ if ($url['get'] == true) {
 		require 'application/helpers/register.php';
 		require 'templates/' . $config['template'] . '/html/register.html';
 		$jump_to_footer = true;
+	} else {
+		$jump_to_footer = false;
 	}
 	
 	// Load specific pages.
@@ -79,7 +81,6 @@ if ($url['get'] == true) {
 					// Load that specifc page from the db and display it.
 					include 'application/helpers/load_db_page.php';
 					include 'templates/' . $config['template'] . '/html/load_db_page.html';
-					
 				} else {
 					include 'application/helpers/main.php';
 					include 'templates/' . $config['template'] . '/html/main.html';

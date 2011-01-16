@@ -30,7 +30,7 @@ $user_info['major'] = User_Parse::parse_major($tmp['major']);
 $user_info['dorm'] = User_Parse::parse_dorm($tmp['dorm']);
 $user_info['recruit_place'] = User_Parse::parse_recruit_place($tmp['recruit_place']);
 $user_info['texting'] = User_Parse::parse_texting($tmp['texting']);
-$user_info['position'] = User_Parse::parse_position($tmp['position']);
+$user_info['positions'] = User_Parse::parse_positions($tmp['positions']);
 $user_info['tags'] = User_Parse::parse_tags($tmp['tags']);
 
 // The numeric values for each value
@@ -40,7 +40,7 @@ $user_info['numeric']['major'] = $tmp['major'];
 $user_info['numeric']['dorm'] = $tmp['dorm'];
 $user_info['numeric']['recruit_place'] = $tmp['recruit_place'];
 $user_info['numeric']['texting'] = $tmp['texting'];
-$user_info['numeric']['position'] = $tmp['position'];
+$user_info['numeric']['positions'] = $tmp['positions'];
 $user_info['numeric']['tags'] = $tmp['tags'];
 
 // Direct Copying of data
@@ -61,6 +61,5 @@ $majors = MySQL::search("SELECT * FROM `{$database}`.`major` ORDER BY `id` ASC")
 $dorms = MySQL::search("SELECT * FROM `{$database}`.`dorm` ORDER BY `id` ASC");
 $recruit_places = MySQL::search("SELECT * FROM `{$database}`.`recruit_place` ORDER BY `id` ASC");
 $texting = array( 0 => array('0', 'No'), 1 => array('1', 'Yes'));
-$positions = MySQL::search("SELECT * FROM `{$database}`.`position` ORDER BY `id` ASC");
+$positions = MySQL::search("SELECT * FROM `{$database}`.`positions` ORDER BY `id` ASC");
 $tags = MySQL::search("SELECT * FROM `{$database}`.`tags` ORDER BY `id` ASC");
-

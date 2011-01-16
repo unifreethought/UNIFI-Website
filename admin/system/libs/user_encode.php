@@ -98,7 +98,7 @@ class User_Encode {
 			if (!empty(self::$positions[$item])) {
 				$msg .= self::$positions[$item] . ', ';
 			} else {
-				$tmp = MySQL::single("SELECT `id` FROM `" . self::$database . "`.`position` WHERE `desc` = '{$item}' LIMIT 1");
+				$tmp = MySQL::single("SELECT `id` FROM `" . self::$database . "`.`positions` WHERE `desc` = '{$item}' LIMIT 1");
 				self::$positions[$item] = $tmp['id'];
 				$msg .= $tmp['id'] . ', ';
 			}

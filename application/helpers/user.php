@@ -93,10 +93,13 @@ $fb_cookie_response = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 if ($fb_cookie_response) {
 	$fb_id = $fb_cookie_response['uid'];
 	$user_id = get_user_id_on_exist($fb_id);
+	//echo $fb_id . ' ' . $user_id;
 	
 	if (!$user_id) {
 		// redirect to a page where you get the details from the user.
 		$show_register_form = true;
 		$fb_data = get_more_fb_data($fb_id);
+	} else {
+		$show_register_form = false;	
 	}
 }
