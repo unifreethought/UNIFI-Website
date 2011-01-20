@@ -16,9 +16,10 @@
 			<label>
 				Year: 
 					<select name="year">
+						<option value='0'><?php echo FORM_NO_VALUE; ?></option>
 						<?php
 						foreach ($years as $year) {
-							echo "<option value='{$year['id']}' id='year{$year['id']}'>{$year['desc']}</option>";
+							echo "<option value='{$year['id']}'>{$year['desc']}</option>";
 						}
 						?>
 					</select><br />
@@ -27,9 +28,10 @@
 			<label>
 				Major:
 					<select name="major">
+						<option value='0'><?php echo FORM_NO_VALUE; ?></option>
 						<?php
 						foreach ($majors as $major) {
-							echo "<option value='{$major['id']}' id='major{$major['id']}'>{$major['desc']}</option>";
+							echo "<option value='{$major['id']}'>{$major['desc']}</option>";
 						}
 						?>
 					</select><br />
@@ -38,9 +40,10 @@
 			<label>
 				Dorm:
 					<select name="dorm">
+						<option value='0'><?php echo FORM_NO_VALUE; ?></option>
 						<?php
 						foreach ($dorms as $dorm) {
-							echo "<option value='{$dorm['id']}' id='dorm{$dorm['id']}'>{$dorm['desc']}</option>";
+							echo "<option value='{$dorm['id']}'>{$dorm['desc']}</option>";
 						}
 						?>
 					</select><br />
@@ -49,9 +52,10 @@
 			<label>
 				Recruit Place:
 					<select name="recruit_place">
+						<option value='0'><?php echo FORM_NO_VALUE; ?></option>
 						<?php
 						foreach ($recruit_places as $recruit_place) {
-							echo "<option value='{$recruit_place['id']}' id='recruit_place{$recruit_place['id']}'>{$recruit_place['desc']}</option>";
+							echo "<option value='{$recruit_place['id']}'>{$recruit_place['desc']}</option>";
 						}
 						?>
 					</select><br />
@@ -60,8 +64,9 @@
 			<label>
 				Texting:
 					<select name="texting">
-						<option value="0" id='texting0'>No</option>
-						<option value="1" id='texting1'>Yes</option>
+						<option value='-1'><?php echo FORM_NO_VALUE; ?></option>
+						<option value="0">No</option>
+						<option value="1">Yes</option>
 					</select><br />
 			</label>
 			
@@ -71,8 +76,7 @@
 					<fieldset>
 					<?php 
 						foreach ($positions as $position) {
-							echo $position['desc'] . " <input type='checkbox' name='positions[]' ";
-							echo "id='position{$position['id']}' value='{$position['id']}' /> | ";
+							echo $position['desc'] . " <input type='checkbox' name='positions[]' value='{$position['id']}' /> | ";
 						}
 					?>
 					</fieldset>
@@ -86,7 +90,7 @@
 					<fieldset>
 					<?php 
 						foreach ($tags as $tag) {
-							echo $tag['desc'] . " <input type='checkbox' name='tags[]' id='tag{$tag['id']}' value='{$tag['id']}' /> | ";
+							echo $tag['desc'] . " <input type='checkbox' name='tags[]' value='{$tag['id']}' /> | ";
 						}
 					?>
 					</fieldset>

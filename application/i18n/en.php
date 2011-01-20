@@ -53,3 +53,6 @@ define('LIST_MEMBERS_Texting', 'Texting');
 define('LIST_MEMBERS_Positions', 'Position(s)');
 define('LIST_MEMBERS_Tags', 'Tag(s)');
 define('LIST_MEMBERS_Notes', 'Notes');
+
+// Searching members
+define('FORM_NO_VALUE', 'None');
