@@ -9,7 +9,7 @@ require 'system/libs/user.php';
 require 'system/libs/user_encode.php';
 User_Encode::set($database);
 User_Parse::set($database);
- 
+
 // Load all of the possible user data and show it in a form.
 $user = MySQL::clean($_GET['user']);
 
