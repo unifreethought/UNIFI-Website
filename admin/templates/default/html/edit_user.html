@@ -131,7 +131,7 @@
 						
 						foreach ($positions as $position) {
 							
-							echo $position['desc'] . " <input type='checkbox' name='positions[]' id='position{$position['id']}' value='{$position['id']}'";
+							echo "<label>" . $position['desc'] . " <input type='checkbox' name='positions[]' id='position{$position['id']}' value='{$position['id']}'";
 							
 							foreach ($look as $l) {
 								if ($position['id'] == $l) {
@@ -140,7 +140,7 @@
 								}
 							}
 							
-							echo "/> | ";
+							echo "/> | </label>";
 						}
 					?>
 					</fieldset>
@@ -159,7 +159,7 @@
 						
 						foreach ($tags as $tag) {
 							
-							echo $tag['desc'] . " <input type='checkbox' name='tags[]' id='tag{$tag['id']}' value='{$tag['id']}'";
+							echo "<label>" . $tag['desc'] . " <input type='checkbox' name='tags[]' id='tag{$tag['id']}' value='{$tag['id']}'";
 							
 							foreach ($look as $l) {
 								if ($tag['id'] == $l) {
@@ -168,7 +168,7 @@
 								}
 							}
 							
-							echo "/> | ";
+							echo "/> | </label>";
 						}
 					?>
 					</fieldset>
