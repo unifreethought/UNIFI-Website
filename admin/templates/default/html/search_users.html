@@ -76,7 +76,7 @@
 					<fieldset>
 					<?php 
 						foreach ($positions as $position) {
-							echo $position['desc'] . " <input type='checkbox' name='positions[]' value='{$position['id']}' /> | ";
+							echo "<label>" . $position['desc'] . " <input type='checkbox' name='positions[]' value='{$position['id']}' /> | </label>";
 						}
 					?>
 					</fieldset>
@@ -90,7 +90,7 @@
 					<fieldset>
 					<?php 
 						foreach ($tags as $tag) {
-							echo $tag['desc'] . " <input type='checkbox' name='tags[]' value='{$tag['id']}' /> | ";
+							echo "<label>" . $tag['desc'] . " <input type='checkbox' name='tags[]' value='{$tag['id']}' /> | </label>";
 						}
 					?>
 					</fieldset>
@@ -108,10 +108,6 @@
 			
 			<label>
 				Email: <input type="text" name="email" value="" /><br />
-			</label>
-			
-			<label>
-				<textarea rows="12" cols="60" name="notes"></textarea><br />
 			</label>
 			
 			<input type="submit" value="Search Members" />
