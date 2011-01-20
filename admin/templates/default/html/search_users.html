@@ -1,0 +1,116 @@
+
+	<div id="wrapper">
+		<p><strong>Searching members</strong>: Enter the value(s) that you want to use to limit the search.</p>
+		
+		<form action="index.php" method="GET">
+			<input type="hidden" name="page" value="perform_search" />
+			
+			<label>
+				First Name: <input type="text" name="first_name" value="" /><br />
+			</label>
+			
+			<label>
+				Last Name: <input type="text" name="last_name" value="" /><br />
+			</label>
+			
+			<label>
+				Year: 
+					<select name="year">
+						<?php
+						foreach ($years as $year) {
+							echo "<option value='{$year['id']}' id='year{$year['id']}'>{$year['desc']}</option>";
+						}
+						?>
+					</select><br />
+			</label>			
+			
+			<label>
+				Major:
+					<select name="major">
+						<?php
+						foreach ($majors as $major) {
+							echo "<option value='{$major['id']}' id='major{$major['id']}'>{$major['desc']}</option>";
+						}
+						?>
+					</select><br />
+			</label>
+			
+			<label>
+				Dorm:
+					<select name="dorm">
+						<?php
+						foreach ($dorms as $dorm) {
+							echo "<option value='{$dorm['id']}' id='dorm{$dorm['id']}'>{$dorm['desc']}</option>";
+						}
+						?>
+					</select><br />
+			</label>
+			
+			<label>
+				Recruit Place:
+					<select name="recruit_place">
+						<?php
+						foreach ($recruit_places as $recruit_place) {
+							echo "<option value='{$recruit_place['id']}' id='recruit_place{$recruit_place['id']}'>{$recruit_place['desc']}</option>";
+						}
+						?>
+					</select><br />
+			</label>
+			
+			<label>
+				Texting:
+					<select name="texting">
+						<option value="0" id='texting0'>No</option>
+						<option value="1" id='texting1'>Yes</option>
+					</select><br />
+			</label>
+			
+			<label>
+				Position(s):
+				
+					<fieldset>
+					<?php 
+						foreach ($positions as $position) {
+							echo $position['desc'] . " <input type='checkbox' name='positions[]' ";
+							echo "id='position{$position['id']}' value='{$position['id']}' /> | ";
+						}
+					?>
+					</fieldset>
+					
+				<br />
+			</label>
+			
+			<label>
+				Tag(s):
+				
+					<fieldset>
+					<?php 
+						foreach ($tags as $tag) {
+							echo $tag['desc'] . " <input type='checkbox' name='tags[]' id='tag{$tag['id']}' value='{$tag['id']}' /> | ";
+						}
+					?>
+					</fieldset>
+				
+				<br />
+			</label>
+			
+			<label>
+				Hometown: <input type="text" name="hometown" value="" /><br />
+			</label>
+			
+			<label>
+				Phone: <input type="text" name="phone" value="" /><br />
+			</label>
+			
+			<label>
+				Email: <input type="text" name="email" value="" /><br />
+			</label>
+			
+			<label>
+				<textarea rows="12" cols="60" name="notes"></textarea><br />
+			</label>
+			
+			<input type="submit" value="Search Members" />
+		</form>
+	</div>
+

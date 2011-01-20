@@ -5,6 +5,8 @@
  * 2010-11-21
  */
 
+error_reporting(E_ALL);
+
 // Load some libraries
 require '../system/libs/mysql.class.php';
 require '../system/libs/date.class.php';
@@ -113,6 +115,40 @@ if ($url['post']) {
 				exit(ADMIN_NOT_AUTHORIZED);
 			
 			}
+		break;
+		
+		case 'search_users':
+			
+			$can_list = MySQL::single("SELECT `view_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+			if ($view_dashbord == '1' && $can_list['view_members'] == 1) {
+			
+				// Feature still needed!!
+				include 'application/helpers/search_users.php';
+				include 'templates/' . $config['template'] . '/html/search_users.html';
+			
+			} else {
+			
+				exit(ADMIN_NOT_AUTHORIZED);
+			
+			}
+			
+		break;
+		
+		case 'perform_search':
+			
+			$can_list = MySQL::single("SELECT `view_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+			if ($view_dashbord == '1' && $can_list['view_members'] == 1) {
+			
+				// Feature still needed!!
+				include 'application/helpers/perform_search.php';
+				include 'templates/' . $config['template'] . '/html/perform_search.html';
+			
+			} else {
+			
+				exit(ADMIN_NOT_AUTHORIZED);
+			
+			}
+			
 		break;
 		
 		case 'create_event':
