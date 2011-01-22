@@ -56,3 +56,4 @@ define('LIST_MEMBERS_Notes', 'Notes');
 
 // Searching members
 define('FORM_NO_VALUE', 'None');
+define('MEMBER_SEARCH', 'Member Search');

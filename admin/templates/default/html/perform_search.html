@@ -1,9 +1,43 @@
 
 	<div id="wrapper">
-		Member Search
+		<h2><?php echo MEMBER_SEARCH; ?></h2>
+		<table>
+			<thead>
+			<tr>
+				<td><?php echo LIST_MEMBERS_id; ?></td>
+				<td><?php echo LIST_MEMBERS_First; ?></td>
+				<td><?php echo LIST_MEMBERS_Last; ?></td>
+				<td><?php echo LIST_MEMBERS_Year; ?></td>
+				<td><?php echo LIST_MEMBERS_Major; ?></td>
+				<td><?php echo LIST_MEMBERS_Dorm; ?></td>
+				<td><?php echo LIST_MEMBERS_Phone; ?></td>
+				<td><?php echo LIST_MEMBERS_Email; ?></td>
+				<td><?php echo LIST_MEMBERS_Texting; ?></td>
+				<td><?php echo LIST_MEMBERS_Positions; ?></td>
+				<td><?php echo LIST_MEMBERS_Tags; ?></td>
+				<td><?php echo LIST_MEMBERS_Notes; ?></td>
+			</tr>
+			</thead>
 		
-		<br /><br />
-		
-		
+			<?php
+				foreach ($users as $user) {
+					echo '<tr>';
+						echo "<td><a href='index.php?page=edit_user&user={$user['id']}'>{$user['id']}</a></td>";
+						echo "<td>{$user['first_name']}</td>";
+						echo "<td>{$user['last_name']}</td>";
+						echo "<td>{$user['year']}</td>";
+						echo "<td>{$user['major']}</td>";
+						echo "<td>{$user['dorm']}</td>";
+						echo "<td>{$user['phone']}</td>";
+						echo "<td>{$user['email']}</td>";
+						echo "<td>{$user['texting']}</td>";
+						echo "<td>{$user['positions']}</td>";
+						echo "<td>{$user['tags']}</td>";
+						echo "<td>{$user['notes']}</td>";
+					echo '</tr>';
+				}
+			?>
+		</table>
 	</div>
+	
 	

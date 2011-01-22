@@ -4,12 +4,13 @@
  * Adam Shannon
  * 2011-01-20
  */
+require 'system/libs/user.php';
+User_Parse::set($database);
 
 // I'm neglecting positions AND tags right now..
 // Also, we should be grabbing results for each item and comparing them
 // to get the "most relevant" results. That way we can filter them in
 // relevance.
-
 $first_name 	= ($_GET['first_name'] == '') ? '' : " `first_name` = '" . MySQL::clean($_GET['first_name']) . "' AND ";
 $last_name 		= ($_GET['last_name'] == '') ? '' : " `last_name` = '" . MySQL::clean($_GET['last_name']) . "' AND ";
 
@@ -29,9 +30,9 @@ if ($first_name !== '' || $last_name !== '') {
 	// Generate results to search within
 	//echo "SELECT `id` FROM `{$database}`.`users` WHERE " . substr($first_name . $last_name, 0, -5) . '<br />';
 	$possible_results = MySQL::search("SELECT `id` FROM `{$database}`.`users` WHERE " . substr($first_name . $last_name, 0, -5));
-	echo 'First or Last Name:';
-	print_r($possible_results);
-	echo '<br /><br />';
+	//echo 'First or Last Name:';
+	//print_r($possible_results);
+	//echo '<br /><br />';
 } else {
 	// Alright, so I'm not completely sure how I want to go about this.
 	// I'm thinking that I should pull each result down and inter-compare,
@@ -39,8 +40,41 @@ if ($first_name !== '' || $last_name !== '') {
 	// Why not do the same that I used to do and pull them with AND's?
 	$sql2 = substr($year . $major . $dorm . $recruit_place . $texting . $hometown . $phone . $email, 0, -5);
 	$possible_results = MySQL::search("SELECT `id` FROM `{$database}`.`user-data` WHERE " . $sql2);
-	echo 'Other:';
-	print_r($possible_results);
-	echo '<br /><br />';
+	//echo 'Other:';
+	//print_r($possible_results);
+	//echo '<br /><br />';
+}
+
+$users = array();
+foreach ($possible_results as $user) {
+	$user['id'] = MySQL::clean($user['id']);
+	$tmp = MySQL::single("SELECT * FROM `{$database}`.`user-data` WHERE `id` = '{$user['id']}' LIMIT 1");
+	
+	$tmp_data = MySQL::single("SELECT `first_name`,`last_name` FROM `{$database}`.`users` WHERE `id` = '{$user['id']}' LIMIT 1");
+	$users[$user['id']] = array(
+		'first_name' => $tmp_data['first_name'],
+		'last_name' => $tmp_data['last_name']
+	);
+	
+	// Join the arrays together with the cryptic database data
+	$users[$user['id']]['id'] = $user['id'];
+	
+	// The db parsing requests
+	$users[$user['id']]['year'] = User_Parse::parse_year($tmp['year']);
+	$users[$user['id']]['major'] = User_Parse::parse_major($tmp['major']);
+	$users[$user['id']]['dorm'] = User_Parse::parse_dorm($tmp['dorm']);
+	$users[$user['id']]['recruit_place'] = User_Parse::parse_recruit_place($tmp['recruit_place']);
+	$users[$user['id']]['texting'] = User_Parse::parse_texting($tmp['texting']);
+	$users[$user['id']]['positions'] = User_Parse::parse_positions($tmp['positions']);
+	$users[$user['id']]['tags'] = User_Parse::parse_tags($tmp['tags']);
+	
+	// Direct Copying of data
+	$users[$user['id']]['hometown'] = $tmp['hometown'];
+	$users[$user['id']]['phone'] = $tmp['phone'];
+	$users[$user['id']]['email'] = $tmp['email'];
+	$users[$user['id']]['notes'] = $tmp['notes'];
+	
+	// Date parsing
+	$users[$user['id']]['recruit_date'] = Date::parse($tmp['recruit_date']);
 }
 
