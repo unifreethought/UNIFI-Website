@@ -14,14 +14,3 @@ $texting = array( 0 => array('0', 'No'), 1 => array('1', 'Yes'));
 $positions = MySQL::search("SELECT * FROM `{$database}`.`positions` ORDER BY `id` ASC");
 $tags = MySQL::search("SELECT * FROM `{$database}`.`tags` ORDER BY `id` ASC");
 
-/**
- * Remember the other fields
- * first_name
- * last_name
- * facebook
- * hometown
- * phone
- * email
- * notes
- */
-

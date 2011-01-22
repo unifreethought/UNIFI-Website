@@ -1,39 +1,8 @@
 
 	<div id="wrapper">
-		Edit User
+		<?php echo PAGE_EDIT_USER_HEADER; ?>
 		
-		<p>
-			Below are the values for a user, feel free to edit them as needed and 
-			the site will handle the data. Thanks :)
-		</p>
-		
-		<?php // print_r($user_info); ?>
-		
-		<!--
-		<?php
-			/*
-			echo $user_info['year'] . ':: ' . User_Encode::encode_year($user_info['year']) . "\n";
-			echo $user_info['major'] . ':: ' . User_Encode::encode_major($user_info['major']) . "\n";
-			echo $user_info['dorm'] . ':: ' . User_Encode::encode_dorm($user_info['dorm']) . "\n";
-			echo $user_info['recruit_place'] . ':: ' . User_Encode::encode_recruit_place($user_info['recruit_place']) . "\n";
-			echo $user_info['texting'] . ':: ' . User_Encode::encode_texting($user_info['texting']) . "\n";
-			echo $user_info['position'] . ':: ' . User_Encode::encode_positions($user_info['position']) . "\n";
-			echo $user_info['tags'] . ':: ' . User_Encode::encode_tags($user_info['tags']) . "\n";
-			*/
-		?>
-		-->
-		
-		<?php
-			/*
-			print_r($years);
-			print_r($majors);
-			print_r($dorms);
-			print_r($recruit_places);
-			print_r($texting);
-			print_r($positions);
-			print_r($tags);
-			*/
-		?>
+		<p><?php echo PAGE_EDIT_USER_DESC; ?></p>
 		
 		<!-- The form with the user's details -->
 		<form action="index.php" method="POST" />
@@ -41,15 +10,15 @@
 			<input type="hidden" name="id" value="<?php echo $user_info['id']; ?>" />
 			
 			<label>
-				First Name: <input type="text" name="first_name" value="<?php echo $user_info['first_name']; ?>" /><br />
+				<?php echo LIST_MEMBERS_First; ?>: <input type="text" name="first_name" value="<?php echo $user_info['first_name']; ?>" /><br />
 			</label>
 			
 			<label>
-				Last Name: <input type="text" name="last_name" value="<?php echo $user_info['last_name']; ?>" /><br />
+				<?php echo LIST_MEMBERS_Last; ?>: <input type="text" name="last_name" value="<?php echo $user_info['last_name']; ?>" /><br />
 			</label>
 			
 			<label>
-				Year: 
+				<?php echo LIST_MEMBERS_Year; ?>: 
 					<select name="year">
 						<?php
 						foreach ($years as $year) {
@@ -64,7 +33,7 @@
 			</label>			
 			
 			<label>
-				Major:
+				<?php echo LIST_MEMBERS_Major; ?>:
 					<select name="major">
 						<?php
 						foreach ($majors as $major) {
@@ -79,7 +48,7 @@
 			</label>
 			
 			<label>
-				Dorm:
+				<?php echo LIST_MEMBERS_Dorm; ?>:
 					<select name="dorm">
 						<?php
 						foreach ($dorms as $dorm) {
@@ -94,7 +63,7 @@
 			</label>
 			
 			<label>
-				Recruit Place:
+				<?php echo LIST_MEMBERS_Recruit_Place; ?>:
 					<select name="recruit_place">
 						<?php
 						foreach ($recruit_places as $recruit_place) {
@@ -109,7 +78,7 @@
 			</label>
 			
 			<label>
-				Texting:
+				<?php echo LIST_MEMBERS_Texting; ?>:
 					<select name="texting">
 						<option value="0" id='texting0'>No</option>
 						<option value="1" id='texting1'>Yes</option>
@@ -121,7 +90,7 @@
 			</label>
 			
 			<label>
-				Position(s):
+				<?php echo LIST_MEMBERS_Positions; ?>:
 				
 					<fieldset>
 					<?php 
@@ -149,7 +118,7 @@
 			</label>
 			
 			<label>
-				Tag(s):
+				<?php echo LIST_MEMBERS_Tags; ?>:
 				
 					<fieldset>
 					<?php 
@@ -177,15 +146,15 @@
 			</label>
 			
 			<label>
-				Hometown: <input type="text" name="hometown" value="<?php echo $user_info['hometown']; ?>" /><br />
+				<?php echo LIST_MEMBERS_Hometown; ?>: <input type="text" name="hometown" value="<?php echo $user_info['hometown']; ?>" /><br />
 			</label>
 			
 			<label>
-				Phone: <input type="text" name="phone" value="<?php echo $user_info['phone']; ?>" /><br />
+				<?php echo LIST_MEMBERS_Phone; ?>: <input type="text" name="phone" value="<?php echo $user_info['phone']; ?>" /><br />
 			</label>
 			
 			<label>
-				Email: <input type="text" name="email" value="<?php echo $user_info['email']; ?>" /><br />
+				<?php echo LIST_MEMBERS_Email; ?>: <input type="text" name="email" value="<?php echo $user_info['email']; ?>" /><br />
 			</label>
 			
 			<label>

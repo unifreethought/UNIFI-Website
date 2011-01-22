@@ -1,20 +1,20 @@
 
 	<div id="wrapper">
-		<p><strong>Searching members</strong>: Enter the value(s) that you want to use to limit the search.</p>
+		<p><?php echo MEMBER_SEARCH_DESC; ?></p>
 		
 		<form action="index.php" method="GET">
 			<input type="hidden" name="page" value="perform_search" />
 			
 			<label>
-				First Name: <input type="text" name="first_name" value="" /><br />
+				<?php echo LIST_MEMBERS_First; ?>: <input type="text" name="first_name" value="" /><br />
 			</label>
 			
 			<label>
-				Last Name: <input type="text" name="last_name" value="" /><br />
+				<?php echo LIST_MEMBERS_Last; ?>: <input type="text" name="last_name" value="" /><br />
 			</label>
 			
 			<label>
-				Year: 
+				<?php echo LIST_MEMBERS_Year; ?>: 
 					<select name="year">
 						<option value='0'><?php echo FORM_NO_VALUE; ?></option>
 						<?php
@@ -26,7 +26,7 @@
 			</label>			
 			
 			<label>
-				Major:
+				<?php echo LIST_MEMBERS_Major; ?>:
 					<select name="major">
 						<option value='0'><?php echo FORM_NO_VALUE; ?></option>
 						<?php
@@ -38,7 +38,7 @@
 			</label>
 			
 			<label>
-				Dorm:
+				<?php echo LIST_MEMBERS_Dorm; ?>: 
 					<select name="dorm">
 						<option value='0'><?php echo FORM_NO_VALUE; ?></option>
 						<?php
@@ -50,7 +50,7 @@
 			</label>
 			
 			<label>
-				Recruit Place:
+				<?php echo LIST_MEMBERS_Recruit_Place; ?>: 
 					<select name="recruit_place">
 						<option value='0'><?php echo FORM_NO_VALUE; ?></option>
 						<?php
@@ -62,7 +62,7 @@
 			</label>
 			
 			<label>
-				Texting:
+				<?php echo LIST_MEMBERS_Texting; ?>: 
 					<select name="texting">
 						<option value='-1'><?php echo FORM_NO_VALUE; ?></option>
 						<option value="0">No</option>
@@ -71,7 +71,7 @@
 			</label>
 			
 			<label>
-				Position(s):
+				<?php echo LIST_MEMBERS_Positions; ?>: 
 				
 					<fieldset>
 					<?php 
@@ -85,7 +85,7 @@
 			</label>
 			
 			<label>
-				Tag(s):
+				<?php echo LIST_MEMBERS_Tags; ?>: 
 				
 					<fieldset>
 					<?php 
@@ -99,15 +99,15 @@
 			</label>
 			
 			<label>
-				Hometown: <input type="text" name="hometown" value="" /><br />
+				<?php echo LIST_MEMBERS_Hometown; ?>:  <input type="text" name="hometown" value="" /><br />
 			</label>
 			
 			<label>
-				Phone: <input type="text" name="phone" value="" /><br />
+				<?php echo LIST_MEMBERS_Phone; ?>:  <input type="text" name="phone" value="" /><br />
 			</label>
 			
 			<label>
-				Email: <input type="text" name="email" value="" /><br />
+				<?php echo LIST_MEMBERS_Email; ?>:  <input type="text" name="email" value="" /><br />
 			</label>
 			
 			<input type="submit" value="Search Members" />
