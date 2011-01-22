@@ -31,6 +31,8 @@ function check_url() {
 				$url[$key] = $value;
 			}
 		}
+	} else {
+		$url['page'] = 'main';
 	}
 	
 	
