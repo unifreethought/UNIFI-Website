@@ -3,6 +3,8 @@
 		<?php echo PAGE_POST_TO_BLOG; ?>
 		<form action="index.php" method="POST">
 		
+			<input type="hidden" name="admin_post_to_blog" value="post-new" />
+		
 			<?php echo PAGE_POST_TO_BLOG_TITLE_FIELD; ?> <input type="text" name="title" /><br />
 			<textarea name="text" rows="15" cols="70" autofocus></textarea><br />
 			

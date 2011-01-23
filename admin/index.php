@@ -47,6 +47,18 @@ if ($url['post']) {
 		include 'application/helpers/form_edit_user.php';
 	}
 	
+	if (!empty($_POST['admin_post_to_blog']) && $_POST['admin_post_to_blog'] == 'post-new') {
+		
+		// Auth the user and check for the ability to post to the blog.
+		$user_id = MySQL::clean($user_id);
+		$tmp = MySQL::single("SELECT `post_to_blog` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+		if ($tmp['post_to_blog'] != '1') {
+			exit(ADMIN_NOT_AUTHORIZED);
+		}
+		
+		include 'application/helpers/form_blog_post.php';
+	}
+	
 	exit('');
 	
 } else {
