@@ -4,7 +4,7 @@
  * Adam Shannon
  * 2010-11-21
  */
-
+ 
 // Load some libraries
 require 'system/libs/mysql.class.php';
 require 'system/libs/date.class.php';
@@ -36,6 +36,10 @@ $url = check_url();
 if ($url['post'] == true) {
 	if ($_POST['page'] == 'new-user') {
 		require 'application/helpers/form_register.php';
+	}
+	
+	if ($_POST['page'] == 'comment-reply') {
+		require 'application/helpers/comment_reply.php';
 	}
 
 	exit();
