@@ -59,6 +59,19 @@ if ($url['post']) {
 		include 'application/helpers/form_blog_post.php';
 	}
 	
+	if (!empty($_POST['edit_blog_post']) && $_POST['edit_blog_post'] == 'yes') {
+	
+		// Auth the user and check for the ability to post to the blog.
+		$user_id = MySQL::clean($user_id);
+		$tmp = MySQL::single("SELECT `post_to_blog` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+		if ($tmp['post_to_blog'] != '1') {
+			exit(ADMIN_NOT_AUTHORIZED);
+		}
+		
+		include 'application/helpers/form_blog_post_edit.php';
+	
+	}
+	
 	exit('');
 	
 } else {
@@ -100,6 +113,21 @@ if ($url['post']) {
 				// Feature still needed!!
 				include 'application/helpers/list_blog_posts.php';
 				include 'templates/' . $config['template'] . '/html/list_blog_posts.html';
+				
+			} else {
+				exit(ADMIN_NOT_AUTHORIZED);
+			}
+			
+		break;
+		
+		case 'edit_blog_post':
+			
+			$can_post = MySQL::single("SELECT `post_to_blog` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+			if ($can_post['post_to_blog'] == 1) {
+				
+				// Feature still needed!!
+				include 'application/helpers/edit_blog_post.php';
+				include 'templates/' . $config['template'] . '/html/edit_blog_post.html';
 				
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
