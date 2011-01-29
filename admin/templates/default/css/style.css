@@ -26,6 +26,12 @@ table {
 	margin: 0px;
 	padding 5px;
 }
+
+table#list-blog-posts {
+	cursor: pointer;
+	margin-left: 2.5%;
+	width: 95%;
+}
 	
 	thead {
 		background-color: #000000;

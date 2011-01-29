@@ -39,6 +39,13 @@ define('BLOG_OLDER_POSTS', 'Older posts');
 define('BLOG_COMMENT_REPLY', 'Leave a reply');
 define('BLOG_COMMENT_SUBMIT', 'Submit');
 
+// Listing blog posts
+define('LIST_BLOG_ID', 'ID #1');
+define('LIST_BLOG_AUTHOR', 'Author');
+define('LIST_BLOG_TIMESTAMP', 'Date');
+define('LIST_BLOG_TITLE', 'Title');
+define('LIST_BLOG_CONTENT', 'Content');
+
 // Listing of Members
 define('LIST_MEMBERS_HEADER', 'User Listing');
 define('LIST_MEMBERS_id', 'id');
@@ -68,6 +75,7 @@ define('PAGE_CREATE_EVENT_HEADER', 'Create Event');
 define('PAGE_POST_TO_BLOG', 'Create a blog post');
 define('PAGE_POST_TO_BLOG_TITLE_FIELD', 'Title: ');
 define('PAGE_LIST_EVENTS_TITLE', 'List Events');
+define('PAGE_LIST_BLOG_POSTS', 'Our Blog Posts');
 
 // Dashbord Titles
 define('ADMIN_DASHBORD_TITLE', 'Admin Dashbord');

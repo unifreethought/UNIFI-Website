@@ -92,6 +92,21 @@ if ($url['post']) {
 			
 		break;
 		
+		case 'list_blog_posts':
+		
+			$can_post = MySQL::single("SELECT `post_to_blog` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+			if ($can_post['post_to_blog'] == 1) {
+				
+				// Feature still needed!!
+				include 'application/helpers/list_blog_posts.php';
+				include 'templates/' . $config['template'] . '/html/list_blog_posts.html';
+				
+			} else {
+				exit(ADMIN_NOT_AUTHORIZED);
+			}
+			
+		break;
+		
 		case 'list_members':
 		
 			$can_list = MySQL::single("SELECT `view_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
