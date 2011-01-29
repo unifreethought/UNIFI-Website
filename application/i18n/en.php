@@ -92,3 +92,4 @@ define('ADMIN_DASHBORD_EDIT_EVENT', 'Edit Event');
 define('ADMIN_DASHBORD_EDIT_EVENT_ATTENDANCE', 'Edit Event Attendance');
 	define('ADMIN_DASHBORD_EDIT_EVENT_ATTENDANCE_DESC', '(Feature requires an event to edit)');
 
+define('ADMIN_DASHBORD_EDIT_MEMBER_RIGHTS', 'Edit member admin rights');
