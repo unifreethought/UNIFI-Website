@@ -84,7 +84,7 @@ define('ADMIN_DASHBORD_LIST_NAME', 'Items');
 define('ADMIN_DASHBORD_POST_BLOG', 'Post a Blog Post');
 define('ADMIN_DASHBORD_LIST_BLOG_POSTS', 'List Blog Posts');
 	define('ADMIN_DASHBORD_LIST_BLOG_POSTS_DESC', ' (list all of the posts)');
-define('ADMIN_DASHBORD_EDIT_BLOG_POSTS', 'Edit Blog Posts');
+define('ADMIN_DASHBORD_EDIT_BLOG_POSTS', 'Edit Blog Post');
 	define('ADMIN_DASHBORD_EDIT_BLOG_POSTS_DESC', ' (content changes, draft/live changing, deleting, etc..)');
 	
 define('ADMIN_DASHBORD_LIST_MEMBERS', 'List Members');
