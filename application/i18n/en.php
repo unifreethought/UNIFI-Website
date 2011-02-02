@@ -57,6 +57,15 @@ define('LIST_EVENT_TITLE', 'Title');
 define('LIST_EVENT_START_TIME', 'Start Time');
 define('LIST_EVENT_END_TIME', 'End Time');
 define('LIST_EVENT_LOCATION', 'Location');
+define('LIST_EVENT_DESCRIPTION', 'Description');
+
+// Editing events
+define('EDIT_EVENT_TITLE', 'Title: ');
+define('EDIT_EVENT_LOCATION', 'Location: ');
+define('EDIT_EVENT_START', 'Start: ');
+define('EDIT_EVENT_END', 'End: ');
+define('EDIT_EVENT_ATTENDING', 'Members Attending');
+define('EDIT_EVENT_SUBMIT', 'Edit Event');
 
 // Listing of Members
 define('LIST_MEMBERS_HEADER', 'User Listing');
