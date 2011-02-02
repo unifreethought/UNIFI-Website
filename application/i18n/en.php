@@ -51,6 +51,13 @@ define('EDIT_BLOG_POST_HEADER', 'Edit a blog post.');
 define('EDIT_BLOG_POST_TITLE', 'Title: ');
 define('EDIT_BLOG_POST_SUBMIT', 'Edit Post');
 
+// List Events
+define('LIST_EVENT_ID', 'ID #');
+define('LIST_EVENT_TITLE', 'Title');
+define('LIST_EVENT_START_TIME', 'Start Time');
+define('LIST_EVENT_END_TIME', 'End Time');
+define('LIST_EVENT_LOCATION', 'Location');
+
 // Listing of Members
 define('LIST_MEMBERS_HEADER', 'User Listing');
 define('LIST_MEMBERS_id', 'id');

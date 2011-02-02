@@ -1,4 +1,33 @@
 
 	<div id="wrapper">
 		<?php echo PAGE_LIST_EVENTS_TITLE; ?>
+		
+		<br /><br />
+		
+		<table style="cursor: pointer; margin-left: 2.5%; width: 95%;">
+			<thead>
+				<tr>
+					<td><?php echo LIST_EVENT_ID; ?></td>
+					<td><?php echo LIST_EVENT_TITLE; ?></td>
+					<td><?php echo LIST_EVENT_START_TIME; ?></td>
+					<td><?php echo LIST_EVENT_END_TIME; ?></td>
+					<td><?php echo LIST_EVENT_LOCATION; ?></td>
+				</tr>
+			</thead>
+			
+			<?php
+				foreach ($events as $event) {
+					$start_time = Date::parse($event['start_time']);
+					$end_time = Date::parse($event['end_time']);
+				
+					echo '<tr onclick="window.location=\'index.php?page=edit_event&event_id=' . $event['id'] . '\';">';
+						echo "<td>{$event['id']}</td>";
+						echo "<td>{$event['title']}</td>";
+						echo "<td>{$start_time}</td>";
+						echo "<td>{$end_time}</td>";
+						echo "<td>{$event['location']}</td>";
+					echo '</tr>';
+				}
+			?>
+		</table>
 	</div>
