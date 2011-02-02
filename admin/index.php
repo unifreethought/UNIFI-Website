@@ -235,6 +235,23 @@ if ($url['post']) {
 			
 		break;
 		
+		case 'edit_event':
+		
+			$can_edit_events = MySQL::single("SELECT `add_events`,`list_events` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+			if ($view_dashbord == '1' && $can_edit_events['add_events'] == 1 && $can_edit_events['list_events'] == 1) {
+			
+				// Feature still needed!!
+				include 'application/helpers/edit_event.php';
+				include 'templates/' . $config['template'] . '/html/edit_event.html';
+			
+			} else {
+			
+				exit(ADMIN_NOT_AUTHORIZED);
+			
+			}
+			
+		break;
+		
 		default:
 			
 			if ($view_dashbord) {
