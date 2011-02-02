@@ -12,6 +12,7 @@
 					<td><?php echo LIST_EVENT_START_TIME; ?></td>
 					<td><?php echo LIST_EVENT_END_TIME; ?></td>
 					<td><?php echo LIST_EVENT_LOCATION; ?></td>
+					<td><?php echo LIST_EVENT_DESCRIPTION; ?></td>
 				</tr>
 			</thead>
 			
@@ -26,6 +27,7 @@
 						echo "<td>{$start_time}</td>";
 						echo "<td>{$end_time}</td>";
 						echo "<td>{$event['location']}</td>";
+						echo '<td>' . substr($event['description'], 0, 70) . '</td>';
 					echo '</tr>';
 				}
 			?>
