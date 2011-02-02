@@ -118,3 +118,4 @@ define('ADMIN_DASHBORD_BACKUP_DB', 'Backup the database.');
 define('ADMIN_DASHBORD_CREATE_USER', 'Create User');
 define('ADMIN_DASHBORD_DELETE_USER', 'Delete User');
 define('ADMIN_DASHBORD_CENTRAL_LOG', 'Central Log');
+define('ADMIN_DASHBORD_MAIL_USERS', 'Mail Users');
