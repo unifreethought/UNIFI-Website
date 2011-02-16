@@ -23,7 +23,7 @@
 						echo "<td>{$authors[$post['author']]}</td>";
 						echo '<td>' . Date::parse($post['timestamp']) . '</td>';
 						echo "<td>{$post['title']}</td>";
-						echo '<td>' . substr($post['content'], 0, 200) . '</td>';
+						echo '<td>' . htmlentities(substr($post['content'], 0, 200)) . '</td>';
 					echo '</tr>';
 				}
 			?>
