@@ -3,6 +3,11 @@
 			<!-- Blog Content -->
 			
 			<?php
+				// Show an error when commenting fails.
+				if (array_key_exists('commentFail', $_GET)) {
+					echo "<p class='post commentFail'>" . BLOG_COMMENT_FAIL . "</p>";
+				}
+			
 				echo "<p class='post'>";
 					echo "<span class='right'>" . Date::parse($post['timestamp']) . "</span>";
 					echo "<h5 class='blog_title'><a href='?post=" . $post['id'] . "'>" . $post['title'] . "</a></h5>";

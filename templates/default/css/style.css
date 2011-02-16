@@ -106,6 +106,15 @@ div#container {
 			font-size: 1.5em;
 			margin: 20px 0px 0px 0px;
 		}
+		
+		div#main p.commentFail {
+			background-color: #FF9900;
+			border: 1px solid #000000;
+			font-family: Ariel;
+			font-size: 1.25em;
+			padding: 5px 5px 5px 5px;
+			text-align: center;
+		}
 	
 		div#main p.post {
 			margin-left: 10px;
