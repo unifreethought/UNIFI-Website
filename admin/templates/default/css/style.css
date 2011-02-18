@@ -27,7 +27,7 @@ table {
 	padding 5px;
 }
 
-table#list-blog-posts {
+table#list-blog-posts, table#list-custom-pages {
 	cursor: pointer;
 	margin-left: 2.5%;
 	width: 95%;
