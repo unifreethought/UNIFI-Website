@@ -62,10 +62,11 @@ $add_events = '0';
 $list_events = '0';
 $edit_events = '0';
 $edit_event_attendance = '0';
+$edit_custom_pages = '0';
 
 $sql = "INSERT INTO `{$database}`.`user-permissions` (`user_id`, `post_to_blog`, `access_admin_dashbord`, `view_members`, `edit_members`,";
-$sql .= " `add_events`, `list_events`, `edit_events`, `edit_event_attendance`) VALUES ('{$tmp_user_id['id']}', '{$post_to_blog}', '{$access_admin_dashbord}',";
-$sql .= " '{$view_members}', '{$edit_members}', '{$add_events}', '{$list_events}', '{$edit_events}', '{$edit_event_attendance}');";
+$sql .= " `add_events`, `list_events`, `edit_events`, `edit_event_attendance`, `edit_custom_pages`) VALUES ('{$tmp_user_id['id']}', '{$post_to_blog}', '{$access_admin_dashbord}',";
+$sql .= " '{$view_members}', '{$edit_members}', '{$add_events}', '{$list_events}', '{$edit_events}', '{$edit_event_attendance}', '{$edit_custom_pages}');";
 //echo $sql . '<br /><br />';
 MySQL::query($sql);
 
