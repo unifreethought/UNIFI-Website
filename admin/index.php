@@ -283,7 +283,7 @@ if ($url['post']) {
 		break;
 		
 		
-		case 'edit_custom_pages':
+		case 'edit_custom_page':
 		
 			$can_edit_custom_pages = MySQL::single("SELECT `edit_custom_pages` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
 			if ($view_dashbord == '1' && $can_edit_custom_pages['edit_custom_pages'] == 1) {
