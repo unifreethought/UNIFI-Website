@@ -129,3 +129,6 @@ define('ADMIN_DASHBORD_CREATE_USER', 'Create User');
 define('ADMIN_DASHBORD_DELETE_USER', 'Delete User');
 define('ADMIN_DASHBORD_CENTRAL_LOG', 'Central Log');
 define('ADMIN_DASHBORD_MAIL_USERS', 'Mail Users');
+
+define('ADMIN_DASHBORD_LIST_CUSTOM_PAGES', 'List Custom Pages');
+define('ADMIN_DASHBORD_EDIT_CUSTOM_PAGES', 'Edit Custom Pages');
