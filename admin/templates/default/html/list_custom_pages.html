@@ -19,7 +19,7 @@
 						echo '<td>' . $page['id'] . '</td>';
 						echo '<td>' . $page['url_stub'] . '</td>';
 						echo '<td>' . $page['page_title'] . '</td>';
-						echo '<td>' . $page['content'] . '</td>';
+						echo '<td>' . htmlentities(substr($page['content'], 0, 200)) . '...</td>';
 					echo '</tr>';
 				}
 			?>
