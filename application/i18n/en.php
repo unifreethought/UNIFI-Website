@@ -87,6 +87,8 @@ define('LIST_MEMBERS_Hometown', 'Hometown');
 
 // Creating Members
 define('CREATE_MEMBER_FACEBOOK', 'Facebook');
+define('CREATE_MEMBER_FACEBOOK_ID', 'Get Facebook ID');
+define('CREATE_MEMBER_FACEBOOK_ID_BUTTON', 'Loading...');
 
 // Searching members
 define('FORM_NO_VALUE', 'None');

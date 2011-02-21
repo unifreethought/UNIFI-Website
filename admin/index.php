@@ -112,6 +112,24 @@ if ($url['post']) {
 	exit('');
 	
 } else {
+	
+	// Sometimes we need to check for a FB ID request
+	// This is due to the lack of true cross site request compatability.
+	if (!empty($_GET['getFBID'])) {
+		$ch = curl_init();
+		$url = "http://graph.facebook.com/";
+			curl_setopt($ch, CURLOPT_FRESH_CONNECT, true);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+			curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+			curl_setopt($ch, CURLOPT_ENCODING, '');
+			curl_setopt($ch, CURLOPT_REFERER, 'http://unifreethought.com/');
+			curl_setopt($ch, CURLOPT_URL, $url . $_GET['getFBID']);
+			curl_setopt($ch, CURLOPT_USERAGENT, 'UNI Freethinkers and Inquirers Page Fetcher');
+		echo curl_exec($ch);
+		exit();
+	}
+
 	include 'templates/' . $config['template'] . '/html/header.html';
 	
 	// Clean the $user_id for each action. 

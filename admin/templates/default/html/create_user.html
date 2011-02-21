@@ -17,8 +17,31 @@
 			</label>
 			
 			<label>
-				<?php echo CREATE_MEMBER_FACEBOOK; ?>: <input type="text" name="facebook" value="" /><br />
-
+				<?php echo CREATE_MEMBER_FACEBOOK; ?>: <input type="text" id="facebook-id" name="facebook" value="" /><br />
+				<input type="button" onclick="getFacebookID();" id="getFBIDButton" value="<?php echo CREATE_MEMBER_FACEBOOK_ID; ?>" /><br />
+				
+				<script>
+				function getFacebookID() {
+					var elm = document.getElementById('facebook-id');
+					
+					// Change the value of the "getFBID" button once it's clicked.
+					var button = document.getElementById('getFBIDButton');
+						tmp = button.value;
+						button.value = '<?php echo CREATE_MEMBER_FACEBOOK_ID_BUTTON; ?>';
+						
+					// Fetch the page via the site its self.
+					var xhr = new XMLHttpRequest();
+						xhr.open('GET', 'index.php?getFBID=' + elm.value, false);
+						xhr.send();
+						
+					// Parse the response and put the id into the form.
+					var response = JSON.parse(xhr.response);
+					elm.value = response.id;
+					
+					// Set the "getFBID" button's value back.
+					button.value = tmp;
+				}
+				</script>
 				 - P.S. Include a button to grab the FB id of any user (given a link to their profile).<br />
 			</label>
 			
