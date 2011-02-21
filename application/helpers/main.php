@@ -15,7 +15,7 @@ $posts = MySQL::search("SELECT * FROM `" . MySQL::$database . "`.`blog-posts` WH
 // Create an array of authors, organized by their user id.
 $authors = array();
 foreach ($posts as $post) {
-	if (empty($authors[$post['author']]) && $authors[$post['author']] != '0') {
+	if (@empty($authors[$post['author']]) && @$authors[$post['author']] != '0') {
 		$result = MySQL::single("SELECT `first_name`,`last_name` FROM `" . MySQL::$database . "`.`users` WHERE `id` = '" . MySQL::clean($post['author']) . "' LIMIT 1");
 		$authors[$post['author']] = $result['first_name'] . ' ' . $result['last_name'];
 	}
