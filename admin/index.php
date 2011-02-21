@@ -159,6 +159,22 @@ if ($url['post']) {
 			
 		break;
 		
+		case 'create_user':
+			
+			$can_edit = MySQL::single("SELECT `edit_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+			if ($view_dashbord == '1' && $can_edit['edit_members'] == 1) {
+			
+				include 'application/helpers/create_user.php';
+				include 'templates/' . $config['template'] . '/html/create_user.html';
+			
+			} else {
+			
+				exit(ADMIN_NOT_AUTHORIZED);
+			
+			}
+			
+		break;
+		
 		case 'list_members':
 		
 			$can_list = MySQL::single("SELECT `view_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");

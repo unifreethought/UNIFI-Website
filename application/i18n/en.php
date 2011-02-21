@@ -85,12 +85,17 @@ define('LIST_MEMBERS_Notes', 'Notes');
 define('LIST_MEMBERS_Recruit_Place', 'Recruit Place');
 define('LIST_MEMBERS_Hometown', 'Hometown');
 
+// Creating Members
+define('CREATE_MEMBER_FACEBOOK', 'Facebook');
+
 // Searching members
 define('FORM_NO_VALUE', 'None');
 define('MEMBER_SEARCH', 'Member Search');
 define('MEMBER_SEARCH_DESC', '<strong>Searching members</strong>: Enter the value(s) that you want to use to limit the search.');
 
 // Page Titles
+define('PAGE_CREATE_USER_HEADER', 'Create User');
+define('PAGE_CREATE_USER_DESC', '(Desc)');
 define('PAGE_EDIT_USER_HEADER', 'Edit User');
 define('PAGE_EDIT_USER_DESC', 'Below are the values for a user, feel free to edit them as needed and the site will handle the data. Thanks :)');
 define('PAGE_CREATE_EVENT_HEADER', 'Create Event');
