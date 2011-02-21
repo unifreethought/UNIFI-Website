@@ -45,6 +45,19 @@ if ($url['post']) {
 		include 'application/helpers/form_edit_user.php';
 	}
 	
+	if (!empty($_POST['create_user']) && $_POST['create_user'] == 'yes') {
+		
+		$user_id = MySQL::clean($user_id);
+		$tmp = MySQL::single("SELECT `edit_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+		if ($tmp['edit_members'] != '1') {
+			exit(ADMIN_NOT_AUTHORIZED);
+		}
+		
+		// Finally, submit the change.
+		include 'application/helpers/form_create_user.php';	
+		
+	}
+	
 	if (!empty($_POST['admin_post_to_blog']) && $_POST['admin_post_to_blog'] == 'post-new') {
 		
 		// Auth the user and check for the ability to post to the blog.
