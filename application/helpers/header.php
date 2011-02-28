@@ -10,4 +10,5 @@ $nav_items = MySQL::search("SELECT `name`,`href`,`style` FROM `" . MySQL::$datab
 $css_file = 'templates/' . $config['template'] . '/css/style.css';
 
 include 'print_profile_button.php';
+include 'print_admin_link.php';
 
