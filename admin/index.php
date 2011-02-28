@@ -121,6 +121,19 @@ if ($url['post']) {
 		include 'application/helpers/form_edit_event.php';
 	
 	}
+
+	if (!empty($_POST['create_custom_page']) && $_POST['create_custom_page'] == 'yes') {
+		
+		// Auth the user and check for the ability to edit custom pages.
+		$user_id = MySQL::clean($user_id);
+		$tmp = MySQL::single("SELECT `edit_custom_pages` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+		if ($tmp['edit_custom_pages'] != '1') {
+			exit(ADMIN_NOT_AUTHORIZED);
+		}	
+		
+		include 'application/helpers/form_create_custom_page.php';
+		
+	}
 	
 	if (!empty($_POST['edit_custom_page']) && $_POST['edit_custom_page'] == 'yes') {
 		
@@ -356,6 +369,23 @@ if ($url['post']) {
 				// Feature still needed!!
 				include 'application/helpers/edit_event.php';
 				include 'templates/' . $config['template'] . '/html/edit_event.html';
+			
+			} else {
+			
+				exit(ADMIN_NOT_AUTHORIZED);
+			
+			}
+			
+		break;
+
+		case 'create_custom_page':
+		
+			$can_edit_custom_pages = MySQL::single("SELECT `edit_custom_pages` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+			if ($view_dashbord == '1' && $can_edit_custom_pages['edit_custom_pages'] == 1) {
+			
+				// Feature still needed!!
+				include 'application/helpers/create_custom_page.php';
+				include 'templates/' . $config['template'] . '/html/create_custom_page.html';
 			
 			} else {
 			
