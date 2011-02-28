@@ -1,0 +1,28 @@
+
+	<div id="wrapper">
+		
+		<?php echo ADMIN_DASHBORD_DELETE_USER; ?>
+		
+		<br /><br />
+		
+		<form action="index.php" method="POST">
+			<input type="hidden" name="delete_user" value="yes" />
+			
+			
+			<label>
+				<?php echo REGISTER_FIRST_NAME; ?>
+				<input type="text" name="first_name" value="" /><br />
+			</label>
+			
+			<label>
+				<?php echo REGISTER_LAST_NAME; ?>
+				<input type="text" name="last_name" value="" /><br />
+			</label>
+			
+			<br />
+			
+			<input type="submit" value="<?php echo ADMIN_DASHBORD_DELETE_USER_SUBMIT; ?>" />
+		</form>
+		
+	</div>
+	

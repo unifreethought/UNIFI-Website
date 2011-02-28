@@ -134,6 +134,9 @@ define('ADMIN_DASHBORD_EDIT_MEMBER_RIGHTS', 'Edit member admin rights');
 define('ADMIN_DASHBORD_BACKUP_DB', 'Backup the database.');
 define('ADMIN_DASHBORD_CREATE_USER', 'Create User');
 define('ADMIN_DASHBORD_DELETE_USER', 'Delete User');
+	define('ADMIN_DASHBORD_DELETE_USER_SUBMIT', 'Delete User');
+	define('ADMIN_DASHBORD_DELETE_USER_CONFORM_DESC', 'Select ONLY the accounts that you wish to delete!!');
+	define('ADMIN_DASHBORD_DELETE_USER_GO_HOME', 'Go Home (do not delete anyone)');
 define('ADMIN_DASHBORD_CENTRAL_LOG', 'Central Log');
 define('ADMIN_DASHBORD_MAIL_USERS', 'Mail Users');
 

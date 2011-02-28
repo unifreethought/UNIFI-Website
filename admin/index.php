@@ -58,6 +58,32 @@ if ($url['post']) {
 		
 	}
 	
+	if (!empty($_POST['delete_user']) && $_POST['delete_user'] == 'yes') {
+		
+		$user_id = MySQL::clean($user_id);
+		$tmp = MySQL::single("SELECT `edit_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+		if ($tmp['edit_members'] != '1') {
+			exit(ADMIN_NOT_AUTHORIZED);
+		}
+		
+		// Finally, submit the change.
+		include 'application/helpers/form_delete_user.php';	
+		
+	}
+	
+	if (!empty($_POST['confirm_delete']) && $_POST['confirm_delete'] == 'yes') {
+		
+		$user_id = MySQL::clean($user_id);
+		$tmp = MySQL::single("SELECT `edit_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+		if ($tmp['edit_members'] != '1') {
+			exit(ADMIN_NOT_AUTHORIZED);
+		}
+		
+		// Finally, submit the change.
+		include 'application/helpers/form_confirm_delete_user.php';		
+		
+	}
+	
 	if (!empty($_POST['admin_post_to_blog']) && $_POST['admin_post_to_blog'] == 'post-new') {
 		
 		// Auth the user and check for the ability to post to the blog.
@@ -197,6 +223,22 @@ if ($url['post']) {
 			
 				include 'application/helpers/create_user.php';
 				include 'templates/' . $config['template'] . '/html/create_user.html';
+			
+			} else {
+			
+				exit(ADMIN_NOT_AUTHORIZED);
+			
+			}
+			
+		break;
+		
+		case 'delete_user':
+			
+			$can_edit = MySQL::single("SELECT `edit_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+			if ($view_dashbord == '1' && $can_edit['edit_members'] == 1) {
+			
+				include 'application/helpers/delete_user.php';
+				include 'templates/' . $config['template'] . '/html/delete_user.html';
 			
 			} else {
 			
