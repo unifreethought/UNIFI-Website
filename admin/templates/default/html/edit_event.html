@@ -7,7 +7,7 @@
 			<ul>
 				<?php
 					foreach ($members as $member) {
-						echo "<li><a href='index.php?page=edit_user&user={$member['user_id']}'>{$member['name']}</a></li>";
+						echo "<li><a href='../index.php?page=profile&profile={$member['user_id']}'>{$member['name']}</a></li>";
 					}
 				?>
 			</ul>
