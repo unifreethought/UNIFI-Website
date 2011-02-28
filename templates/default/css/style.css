@@ -41,14 +41,14 @@ div#container {
 			list-style-type: none;
 		}
 		
-			div#nav ul li.nav_item {
+			div#nav ul li.nav_item, a.nav_item {
 				background-color: #000000;
 				display: inline;
 				margin-right: 10px;
 				padding: 10px;
 			}
 			
-				div#nav ul li.nav_item a, div#nav ul li.nav_item a:visited {
+				div#nav ul li.nav_item a, div#nav ul li.nav_item a:visited, a.nav_item  {
 					color: #FFFFFF;
 				}
 				

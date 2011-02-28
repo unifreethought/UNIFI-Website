@@ -72,6 +72,11 @@ if ($url['get'] == true) {
 			
 			break;
 			
+			case 'profile':
+				include 'application/helpers/show_profile.php';
+				include 'templates/' . $config['template'] . '/html/show_profile.html';
+			break;
+			
 			case 'post':
 				include 'application/helpers/show_post.php';
 				include 'templates/' . $config['template'] . '/html/show_post.html';

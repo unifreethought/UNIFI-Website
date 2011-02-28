@@ -21,6 +21,9 @@ define('ADMIN_HEADER', 'UNIFI Admin Dashbord');
 // Facebook dialogs
 define('FB_LOGIN_OUT_ALERT', 'Press OK to reload the page and finish loggin in/out.');
 
+// Profile Nav Link
+define('MAIN_PAGE_PROFILE_NAV_LINK', 'Profile');
+
 // Registration
 define('REGISTER_HEADER', 'Please Register');
 define('REGISTER_SUBMIT', 'Register');
