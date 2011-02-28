@@ -147,6 +147,7 @@ define('ADMIN_DASHBORD_DELETE_USER', 'Delete User');
 define('ADMIN_DASHBORD_CENTRAL_LOG', 'Central Log');
 define('ADMIN_DASHBORD_MAIL_USERS', 'Mail Users');
 
+define('ADMIN_DASHBORD_DELETE_CUSTOM_PAGE', 'Delete Custom Page');
 define('ADMIN_DASHBORD_CREATE_CUSTOM_PAGE', 'Create Custom Page');
 	define('ADMIN_DASHBORD_CREATE_CUSTOM_PAGE_POSITION', 'Position');
 	define('ADMIN_DASHBORD_CREATE_CUSTOM_PAGE_URL_STUB', 'URL Stub');
