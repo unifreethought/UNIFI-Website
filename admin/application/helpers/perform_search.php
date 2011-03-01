@@ -23,6 +23,32 @@ $hometown 		= ($_GET['hometown'] == '') ? '' : " `hometown` = '" . MySQL::clean(
 $phone 			= ($_GET['phone'] == '') ? '' : " `phone` = '" . MySQL::clean($_GET['phone']) . "' AND ";
 $email 			= ($_GET['email'] == '') ? '' : " `email` = '" . MySQL::clean($_GET['email']) . "' AND ";
 
+// Parse out the tags and positions
+$tags_bad = (empty($_GET['tags'])) ? array() : $_GET['tags'];
+$positions_bad = (empty($_GET['positions'])) ? array() : $_GET['positions'];
+
+$tags_table = ' `tags` ';
+$positions_table = ' `positions` ';
+
+$tags = '';
+$positions = ' AND ';
+foreach ($tags_bad as $item) {
+	$tags .= $tags_table . "LIKE '%" . MySQL::clean($item) . "%' AND ";
+}
+
+foreach ($positions_bad as $item) {
+	$positions .= $positions_table . "LIKE '%" . MySQL::clean($item) . "%' AND ";
+}
+
+$tags = substr($tags, 0, -5);
+$positions = substr($positions, 0, -5);
+
+if (empty($tags)) {
+	$positions = substr($positions, 5);
+}
+
+//print $tags . '<br />' . $positions . '<br /><br />';
+
 //print "\"{$first_name}{$last_name}\"<br />";
 //print "\"{$year}{$major}{$dorm}{$recruit_place}{$texting}{$hometown}{$phone}{$email}\"<br/ >";
 
@@ -38,8 +64,11 @@ if ($first_name !== '' || $last_name !== '') {
 	// I'm thinking that I should pull each result down and inter-compare,
 	// but that's a lot of work.
 	// Why not do the same that I used to do and pull them with AND's?
-	$sql2 = substr($year . $major . $dorm . $recruit_place . $texting . $hometown . $phone . $email, 0, -5);
-	$possible_results = MySQL::search("SELECT `id` FROM `{$database}`.`user-data` WHERE " . $sql2);
+	$sql2 = "SELECT `id` FROM `{$database}`.`user-data` WHERE ";
+	$sql2 .= substr($year . $major . $dorm . $recruit_place . $texting . $hometown . $phone . $email, 0, -5);
+	$sql2 .= $tags . $positions;
+	//echo $sql2;
+	$possible_results = MySQL::search($sql2);
 	//echo 'Other:';
 	//print_r($possible_results);
 	//echo '<br /><br />';
