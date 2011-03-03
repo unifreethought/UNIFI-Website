@@ -35,8 +35,8 @@ class Show_Date {
 	}
 	
 	// Show a dropdown element for the day with respect for the month.
-	static function day($name = 'day', $now = @date('d')) {
-		$today = $now;
+	static function day($name = 'day', $now) {
+		$today = empty($now) ? date('d') : $now;
 		$days_in_month = @date('t');
 		$html = "<select name='{$name}'>";
 		
@@ -52,8 +52,8 @@ class Show_Date {
 	}
 	
 	// Show a <select> element for the months
-	static function month($name = 'month', $now = @date('n')) {
-		$month = $now;
+	static function month($name = 'month', $now) {
+		$month = empty($now) ? date('n') : $now;
 		$html = "<select name='{$name}'>";
 
 		for ($i = 1; $i <= 12; $i++) {
@@ -68,8 +68,8 @@ class Show_Date {
 	}
 	
 	// Show a <select> element for the years.
-	static function year($name = 'year', $min = 2, $max = 5, $now = @date('Y')) {
-		$year = $now;
+	static function year($name = 'year', $min = 2, $max = 5, $now) {
+		$year = empty($now) ? date('Y') : $now;
 		$html = "<select name='{$name}'>";
 		
 		// Show a few years before and a few after...
@@ -89,6 +89,18 @@ class Show_Date {
 	// It's thrown in here for convience.
 	static function timestamp($hour, $minute, $day, $month, $year) {
 		return mktime($hour, $minute, 00, $month, $day, $year);
+	}
+	
+	// Parse a timestamp into: hour, minute, day, month, and year.
+	static function parse($timestamp) {
+		$tmp = explode(',', @date('H,m,d,m,Y', $timestamp));
+		return array(
+			'hour' => $tmp[0],
+			'minute' => $tmp[1],
+			'day' => $tmp[2],
+			'month' => $tmp[3],
+			'year' => $tmp[4]
+		);
 	}
 	
 }
