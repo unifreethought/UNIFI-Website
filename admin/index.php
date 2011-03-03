@@ -109,6 +109,19 @@ if ($url['post']) {
 	
 	}
 	
+	if (!empty($_POST['create_event']) && $_POST['create_event'] == 'yes') {
+	
+		// Auth the user and check for the ability to post to the blog.
+		$user_id = MySQL::clean($user_id);
+		$tmp = MySQL::single("SELECT `add_events`,`list_events` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+		if ($tmp['add_events'] != '1' || $tmp['list_events'] != '1') {
+			exit(ADMIN_NOT_AUTHORIZED);
+		}
+		
+		include 'application/helpers/form_create_event.php';
+	
+	}
+	
 	if (!empty($_POST['edit_event']) && $_POST['edit_event'] == 'yes') {
 	
 		// Auth the user and check for the ability to post to the blog.

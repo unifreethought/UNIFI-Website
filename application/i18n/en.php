@@ -131,6 +131,13 @@ define('ADMIN_DASHBORD_EDIT_MEMBER', 'Edit Member');
 define('ADMIN_DASHBORD_SEARCH_USERS', 'Search Users');
 
 define('ADMIN_DASHBORD_CREATE_EVENT', 'Create Event');
+	define('PAGE_CREATE_EVENT_TITLE', 'Title');
+	define('PAGE_CREATE_EVENT_START_TIME', 'Start Time');
+	define('PAGE_CREATE_EVENT_END_TIME', 'End Time');
+	define('PAGE_CREATE_EVENT_LOCATION', 'Location');
+	define('PAGE_CREATE_EVENT_DESCRIPTION', 'Description');
+	define('PAGE_CREATE_EVENT_SUBMIT', 'Submit');
+
 define('ADMIN_DASHBORD_LIST_EVENTS', 'List Events');
 define('ADMIN_DASHBORD_EDIT_EVENT', 'Edit Event');
 	define('ADMIN_DASHBORD_EDIT_EVENT_DESC', '(Feature requires an event to edit)');

@@ -1,5 +1,50 @@
 
 	<div id="wrapper">
 		<?php echo PAGE_CREATE_EVENT_HEADER; ?>
+		
+		<form action="index.php" method="POST">
+			<input type="hidden" name="create_event" value="yes" />
+			
+			<label>
+				<?php echo PAGE_CREATE_EVENT_TITLE; ?>
+				<input type="text" name="title" /><br />
+			</label>
+			
+			<label>
+				<?php echo PAGE_CREATE_EVENT_START_TIME; ?>
+				<!-- <input type="text" name="start_time" /><br /> -->
+				<?php
+					echo Show_Date::hour_minute('start_hour') . ' -- ';
+					echo Show_Date::month('start_month') . '/'; 
+					echo Show_Date::day('start_day') . '/';
+					echo Show_Date::year('start_year');
+				?>
+				<br />
+			</label>
+			
+			<label>
+				<?php echo PAGE_CREATE_EVENT_END_TIME; ?>
+				<!-- <input type="text" name="end_time" /><br /> -->
+				<?php
+					echo Show_Date::hour_minute('end_hour') . ' -- ';
+					echo Show_Date::month('end_month') . '/'; 
+					echo Show_Date::day('end_day') . '/';
+					echo Show_Date::year('end_year');
+				?>
+				<br />
+			</label>
+			
+			<label>
+				<?php echo PAGE_CREATE_EVENT_LOCATION; ?>
+				<input type="text" name="location" /><br />
+			</label>
+			
+			<label>
+				<?php echo PAGE_CREATE_EVENT_DESCRIPTION; ?>
+				<input type="text" name="description" /><br />
+			</label>
+			
+			<input type="submit" value="<?php echo PAGE_CREATE_EVENT_SUBMIT; ?>" />
+		</form>
 	</div>
 
