@@ -110,6 +110,7 @@ define('PAGE_EDIT_USER_DESC', 'Below are the values for a user, feel free to edi
 define('PAGE_CREATE_EVENT_HEADER', 'Create Event');
 define('PAGE_POST_TO_BLOG', 'Create a blog post');
 define('PAGE_POST_TO_BLOG_TITLE_FIELD', 'Title: ');
+define('PAGE_POST_TO_BLOG_ALLOWED_TAGS', 'Allowed Tags: ');
 define('PAGE_LIST_EVENTS_TITLE', 'List Events');
 define('PAGE_LIST_BLOG_POSTS', 'Our Blog Posts');
 define('PAGE_EDIT_EVENT_HEADER', 'Edit an Event');
