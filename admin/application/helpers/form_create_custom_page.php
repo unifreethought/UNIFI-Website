@@ -7,6 +7,9 @@
  
 // Make sure to update this code to reflect the db change which references the tables together.
 // P.S. It might be good to have an option in the db to make pages public or not.
+
+// Update: I don't think it's a good idea to combine these, because what if we want to create a custom
+// page but not link it on the header?
 $position = MySQL::clean($_POST['position']);
 $url_stub = MySQL::clean($_POST['url_stub']);
 $name = MySQL::clean($_POST['name']);
