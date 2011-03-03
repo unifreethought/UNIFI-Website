@@ -79,4 +79,10 @@ class Show_Date {
 		return $html . '</select>';
 	}
 	
+	// Parse a date into a UNIX timestamp
+	// It's thrown in here for convience.
+	static function timestamp($hour, $minute, $day, $month, $year) {
+		return mktime($hour, $minute, 00, $month, $day, $year);
+	}
+	
 }
