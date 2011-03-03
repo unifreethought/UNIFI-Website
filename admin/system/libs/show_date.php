@@ -8,20 +8,26 @@
 class Show_Date {
 
 	// Show a <select> for the time/date list
-	static function hour_minute($name = 'time') {
+	static function hour_minute($name = 'time', $now) {
 		$html = "<select name='{$name}'>";
 		
 		for ($i = 0; $i < 24; $i++) {
-			if ($i < 10) {
-				$html .= "<option value='0{$i}:00'>0{$i}:00</option>";
+			if ($i == $now) {
+				$selected = ' selected';
 			} else {
-				$html .= "<option value='{$i}:00'>{$i}:00</option>";
+				$selected = '';
+			}
+		
+			if ($i < 10) {
+				$html .= "<option value='0{$i}:00'{$selected}>0{$i}:00</option>";
+			} else {
+				$html .= "<option value='{$i}:00'{$selected}>{$i}:00</option>";
 			}
 			
 			if ($i < 10) {
-				$html .= "<option value='0{$i}:30'>0{$i}:30</option>";
+				$html .= "<option value='0{$i}:30'{$selected}>0{$i}:30</option>";
 			} else {
-				$html .= "<option value='{$i}:30'>{$i}:30</option>";
+				$html .= "<option value='{$i}:30'{$selected}>{$i}:30</option>";
 			}
 		}
 		
@@ -29,8 +35,8 @@ class Show_Date {
 	}
 	
 	// Show a dropdown element for the day with respect for the month.
-	static function day($name = 'day') {
-		$today = @date('d');
+	static function day($name = 'day', $now = @date('d')) {
+		$today = $now;
 		$days_in_month = @date('t');
 		$html = "<select name='{$name}'>";
 		
@@ -46,8 +52,8 @@ class Show_Date {
 	}
 	
 	// Show a <select> element for the months
-	static function month($name = 'month') {
-		$month = @date('n');
+	static function month($name = 'month', $now = @date('n')) {
+		$month = $now;
 		$html = "<select name='{$name}'>";
 
 		for ($i = 1; $i <= 12; $i++) {
@@ -62,8 +68,8 @@ class Show_Date {
 	}
 	
 	// Show a <select> element for the years.
-	static function year($name = 'year', $min = 2, $max = 5) {
-		$year = @date('Y');
+	static function year($name = 'year', $min = 2, $max = 5, $now = @date('Y')) {
+		$year = $now;
 		$html = "<select name='{$name}'>";
 		
 		// Show a few years before and a few after...
