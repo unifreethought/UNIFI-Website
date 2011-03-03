@@ -175,3 +175,10 @@ define('ADMIN_DASHBORD_EDIT_CUSTOM_PAGES', 'Edit Custom Page');
 	define('ADMIN_DASHBORD_EDIT_CUSTOM_PAGE_PAGE_TITLE', 'Page Title: ');
 	define('ADMIN_DASHBORD_EDIT_CUSTOM_PAGE_CONTENT', 'Content: ');
 	define('ADMIN_DASHBORD_EDIT_CUSTOM_PAGE_SUBMIT', 'Submit');
+	
+define('ADMIN_DASHBORD_VIEW_LOG_TITLE', 'View the central log');
+	define('ADMIN_DASHBORD_VIEW_LOG_ID', 'id');
+	define('ADMIN_DASHBORD_VIEW_LOG_USER', 'User');
+	define('ADMIN_DASHBORD_VIEW_LOG_TIME', 'Time');
+	define('ADMIN_DASHBORD_VIEW_LOG_MESSAGE', 'Message');
+	define('ADMIN_DASHBORD_VIEW_LOG_UNIQUE', 'Unique');

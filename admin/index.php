@@ -443,6 +443,23 @@ if ($url['post']) {
 			
 		break;
 		
+		case 'view_log':
+		
+			$can_view_log = MySQL::single("SELECT `view_log` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+			if ($view_dashbord == '1' && $can_view_log['view_log'] == 1) {
+			
+				// Feature still needed!!
+				include 'application/helpers/view_log.php';
+				include 'templates/' . $config['template'] . '/html/view_log.html';
+			
+			} else {
+			
+				exit(ADMIN_NOT_AUTHORIZED);
+			
+			}
+			
+		break;
+		
 		
 		default:
 			
