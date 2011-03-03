@@ -8,14 +8,20 @@
 class Show_Date {
 
 	// Show a <select> for the time/date list
-	static function hour_minute($name = 'time', $now = '') {
+	static function hour_minute($name = 'time', $hour = '', $minute = '') {
 		$html = "<select name='{$name}'>";
+		$selected = $selected_30 = '';
 		
 		for ($i = 0; $i < 24; $i++) {
-			if ($i == $now) {
-				$selected = ' selected';
+			if ($i == $hour) {
+				if ($minute == 30) {
+					$selected_30 = ' selected';
+				} else {
+					$selected = ' selected';
+				}
 			} else {
 				$selected = '';
+				$selected_30 = '';
 			}
 		
 			if ($i < 10) {
@@ -25,9 +31,9 @@ class Show_Date {
 			}
 			
 			if ($i < 10) {
-				$html .= "<option value='0{$i}:30'{$selected}>0{$i}:30</option>";
+				$html .= "<option value='0{$i}:30'{$selected_30}>0{$i}:30</option>";
 			} else {
-				$html .= "<option value='{$i}:30'{$selected}>{$i}:30</option>";
+				$html .= "<option value='{$i}:30'{$selected_30}>{$i}:30</option>";
 			}
 		}
 		

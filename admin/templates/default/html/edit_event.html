@@ -46,12 +46,28 @@
 			
 			<label>
 				<?php echo EDIT_EVENT_START; ?>: 
-				<input type="text" name="start_time" value="<?php echo $start_time; ?>" /><br />
+				<!-- <input type="text" name="start_time" value="<?php echo $start_time; ?>" /><br /> -->
+				<?php
+					echo Show_Date::hour_minute('start_hour', $start['hour'], $start['minute']) . ' -- ';
+					echo Show_Date::month('start_month', $start['month']) . '/'; 
+					echo Show_Date::day('start_day', $start['day']) . '/';
+					// Rem: year($elmName, $yrsBefore, $yrsAfter, $toSelect)
+					echo Show_Date::year('start_year', 3, 5, $start['year']);
+				?>
 			</label>
+			
+			<br />
 			
 			<label>
 				<?php echo EDIT_EVENT_END; ?>: 
-				<input type="text" name="end_time" value="<?php echo $end_time; ?>" /><br />
+				<!-- <input type="text" name="end_time" value="<?php echo $end_time; ?>" /><br /> -->
+				<?php
+					echo Show_Date::hour_minute('end_hour', $end['hour'], $end['minute']) . ' -- ';
+					echo Show_Date::month('end_month', $end['month']) . '/'; 
+					echo Show_Date::day('end_day', $end['day']) . '/';
+					// Rem: year($elmName, $yrsBefore, $yrsAfter, $toSelect)
+					echo Show_Date::year('end_year', 3, 5, $end['year']);
+				?>
 			</label>
 			
 			<br />
