@@ -71,5 +71,7 @@ $sql .= " '{$view_members}', '{$edit_members}', '{$add_events}', '{$list_events}
 //echo $sql . '<br /><br />';
 MySQL::query($sql);
 
+Log::create($user_id, 'register', "name:{$first_name} {$last_name}");
+
 header("Location: index.php");
 exit();
