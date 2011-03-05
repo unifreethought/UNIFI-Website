@@ -50,5 +50,8 @@ $sql .= ", `texting` = '{$texting}', `hometown` = '{$hometown}', `phone` = '{$ph
 $sql .= ", `positions` = '{$positions}', `tags` = '{$tags}' WHERE `user-data`.`id` = '{$id}'";
 MySQL::query($sql);
 
+Log::create($user_id, 'edit_user', "name:{$first_name} {$last_name}");
+
+// Btw, this is a SECURITY HOLE!!
 header("Location: {$_SERVER['HTTP_REFERER']}");
 exit();
