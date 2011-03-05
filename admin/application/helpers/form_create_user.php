@@ -59,4 +59,6 @@ $sql .= "`list_events`,`edit_events`,`edit_event_attendance`,`edit_custom_pages`
 //echo $sql . '<br /><br />';
 MySQL::query($sql);
 
+Log::create($user_id, 'create_user', "name:{$first_name} {$last_name}");
+
 header('Location: index.php');
