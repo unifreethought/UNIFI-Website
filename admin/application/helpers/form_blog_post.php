@@ -13,4 +13,7 @@ $sql = "INSERT INTO `{$database}`.`blog-posts` (`id`,`author`, `timestamp`, `tit
 $sql .= "('0', '{$user_id}', '{$time}', '{$title}', '{$text}');";
 MySQL::query($sql);
 
-header('Location: index.php');
+// Log the new post.
+Log::create($user_id, 'new_blog_post', 'date:' . Date::parse($time) . '<br>title:' . $title);
+
+//header('Location: index.php');
