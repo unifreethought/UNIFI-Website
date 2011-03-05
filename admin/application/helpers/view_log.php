@@ -15,7 +15,7 @@ $results = array();
 
 foreach ($data as $item) {
 	$id = $item['id'];
-	$user = MySQL::single("SELECT `first_name`,`last_name` FROM `{$database}`.`users` WHERE `id` = '{$item['id']}' LIMIT 1");
+	$user = MySQL::single("SELECT `first_name`,`last_name` FROM `{$database}`.`users` WHERE `id` = '{$item['user_id']}' LIMIT 1");
 	$time = Date::parse($item['timestamp']);
 	$message = MySQL::single("SELECT `message` FROM `{$database}`.`log-messages` WHERE `id` = '{$item['message_id']}' LIMIT 1");
 	$unique = $item['unique_data'];
