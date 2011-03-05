@@ -17,6 +17,10 @@ if ($config['web'] !== 'enabled') {
 	exit(WEB_ACCESS_DISABLED);
 }
 
+// Load the logging library
+include 'admin/system/libs/log-actions.php';
+Log::set($database);
+
 // Include the errors handler
 require 'system/errors/errors.php';
 
