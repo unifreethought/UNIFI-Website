@@ -16,4 +16,4 @@ MySQL::query($sql);
 // Log the new post.
 Log::create($user_id, 'new_blog_post', 'date:' . Date::parse($time) . '<br>title:' . $title);
 
-//header('Location: index.php');
+header('Location: index.php');
