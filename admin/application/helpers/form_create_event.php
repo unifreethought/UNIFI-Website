@@ -31,5 +31,7 @@ $sql = "INSERT INTO `{$database}`.`events` (`id`,`title`,`start_time`,`end_time`
 $sql .= "('{$id}','{$title}','{$start}','{$end}','{$location}','{$desc}');";
 MySQL::query($sql);
 
+Log::create($user_id, 'create_event', "title:{$title}");
+
 header('Location: index.php');
 
