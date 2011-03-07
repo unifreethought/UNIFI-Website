@@ -11,4 +11,5 @@ $css_file = 'templates/' . $config['template'] . '/css/style.css';
 
 include 'print_profile_button.php';
 include 'print_admin_link.php';
+include 'print_events_link.php';
 

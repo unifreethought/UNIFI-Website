@@ -25,7 +25,11 @@ define('FB_LOGIN_OUT_ALERT', 'Press OK to reload the page and finish loggin in/o
 
 // Profile Nav Link
 define('MAIN_PAGE_PROFILE_NAV_LINK', 'Profile');
-	// Carl Sagan['s Profile]
+
+// Events Nav Link
+define('MAIN_PAGE_EVENTS_NAV_LINK', 'Events');
+
+// e.g. Carl Sagan['s Profile]
 define('PROFILE_HEADER_SUFFIX', '\'s Profile');
 
 // Registration
