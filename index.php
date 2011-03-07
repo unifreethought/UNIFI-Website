@@ -64,6 +64,14 @@ if ($url['get'] == true) {
 		$jump_to_footer = false;
 	}
 	
+	if ($_GET['page'] == 'attend_event') {
+		require 'application/helpers/attend_event.php';
+		require 'templates/' . $config['template'] . '/html/attend_event.html';
+		$jump_to_footer = true;
+	} else {
+		$jump_to_footer = false;
+	}
+	
 	// Load specific pages.
 	if (!$jump_to_footer) {
 		if (empty($url['page'])) {

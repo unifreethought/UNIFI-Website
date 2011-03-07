@@ -6,10 +6,18 @@
  */
 
 $notices = MySQL::search("SELECT `event_id` FROM `{$database}`.`event_notifications` WHERE `user_id` = '{$user_id}' ORDER BY `timestamp` DESC LIMIT 100");
-$events = array();
+$attending = array();
+$not_attending = array();
 
 foreach ($notices as $notice) {
-	$events[] = MySQL::single("SELECT * FROM `{$database}`.`events` WHERE `id` = '{$notice['event_id']}' LIMIT 1");
+	$event = MySQL::single("SELECT * FROM `{$database}`.`events` WHERE `id` = '{$notice['event_id']}' LIMIT 1");
+	$rsvp = MySQL::single("SELECT `rsvp` FROM `{$database}`.`event_notifications` WHERE `event_id` = '{$notice['event_id']}' LIMIT 1");
+	
+	if ($rsvp['rsvp'] == '1') {
+		$attending[] = $event;
+	} else {
+		$not_attending[] = $event;
+	}
 }
 
 
