@@ -72,7 +72,7 @@ if ($url['get'] == true) {
 	
 		switch ($url['page']) {
 			
-			case 'events':
+			case 'view_events':
 			
 			break;
 			
