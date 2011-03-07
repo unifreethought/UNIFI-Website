@@ -6,4 +6,4 @@
  */
  
 // Pull the 20 latest events
-$events = MySQL::search("SELECT * FROM `{$database}`.`events` LIMIT 20");
+$events = MySQL::search("SELECT * FROM `{$database}`.`events` ORDER BY `start_time` DESC LIMIT 50");
