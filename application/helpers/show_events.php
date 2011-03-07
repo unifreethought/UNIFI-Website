@@ -5,7 +5,11 @@
  * 2011-03-06
  */
 
-$notices = MySQL::search("SELECT `event_id` FROM `{$database}`.`event_notifications` WHERE `user_id` = '{$user_id}' ORDER BY `timestamp` DESC LIMIT 100");
+$now = @time() - 100;
+$sql = "SELECT `event_id` FROM `{$database}`.`event_notifications` WHERE `user_id` = '{$user_id}' AND `timestamp` > '{$now}' ";
+$sql .= "ORDER BY `timestamp` DESC LIMIT 100";
+
+$notices = MySQL::search($sql);
 $attending = array();
 $not_attending = array();
 
@@ -13,10 +17,12 @@ foreach ($notices as $notice) {
 	$event = MySQL::single("SELECT * FROM `{$database}`.`events` WHERE `id` = '{$notice['event_id']}' LIMIT 1");
 	$rsvp = MySQL::single("SELECT `rsvp` FROM `{$database}`.`event_notifications` WHERE `event_id` = '{$notice['event_id']}' LIMIT 1");
 	
-	if ($rsvp['rsvp'] == '1') {
-		$attending[] = $event;
-	} else {
-		$not_attending[] = $event;
+	if ($event['end_time'] > $now) {
+		if ($rsvp['rsvp'] == '1') {
+			$attending[] = $event;
+		} else {
+			$not_attending[] = $event;
+		}
 	}
 }
 
