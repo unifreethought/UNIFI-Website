@@ -84,6 +84,7 @@ define('EDIT_EVENT_START', 'Start: ');
 define('EDIT_EVENT_END', 'End: ');
 define('EDIT_EVENT_ATTENDING', 'Members Attending');
 define('EDIT_EVENT_SUBMIT', 'Edit Event');
+define('EDIT_EVENT_INVITE_MEMBERS', 'Invite Members');
 
 // Listing of Members
 define('LIST_MEMBERS_HEADER', 'User Listing');

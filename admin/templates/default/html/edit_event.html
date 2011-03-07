@@ -25,6 +25,13 @@
 		
 		<hr />
 		
+		<div style="float: right; width: 40%;">
+			<strong><?php echo EDIT_EVENT_INVITE_MEMBERS; ?></strong><br />
+			<button onclick="window.location='index.php?page=invite_members&event_id=<?php echo $event_id; ?>';">
+				<?php echo EDIT_EVENT_INVITE_MEMBERS; ?>
+			</button>
+		</div>
+		
 		<?php
 			$start_time = Date::parse($event['start_time']);
 			$end_time = Date::parse($event['end_time']);

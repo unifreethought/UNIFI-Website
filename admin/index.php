@@ -186,6 +186,10 @@ if ($url['post']) {
 		echo curl_exec($ch);
 		exit();
 	}
+	
+	if (!empty($_GET['page']) && $_GET['page'] == 'invite_members') {
+		include 'application/helpers/invite_all_members_to_event.php';
+	}
 
 	include 'templates/' . $config['template'] . '/html/header.html';
 	
