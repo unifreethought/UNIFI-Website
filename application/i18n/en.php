@@ -25,12 +25,18 @@ define('FB_LOGIN_OUT_ALERT', 'Press OK to reload the page and finish loggin in/o
 
 // Profile Nav Link
 define('MAIN_PAGE_PROFILE_NAV_LINK', 'Profile');
+define('PROFILE_HEADER_SUFFIX', '\'s Profile');
 
 // Events Nav Link
 define('MAIN_PAGE_EVENTS_NAV_LINK', 'Events');
-
-// e.g. Carl Sagan['s Profile]
-define('PROFILE_HEADER_SUFFIX', '\'s Profile');
+define('EVENTS_HEADER', 'Your Upcoming Events');
+define('EVENTS_TABLE_TITLE_TITLE', 'Title');
+define('EVENTS_TABLE_TITLE_START_TIME', 'Start Time');
+define('EVENTS_TABLE_TITLE_END_TIME', 'End Time');
+define('EVENTS_TABLE_TITLE_LOCATION', 'Location');
+define('EVENTS_TABLE_TITLE_DESCRIPTION', 'Description');
+define('EVENTS_TABLE_TITLE_RSVP', 'RSVP');
+define('EVENTS_BUTTON_ATTEND', 'Attend');
 
 // Registration
 define('REGISTER_HEADER', 'Please Register');

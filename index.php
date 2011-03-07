@@ -73,7 +73,8 @@ if ($url['get'] == true) {
 		switch ($url['page']) {
 			
 			case 'view_events':
-			
+				include 'application/helpers/show_events.php';
+				include 'templates/' . $config['template'] . '/html/show_events.html';
 			break;
 			
 			case 'profile':
