@@ -2,7 +2,29 @@
 	<div id="wrapper">
 		<?php echo EDIT_BLOG_POST_HEADER; ?>
 		
-		<br />
+		<div style="float: right; width: 40%;">
+			<ul style="list-style-type: none; margin: 2px;">
+				<?php 
+					foreach ($tags as $tag) {
+						echo "<li><label><input type='checkbox' class='tags' name='{$tag['id']}' />{$tag['tag']}</label></li>";
+					}
+				?>
+			</ul>
+			<button onclick="addTags();" style="margin-left: 10%;"><?php echo PAGE_POST_TO_BLOG_ADD_TAGS; ?></button>
+			<script>
+			function addTags() {
+				var elms = document.getElementsByClassName('tags');
+				var xhr = new XMLHttpRequest();
+				for (var i = 0; i < elms.length; i++) {
+					if (elms[i].checked) {
+						//console.log(window.location.origin + window.location.pathname + '?addBlogTag=' + elms[i].name);
+						xhr.open('GET', window.location.origin + window.location.pathname + '?addBlogTag=' + elms[i].name, false);
+						xhr.send(null);
+					}
+				}
+			}
+			</script>
+		</div>
 		
 		<form action="index.php" method="POST" id="edit_blog_post_form">
 			<input type="hidden" name="edit_blog_post" value="yes" />
