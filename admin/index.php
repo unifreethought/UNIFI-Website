@@ -191,6 +191,11 @@ if ($url['post']) {
 		include 'application/helpers/invite_all_members_to_event.php';
 		exit();
 	}
+	
+	if (!empty($_GET['addBlogTag'])) {
+		include 'application/helpers/add_blog_tag.php';
+		exit();
+	}
 
 	include 'templates/' . $config['template'] . '/html/header.html';
 	

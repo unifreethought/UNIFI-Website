@@ -4,9 +4,18 @@
 		
 		<div style="float: right; width: 40%;">
 			<ul style="list-style-type: none; margin: 2px;">
-				<?php 
+				<?php
+					$checked = '';
 					foreach ($tags as $tag) {
-						echo "<li><label><input type='checkbox' class='tags' name='{$tag['id']}' />{$tag['tag']}</label></li>";
+						foreach ($selected as $item) {
+							if ($item['tag_id'] == $tag['id']) {
+								$checked = ' checked';
+								break;
+							} else {
+								$checked = '';
+							}
+						}
+						echo "<li><label><input type='checkbox' class='tags' name='{$tag['id']}' {$checked} />{$tag['tag']}</label></li>";
 					}
 				?>
 			</ul>
@@ -18,8 +27,12 @@
 				for (var i = 0; i < elms.length; i++) {
 					if (elms[i].checked) {
 						//console.log(window.location.origin + window.location.pathname + '?addBlogTag=' + elms[i].name);
-						xhr.open('GET', window.location.origin + window.location.pathname + '?addBlogTag=' + elms[i].name, false);
+						var url = window.location.origin + window.location.pathname + '?addBlogTag=' + elms[i].name + '&blog_post=';
+							url += "<?php echo $data['id']; ?>";
+						console.log(url);
+						xhr.open('GET', url, false);
 						xhr.send(null);
+						console.log(xhr.responseText);
 					}
 				}
 			}
