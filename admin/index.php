@@ -28,6 +28,10 @@ require '../system/errors/errors.php';
 require '../application/helpers/user.php';
 //echo $fb_id . ' ' . $user_id . '<br />';
 
+// Load up the auth library
+include '../system/libs/auth.php';
+Auth::set($user_id, $database);
+
 // Check the url
 require '../application/helpers/url.php';
 $url = check_url();
@@ -39,77 +43,61 @@ if ($url['post']) {
 		
 		// First authenticate the user against the db.
 		// Then, make sure that the user can edit members.
-		$user_id = MySQL::clean($user_id);
-		$tmp = MySQL::single("SELECT `edit_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
-		if ($tmp['edit_members'] != '1') {
+		if (!Auth::edit_members()) {
 			exit(ADMIN_NOT_AUTHORIZED);
+		} else {
+			include 'application/helpers/form_edit_user.php';
 		}
-		
-		// Finally, submit the change.
-		include 'application/helpers/form_edit_user.php';
 	}
 	
 	if (!empty($_POST['create_user']) && $_POST['create_user'] == 'yes') {
 		
-		$user_id = MySQL::clean($user_id);
-		$tmp = MySQL::single("SELECT `edit_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
-		if ($tmp['edit_members'] != '1') {
+		if (!Auth::edit_members()) {
 			exit(ADMIN_NOT_AUTHORIZED);
+		} else {
+			include 'application/helpers/form_create_user.php';	
 		}
-		
-		// Finally, submit the change.
-		include 'application/helpers/form_create_user.php';	
 		
 	}
 	
 	if (!empty($_POST['delete_user']) && $_POST['delete_user'] == 'yes') {
 		
-		$user_id = MySQL::clean($user_id);
-		$tmp = MySQL::single("SELECT `edit_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
-		if ($tmp['edit_members'] != '1') {
+		if (!Auth::edit_members()) {
 			exit(ADMIN_NOT_AUTHORIZED);
+		} else {
+			include 'application/helpers/form_delete_user.php';
 		}
-		
-		// Finally, submit the change.
-		include 'application/helpers/form_delete_user.php';	
 		
 	}
 	
 	if (!empty($_POST['confirm_delete']) && $_POST['confirm_delete'] == 'yes') {
-		
-		$user_id = MySQL::clean($user_id);
-		$tmp = MySQL::single("SELECT `edit_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
-		if ($tmp['edit_members'] != '1') {
+	
+		if (!Auth::edit_members()) {
 			exit(ADMIN_NOT_AUTHORIZED);
+		} else {
+			include 'application/helpers/form_confirm_delete_user.php';
 		}
-		
-		// Finally, submit the change.
-		include 'application/helpers/form_confirm_delete_user.php';		
 		
 	}
 	
 	if (!empty($_POST['admin_post_to_blog']) && $_POST['admin_post_to_blog'] == 'post-new') {
 		
 		// Auth the user and check for the ability to post to the blog.
-		$user_id = MySQL::clean($user_id);
-		$tmp = MySQL::single("SELECT `post_to_blog` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
-		if ($tmp['post_to_blog'] != '1') {
+		if (!Auth::post_to_blog()) {
 			exit(ADMIN_NOT_AUTHORIZED);
+		} else {
+			include 'application/helpers/form_blog_post.php';
 		}
-		
-		include 'application/helpers/form_blog_post.php';
 	}
 	
 	if (!empty($_POST['edit_blog_post']) && $_POST['edit_blog_post'] == 'yes') {
 	
 		// Auth the user and check for the ability to post to the blog.
-		$user_id = MySQL::clean($user_id);
-		$tmp = MySQL::single("SELECT `post_to_blog` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
-		if ($tmp['post_to_blog'] != '1') {
+		if (!Auth::post_to_blog()) {
 			exit(ADMIN_NOT_AUTHORIZED);
+		} else {
+			include 'application/helpers/form_blog_post_edit.php';
 		}
-		
-		include 'application/helpers/form_blog_post_edit.php';
 	
 	}
 	

@@ -37,6 +37,10 @@ require 'application/helpers/user.php';
 require 'application/helpers/url.php';
 $url = check_url();
 
+// Load up the auth library
+include 'system/libs/auth.php';
+Auth::set($user_id, $database);
+
 if ($url['post'] == true) {
 	if ($_POST['page'] == 'new-user') {
 		require 'application/helpers/form_register.php';
