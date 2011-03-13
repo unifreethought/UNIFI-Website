@@ -190,11 +190,8 @@ if ($url['post']) {
 		case 'post':
 			
 			if (Auth::can_post_blog()) {
-				
-				// Feature still needed!!
 				include 'application/helpers/post_to_blog.php';
 				include 'templates/' . $config['template'] . '/html/post_to_blog.html';
-				
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -204,11 +201,8 @@ if ($url['post']) {
 		case 'list_blog_posts':
 		
 			if (Auth::can_post_blog()) {
-				
-				// Feature still needed!!
 				include 'application/helpers/list_blog_posts.php';
 				include 'templates/' . $config['template'] . '/html/list_blog_posts.html';
-				
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -218,11 +212,8 @@ if ($url['post']) {
 		case 'edit_blog_post':
 			
 			if (Auth::can_post_blog()) {
-				
-				// Feature still needed!!
 				include 'application/helpers/edit_blog_post.php';
 				include 'templates/' . $config['template'] . '/html/edit_blog_post.html';
-				
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -231,98 +222,65 @@ if ($url['post']) {
 		
 		case 'create_user':
 			
-			$can_edit = MySQL::single("SELECT `edit_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
-			if ($view_dashbord == '1' && $can_edit['edit_members'] == 1) {
-			
+			if (Auth::edit_users()) {
 				include 'application/helpers/create_user.php';
 				include 'templates/' . $config['template'] . '/html/create_user.html';
-			
 			} else {
-			
 				exit(ADMIN_NOT_AUTHORIZED);
-			
 			}
 			
 		break;
 		
 		case 'delete_user':
-			
-			$can_edit = MySQL::single("SELECT `edit_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
-			if ($view_dashbord == '1' && $can_edit['edit_members'] == 1) {
-			
+		
+			if (Auth::edit_users()) {
 				include 'application/helpers/delete_user.php';
 				include 'templates/' . $config['template'] . '/html/delete_user.html';
-			
 			} else {
-			
 				exit(ADMIN_NOT_AUTHORIZED);
-			
 			}
 			
 		break;
 		
 		case 'list_members':
 		
-			$can_list = MySQL::single("SELECT `view_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
-			if ($view_dashbord == '1' && $can_list['view_members'] == 1) {
-			
-				// Feature still needed!!
+			if (Auth::edit_users()) {
 				include 'application/helpers/list_users.php';
 				include 'templates/' . $config['template'] . '/html/list_users.html';
-			
 			} else {
-			
 				exit(ADMIN_NOT_AUTHORIZED);
-			
 			}
 			
 		break;
 		
 		case 'edit_user':
 		
-			$can_edit = MySQL::single("SELECT `edit_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
-			if ($view_dashbord == '1' && $can_edit['edit_members'] == 1) {
-			
+			if (Auth::edit_users()) {
 				include 'application/helpers/edit_user.php';
 				include 'templates/' . $config['template'] . '/html/edit_user.html';
-			
 			} else {
-			
 				exit(ADMIN_NOT_AUTHORIZED);
-			
 			}
 		break;
 		
 		case 'search_users':
 			
-			$can_list = MySQL::single("SELECT `view_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
-			if ($view_dashbord == '1' && $can_list['view_members'] == 1) {
-			
-				// Feature still needed!!
+			if (Auth::edit_users()) {
 				include 'application/helpers/search_users.php';
 				include 'templates/' . $config['template'] . '/html/search_users.html';
-			
 			} else {
-			
 				exit(ADMIN_NOT_AUTHORIZED);
-			
 			}
 			
 		break;
 		
 		case 'perform_search':
 			
-			$can_list = MySQL::single("SELECT `view_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
-			if ($view_dashbord == '1' && $can_list['view_members'] == 1) {
-			
-				// Feature still needed!!
+			if (Auth::edit_users()) {
 				include 'application/helpers/perform_search.php';
 				include 'templates/' . $config['template'] . '/html/perform_search.html';
-			
 			} else {
-			
 				exit(ADMIN_NOT_AUTHORIZED);
-			
 			}
 			
 		break;

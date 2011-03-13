@@ -90,4 +90,16 @@ class Auth {
 			return false;
 		}
 	}
+	
+	/**
+	 * Auth the user to see if they can edit users.
+	 */
+	static function edit_users() {
+		$can_edit = MySQL::single("SELECT `edit_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+		if ($can_edit['edit_members'] == 1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
