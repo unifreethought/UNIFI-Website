@@ -24,16 +24,20 @@
 			function addTags() {
 				var elms = document.getElementsByClassName('tags');
 				var xhr = new XMLHttpRequest();
+				var checked = 'yes';
+				
 				for (var i = 0; i < elms.length; i++) {
 					if (elms[i].checked) {
-						//console.log(window.location.origin + window.location.pathname + '?addBlogTag=' + elms[i].name);
-						var url = window.location.origin + window.location.pathname + '?addBlogTag=' + elms[i].name + '&blog_post=';
-							url += "<?php echo $data['id']; ?>";
-						//console.log(url);
-						xhr.open('GET', url, false);
-						xhr.send(null);
-						//console.log(xhr.responseText);
+						checked = 'yes';
+					} else {
+						checked = 'no';
 					}
+					
+					var url = window.location.origin + window.location.pathname + '?addBlogTag=' + elms[i].name + '&blog_post=';
+						url += "<?php echo $data['id']; ?>" + '&checked=' + checked;
+					xhr.open('GET', url, false);
+					xhr.send(null);
+					alert(xhr.responseText);
 				}
 			}
 			</script>
