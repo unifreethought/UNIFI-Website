@@ -95,7 +95,7 @@ class Auth {
 	 * Auth the user to see if they can edit users.
 	 */
 	static function edit_users() {
-		$can_edit = MySQL::single("SELECT `edit_members` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+		$can_edit = MySQL::single("SELECT `edit_members` FROM `" . self::$database . "`.`user-permissions` WHERE `user_id` = '" . self::$user_id . "' LIMIT 1");
 		if ($can_edit['edit_members'] == 1) {
 			return true;
 		} else {
@@ -107,7 +107,7 @@ class Auth {
 	 * Auth the user to see if they can view the log.
 	 */
 	static function view_log() {
-		$can_view_log = MySQL::single("SELECT `view_log` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+		$can_view_log = MySQL::single("SELECT `view_log` FROM `" . self::$database . "`.`user-permissions` WHERE `user_id` = '" . self::$user_id . "' LIMIT 1");
 		if ($can_view_log['view_log'] == '1') {
 			return true;
 		} else {
