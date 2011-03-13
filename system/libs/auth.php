@@ -78,4 +78,16 @@ class Auth {
 			return false;
 		}
 	}
+	
+	/**
+	 * Auth the user to see if they can post to the blog.
+	 */
+	static function can_post_blog() {
+		$can_post = MySQL::single("SELECT `post_to_blog` FROM `" . self::$database . "`.`user-permissions` WHERE `user_id` = '" . self::$user_id . "' LIMIT 1");
+		if ($can_post['post_to_blog'] == 1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }

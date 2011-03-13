@@ -188,9 +188,8 @@ if ($url['post']) {
 	switch ($url['page']) {
 	
 		case 'post':
-		
-			$can_post = MySQL::single("SELECT `post_to_blog` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
-			if ($can_post['post_to_blog'] == 1) {
+			
+			if (Auth::can_post_blog()) {
 				
 				// Feature still needed!!
 				include 'application/helpers/post_to_blog.php';
@@ -204,8 +203,7 @@ if ($url['post']) {
 		
 		case 'list_blog_posts':
 		
-			$can_post = MySQL::single("SELECT `post_to_blog` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
-			if ($can_post['post_to_blog'] == 1) {
+			if (Auth::can_post_blog()) {
 				
 				// Feature still needed!!
 				include 'application/helpers/list_blog_posts.php';
@@ -219,8 +217,7 @@ if ($url['post']) {
 		
 		case 'edit_blog_post':
 			
-			$can_post = MySQL::single("SELECT `post_to_blog` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
-			if ($can_post['post_to_blog'] == 1) {
+			if (Auth::can_post_blog()) {
 				
 				// Feature still needed!!
 				include 'application/helpers/edit_blog_post.php';
