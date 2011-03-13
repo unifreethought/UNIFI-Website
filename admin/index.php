@@ -183,7 +183,9 @@ if ($url['post']) {
 	$user_id = MySQL::clean($user_id);
 	
 	// Do a general check on viewing the dashbord.
-	$view_dashbord = Auth::view_dashboard();
+	if (!Auth::view_dashboard()) {
+		exit(ADMIN_NOT_AUTHORIZED);
+	}
 	
 	switch ($url['page']) {
 	
