@@ -102,4 +102,16 @@ class Auth {
 			return false;
 		}
 	}
+	
+	/**
+	 * Auth the user to see if they can handle events.
+	 */
+	static function edit_events() {
+		$event = MySQL::single("SELECT `add_events`,`list_events` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+		if ($event['add_events'] == '1' && $event['list_events'] == '1') {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
