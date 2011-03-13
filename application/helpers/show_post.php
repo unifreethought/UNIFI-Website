@@ -5,13 +5,22 @@
  * 2010-11-21
  */
  
-$post = MySQL::single("SELECT * FROM `" . MySQL::$database . "`.`blog-posts` WHERE `id` = '" . MySQL::clean($url['id']) . "' LIMIT 1");
-$comments = MySQL::search("SELECT * FROM `" . MySQL::$database . "`.`blog-comments` WHERE `blog_post` = '" . MySQL::clean($url['id']) . "'");
+$post_id = MySQL::clean($url['id']);
+
+$post = MySQL::single("SELECT * FROM `{$database}`.`blog-posts` WHERE `id` = '{$post_id}' LIMIT 1;");
+
+// Check to see if the post actually exists
+if (empty($post['title'])) {
+	include 'templates/' . $config['template'] . '/html/show_no_post.html';
+	exit();
+}
+
+$comments = MySQL::search("SELECT * FROM `{$database}`.`blog-comments` WHERE `blog_post` = '{$post_id}';");
 
 $authors = array();
 
 // Load the author's real name.
-$post_author = MySQL::single("SELECT `first_name`,`last_name` FROM `" . MySQL::$database . "`.`users` WHERE `id` = '" . MySQL::clean($post['author']) . "' LIMIT 1");
+$post_author = MySQL::single("SELECT `first_name`,`last_name` FROM `{$database}`.`users` WHERE `id` = '" . MySQL::clean($post['author']) . "' LIMIT 1");
 $authors[$post['author']] = $post_author['first_name'] . ' ' . $post_author['last_name'];
 
 // Load the commenters real names.

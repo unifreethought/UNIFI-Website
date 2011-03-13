@@ -51,6 +51,7 @@ define('REGISTER_MALE', 'Male');
 define('REGISTER_TRANSGENDER', 'Transgender');
 
 // Blog
+define('BLOG_POST_NOT_THERE', 'We\'re sorry, but it looks like this post doesn\'t exist.');
 define('BLOG_AUTHOR_PREFIX', 'By ');
 define('BLOG_OLDER_POSTS', 'Older posts');
 define('BLOG_COMMENT_REPLY', 'Leave a reply');
