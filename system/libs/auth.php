@@ -104,11 +104,11 @@ class Auth {
 	}
 	
 	/**
-	 * Auth the user to see if they can handle events.
+	 * Auth the user to see if they can view the log.
 	 */
-	static function edit_events() {
-		$event = MySQL::single("SELECT `add_events`,`list_events` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
-		if ($event['add_events'] == '1' && $event['list_events'] == '1') {
+	static function view_log() {
+		$can_view_log = MySQL::single("SELECT `view_log` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+		if ($can_view_log['view_log'] == '1') {
 			return true;
 		} else {
 			return false;
