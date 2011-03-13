@@ -183,12 +183,7 @@ if ($url['post']) {
 	$user_id = MySQL::clean($user_id);
 	
 	// Do a general check on viewing the dashbord.
-	$can_view_dashbord = MySQL::single("SELECT `access_admin_dashbord` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
-	if ($can_view_dashbord['access_admin_dashbord'] == '1') {
-		$view_dashbord = true;
-	} else {
-		$view_dashbord = false;
-	}
+	$view_dashbord = Auth::view_dashboard();
 	
 	switch ($url['page']) {
 	
