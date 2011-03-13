@@ -176,6 +176,11 @@ if ($url['post']) {
 		include 'application/helpers/add_blog_tag.php';
 		exit();
 	}
+	
+	if (!empty($_GET['createBlogTag'])) {
+		include 'application/helpers/create_blog_tag.php';
+		exit();
+	}
 
 	include 'templates/' . $config['template'] . '/html/header.html';
 	

@@ -3,7 +3,7 @@
 		<?php echo EDIT_BLOG_POST_HEADER; ?>
 		
 		<div style="float: right; width: 40%;">
-			<ul style="list-style-type: none; margin: 2px;">
+			<ul id="blogTags" style="list-style-type: none; margin: 2px;">
 				<?php
 					$checked = '';
 					foreach ($tags as $tag) {
@@ -29,14 +29,34 @@
 						//console.log(window.location.origin + window.location.pathname + '?addBlogTag=' + elms[i].name);
 						var url = window.location.origin + window.location.pathname + '?addBlogTag=' + elms[i].name + '&blog_post=';
 							url += "<?php echo $data['id']; ?>";
-						console.log(url);
+						//console.log(url);
 						xhr.open('GET', url, false);
 						xhr.send(null);
-						console.log(xhr.responseText);
+						//console.log(xhr.responseText);
 					}
 				}
 			}
 			</script>
+			
+			<br /><br />
+			<!-- Create a new tag -->
+			<div style="margin-left: 10%;">
+				<input type="text" id="createTag" />
+				<button onclick="createTag();"><?php echo PAGE_POST_TO_BLOG_CREATE_TAG; ?></button>
+				<script>
+				function createTag() {
+					var newTag = document.getElementById('createTag');
+					var tagList = document.getElementById('blogTags');
+					var xhr = new XMLHttpRequest();
+						xhr.open('GET', window.location.origin + window.location.pathname + '?createBlogTag=' + encodeURIComponent(newTag.value), false);
+						xhr.send(null);
+						
+					// Now append the new tag to the list.
+					// Remember, this returns some HTML, which is terrible practice!!
+					tagList.innerHTML += xhr.responseText;
+				}
+				</script>
+			</div>
 		</div>
 		
 		<form action="index.php" method="POST" id="edit_blog_post_form">

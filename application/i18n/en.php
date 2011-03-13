@@ -125,6 +125,7 @@ define('PAGE_POST_TO_BLOG', 'Create a blog post');
 define('PAGE_POST_TO_BLOG_TITLE_FIELD', 'Title: ');
 define('PAGE_POST_TO_BLOG_ALLOWED_TAGS', 'Allowed Tags: ');
 define('PAGE_POST_TO_BLOG_ADD_TAGS', 'Update Tags');
+define('PAGE_POST_TO_BLOG_CREATE_TAG', 'Create Tag');
 define('PAGE_LIST_EVENTS_TITLE', 'List Events');
 define('PAGE_LIST_BLOG_POSTS', 'Our Blog Posts');
 define('PAGE_EDIT_EVENT_HEADER', 'Edit an Event');
