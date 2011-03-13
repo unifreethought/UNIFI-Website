@@ -126,26 +126,22 @@ if ($url['post']) {
 	if (!empty($_POST['create_custom_page']) && $_POST['create_custom_page'] == 'yes') {
 		
 		// Auth the user and check for the ability to edit custom pages.
-		$user_id = MySQL::clean($user_id);
-		$tmp = MySQL::single("SELECT `edit_custom_pages` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
-		if ($tmp['edit_custom_pages'] != '1') {
+		if (!Auth::edit_custom_pages()) {
 			exit(ADMIN_NOT_AUTHORIZED);
-		}	
-		
-		include 'application/helpers/form_create_custom_page.php';
+		} else {
+			include 'application/helpers/form_create_custom_page.php';
+		}
 		
 	}
 	
 	if (!empty($_POST['edit_custom_page']) && $_POST['edit_custom_page'] == 'yes') {
 		
 		// Auth the user and check for the ability to edit custom pages.
-		$user_id = MySQL::clean($user_id);
-		$tmp = MySQL::single("SELECT `edit_custom_pages` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
-		if ($tmp['edit_custom_pages'] != '1') {
+		if (!Auth::edit_custom_pages()) {
 			exit(ADMIN_NOT_AUTHORIZED);
-		}	
-		
-		include 'application/helpers/form_edit_custom_page.php';
+		} else {
+			include 'application/helpers/form_edit_custom_page.php';
+		}
 		
 	}
 	

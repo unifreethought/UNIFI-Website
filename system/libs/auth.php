@@ -54,4 +54,16 @@ class Auth {
 			return false;		
 		}
 	}
+	
+	/**
+	 * Check to see if the user can edit custom pages.
+	 */
+	static function edit_custom_pages() {
+		$tmp = MySQL::single("SELECT `edit_custom_pages` FROM ``" . self::$database . "`.`user-permissions` WHERE `user_id` = '" . self::$user_id . "' LIMIT 1");
+		if ($tmp['edit_custom_pages'] == '1') {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
