@@ -320,34 +320,22 @@ if ($url['post']) {
 
 		case 'create_custom_page':
 		
-			$can_edit_custom_pages = MySQL::single("SELECT `edit_custom_pages` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
-			if ($view_dashbord == '1' && $can_edit_custom_pages['edit_custom_pages'] == 1) {
-			
-				// Feature still needed!!
+			if (Auth::edit_custom_pages()) {
 				include 'application/helpers/create_custom_page.php';
 				include 'templates/' . $config['template'] . '/html/create_custom_page.html';
-			
 			} else {
-			
 				exit(ADMIN_NOT_AUTHORIZED);
-			
 			}
 			
 		break;
 		
 		case 'list_custom_pages':
 		
-			$can_edit_custom_pages = MySQL::single("SELECT `edit_custom_pages` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
-			if ($view_dashbord == '1' && $can_edit_custom_pages['edit_custom_pages'] == 1) {
-			
-				// Feature still needed!!
+			if (Auth::edit_custom_pages()) {
 				include 'application/helpers/list_custom_pages.php';
 				include 'templates/' . $config['template'] . '/html/list_custom_pages.html';
-			
 			} else {
-			
 				exit(ADMIN_NOT_AUTHORIZED);
-			
 			}
 			
 		break;
@@ -355,17 +343,11 @@ if ($url['post']) {
 		
 		case 'edit_custom_page':
 		
-			$can_edit_custom_pages = MySQL::single("SELECT `edit_custom_pages` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
-			if ($view_dashbord == '1' && $can_edit_custom_pages['edit_custom_pages'] == 1) {
-			
-				// Feature still needed!!
+			if (Auth::edit_custom_pages()) {
 				include 'application/helpers/edit_custom_page.php';
 				include 'templates/' . $config['template'] . '/html/edit_custom_page.html';
-			
 			} else {
-			
 				exit(ADMIN_NOT_AUTHORIZED);
-			
 			}
 			
 		break;
