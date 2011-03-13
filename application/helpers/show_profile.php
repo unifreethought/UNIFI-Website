@@ -17,6 +17,12 @@ $id = MySQL::clean($_GET['profile']);
 $generic_data = MySQL::single("SELECT `first_name`,`last_name` FROM `{$database}`.`users` WHERE `id` = '{$id}' LIMIT 1");
 //print_r($generic_data);
 
+// Check to see if the user actually exists
+if (empty($generic_data['first_name'])) {
+	include 'templates/' . $config['template'] . '/html/show_no_profile.html';
+	exit();
+}
+
 $full_data = MySQL::single("SELECT * FROM `{$database}`.`user-data` WHERE `id` = '{$id}' LIMIT 1");
 //print_r($full_data);
 

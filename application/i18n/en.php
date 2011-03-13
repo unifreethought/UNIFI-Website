@@ -26,6 +26,7 @@ define('FB_LOGIN_OUT_ALERT', 'Press OK to reload the page and finish loggin in/o
 // Profile Nav Link
 define('MAIN_PAGE_PROFILE_NAV_LINK', 'Profile');
 define('PROFILE_HEADER_SUFFIX', '\'s Profile');
+define('PROFILE_DOES_NOT_EXIST', 'We\'re sorry, but this profile doesn\'t seem to exist.');
 
 // Events Nav Link
 define('MAIN_PAGE_EVENTS_NAV_LINK', 'Events');
