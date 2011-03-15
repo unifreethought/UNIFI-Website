@@ -7,7 +7,7 @@
 
 function show_checked($permission) {
 	if ($permission == '1') {
-		echo ' checked';
+		echo 'checked';
 	}
 }
 

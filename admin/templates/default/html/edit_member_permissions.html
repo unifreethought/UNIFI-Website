@@ -9,7 +9,7 @@
 		
 		<form action="index.php" method="POST">
 			<input type="hidden" name="form_edit_user_permissions" value="yes" />
-			<input type="hidden" name="user_id" value="<?php echo $user; ?> />
+			<input type="hidden" name="user_id" value="<?php echo $user; ?>" />
 			
 			<label>
 				<input type="checkbox" name="post_to_blog" value="yes" <?php show_checked($permissions['post_to_blog']); ?> />
