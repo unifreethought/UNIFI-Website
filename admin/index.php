@@ -145,6 +145,17 @@ if ($url['post']) {
 		
 	}
 	
+	if (!empty($_POST['form_edit_user_permissions']) && $_POST['form_edit_user_permissions'] == 'yes') {
+		
+		// Auth the user.
+		if (!Auth::edit_user_permissions()) {
+			exit(ADMIN_NOT_AUTHORIZED);
+		} else {
+			include 'application/helpers/form_edit_user_permissions.php';
+		}
+		
+	}
+	
 	exit('');
 	
 } else {

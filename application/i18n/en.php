@@ -20,6 +20,9 @@ define('ADMIN_NOT_AUTHORIZED', 'Sorry, but you\'re not authorized to view this p
 
 define('ADMIN_HEADER', 'UNIFI Admin Dashbord');
 
+// Common Errors
+define('NO_USER_ID', 'Whoops, you need to specify a user.');
+
 // Facebook dialogs
 define('FB_LOGIN_OUT_ALERT', 'Press OK to reload the page and finish loggin in/out.');
 
