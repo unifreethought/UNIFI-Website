@@ -31,8 +31,6 @@ class Log {
 		$sql = "INSERT INTO `" . self::$db . "`.`log` (`id`,`user_id`,`timestamp`,`message_id`,`unique_data`) VALUES ";
 		$sql .= "('0','{$user}','{$time}','{$message}','{$unique}');";
 		
-		echo $sql;
-		
 		MySQL::query($sql);
 	}
 }
