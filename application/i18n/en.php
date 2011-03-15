@@ -197,3 +197,5 @@ define('ADMIN_DASHBORD_VIEW_LOG_TITLE', 'View the central log');
 	define('ADMIN_DASHBORD_VIEW_LOG_TIME', 'Time');
 	define('ADMIN_DASHBORD_VIEW_LOG_MESSAGE', 'Message');
 	define('ADMIN_DASHBORD_VIEW_LOG_UNIQUE', 'Unique');
+	
+define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS', 'Edit Member Permissions');

@@ -114,4 +114,16 @@ class Auth {
 			return false;
 		}
 	}
+	
+	/**
+	 * Auth the user to see if they can edit member permissions.
+	 */
+	static function edit_user_permissions() {
+		$tmp = MySQL::single("SELECT `can_edit_user_permissions` FROM `" . self::$database . "`.`presidential-permissions` WHERE `user_id` = '" . self::$user_id . "' LIMIT 1;");
+		if ($tmp['can_edit_user_permissions'] == '1') {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }

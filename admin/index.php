@@ -370,6 +370,18 @@ if ($url['post']) {
 			
 		break;
 		
+		case 'edit_member_rights':
+			
+			if (Auth::edit_user_permissions()) {
+				include 'application/helpers/edit_member_permissions.php';
+				include 'templates/' . $config['template'] . '/html/edit_member_permissions.html';
+			} else {
+				Log::create($user_id, 'failed_user_edit_permissions', 'N/A');
+				exit(ADMIN_NOT_AUTHORIZED);
+			}
+			
+		break;
+		
 		
 		default:
 			
