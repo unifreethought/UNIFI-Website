@@ -1,0 +1,76 @@
+	<!--
+		The footer which contains the legal documentation, copyright, and other
+		things as needed.
+	-->
+	<hr class="no-hr" />
+	<footer>
+		<div id="copyright" class="right">
+			Copyright &copy; 2011 University of Northern Iowa Freethinkers and Inquirers
+		</div>
+		
+		<div id="footer-links">
+			<ul>
+				<li><a href="#">Legal & Privacy</a></li>
+				<li><a href="#">Contact Us</a></li>
+				<li><a href="#top">Top</a></li>
+			</ul>
+		</div>
+	</footer>
+	
+</section> <!-- #wrapper -->
+
+<script>
+/**
+ * Set up a script to rotate quotes.
+ */
+function bind_quote_rotate() {
+	var quotes = Array(5);
+		quotes[0] = "\"We are star stuff\"<br \/\>-- Carl Sagan";	
+		quotes[1] = "\"The secrets of evolution are time and death.\"<br \/\>-- Carl Sagan";
+		quotes[2] = "\"Scientists love mysteries, they love not knowing.\"<br \/\>-- Lawrence Krauss";
+		quotes[3] = "\"Don't panic.\"<br \/\>-- Douglas Adams";
+		quotes[4] = "\"I can\'t believe the special stories about our relationship to the universe at large.\"<br \/\>-- Richard Feynman";
+	
+	var elm = document.querySelector("#quote");
+		elm.onclick = function (e) {
+			var pick = Math.floor(Math.random() * quotes.length);
+			this.innerHTML = quotes[pick];
+		};
+}
+
+/**
+ * Set up the nav elements to go to their child a's link.
+ */
+function bind_nav_links() {
+	window.nav_elms = document.querySelectorAll('.nav-item');
+	var i = 0, len = window.nav_elms.length;
+	for (i; i < len; i++) {
+		window.nav_elms[i].onclick = function () { window.location = this.childNodes[0].href; };
+	}
+}
+
+/**
+ * Do some custom CSS for Firefox...
+ */
+function custom_firefox_css() {
+	if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+		// The #blog-wrapper is broken, fix that.
+		document.querySelector('#blog-wrapper').style.paddingLeft = '1%';
+		document.querySelector('#blog-wrapper').style.paddingRight = "1%";
+		document.querySelector('#blog-wrapper').style.width = "70%";
+	}
+}
+
+window.onload = function () {
+	// Bind the rotating quote function to the page.
+	bind_quote_rotate();
+	
+	// Map the nav elements to their first child's href.
+	bind_nav_links();
+	
+	// Attempt to fix some CSS issues
+	custom_firefox_css();
+};
+</script>
+</body>
+</html>

@@ -88,7 +88,7 @@ header {
 		}
 		
 			header nav ul li {
-				background: #000000 url('images/nav-bg.png') repeat-x;
+				/* Check header.html */
 				border: 1px solid #000000;
 				cursor: pointer;
 				display: inline-block;
@@ -100,7 +100,8 @@ header {
 			}
 			
 				header nav ul li:hover {
-					background: #000000 url('images/nav-bg-hover.png') repeat-x;
+					/* In header.html */
+					/* background: #000000 url('images/nav-bg-hover.png') repeat-x; */
 				}
 			
 				header nav ul li a {
