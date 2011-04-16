@@ -176,6 +176,11 @@ header {
 				width: auto;
 			}
 			
+				#fb-button-container{
+					height: 19px;
+					overflow: hidden;
+				}
+			
 		aside section#admin-box {
 			/* */
 		}

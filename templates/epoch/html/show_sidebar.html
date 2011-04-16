@@ -10,21 +10,24 @@
 			<h3>You:</h3>
 			<div id="profile-box">
 			
-				<div class="right no-border">
-					<img src="templates/<?php echo $config['template']; ?>/images/fb-button.png" />
+				<div class="right no-border" id="fb-button-container">
+					<?php print_fb_button(); ?>
 				</div>
 				
 				<div class="no-border">
 					<span>
+						<!-- print_events_link($user_id, $database); -->
 						<a href="#" class="profile-link">Profile</a>
 					</span>
 					<span>
+						<!-- print_profile_button($user_id); -->
 						<a href="#" class="profile-link">Events</a> (7)
 					</span>
 				</div>
 			</div>
 		</section>
 		
+		<!-- print_admin_link($user_id, $database); -->
 		<section id="admin-box">
 			<h3>Admin:</h3>
 			<div>
