@@ -16,12 +16,11 @@
 				
 				<div class="no-border">
 					<span>
-						<!-- print_events_link($user_id, $database); -->
+						<!-- print_profile_button($user_id); -->
 						<a href="#" class="profile-link">Profile</a>
 					</span>
 					<span>
-						<!-- print_profile_button($user_id); -->
-						<a href="#" class="profile-link">Events</a> (7)
+						<?php print_events_link($user_id, $database); ?>
 					</span>
 				</div>
 			</div>
