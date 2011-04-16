@@ -61,6 +61,14 @@ function custom_firefox_css() {
 	}
 }
 
+/**
+ * Fix the content wrapper's height.
+ */
+function fix_content_wrapper_height() {
+	var elm = document.querySelector("#blog-wrapper");
+		elm.style.height = document.height + 'px';
+}
+
 window.onload = function () {
 	// Bind the rotating quote function to the page.
 	bind_quote_rotate();
@@ -70,6 +78,9 @@ window.onload = function () {
 	
 	// Attempt to fix some CSS issues
 	custom_firefox_css();
+	
+	// Make sure that the wrapper is the right height.
+	fix_content_wrapper_height();
 };
 </script>
 </body>

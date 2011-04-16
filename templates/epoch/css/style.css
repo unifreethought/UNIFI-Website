@@ -321,6 +321,25 @@ article {
 				text-indent: 10px;
 				font-size: 12pt;
 			}
+			
+				article section.comment {
+					border-bottom: 1px solid #000000;
+					padding-left: 6px;
+					padding-top: 5px;
+					padding-bottom: 3px;
+				}
+				
+					article section.comment:nth-child(odd) {
+						background-color: #CCCCCC;
+					}
+				div section#comment_reply {
+					/* */
+				}
+				
+					div section#comment_reply form textarea {
+						height: 200px;
+						width: 550px;
+					}
 
 footer {
 	background-color: #36317d;

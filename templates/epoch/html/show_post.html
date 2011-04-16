@@ -33,24 +33,24 @@
 				echo "<span class='blog-post-author'>" . BLOG_AUTHOR_PREFIX . "<a href='index.php?page=profile&profile={$post['id']}'>";
 					echo Clean::output($authors[$post['author']]) . '</a>' . Date::parse($post['timestamp']) . '</span>';
 				echo '<p>' . wordwrap(Clean::output($post['content']), 70) . '</p>';
-				echo "<span class='blog-post-comments'><a href='?page=post&id=" . $post['id'] . "'>Comments  (99)</a></span>";
+				echo "<a name='comments'></a>";
+				echo "<span class='blog-post-comments'><a href='?page=post&id=" . $post['id'] . "#comments'>Comments  (99)</a></span>";
 			echo "</section>";
 		?>
 			
 			<!-- Comments -->
-			
 			<?php
 				foreach ($comments as $comment) {
-					echo "<p class='comment'>";
+					echo "<section class='comment'>";
 						echo "<span class='right'>" . Date::parse($comment['timestamp']) . "</span>";
 						echo "<span class='author'>" . $authors[$comment['author']] . '</span>';
 						echo "<p class='comment_content'><pre>" . wordwrap(Clean::output($comment['content']), 50) . "</pre></p>";
-					echo "</p><hr />";
+					echo "</section>";
 				}
 			?>
 			
 			<!-- Leave a comment -->
-			<div id="comment_reply">
+			<section id="comment_reply">
 				<h4><?php echo BLOG_COMMENT_REPLY; ?></h4>
 				<form action="index.php" method="POST">
 					<input type="hidden" name="page" value="comment-reply" />
@@ -59,7 +59,7 @@
 					<br /><br />
 					<input type="submit" value="<?php echo BLOG_COMMENT_SUBMIT; ?>" />
 				</form>
-			</div>
+			</section>
 		</div>
 		</article>
 		
