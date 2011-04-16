@@ -309,6 +309,7 @@ article {
 				
 				article section.blog-post span.blog-post-author a {
 					color: #000000;
+					margin-right: 10px;
 				}
 				
 			article section.blog-post span.blog-post-comments {
