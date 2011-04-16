@@ -17,7 +17,8 @@ define('WEB_ACCESS_DISABLED', 'We\'re sorry, but this website is down.');
 
 // Admin Auth Errors
 define('ADMIN_NOT_AUTHORIZED', 'Sorry, but you\'re not authorized to view this page.');
-
+define('ADMIN_SIDEBAR_HEADER', 'Admin');
+define('ADMIN_SIDEBAR_LINK', 'Dashboard');
 define('ADMIN_HEADER', 'UNIFI Admin Dashbord');
 
 // Common Errors
