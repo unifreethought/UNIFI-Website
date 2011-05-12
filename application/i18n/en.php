@@ -23,6 +23,7 @@ define('ADMIN_HEADER', 'UNIFI Admin Dashbord');
 
 // Common Errors
 define('NO_USER_ID', 'Whoops, you need to specify a user.');
+define('NO_FB_ID_HELP', 'Login with Facebook: ');
 
 // Facebook dialogs
 define('FB_LOGIN_OUT_ALERT', 'Press OK to reload the page and finish loggin in/out.');
