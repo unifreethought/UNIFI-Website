@@ -4,6 +4,8 @@
  * Adam Shannon
  * 2010-11-21
  */
+ 
+include 'show_authors_and_labels.php';
 
 if (empty($url['older_than'])) {
 	$url['older_than'] = @time();
