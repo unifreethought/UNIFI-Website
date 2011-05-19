@@ -103,6 +103,11 @@ if ($url['get'] == true) {
 				include 'templates/' . $config['template'] . '/html/show_post.html';
 			break;
 			
+			case 'label':
+				include 'application/helpers/show_label.php';
+				include 'templates/' . $config['template'] . '/html/main.html';
+			break;
+			
 			default:
 				include 'application/helpers/detect_page.php';
 				$url_stubs = get_possible_url_stubs();
