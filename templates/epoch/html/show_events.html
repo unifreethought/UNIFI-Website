@@ -1,0 +1,100 @@
+
+
+<div id="wrapper">
+	<!-- 
+		Create the header secion, this will be the main image, navigation elements,
+		rotating quote, and search button.
+	-->
+	<header>
+		<?php include 'templates/epoch/html/show_nav.html'; ?>
+	</header>
+	
+	<hr />
+	
+	<!--
+		The "right side" of the page which contains: "You" box, [Admin Dashboard], 
+		social media icons, labels/authors, and the blogroll.
+	-->
+	<aside>
+		<?php include 'templates/epoch/html/show_sidebar.html'; ?>
+	</aside>
+	
+	<!--
+		The main section of the page, which has the blog posts (for the home page),
+		and the main content for other pages.
+		
+		P.S. Where needed content should be separated by the <section> element.
+	-->
+	<article>
+		
+		<h3><?php echo EVENTS_HEADER; ?></h3>
+		
+		<!-- Not Attending -->
+		<table style="border: 1px solid #000000; text-align: center; width: 97%;">
+			<thead style="background-color: #AA00AA; color: #FFFFFF; font-weight: bold;">
+				<tr>
+					<td><?php echo EVENTS_TABLE_TITLE_TITLE; ?></td>
+					<td><?php echo EVENTS_TABLE_TITLE_START_TIME; ?></td>
+					<td><?php echo EVENTS_TABLE_TITLE_END_TIME; ?></td>
+					<td><?php echo EVENTS_TABLE_TITLE_LOCATION; ?></td>
+					<td><?php echo EVENTS_TABLE_TITLE_DESCRIPTION; ?></td>
+					<td><?php echo EVENTS_TABLE_TITLE_RSVP; ?></td>
+				</tr>
+			</thead>
+			
+			<?php
+				foreach ($not_attending as $event) {
+					echo '<tr>';
+						echo '<td>' . $event['title'] . '</td>';
+						echo '<td>' . Date::parse($event['start_time']) . '</td>';
+						echo '<td>' . Date::parse($event['end_time']) . '</td>';
+						echo '<td>' . $event['location'] . '</td>';
+						echo '<td>' . $event['description'] . '</td>';
+						// For some strange reason if I include the next two statements on the same line
+						// php will print: [where a = print_rsvp_links(..)]
+						// "a<td></td>"
+						// This fixes it...
+						echo '<td>';
+						echo print_rsvp_links($event['id']) . '</td>';
+					echo '</tr>';
+				}
+			?>
+			
+		</table>
+		
+		<br /><br />
+		
+		<!-- Attending -->
+		<table style="border: 1px solid #000000; text-align: center; width: 97%;">
+			<thead style="background-color: #AA00AA; color: #FFFFFF; font-weight: bold;">
+				<tr>
+					<td><?php echo EVENTS_TABLE_TITLE_TITLE; ?></td>
+					<td><?php echo EVENTS_TABLE_TITLE_START_TIME; ?></td>
+					<td><?php echo EVENTS_TABLE_TITLE_END_TIME; ?></td>
+					<td><?php echo EVENTS_TABLE_TITLE_LOCATION; ?></td>
+					<td><?php echo EVENTS_TABLE_TITLE_DESCRIPTION; ?></td>
+					<td><?php echo EVENTS_TABLE_TITLE_RSVP; ?></td>
+				</tr>
+			</thead>
+			
+			<?php
+				foreach ($attending as $event) {
+					echo '<tr>';
+						echo '<td>' . $event['title'] . '</td>';
+						echo '<td>' . Date::parse($event['start_time']) . '</td>';
+						echo '<td>' . Date::parse($event['end_time']) . '</td>';
+						echo '<td>' . $event['location'] . '</td>';
+						echo '<td>' . $event['description'] . '</td>';
+						// For some strange reason if I include the next two statements on the same line
+						// php will print: [where a = print_rsvp_links(..)]
+						// "a<td></td>"
+						// This fixes it...
+						echo '<td>' . EVENTS_BUTTON_ATTEND . '</td>';
+					echo '</tr>';
+				}
+			?>
+			
+		</table>
+	</article>
+</div>
+	

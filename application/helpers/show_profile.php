@@ -4,6 +4,8 @@
  * Adam Shannon
  * 2010-11-21
  */
+ 
+include 'show_authors_and_labels.php';
 
 include 'admin/system/libs/user.php';
 User_Parse::set($database);

@@ -4,6 +4,8 @@
  * Adam Shannon
  * 2011-03-06
  */
+ 
+include 'show_authors_and_labels.php';
 
 $now = @time() - 100;
 $sql = "SELECT `event_id` FROM `{$database}`.`event_notifications` WHERE `user_id` = '{$user_id}' AND `timestamp` > '{$now}' ";

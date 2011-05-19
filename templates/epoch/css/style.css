@@ -272,6 +272,7 @@ header {
 		
 article {
 	margin-left: 2%;
+	min-height: 1500px;
 	width: 70%;
 }
 
