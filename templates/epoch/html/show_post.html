@@ -33,7 +33,7 @@
 					echo Clean::output($authors[$post['author']]) . '</a>' . Date::parse($post['timestamp']) . '</span>';
 				echo '<p>' . wordwrap(Clean::output($post['content']), 70) . '</p>';
 				echo "<a name='comments'></a>";
-				echo "<span class='blog-post-comments'><a href='?page=post&id=" . $post['id'] . "#comments'>Comments  (99)</a></span>";
+				echo "<span class='blog-post-comments'><a href='?page=post&id=" . $post['id'] . "#comments'>" . BLOG_POST_COMMENTS . "</a></span>";
 			echo "</section>";
 		?>
 			

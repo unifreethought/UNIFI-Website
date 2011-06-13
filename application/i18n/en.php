@@ -71,6 +71,7 @@ define('BLOG_OLDER_POSTS', 'Older posts');
 define('BLOG_COMMENT_REPLY', 'Leave a reply');
 define('BLOG_COMMENT_SUBMIT', 'Submit');
 define('BLOG_COMMENT_FAIL', 'Sorry, but you must be logged in to comment.');
+define('BLOG_POST_COMMENTS', 'Comments');
 
 // Listing blog posts
 define('LIST_BLOG_ID', 'ID #1');

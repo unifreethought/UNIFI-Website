@@ -113,6 +113,11 @@ if ($url['get'] == true) {
 				include 'templates/' . $config['template'] . '/html/legal.html';
 			break;
 			
+			case 'search':
+				include 'application/helpers/search.php';
+				include 'templates/' . $config['template'] . '/html/search.html';
+			break;
+			
 			default:
 				include 'application/helpers/detect_page.php';
 				$url_stubs = get_possible_url_stubs();
