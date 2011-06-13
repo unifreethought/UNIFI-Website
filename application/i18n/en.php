@@ -28,6 +28,11 @@ define('NO_FB_ID_HELP', 'Login with Facebook: ');
 // Facebook dialogs
 define('FB_LOGIN_OUT_ALERT', 'Press OK to reload the page and finish loggin in/out.');
 
+// Footer links
+define('FOOTER_LEGAL', 'Legal & Privacy');
+define('FOOTER_CONTACT', 'Contact');
+define('FOOTER_TOP', 'Top');
+
 // Profile Nav Link
 define('MAIN_PAGE_PROFILE_NAV_LINK', 'Profile');
 define('PROFILE_HEADER_SUFFIX', '\'s Profile');
