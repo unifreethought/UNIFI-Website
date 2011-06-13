@@ -108,6 +108,11 @@ if ($url['get'] == true) {
 				include 'templates/' . $config['template'] . '/html/main.html';
 			break;
 			
+			case 'legal':
+				include 'application/helpers/show_authors_and_labels.php';
+				include 'templates/' . $config['template'] . '/html/legal.html';
+			break;
+			
 			default:
 				include 'application/helpers/detect_page.php';
 				$url_stubs = get_possible_url_stubs();

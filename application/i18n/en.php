@@ -38,6 +38,9 @@ define('MAIN_PAGE_PROFILE_NAV_LINK', 'Profile');
 define('PROFILE_HEADER_SUFFIX', '\'s Profile');
 define('PROFILE_DOES_NOT_EXIST', 'We\'re sorry, but this profile doesn\'t seem to exist.');
 
+// Legal
+define('LEGAL_HEADER', 'UNIFI Website Usage and Privacy Policy');
+
 // Events Nav Link
 define('MAIN_PAGE_EVENTS_NAV_LINK', 'Events');
 define('EVENTS_HEADER', 'Your Upcoming Events');
