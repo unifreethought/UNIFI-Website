@@ -53,6 +53,9 @@ if ($url['post'] == true) {
 	exit();
 }
 
+// Include the sneaky HTTP headers
+include 'application/eggs/headers.php';
+
 include 'application/helpers/header.php';
 include 'templates/' . $config['template'] . '/html/header.html';
 
