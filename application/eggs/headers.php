@@ -16,4 +16,4 @@ $headers = array(
 	'There is no sharp line between humans and the rest of the animal kingdom -- it\'s a very wozzy line -- and it\'s getting wozzier all the time -- Jane Goodall',
 );
 
-header('Quote: ' . $headers[mt_rand(0, count($headers) - 1)]);
+header('X-Quote: ' . $headers[mt_rand(0, count($headers) - 1)]);
