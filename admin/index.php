@@ -198,8 +198,8 @@ if ($url['post']) {
 	// Clean the $user_id for each action. 
 	$user_id = MySQL::clean($user_id);
 	
-	// Do a general check on viewing the dashboard.
-	if (!Auth::view_dashboard()) {
+	// Do a general check on viewing the DASHBOARD.
+	if (!Auth::view_DASHBOARD()) {
 		exit(ADMIN_NOT_AUTHORIZED);
 	}
 	
@@ -396,7 +396,7 @@ if ($url['post']) {
 		
 		default:
 			
-			if (Auth::view_dashboard()) {
+			if (Auth::view_DASHBOARD()) {
 				include 'templates/' . $config['template'] . '/html/dashboard.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
