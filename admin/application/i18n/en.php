@@ -4,9 +4,12 @@
  * Adam Shannon
  * 2010-11-21
  */
-
+ 
 define('ADMIN_TITLE', 'UNIFI -- Admin');
 define('ADMIN_ACCESS_DISABLED', 'We\'re sorry, but admin access to the site is down.');
+define('ADMIN_HEADER', 'UNIFI - ADMIN');
+define('MAIN_PAGE_ADMIN_TO_REGULAR_HOME', 'Back to home');
+define('ADMIN_DASHBOARD_TITLE', 'Dashboard');
 
 define('ADMIN_DASHBOARD_LIST_NAME', 'Items');
 
