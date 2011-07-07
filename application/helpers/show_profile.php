@@ -16,7 +16,7 @@ User_Parse::set($database);
 // But, for now show all of the data!!
 $id = MySQL::clean($_GET['profile']);
 
-$generic_data = MySQL::single("SELECT `first_name`,`last_name` FROM `{$database}`.`users` WHERE `id` = '{$id}' LIMIT 1");
+$generic_data = MySQL::single("SELECT `first_name`,`last_name`,`facebook` FROM `{$database}`.`users` WHERE `id` = '{$id}' LIMIT 1");
 //print_r($generic_data);
 
 // Check to see if the user actually exists
