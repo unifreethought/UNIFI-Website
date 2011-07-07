@@ -1,0 +1,71 @@
+
+	<div id="wrapper">
+		
+		<h3><?php echo ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS; ?></h3>
+		
+		<p>
+			<?php echo ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_GET_USER_DESC . ' <em>' . $data['first_name'] . ' ' . $data['last_name']; ?></em>
+		</p>
+		
+		<form action="index.php" method="POST">
+			<input type="hidden" name="form_edit_user_permissions" value="yes" />
+			<input type="hidden" name="user_id" value="<?php echo $user; ?>" />
+			
+			<label>
+				<input type="checkbox" name="post_to_blog" value="yes" <?php show_checked($permissions['post_to_blog']); ?> />
+				<?php echo ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_POST_TO_BLOG; ?>
+			</label><br />
+			
+			<label>
+				<input type="checkbox" name="access_admin_DASHBOARD" value="yes" <?php show_checked($permissions['access_admin_DASHBOARD']); ?> />
+				<?php echo ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_ACCESS_ADMIN_DASHBOARD; ?>
+			</label><br />
+			
+			<label>
+				<input type="checkbox" name="view_members" value="yes" <?php show_checked($permissions['view_members']); ?> />
+				<?php echo ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_VIEW_MEMBERS; ?>
+			</label><br />
+			
+			<label>
+				<input type="checkbox" name="edit_members" value="yes" <?php show_checked($permissions['edit_members']); ?> />
+				<?php echo ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_EDIT_MEMBERS; ?>
+			</label><br />
+			
+			<label>
+				<input type="checkbox" name="add_events" value="yes" <?php show_checked($permissions['add_events']); ?> />
+				<?php echo ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_ADD_EVENTS; ?>
+			</label><br />
+			
+			<label>
+				<input type="checkbox" name="list_events" value="yes" <?php show_checked($permissions['list_events']); ?> />
+				<?php echo ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_LIST_EVENTS; ?>
+			</label><br />
+			
+			<label>
+				<input type="checkbox" name="edit_events" value="yes" <?php show_checked($permissions['edit_events']); ?> />
+				<?php echo ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_EDIT_EVENTS; ?>
+			</label><br />
+			
+			<label>
+				<input type="checkbox" name="edit_event_attendance" value="yes" <?php show_checked($permissions['edit_event_attendance']); ?> />
+				<?php echo ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_EDIT_EVENT_ATTENDANCE; ?>
+			</label><br />
+			
+			<label>
+				<input type="checkbox" name="edit_custom_pages" value="yes" <?php show_checked($permissions['edit_custom_pages']); ?> />
+				<?php echo ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_EDIT_CUSTOM_PAGES; ?>
+			</label><br />
+			
+			<label>
+				<input type="checkbox" name="view_log" value="yes" <?php show_checked($permissions['view_log']); ?> />
+				<?php echo ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_VIEW_LOG; ?>
+			</label>
+			
+			<br /><br />
+			
+			<input type="submit" value="<?php echo ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_GET_USER_SUBMIT; ?>" />
+			
+		</form>
+		
+	</div>
+	
