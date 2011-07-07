@@ -4,10 +4,11 @@
  * Adam Shannon
  * 2010-11-21
  */
- 
+
 define('ADMIN_TITLE', 'UNIFI -- Admin');
 define('ADMIN_ACCESS_DISABLED', 'We\'re sorry, but admin access to the site is down.');
 
+/*
 define('ADMIN_DASHBOARD_LIST_NAME', 'Items');
 
 define('ADMIN_DASHBOARD_POST_BLOG', 'Post a Blog Post');
@@ -89,3 +90,4 @@ define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_GET_USER_DESC', 'Editing permissio
 	define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_EDIT_EVENT_ATTENDANCE', 'Edit Event Attendance');
 	define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_EDIT_CUSTOM_PAGES', 'Edit Custom Pages');
 	define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_VIEW_LOG', 'View Log');
+*/
