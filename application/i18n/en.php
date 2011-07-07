@@ -9,7 +9,7 @@ define('LANGUAGE_ID', 'English');
 define('BASE_URL', 'http://unifreethought.com');
 define('SITE_TITLE', 'UNI Freethinkers and Inquirers');
 define('ADMIN_TITLE', 'UNIFI -- Admin');
-define('MAIN_PAGE_ADMIN_NAV_LINK', 'Admin DASHBOARD');
+define('MAIN_PAGE_ADMIN_NAV_LINK', 'Admin Dashboard');
 define('MAIN_PAGE_ADMIN_TO_REGULAR_HOME', 'Back to Site');
 
 define('ADMIN_ACCESS_DISABLED', 'We\'re sorry, but admin access to the site is down.');
@@ -18,8 +18,8 @@ define('WEB_ACCESS_DISABLED', 'We\'re sorry, but this website is down.');
 // Admin Auth Errors
 define('ADMIN_NOT_AUTHORIZED', 'Sorry, but you\'re not authorized to view this page.');
 define('ADMIN_SIDEBAR_HEADER', 'Admin');
-define('ADMIN_SIDEBAR_LINK', 'DASHBOARD');
-define('ADMIN_HEADER', 'UNIFI Admin DASHBOARD');
+define('ADMIN_SIDEBAR_LINK', 'Dashboard');
+define('ADMIN_HEADER', 'UNIFI Admin Dashboard');
 
 // Common Errors
 define('NO_USER_ID', 'Whoops, you need to specify a user.');
@@ -145,7 +145,7 @@ define('PAGE_LIST_BLOG_POSTS', 'Our Blog Posts');
 define('PAGE_EDIT_EVENT_HEADER', 'Edit an Event');
 
 // DASHBOARD Titles
-define('ADMIN_DASHBOARD_TITLE', 'Admin DASHBOARD');
+define('ADMIN_DASHBOARD_TITLE', 'Admin Dashboard');
 define('ADMIN_DASHBOARD_LIST_NAME', 'Items');
 
 define('ADMIN_DASHBOARD_POST_BLOG', 'Post a Blog Post');
@@ -218,7 +218,7 @@ define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_GET_USER_DESC', 'Editing permissio
 	define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_GET_USER_FORM', 'User: ');
 	define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_GET_USER_SUBMIT', 'Edit User');
 	define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_POST_TO_BLOG', 'Post to blog');
-	define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_ACCESS_ADMIN_DASHBOARD', 'Access Admin DASHBOARD');
+	define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_ACCESS_ADMIN_DASHBOARD', 'Access Admin Dashboard');
 	define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_VIEW_MEMBERS', 'View Members');
 	define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_EDIT_MEMBERS', 'Edit Members');
 	define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_ADD_EVENTS', 'Add Events');
