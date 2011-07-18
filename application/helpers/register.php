@@ -4,7 +4,8 @@
  * Adam Shannon
  * 2010-11-21
  */
- 
+
+include 'show_authors_and_labels.php';
 require 'admin/system/libs/user_encode.php';
 User_Encode::set($database);
 

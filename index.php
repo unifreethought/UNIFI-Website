@@ -63,12 +63,8 @@ include 'templates/' . $config['template'] . '/html/header.html';
 if ($url['get'] == true) {
 
 	// Special conditional catches
-	if ($show_register_form == true) {
-		require 'application/helpers/register.php';
-		require 'templates/' . $config['template'] . '/html/register.html';
-		$jump_to_footer = true;
-	} else {
-		$jump_to_footer = false;
+	if ($show_register_form == true && $url['page'] == 'main') {
+		$url['page'] = 'register';
 	}
 	
 	if (empty($_GET['page'])) {
@@ -76,65 +72,72 @@ if ($url['get'] == true) {
 	}
 	
 	if ($_GET['page'] == 'attend_event') {
-		require 'application/helpers/attend_event.php';
-		require 'templates/' . $config['template'] . '/html/attend_event.html';
-		$jump_to_footer = true;
-	} else {
-		$jump_to_footer = false;
+		$url['page'] = 'attend_event';
 	}
 	
-	// Load specific pages.
-	if (!$jump_to_footer) {
-		if (empty($url['page'])) {
-			$url['page'] = 'main';
-		}
 	
-		switch ($url['page']) {
+	// Load specific pages.
+	if (empty($url['page'])) {
+		$url['page'] = 'main';
+	}
+
+	switch ($url['page']) {
+		
+		case 'view_events':
+			include 'application/helpers/show_events.php';
+			include 'templates/' . $config['template'] . '/html/show_events.html';
+		break;
+		
+		case 'profile':
+			include 'application/helpers/show_profile.php';
+			include 'templates/' . $config['template'] . '/html/show_profile.html';
+		break;
+		
+		case 'post':
+			include 'application/helpers/show_post.php';
+			include 'templates/' . $config['template'] . '/html/show_post.html';
+		break;
+		
+		case 'label':
+			include 'application/helpers/show_label.php';
+			include 'templates/' . $config['template'] . '/html/main.html';
+		break;
+		
+		case 'legal':
+			include 'application/helpers/show_authors_and_labels.php';
+			include 'templates/' . $config['template'] . '/html/legal.html';
+		break;
+		
+		case 'search':
+			include 'application/helpers/search.php';
+			include 'templates/' . $config['template'] . '/html/search.html';
+		break;
+		
+		case 'attend_event':
+			require 'application/helpers/attend_event.php';
+			require 'templates/' . $config['template'] . '/html/attend_event.html';
+		break;
+		
+		case 'register':
+			require 'application/helpers/register.php';
+			require 'templates/' . $config['template'] . '/html/register.html';
+		break;
+		
+		default:
+			include 'application/helpers/detect_page.php';
+			$url_stubs = get_possible_url_stubs();
 			
-			case 'view_events':
-				include 'application/helpers/show_events.php';
-				include 'templates/' . $config['template'] . '/html/show_events.html';
-			break;
-			
-			case 'profile':
-				include 'application/helpers/show_profile.php';
-				include 'templates/' . $config['template'] . '/html/show_profile.html';
-			break;
-			
-			case 'post':
-				include 'application/helpers/show_post.php';
-				include 'templates/' . $config['template'] . '/html/show_post.html';
-			break;
-			
-			case 'label':
-				include 'application/helpers/show_label.php';
-				include 'templates/' . $config['template'] . '/html/main.html';
-			break;
-			
-			case 'legal':
-				include 'application/helpers/show_authors_and_labels.php';
-				include 'templates/' . $config['template'] . '/html/legal.html';
-			break;
-			
-			case 'search':
-				include 'application/helpers/search.php';
-				include 'templates/' . $config['template'] . '/html/search.html';
-			break;
-			
-			default:
-				include 'application/helpers/detect_page.php';
-				$url_stubs = get_possible_url_stubs();
-				
-				if (in_array($url['page'], $url_stubs)) {
-					// Load that specifc page from the db and display it.
-					include 'application/helpers/load_db_page.php';
-					include 'templates/' . $config['template'] . '/html/load_db_page.html';
-				} else {
+			if (in_array($url['page'], $url_stubs)) {
+				// Load that specifc page from the db and display it.
+				include 'application/helpers/load_db_page.php';
+				include 'templates/' . $config['template'] . '/html/load_db_page.html';
+			} else {
+				if ($url['page'] != 'register') {
 					include 'application/helpers/main.php';
 					include 'templates/' . $config['template'] . '/html/main.html';
 				}
-			break;
-		}	
+			}
+		break;
 	}
 	
 }
