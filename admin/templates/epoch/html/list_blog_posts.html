@@ -18,7 +18,7 @@
 			<?php
 				foreach ($posts as $post) {
 					$tmp = "window.location=\"index.php?page=edit_blog_post&blog_post=" . $post['id'] . '";';
-					echo "<tr onclick='{$tmp}'>";
+					echo "<tr style='cursor:pointer;' onclick='{$tmp}'>";
 						echo "<td>{$post['id']}</td>";
 						echo "<td>{$authors[$post['author']]}</td>";
 						echo '<td>' . Date::parse($post['timestamp']) . '</td>';
