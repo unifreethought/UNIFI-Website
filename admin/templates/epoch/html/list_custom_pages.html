@@ -15,7 +15,7 @@
 			
 			<?php
 				foreach ($pages as $page) {
-					echo '<tr onclick="window.location=\'index.php?page=edit_custom_page&url_stub=' . $page['url_stub'] . '\';">';
+					echo '<tr style="cursor:pointer;" onclick="window.location=\'index.php?page=edit_custom_page&url_stub=' . $page['url_stub'] . '\';">';
 						echo '<td>' . $page['id'] . '</td>';
 						echo '<td>' . $page['url_stub'] . '</td>';
 						echo '<td>' . $page['page_title'] . '</td>';
