@@ -13,6 +13,11 @@ header {
 		font-size: 2em;
 	}
 	
+	header a {
+		color: #000000;
+		text-decoration: none;
+	}
+	
 section#container {
 	margin-left: 5%;
 	width: 80%;
