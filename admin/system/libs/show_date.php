@@ -97,6 +97,11 @@ class Show_Date {
 		return mktime($hour, $minute, 00, $month, $day, $year);
 	}
 	
+	// Parse a timestamp into H:i Y-m-d
+	static function human($timestamp) {
+		return @date('H:i Y-m-d', $timestamp);
+	}
+	
 	// Parse a timestamp into: hour, minute, day, month, and year.
 	static function parse($timestamp) {
 		$tmp = explode(',', @date('H,m,d,m,Y', $timestamp));

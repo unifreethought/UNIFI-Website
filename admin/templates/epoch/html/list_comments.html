@@ -1,0 +1,14 @@
+
+	<div id="wrapper">
+		<?php echo PAGE_LIST_COMMENTS; ?>
+		
+		<br /><br />
+		
+		<section>
+			<?php
+				foreach ($comments as $comment) {
+					echo "By {$authors[$comment['author']]} on <a href='../index.php?page=post&id={$comment['blog_post']}'>{$post_titles[$comment['blog_post']]}</a> on " . Show_Date::human($comment['timestamp']) . "<br />";
+					echo "<p>{$comment['content']}</p><hr />";
+				}
+			?>
+		</section>

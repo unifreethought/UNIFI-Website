@@ -370,6 +370,14 @@ if ($url['post']) {
 			
 		break;
 		
+		case 'list_comments':
+			
+			// No need to auth this, if they can see the dashboard then they're fine for viewing comments.
+			include 'application/helpers/list_comments.php';
+			include 'templates/' . $config['template'] . '/html/list_comments.html';
+			
+		break;
+		
 		case 'view_log':
 		
 			if (Auth::view_log()) {
