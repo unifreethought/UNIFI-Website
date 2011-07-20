@@ -269,6 +269,15 @@ header {
 				aside section div#labels-and-authors ul li {
 					margin-bottom: 2px;
 				}
+				
+		aside section div#guest-submissions {
+			/* */
+		}
+		
+			aside section div#guest-submissions a {
+				color: #000000;
+				font-size: 0.85em;
+			}
 
 article {
 	margin-left: 2%;
