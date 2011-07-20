@@ -217,3 +217,4 @@ define('PAGE_LIST_EVENTS_TITLE', 'List Events');
 define('PAGE_LIST_BLOG_POSTS', 'Our Blog Posts');
 define('PAGE_EDIT_EVENT_HEADER', 'Edit an Event');
 define('PAGE_LIST_COMMENTS', 'View All Comments');
+define('PAGE_LIST_GUEST_SUBMISSIONS', 'View Guest Submissions');

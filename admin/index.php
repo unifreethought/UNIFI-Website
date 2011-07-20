@@ -378,6 +378,11 @@ if ($url['post']) {
 			
 		break;
 		
+		case 'list_guest_submissions':
+			include 'application/helpers/list_guest_submissions.php';
+			include 'templates/' . $config['template'] . '/html/list_guest_submissions.html';
+		break;
+		
 		case 'view_log':
 		
 			if (Auth::view_log()) {
