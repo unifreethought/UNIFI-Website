@@ -1,0 +1,47 @@
+	
+<div id="wrapper">	
+	<!-- 
+		Create the header secion, this will be the main image, navigation elements,
+		rotating quote, and search button.
+	-->
+	<header>
+		<?php include 'templates/epoch/html/show_nav.html'; ?>
+	</header>
+	
+	<hr />
+	
+	<!--
+		The "right side" of the page which contains: "You" box, [Admin Dashboard], 
+		social media icons, labels/authors, and the blogroll.
+	-->
+	<aside>
+		<?php include 'templates/epoch/html/show_sidebar.html'; ?>
+	</aside>
+	
+	<!--
+		The main section of the page, which has the blog posts (for the home page),
+		and the main content for other pages.
+		
+		P.S. Where needed content should be separated by the <section> element.
+	-->
+	<article>
+		<p>
+		Are you interested in posting to the blog? If so, you can write a post here, submit it and it will be sent to the blog staff! 
+		(By submitting you agree to let the UNIFI blog staff edit your article and title for style and presentation.)
+		</p>
+		
+		<form action="index.php" method="post">
+			<input type="hidden" name="page" value="guest-submission" />
+			
+			<?php
+				if (!isset($fb_id)) {
+					echo "Your Name: <input type='text' name='author' value='' /><br />";
+				}
+			?>
+			
+			Title: <input type="text" name="title" size="75" /><br />
+			<textarea cols="70" rows="15" name="content" /></textarea><br />
+			<input type="submit" value="Submit" />
+		</form>
+	</article>
+		

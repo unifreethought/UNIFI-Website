@@ -49,6 +49,10 @@ if ($url['post'] == true) {
 	if ($_POST['page'] == 'comment-reply') {
 		require 'application/helpers/comment_reply.php';
 	}
+	
+	if ($_POST['page'] == 'guest-submission') {
+		require 'application/helpers/guest_submission.php';
+	}
 
 	exit();
 }
@@ -116,6 +120,11 @@ if ($url['get'] == true) {
 		case 'attend_event':
 			require 'application/helpers/attend_event.php';
 			require 'templates/' . $config['template'] . '/html/attend_event.html';
+		break;
+		
+		case 'guest_submission':
+			require 'application/helpers/show_authors_and_labels.php';
+			require 'templates/' . $config['template'] . '/html/guest_submission_form.html';
 		break;
 		
 		case 'register':
