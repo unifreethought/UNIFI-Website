@@ -1,0 +1,126 @@
+
+	<div id="wrapper">
+		<h3><?php echo PAGE_MEMBER_DATABASE; ?></h3>
+		
+		<!-- Create a new member -->
+		<div>
+			<fieldset>
+			New Member:<br /> 
+				<input type="text" class="member_field" id="first_name" placeholder="First Name" />
+				<input type="text" class="member_field" id="last_name" placeholder="Last Name" />	
+				
+				<!-- Year in School -->
+				<?php
+				echo "<select class='member_select' id='year'>";
+				foreach ($years as $year) {
+					echo "<option value='{$year['id']}' id='year{$year['id']}'>{$year['desc']}</option>";
+				}
+				echo "</select>";
+				?>
+				
+				<!-- Major -->
+				<?php
+				echo "<select class='member_select' id='major'>";
+				foreach ($majors as $major) {
+					echo "<option value='{$major['id']}' id='major{$major['id']}'>{$major['desc']}</option>";
+				}
+				echo "</select>";
+				?>
+				
+				<input type="text" class="member_field" id="hometown" placeholder="Hometown" />
+				
+				<br />
+				
+				<!-- Dorm -->
+				<?php
+				echo "<select class='member_select' id='dorm'>";
+				foreach ($dorms as $dorm) {
+					echo "<option value='{$dorm['id']}' id='dorm{$dorm['id']}'>{$dorm['desc']}</option>";
+				}
+				echo "</select>";
+				?>
+				
+				<!-- Recruit Place -->
+				<?php
+				echo "<select class='member_select' id='recruit_place'>";
+				foreach ($recruit_places as $recruit_place) {
+					echo "<option value='{$recruit_place['id']}' id='recruit_place{$recruit_place['id']}'>{$recruit_place['desc']}</option>";
+				}
+				echo "</select>";
+				?>
+				
+				<input type="text" class="member_field" id="phone" placeholder="Phone Number" />
+				
+				<!-- Texting Allowed -->
+				<select class='member_select' id="texting">
+					<option value="0" id='texting0'>No Texting</option>
+					<option value="1" id='texting1'>Yes, Texting</option>
+				</select>
+				
+				<!-- Positions -->
+				<br />[Positions]: 
+				<?php 
+					foreach ($positions as $position) {
+						echo "<label>" . $position['desc'] . " <input type='checkbox' name='positions[]' id='position{$position['id']}' value='{$position['id']}'";
+						echo "/> | </label>";
+					}
+				?>
+				
+				<!-- Tags -->
+				<br />[Tags]: 
+				<?php 
+					foreach ($tags as $tag) {
+						echo "<label>" . $tag['desc'] . " <input type='checkbox' name='tags[]' id='tag{$tag['id']}' value='{$tag['id']}'";
+						echo "/> | </label>";
+					}
+				?>
+				
+				<br />
+				<input type="button" onclick="addMember();" value="Add Member!" />
+			</fieldset>
+		</div>
+		
+		<!-- Show the members -->
+		<br />
+		<div>
+			<table>
+				<thead>
+					<tr>
+						<td>First</td>
+						<td>Last</td>
+						<td>Year</td>
+						<td>Major</td>
+						<td>Hometown</td>
+						<td>Dorm</td>
+						<td>Recruit Date</td>
+						<td>&lt;-- Place</td>
+						<td>Phone</td>
+						<td>Texting</td>
+						<td>Email</td>
+						<td>Positions</td>
+						<td>Tags</td>
+					</tr>
+				</thead>
+				
+				<?php
+					foreach ($members as $member) {
+						echo "<tr>";
+							echo "<td>" . $member['first_name'] . "</td>";
+							echo "<td>" . $member['last_name'] . "</td>";
+							echo "<td>" . User_Parse::parse_year($member['year']) . "</td>";
+							echo "<td>" . User_Parse::parse_major($member['major']) . "</td>";
+							echo "<td>" . $member['hometown'] . "</td>";
+							echo "<td>" . User_Parse::parse_dorm($member['dorm']) . "</td>";
+							echo "<td>" . @date('Y-m-d H:i:s', $member['recruit_date']) . "</td>";
+							echo "<td>" . User_Parse::parse_recruit_place($member['recruit_place']) . "</td>";
+							echo "<td>" . $member['phone'] . "</td>";
+							echo "<td>" . User_Parse::parse_texting($member['texting']) . "</td>";
+							echo "<td>" . $member['email'] . "</td>";
+							echo "<td>" . User_Parse::parse_positions($member['positions']) . "</td>";
+							echo "<td>" . User_Parse::parse_tags($member['tags']) . "</td>";
+						echo "</tr>";
+					}
+				?>
+			</table>
+		</div>
+	</div>

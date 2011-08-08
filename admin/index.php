@@ -383,6 +383,15 @@ if ($url['post']) {
 			include 'templates/' . $config['template'] . '/html/list_guest_submissions.html';
 		break;
 		
+		case 'member_database':
+			if (Auth::edit_users()) {
+				include 'application/helpers/member_database.php';
+				include 'templates/' . $config['template'] . '/html/member_database.html';
+			} else {
+				exit(ADMIN_NOT_AUTHORIZED);
+			}
+		break;
+		
 		case 'view_log':
 		
 			if (Auth::view_log()) {
