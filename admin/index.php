@@ -192,6 +192,11 @@ if ($url['post']) {
 		include 'application/helpers/create_blog_tag.php';
 		exit();
 	}
+	
+	if ($_GET['page'] == 'add_to_member_database') {
+		include 'application/helpers/add_to_member_database.php';
+		exit();
+	}
 
 	include 'templates/' . $config['template'] . '/html/header.html';
 	

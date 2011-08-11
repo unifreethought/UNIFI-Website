@@ -57,11 +57,14 @@
 					<option value="1" id='texting1'>Yes, Texting</option>
 				</select>
 				
+				<!-- Email -->
+				<input type="text" class="member_field" id="email" placeholder="Email" />
+				
 				<!-- Positions -->
 				<br />[Positions]: 
 				<?php 
 					foreach ($positions as $position) {
-						echo "<label>" . $position['desc'] . " <input type='checkbox' name='positions[]' id='position{$position['id']}' value='{$position['id']}'";
+						echo "<label>" . $position['desc'] . " <input type='checkbox' name='positions[]' class='positions' id='position{$position['id']}' value='{$position['id']}'";
 						echo "/> | </label>";
 					}
 				?>
@@ -70,7 +73,7 @@
 				<br />[Tags]: 
 				<?php 
 					foreach ($tags as $tag) {
-						echo "<label>" . $tag['desc'] . " <input type='checkbox' name='tags[]' id='tag{$tag['id']}' value='{$tag['id']}'";
+						echo "<label>" . $tag['desc'] . " <input type='checkbox' name='tags[]' class='tags' id='tag{$tag['id']}' value='{$tag['id']}'";
 						echo "/> | </label>";
 					}
 				?>
@@ -92,7 +95,7 @@
 						<td>Major</td>
 						<td>Hometown</td>
 						<td>Dorm</td>
-						<td>Recruit Date</td>
+						<!-- <td>Recruit Date</td> -->
 						<td>&lt;-- Place</td>
 						<td>Phone</td>
 						<td>Texting</td>
@@ -111,7 +114,7 @@
 							echo "<td>" . User_Parse::parse_major($member['major']) . "</td>";
 							echo "<td>" . $member['hometown'] . "</td>";
 							echo "<td>" . User_Parse::parse_dorm($member['dorm']) . "</td>";
-							echo "<td>" . @date('Y-m-d H:i:s', $member['recruit_date']) . "</td>";
+							//echo "<td>" . @date('Y-m-d H:i:s', $member['recruit_date']) . "</td>";
 							echo "<td>" . User_Parse::parse_recruit_place($member['recruit_place']) . "</td>";
 							echo "<td>" . $member['phone'] . "</td>";
 							echo "<td>" . User_Parse::parse_texting($member['texting']) . "</td>";
@@ -123,4 +126,50 @@
 				?>
 			</table>
 		</div>
+		
+		<script>
+		function addMember() {
+			var
+				first_name = encodeURIComponent(document.getElementById('first_name').value),
+				last_name = encodeURIComponent(document.getElementById('last_name').value),
+				year = encodeURIComponent(document.getElementById('year').value),
+				major = encodeURIComponent(document.getElementById('major').value),
+				dorm = encodeURIComponent(document.getElementById('dorm').value),
+				recruit_place = encodeURIComponent(document.getElementById('recruit_place').value),
+				phone = encodeURIComponent(document.getElementById('phone').value),
+				texting = encodeURIComponent(document.getElementById('texting').value),
+				hometown = encodeURIComponent(document.getElementById('hometown').value),
+				email = encodeURIComponent(document.getElementById('email').value),
+				
+				positions = document.getElementsByClassName('positions'),
+				tags = document.getElementsByClassName('tags');
+			
+			var append_positions = [];
+			var append_tags = [];
+				
+			for (var i = 0; i < positions.length; i++) {
+				if (positions[i].checked)
+					append_positions.push(positions[i].value);
+			}
+			
+			for (i = 0; i < tags.length; i++) {
+				if (tags[i].checked)
+					append_tags.push(tags[i].value);
+			}
+			
+			var href = "index.php?page=add_to_member_database";
+			var query_string = "&first_name=" + first_name + "&last_name=" + last_name + "&year=" + year + "&major=" + major;
+				query_string += "&dorm=" + dorm + "&recruit_place=" + recruit_place + "&phone=" + phone + "&texting=" + texting;
+				query_string += "&positions=" + append_positions.toString() + "&tags=" + append_tags.toString();
+				query_string += "&hometown=" + hometown + "&email=" + email;
+				
+			console.log(href + query_string);
+				
+			var xhr = new XMLHttpRequest();
+				xhr.open('GET', href + query_string, false);
+				xhr.send(null);
+				
+			location.reload();
+		}
+		</script>
 	</div>
