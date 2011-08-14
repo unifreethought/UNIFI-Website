@@ -95,6 +95,7 @@
 				<!-- Year in School -->
 				<?php
 				echo "<select class='member_select' id='search_year'>";
+					echo "<option value='' selected> -- </option>";
 				foreach ($years as $year) {
 					echo "<option value='{$year['id']}'>{$year['desc']}</option>";
 				}
@@ -104,6 +105,7 @@
 				<!-- Major -->
 				<?php
 				echo "<select class='member_select' id='search_major'>";
+					echo "<option value='' selected> -- </option>";
 				foreach ($majors as $major) {
 					echo "<option value='{$major['id']}'>{$major['desc']}</option>";
 				}
@@ -117,6 +119,7 @@
 				<!-- Dorm -->
 				<?php
 				echo "<select class='member_select' id='search_dorm'>";
+					echo "<option value='' selected> -- </option>";
 				foreach ($dorms as $dorm) {
 					echo "<option value='{$dorm['id']}'>{$dorm['desc']}</option>";
 				}
@@ -126,6 +129,7 @@
 				<!-- Recruit Place -->
 				<?php
 				echo "<select class='member_select' id='search_recruit_place'>";
+					echo "<option value='' selected> -- </option>";
 				foreach ($recruit_places as $recruit_place) {
 					echo "<option value='{$recruit_place['id']}' id='recruit_place{$recruit_place['id']}'>{$recruit_place['desc']}</option>";
 				}
@@ -136,6 +140,7 @@
 				
 				<!-- Texting Allowed -->
 				<select class='member_select' id="search_texting">
+					<option value='' selected> -- </option>
 					<option value="0" id='texting0'>No Texting</option>
 					<option value="1" id='texting1'>Yes, Texting</option>
 				</select>
