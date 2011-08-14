@@ -397,6 +397,15 @@ if ($url['post']) {
 			}
 		break;
 		
+		case 'search_member_database':
+			if (Auth::edit_users()) {
+				include 'application/helpers/search_member_database.php';
+				include 'templates/' . $config['template'] . '/html/search_member_database.html';
+			} else {
+				exit(ADMIN_NOT_AUTHORIZED);
+			}
+		break;
+		
 		case 'view_log':
 		
 			if (Auth::view_log()) {

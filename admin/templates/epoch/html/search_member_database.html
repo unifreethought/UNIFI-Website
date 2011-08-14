@@ -1,0 +1,48 @@
+
+	<div id="wrapper">
+		<?php print_r($_GET); ?>
+		
+		<!-- Show the results. -->
+		<div>
+			<table>
+				<thead>
+					<tr>
+						<td>First</td>
+						<td>Last</td>
+						<td>Year</td>
+						<td>Major</td>
+						<td>Hometown</td>
+						<td>Dorm</td>
+						<!-- <td>Recruit Date</td> -->
+						<td>Recruit Place</td>
+						<td>Phone</td>
+						<td>Texting</td>
+						<td>Email</td>
+						<td>Positions</td>
+						<td>Tags</td>
+					</tr>
+				</thead>
+				
+				<?php
+					foreach ($members as $member) {
+						echo "<tr>";
+							echo "<td>" . $member['first_name'] . "</td>";
+							echo "<td>" . $member['last_name'] . "</td>";
+							echo "<td>" . User_Parse::parse_year($member['year']) . "</td>";
+							echo "<td>" . User_Parse::parse_major($member['major']) . "</td>";
+							echo "<td>" . $member['hometown'] . "</td>";
+							echo "<td>" . User_Parse::parse_dorm($member['dorm']) . "</td>";
+							//echo "<td>" . @date('Y-m-d H:i:s', $member['recruit_date']) . "</td>";
+							echo "<td>" . User_Parse::parse_recruit_place($member['recruit_place']) . "</td>";
+							echo "<td>" . $member['phone'] . "</td>";
+							echo "<td>" . User_Parse::parse_texting($member['texting']) . "</td>";
+							echo "<td>" . $member['email'] . "</td>";
+							echo "<td>" . User_Parse::parse_positions($member['positions']) . "</td>";
+							echo "<td>" . User_Parse::parse_tags($member['tags']) . "</td>";
+						echo "</tr>";
+					}
+				?>
+			</table>
+		</div>
+	</div>
+
