@@ -112,6 +112,17 @@ if ($url['post']) {
 		
 	}
 	
+	if (!empty($_POST['create_volunteer_event']) && $_POST['create_volunteer_event'] == 'yes') {
+	
+		// Auth the user and check for the ability to post to the blog.
+		if (!Auth::edit_events()) {
+			exit(ADMIN_NOT_AUTHORIZED);
+		} else {
+			include 'application/helpers/form_create_volunteer_event.php';
+		}
+		
+	}
+	
 	if (!empty($_POST['edit_event']) && $_POST['edit_event'] == 'yes') {
 	
 		// Auth the user and check for the ability to post to the blog.
@@ -317,6 +328,17 @@ if ($url['post']) {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
 		
+		break;
+		
+		case 'create_volunteer_event':
+			
+			if (Auth::edit_events()) {
+				include 'application/helpers/create_volunteer_event.php';
+				include 'templates/' . $config['template'] . '/html/create_volunteer_event.html';
+			} else {
+				exit(ADMIN_NOT_AUTHORIZED);
+			}
+			
 		break;
 		
 		case 'list_events':
