@@ -78,6 +78,14 @@ define('ADMIN_DASHBOARD_VIEW_LOG_TITLE', 'View the central log');
 	define('ADMIN_DASHBOARD_VIEW_LOG_MESSAGE', 'Message');
 	define('ADMIN_DASHBOARD_VIEW_LOG_UNIQUE', 'Unique');
 	
+// Also covers volunteer events
+define('ADMIN_DASHBOARD_VIEW_EVENTS', 'View Events');
+	define('ADMIN_DASHBOARD_VIEW_EVENTS_TITLE', 'Title');
+	define('ADMIN_DASHBOARD_VIEW_EVENTS_START_TIME', 'Start Time');
+	define('ADMIN_DASHBOARD_VIEW_EVENTS_END_TIME', 'End Time');
+	define('ADMIN_DASHBOARD_VIEW_EVENTS_LOCATION', 'Location');
+	define('ADMIN_DASHBOARD_VIEW_EVENTS_DESCRIPTION', 'Description');
+	
 define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS', 'Edit Member Permissions');
 define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_GET_USER', 'Enter the user to edit.');
 define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_GET_USER_DESC', 'Editing permissions for: ');

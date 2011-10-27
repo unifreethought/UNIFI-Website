@@ -439,6 +439,28 @@ if ($url['post']) {
 			
 		break;
 		
+		case 'view_events':
+		
+			if (Auth::edit_events()) {
+				include 'application/helpers/view_events.php';
+				include 'templates/' . $config['template'] . '/html/view_events.html';
+			} else {
+				exit(ADMIN_NOT_AUTHORIZED);
+			}
+			
+		break;
+		
+		case 'view_volunteer_events':
+		
+			if (Auth::edit_events()) {
+				include 'application/helpers/view_volunteer_events.php';
+				include 'templates/' . $config['template'] . '/html/view_volunteer_events.html';
+			} else {
+				exit(ADMIN_NOT_AUTHORIZED);
+			}
+			
+		break;
+		
 		case 'edit_member_rights':
 			
 			if (Auth::edit_user_permissions()) {
