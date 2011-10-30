@@ -208,6 +208,20 @@ if ($url['post']) {
 		include 'application/helpers/add_to_member_database.php';
 		exit();
 	}
+	
+	if ($_GET['page'] == 'get_matching_members') {
+			if (Auth::edit_users()) {
+				include 'application/helpers/get_matching_members.php';
+			}
+		exit();
+ 	}
+ 	
+	if ($_GET['page'] == 'add_member_to_event') {
+		if (Auth::edit_users()) {
+			include 'application/helpers/add_member_to_event.php';
+		}
+		exit();
+	}
 
 	include 'templates/' . $config['template'] . '/html/header.html';
 	

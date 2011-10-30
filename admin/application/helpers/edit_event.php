@@ -14,3 +14,6 @@ $event = MySQL::single("SELECT * FROM `{$database}`.`events` WHERE `id` = '{$eve
 // Load them into vars
 $event['start'] = Show_Date::parse($event['start_time']);
 $event['end'] = Show_Date::parse($event['end_time']);
+
+// Pull what members are attending
+$membersAttending = MySQL::search("SELECT `member_id` FROM `{$database}`.`event_attendance` WHERE `event_id` = '{$event_id}';");
