@@ -14,7 +14,7 @@
 		
 		<?php
 			foreach ($events as $event) {
-				echo '<tr>';
+				echo '<tr style="cursor:pointer;" onclick="javascript:(function(){window.location=\'index.php?page=edit_volunteer_event&event=' . $event['id'] . '\';})();">';
 					echo '<td>' . $event['title'] . '</td>';
 					echo '<td>' . Date::parse($event['start_time']) . '</td>';
 					echo '<td>' . Date::parse($event['end_time']) . '</td>';

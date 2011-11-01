@@ -222,6 +222,13 @@ if ($url['post']) {
 		}
 		exit();
 	}
+	
+	if ($_GET['page'] == 'add_member_to_volunteer_event') {
+		if (Auth::edit_users()) {
+			include 'application/helpers/add_member_to_volunteer_event.php';
+		}
+		exit();
+	}
 
 	include 'templates/' . $config['template'] . '/html/header.html';
 	
@@ -371,6 +378,17 @@ if ($url['post']) {
 			if (Auth::edit_events()) {
 				include 'application/helpers/edit_event.php';
 				include 'templates/' . $config['template'] . '/html/edit_event.html';
+			} else {
+				exit(ADMIN_NOT_AUTHORIZED);
+			}
+			
+		break;
+		
+		case 'edit_volunteer_event':
+		
+			if (Auth::edit_events()) {
+				include 'application/helpers/edit_volunteer_event.php';
+				include 'templates/' . $config['template'] . '/html/edit_volunteer_event.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}

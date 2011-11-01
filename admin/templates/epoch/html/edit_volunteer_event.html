@@ -1,0 +1,114 @@
+<div id="wrapper">
+	
+	<?php echo PAGE_CREATE_EVENT_HEADER; ?>
+		
+		<form action="index.php" method="POST">
+			<input type="hidden" name="create_volunteer_event" value="yes" />
+			<input type="hidden" name="event_id" value="<?php echo htmlentities($event['id']); ?>" />
+			
+			<label>
+				<?php echo PAGE_CREATE_EVENT_TITLE; ?>
+				<input type="text" name="title" value="<?php echo htmlentities($event['title']); ?>" /><br />
+			</label>
+			
+			<label>
+				<?php echo PAGE_CREATE_EVENT_START_TIME; ?>
+				<!-- <input type="text" name="start_time" /><br /> -->
+				<?php
+					echo Show_Date::hour_minute('start_hour', $event['start']['hour'], $event['start']['minute']) . ' -- ';
+					echo Show_Date::month('start_month', $event['start']['month']) . '/'; 
+					echo Show_Date::day('start_day', $event['start']['day']) . '/';
+					echo Show_Date::year('start_year');
+				?>
+				<br />
+			</label>
+			
+			<label>
+				<?php echo PAGE_CREATE_EVENT_END_TIME; ?>
+				<!-- <input type="text" name="end_time" /><br /> -->
+				<?php
+					echo Show_Date::hour_minute('end_hour', $event['end']['hour'], $event['end']['minute']) . ' -- ';
+					echo Show_Date::month('end_month', $event['end']['day']) . '/'; 
+					echo Show_Date::day('end_day', $event['end']['day']) . '/';
+					echo Show_Date::year('end_year');
+				?>
+				<br />
+			</label>
+			
+			<label>
+				<?php echo PAGE_CREATE_EVENT_LOCATION; ?>
+				<input type="text" name="location" value="<?php echo htmlentities($event['location']); ?>" /><br />
+			</label>
+			
+			<label>
+				<?php echo PAGE_CREATE_EVENT_DESCRIPTION; ?>
+				<input type="text" name="description" value="<?php echo htmlentities($event['description']); ?>" /><br />
+			</label>
+			
+			<input type="submit" value="<?php echo PAGE_CREATE_EVENT_SUBMIT; ?>" />
+		</form>
+	
+		<hr />
+		<!-- We need to now create a form to account for people being at an event. -->
+		<div>
+			<p>What people are here?</p>
+			
+			<div>
+				<input type="text" id="memberSearch" placeholder="Search for members." onkeyup="searchMembers(this.value);" />	
+			</div>
+			
+			<script>
+			var timeout;
+			function searchMembers(value) {
+				// This is broken code that only works on two word names.
+				var parsedValue = value.split(' ');
+				var first = encodeURIComponent(parsedValue[0]);
+				var last = encodeURIComponent(parsedValue[1]);
+				
+				// Search the db for members matching this.
+				var url = "index.php?page=get_matching_members&first=" + first + "&last=" + last;
+				var xhr = new XMLHttpRequest();
+					xhr.open('GET', url, false);
+					xhr.send(null);
+				var response = JSON.parse(xhr.responseText);
+				
+				// Take each and add to the HTML, the easy way.
+				memberSearchResults.innerHTML = "";
+				for (var i = 0; i < response.length; i++) {
+					memberSearchResults.innerHTML += "<li><a href='#' onclick='add(this.innerHTML);'>" + response[i].first_name + ' ' + response[i].last_name + " (" + response[i].id + ")" + "</a></li>";
+				}
+			}
+			
+			function add(value) {
+				var event_id = <?php echo htmlentities($event['id']); ?>;
+				var toParse = value.split(' ');
+				var member_id = toParse[toParse.length-1].substr(1, toParse[toParse.length-1].length - 2);
+				var xhr = new XMLHttpRequest();
+					xhr.open('GET', 'index.php?page=add_member_to_volunteer_event&event=' + event_id + '&member=' + member_id, false);
+					xhr.send(null);
+					
+				// Add member to the lower set of li elms
+				membersAttendingList.innerHTML += "<li>" + xhr.responseText + "</li>";
+			}
+			</script>
+			
+			<div id="memberSearchOutput">
+				Search Results:
+				<ul id="memberSearchResults">
+					<!-- Let the JS fill this in -->
+				</ul>
+			</div>
+			
+			<div id="membersAttending">
+				Members Attending:<br />
+				<ul id="membersAttendingList">
+					<?php
+						foreach ($membersAttending as $member) {
+							$name = MySQL::single("SELECT `first_name`,`last_name` FROM `{$database}`.`member_database` WHERE `id` = '{$member['member_id']}';");
+							echo '<li>' . $name['first_name'] . ' ' . $name['last_name'] . '</li>';
+						}
+					?>
+				</ul>
+			</div>
+		</div>
+</div>
