@@ -52,6 +52,12 @@ $sql .= "'{$phone}', '{$email}', '{$texting}', '{$positions}', '{$tags}', '{$not
 //echo $sql . '<br /><br />';
 MySQL::query($sql);
 
+// Add the user to the member_database table.
+// id, first_name, last_name, year, major, hometown, dorm, recruit_date, recruit_place, phone, email, texting, positions, tags, notes
+$sql = "INSERT INTO `{$database}`.`member_database` (`id`, `first_name`, `last_name`, `year`, `major`, `hometown`, `dorm`, `recruit_date`, `recruit_place`, `phone`, `email`, `texting`, `positions`, `tags`, `notes`)";
+$sql .= " VALUES ('0', '{$first_name}', '{$last_name}', '{$year}', '{$major}', '{$hometown}', '{$dorm}', '{$recruit_date}', '{$recruit_place}', '{$phone}', '{$email}', '{$texting}', '{$positions}', '{$tags}', '');";
+MySQL::query($sql);
+
 // `user-permissions`
 // $user_id
 $post_to_blog = '0';
