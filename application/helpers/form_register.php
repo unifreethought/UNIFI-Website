@@ -53,10 +53,15 @@ $sql .= "'{$phone}', '{$email}', '{$texting}', '{$positions}', '{$tags}', '{$not
 MySQL::query($sql);
 
 // Add the user to the member_database table.
-// id, first_name, last_name, year, major, hometown, dorm, recruit_date, recruit_place, phone, email, texting, positions, tags, notes
-$sql = "INSERT INTO `{$database}`.`member_database` (`id`, `first_name`, `last_name`, `year`, `major`, `hometown`, `dorm`, `recruit_date`, `recruit_place`, `phone`, `email`, `texting`, `positions`, `tags`, `notes`)";
-$sql .= " VALUES ('0', '{$first_name}', '{$last_name}', '{$year}', '{$major}', '{$hometown}', '{$dorm}', '{$recruit_date}', '{$recruit_place}', '{$phone}', '{$email}', '{$texting}', '{$positions}', '{$tags}', '');";
-MySQL::query($sql);
+// We should first make sure they don't exist already.
+$sql = "SELECT `id` FROM `{$database}`.`member_database` WHERE `first_name` = '{$first_name}' AND `last_name` = '{$last_name}';";
+$result = MySQL::single($sql);
+if (empty($result['id'])) {
+	// id, first_name, last_name, year, major, hometown, dorm, recruit_date, recruit_place, phone, email, texting, positions, tags, notes
+	$sql = "INSERT INTO `{$database}`.`member_database` (`id`, `first_name`, `last_name`, `year`, `major`, `hometown`, `dorm`, `recruit_date`, `recruit_place`, `phone`, `email`, `texting`, `positions`, `tags`, `notes`)";
+	$sql .= " VALUES ('0', '{$first_name}', '{$last_name}', '{$year}', '{$major}', '{$hometown}', '{$dorm}', '{$recruit_date}', '{$recruit_place}', '{$phone}', '{$email}', '{$texting}', '{$positions}', '{$tags}', '');";
+	MySQL::query($sql);
+}
 
 // `user-permissions`
 // $user_id
