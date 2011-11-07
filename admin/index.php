@@ -460,6 +460,24 @@ if ($url['post']) {
 			}
 		break;
 		
+		case 'create_report':
+			if (Auth::edit_users()) {
+				include 'application/helpers/create_report.php';
+				include 'templates/' . $config['template'] . '/html/create_report.html';
+			} else {
+				exit(ADMIN_NOT_AUTHORIZED);
+			}
+		break;
+		
+		case 'report_response':
+			if (Auth::edit_users()) {
+				include 'application/helpers/report_response.php';
+				include 'templates/' . $config['template'] . '/html/report_response.html';
+			} else {
+				exit(ADMIN_NOT_AUTHORIZED);
+			}
+		break;
+		
 		case 'view_log':
 		
 			if (Auth::view_log()) {

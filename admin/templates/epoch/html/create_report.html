@@ -1,0 +1,48 @@
+
+	<div id="wrapper">
+		<span>Create a report of members</span>
+		<form action="index.php" method="GET">
+			<input type="hidden" name="page" value="report_response" />
+			
+			<br />
+			
+			<fieldset>
+				<label>Select Grade(s):</label><br />
+				<?php print_options($years, 'year'); ?>
+			</fieldset>
+
+			<br />
+			
+			<fieldset>
+				<label>Dorm(s):</label><br />
+				<?php print_options($dorms, 'dorm'); ?>
+			</fieldset>
+			
+			<br />
+			
+			<fieldset>
+				<label>Position(s):</label><br />
+				<?php print_options($positions, 'position'); ?>
+			</fieldset>
+			
+			<br />
+			
+			<fieldset>
+				<label>Tags(s):</label><br />
+				<?php print_options($tags, 'tag'); ?>
+			</fieldset>
+			
+			<br />
+			
+			<fieldset>
+				<label>Attended Events</label><br />
+				<?php print_options($events, 'event'); ?>
+			</fieldset>
+			
+			<br />
+			
+			<input type="submit" value="Submit" />
+		</form>
+	
+	</div>
+	
