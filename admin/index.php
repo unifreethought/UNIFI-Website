@@ -235,6 +235,12 @@ if ($url['post']) {
 			include 'application/helpers/edit_member_in_database.php';
 		exit();
 	}
+	
+	if ($_GET['page'] == 'add_recruit_place') {
+		if (Auth::edit_users())
+			include 'application/helpers/add_recruit_place.php';
+		exit();
+	}
 
 	include 'templates/' . $config['template'] . '/html/header.html';
 	
@@ -344,6 +350,15 @@ if ($url['post']) {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
 			
+		break;
+		
+		case 'new_recruit_place':
+			if (Auth::edit_users()) {
+				include 'application/helpers/new_recruit_place.php';
+				include 'templates/' . $config['template'] . '/html/new_recruit_place.html';
+			} else {
+				exit(ADMIN_NOT_AUTHORIZED);
+			}
 		break;
 		
 		case 'create_event':
