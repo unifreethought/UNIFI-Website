@@ -229,6 +229,12 @@ if ($url['post']) {
 		}
 		exit();
 	}
+	
+	if ($_GET['page'] == 'edit_member_in_database') {
+		if (Auth::edit_users())
+			include 'application/helpers/edit_member_in_database.php';
+		exit();
+	}
 
 	include 'templates/' . $config['template'] . '/html/header.html';
 	
