@@ -241,6 +241,12 @@ if ($url['post']) {
 			include 'application/helpers/add_recruit_place.php';
 		exit();
 	}
+	
+	if ($_GET['page'] == 'perform_copy_user_to_member_db') {
+		if (Auth::edit_users())
+			include 'application/helpers/perform_copy_user_to_member_db.php';
+		exit();
+	}
 
 	include 'templates/' . $config['template'] . '/html/header.html';
 	
@@ -494,6 +500,15 @@ if ($url['post']) {
 			if (Auth::edit_users()) {
 				include 'application/helpers/report_response.php';
 				include 'templates/' . $config['template'] . '/html/report_response.html';
+			} else {
+				exit(ADMIN_NOT_AUTHORIZED);
+			}
+		break;
+		
+		case 'copy_user_to_member_db':
+			if (Auth::edit_users()) {
+				include 'application/helpers/copy_user_to_member_db.php';
+				include 'templates/' . $config['template'] . '/html/copy_user_to_member_db.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
