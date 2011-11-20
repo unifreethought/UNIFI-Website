@@ -478,6 +478,17 @@ if ($url['post']) {
 			}
 		break;
 		
+		case 'view_member':
+			
+			if (Auth::edit_users()) {
+				include 'application/helpers/view_member.php';
+				include 'templates/' . $config['template'] . '/html/view_member.html';
+			} else {
+				exit(ADMIN_NOT_AUTHORIZED);
+			}
+			
+		break;
+		
 		case 'view_log':
 		
 			if (Auth::view_log()) {
