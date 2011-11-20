@@ -85,7 +85,7 @@ class User_Parse {
 	
 	// Parse the texting from the cache and db
 	static function parse_texting($texting) {
-		return (self::$texting[$texting] == '0') ? 'No' : 'Yes';
+		return ($texting == '1') ? 'Yes' : 'No';
 	}
 	
 	// Parse the [member] position(s) from the cache and db
