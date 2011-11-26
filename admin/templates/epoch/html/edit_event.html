@@ -100,7 +100,9 @@
 			</div>
 			
 			<div id="membersAttending">
-				Members Attending:<br />
+				Members Attending: 
+				<?php echo count($membersAttending); ?>
+				<br />
 				<ul id="membersAttendingList">
 					<?php
 						foreach ($membersAttending as $member) {
