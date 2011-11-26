@@ -15,6 +15,7 @@ $recruit_place = MySQL::clean($_GET['recruit_place']);
 $phone = MySQL::clean($_GET['phone']);
 $email = MySQL::clean($_GET['email']);
 $texting = MySQL::clean($_GET['texting']);
+$notes = MySQL::clean($_GET['notes']);
 
 $sql = "UPDATE  `{$database}`.`member_database`";
 	$sql .= " SET  `first_name` =  '{$first_name}'";
@@ -28,6 +29,7 @@ $sql = "UPDATE  `{$database}`.`member_database`";
 	$sql .= ", `phone` =  '{$phone}'";
 	$sql .= ", `email` =  '{$email}'";
 	$sql .= ", `texting` =  '{$texting}'";
+	$sql .= ", `notes` = '{$notes}'";
 $sql .= " WHERE  `member_database`.`id` = '{$member_id}';";
 
 MySQL::query($sql);
