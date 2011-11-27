@@ -26,7 +26,7 @@ if ($last_clean == "" || $last_clean == "undefined") {
 	$last = build_query_part($last_stub, $first_clean);
 }
 
-$sql = "SELECT `id`,`first_name`,`last_name` FROM `{$database}`.`member_database` WHERE {$first} {$or} {$last};";
+$sql = "SELECT `id`,`first_name`,`last_name` FROM `{$database}`.`member_database` WHERE {$first} {$or} {$last} LIMIT 10;";
 $results = MySQL::search($sql);
 echo json_encode($results);
 
