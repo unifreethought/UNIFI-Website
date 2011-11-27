@@ -32,6 +32,6 @@ $sql .= "`location` = '{$location}',`description` = '{$description}' WHERE `even
 
 MySQL::query($sql);
 
-header("Location: index.php?page=edit_event&event_id=" . $id);
+header("Location: index.php?page=edit_event&event=" . $id);
 exit();
 

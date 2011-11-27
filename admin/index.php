@@ -123,7 +123,7 @@ if ($url['post']) {
 		
 	}
 	
-	if (!empty($_POST['edit_event']) && $_POST['edit_event'] == 'yes') {
+	if (!empty($_POST['form_edit_event']) && $_POST['form_edit_event'] == 'yes') {
 	
 		// Auth the user and check for the ability to post to the blog.
 		if (!Auth::edit_events()) {
