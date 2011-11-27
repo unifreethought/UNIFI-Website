@@ -3,25 +3,30 @@
  * UNIFI Member Database
  * Adam Shannon
  */
-$first = "`first_name` LIKE '%" . MySQL::clean($_GET['first']) . "%'";
-$last = "`last_name` LIKE '%" . MySQL::clean($_GET['last']) . "%'";
-$onlyOneCondition = false;
-
-if ($first == "`first_name` = ''") {
-	$first = '';
-	$onlyOneCondition = true;
+function build_query_part($stubs, $middle) {
+	return $stubs[0] . $middle . $stubs[1];
 }
 
-if ($last = "`last_name` = ''") {
-	$last = '';
-	$onlyOneCondition = true;
+$first_clean = MySQL::clean($_GET['first']);
+$last_clean = MySQL::clean($_GET['last']);
+
+$first_stub = array("`first_name` LIKE '%", "%'");
+$last_stub  = array("`last_name`  LIKE '%", "%'");
+
+$first = build_query_part($first_stub, $first_clean);
+$last  = build_query_part($last_stub, $last_clean);
+$or = ' OR ';
+
+// The order in these two if's is supposed to be like so.
+if ($first_clean == "" || $first_clean == "undefined") {
+	$first = build_query_part($first_stub, $last_clean);
 }
 
-if ($onlyOneCondition) {
-	$or = '';
-} else {
-	$or = ' OR ';
+if ($last_clean == "" || $last_clean == "undefined") {
+	$last = build_query_part($last_stub, $first_clean);
 }
 
-$results = MySQL::search("SELECT `id`,`first_name`,`last_name` FROM `{$database}`.`member_database` WHERE {$first} {$or} {$last};");
+$sql = "SELECT `id`,`first_name`,`last_name` FROM `{$database}`.`member_database` WHERE {$first} {$or} {$last};";
+$results = MySQL::search($sql);
 echo json_encode($results);
+
