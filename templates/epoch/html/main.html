@@ -30,7 +30,7 @@
 			foreach ($posts as $post) {
 				echo "<section class='blog-post'>";
 					echo "<h2><a href='index.php?page=post&id=" . $post['id'] . "'>" . Clean::output($post['title']) . "</a></h2>";
-					echo "<span class='blog-post-author'>" . BLOG_AUTHOR_PREFIX . "<a href='index.php?page=profile&profile={$post['id']}'>";
+					echo "<span class='blog-post-author'>" . BLOG_AUTHOR_PREFIX . "<a href='index.php?page=profile&profile={$post['author']}'>";
 						echo Clean::output($authors[$post['author']]) . '</a>' . Date::parse($post['timestamp']) . '</span>';
 					echo '<p>' . wordwrap(Clean::output($post['content']), 70) . '</p>';
 					echo "<span class='blog-post-comments'><a href='?page=post&id=" . $post['id'] . "'>" . BLOG_POST_COMMENTS . "</a></span>";
