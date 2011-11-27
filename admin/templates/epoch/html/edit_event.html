@@ -97,6 +97,7 @@
 					
 				// Add member to the lower set of li elms
 				membersAttendingList.innerHTML += "<li>" + xhr.responseText + "</li>";
+				membersAttendingCount.innerHTML = +membersAttendingCount.innerHTML + 1;
 			}
 			</script>
 			
@@ -109,7 +110,7 @@
 			
 			<div id="membersAttending">
 				Members Attending: 
-				<?php echo count($membersAttending); ?>
+				<span id="membersAttendingCount"><?php echo count($membersAttending); ?></span>
 				<br />
 				<ul id="membersAttendingList">
 					<?php
