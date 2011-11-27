@@ -133,6 +133,17 @@ if ($url['post']) {
 		}
 	
 	}
+	
+	if (!empty($_POST['form_edit_volunteer_event']) && $_POST['form_edit_volunteer_event'] == 'yes') {
+	
+		// Auth the user and check for the ability to post to the blog.
+		if (!Auth::edit_events()) {
+			exit(ADMIN_NOT_AUTHORIZED);
+		} else {
+			include 'application/helpers/form_edit_volunteer_event.php';
+		}
+	
+	}
 
 	if (!empty($_POST['create_custom_page']) && $_POST['create_custom_page'] == 'yes') {
 		

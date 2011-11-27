@@ -3,7 +3,7 @@
 	<?php echo PAGE_CREATE_EVENT_HEADER; ?>
 		
 		<form action="index.php" method="POST">
-			<input type="hidden" name="create_volunteer_event" value="yes" />
+			<input type="hidden" name="form_edit_volunteer_event" value="yes" />
 			<input type="hidden" name="event_id" value="<?php echo htmlentities($event['id']); ?>" />
 			
 			<label>
@@ -45,7 +45,7 @@
 				<input type="text" name="description" value="<?php echo htmlentities($event['description']); ?>" /><br />
 			</label>
 			
-			<input type="submit" value="<?php echo PAGE_CREATE_EVENT_SUBMIT; ?>" />
+			<input type="submit" value="Update!" />
 		</form>
 	
 		<hr />
