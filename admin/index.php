@@ -271,6 +271,10 @@ if ($url['post']) {
 	
 	switch ($url['page']) {
 	
+		case 'view_all_options':
+			include 'templates/' . $config['template'] . '/html/view_all_options.html';
+		break;
+	
 		case 'post':
 			
 			if (Auth::can_post_blog()) {
