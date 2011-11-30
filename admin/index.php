@@ -475,6 +475,15 @@ if ($url['post']) {
 			
 		break;
 		
+		case 'newsletter':
+			if (Auth::edit_users()) {
+				include 'application/helpers/newsletter.php';
+				include 'templates/' . $config['template'] . '/html/newsletter.html';
+			} else {
+				exit(ADMIN_NOT_AUTHORIZED);
+			}
+		break;
+		
 		case 'list_guest_submissions':
 			include 'application/helpers/list_guest_submissions.php';
 			include 'templates/' . $config['template'] . '/html/list_guest_submissions.html';
