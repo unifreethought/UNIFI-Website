@@ -192,6 +192,13 @@ if ($url['post']) {
 			exit(ADMIN_NOT_AUTHORIZED);
 	}
 	
+	if (!empty($_POST['send_newsletter'])) {
+		if (Auth::edit_users())
+			include 'application/helpers/send_the_newsletter.php';
+		else
+			exit(ADMIN_NOT_AUTHORIZED);
+	}
+	
 	exit('');
 	
 } else {
