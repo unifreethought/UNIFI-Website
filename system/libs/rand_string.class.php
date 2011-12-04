@@ -13,6 +13,17 @@ class RandString {
 	static $allowed_characters = array('!', '@', '#', '\$', '%', '^', '&', '*', '(', ')', '-', '//', '\/', '\\');
 	
 	/**
+	 * @name: set_extra_characters
+	 * We can change the set of characters allowed.
+	 *
+	 * @parm: $chars
+	 * @return: void
+	 */
+	static function set_extra_characters($chars) {
+		self::$allowed_characters = $chars;
+	}
+	
+	/**
 	 * @name: generate
 	 * This will generate a random string of length $length.
 	 *
@@ -37,7 +48,10 @@ class RandString {
 			} else {
 			
 				// Otherwise add a character.
-				$string .= self::$allowed_characters[rand(0, $count)];
+				if (self::$allowed_characters != array())
+					$string .= self::$allowed_characters[rand(0, $count)];
+				else
+					$string .= chr(rand(self::$ascii_min, self::$ascii_max));
 			
 			}
 			
