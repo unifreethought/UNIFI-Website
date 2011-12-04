@@ -178,6 +178,20 @@ if ($url['post']) {
 		
 	}
 	
+	if (!empty($_POST['add_email_to_newsletter'])) {
+		if (Auth::edit_users())
+			include 'application/helpers/add_email_to_newsletter.php';
+		else
+			exit(ADMIN_NOT_AUTHORIZED);
+	}
+	
+	if (!empty($_POST['delete_email_from_newsletter'])) {
+		if (Auth::edit_users())
+			include 'application/helpers/delete_email_from_newsletter.php';
+		else
+			exit(ADMIN_NOT_AUTHORIZED);
+	}
+	
 	exit('');
 	
 } else {
@@ -483,6 +497,29 @@ if ($url['post']) {
 			if (Auth::edit_users()) {
 				include 'application/helpers/newsletter.php';
 				include 'templates/' . $config['template'] . '/html/newsletter.html';
+			} else {
+				exit(ADMIN_NOT_AUTHORIZED);
+			}
+		break;
+		
+		case 'subscribe_email_to_newsletter':
+			if (Auth::edit_users())
+				include 'templates/' . $config['template'] . '/html/subscribe_email_to_newsletter.html';
+			else
+				exit(ADMIN_NOT_AUTHORIZED);
+		break;
+		
+		case 'unsubscribe_email_from_newsletter':
+			if (Auth::edit_users())
+				include 'templates/' . $config['template'] . '/html/unsubscribe_email_from_newsletter.html';
+			else
+				exit(ADMIN_NOT_AUTHORIZED);
+		break;
+		
+		case 'view_all_newsletter_emails':
+			if (Auth::edit_users()) {
+				include 'application/helpers/view_all_newsletter_emails.php';
+				include 'templates/' . $config['template'] . '/html/view_all_newsletter_emails.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
