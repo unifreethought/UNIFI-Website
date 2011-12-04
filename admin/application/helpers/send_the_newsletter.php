@@ -20,7 +20,7 @@ $emails = MySQL::search($sql);
 
 // Send them
 foreach ($emails as $email) {
-	mail($email['email'], $subject, $message, $headers);
+	mail($email['email'], $subject, stripslashes($message), $headers);
 }
 
 header("Location: index.php");
