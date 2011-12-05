@@ -21,6 +21,13 @@ define('FACEBOOK_SECRET', '');
 // Connect
 MySQL::set_vars($hostname, $username, $password, $database);
 
+// Set the $base_href
+$server_name = "";
+if ($server_name != $_SERVER['SERVER_NAME']) {
+	header("Location: http://{$server_name}");
+	exit();
+}
+
 // Set some settings
 $config = array(
 	'admin' => 'enabled',
