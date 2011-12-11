@@ -53,6 +53,10 @@ if ($url['post'] == true) {
 	if ($_POST['page'] == 'guest-submission') {
 		require 'application/helpers/guest_submission.php';
 	}
+	
+	if ($_POST['add_email_to_newsletter'] == 'yes') {
+		include 'application/helpers/add_email_to_newsletter.php';
+	}
 
 	exit();
 }
@@ -130,6 +134,11 @@ if ($url['get'] == true) {
 		case 'register':
 			require 'application/helpers/register.php';
 			require 'templates/' . $config['template'] . '/html/register.html';
+		break;
+		
+		case 'subscribe_to_newsletter':
+		    include 'application/helpers/show_authors_and_labels.php';
+			require 'templates/' . $config['template'] . '/html/subscribe_to_newsletter.html';
 		break;
 		
 		default:
