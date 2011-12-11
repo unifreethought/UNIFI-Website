@@ -255,6 +255,12 @@ if ($url['post']) {
 		exit();
 	}
 	
+	if ($_GET['page'] == 'remove_member_from_event') {
+		if (Auth::edit_users())
+			include 'application/helpers/remove_member_from_event.php';
+		exit();
+	}
+	
 	if ($_GET['page'] == 'add_member_to_volunteer_event') {
 		if (Auth::edit_users()) {
 			include 'application/helpers/add_member_to_volunteer_event.php';

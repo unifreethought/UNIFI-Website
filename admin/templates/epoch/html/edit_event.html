@@ -96,8 +96,16 @@
 					xhr.send(null);
 					
 				// Add member to the lower set of li elms
-				membersAttendingList.innerHTML += "<li>" + xhr.responseText + "</li>";
+				membersAttendingList.innerHTML += "<li><a href='javascript:void(0);' onclick='this.style.textDecoration='line-through';remove(this.innerHTML, <?php echo htmlentities($event['id']); ?>);'>" + xhr.responseText + "</a></li>";
 				membersAttendingCount.innerHTML = +membersAttendingCount.innerHTML + 1;
+			}
+			
+			function remove(member_name, event_id) {
+				var xhr = new XMLHttpRequest();
+					xhr.open("GET", "index.php?page=remove_member_from_event&event=" + event_id + "&member=" + member_name, false);
+					xhr.send(null);
+					
+					membersAttendingCount.innerHTML = +membersAttendingCount.innerHTML - 1;
 			}
 			</script>
 			
@@ -115,8 +123,12 @@
 				<ul id="membersAttendingList">
 					<?php
 						foreach ($membersAttending as $member) {
-							$name = MySQL::single("SELECT `first_name`,`last_name` FROM `{$database}`.`member_database` WHERE `id` = '{$member['member_id']}';");
-							echo '<li>' . $name['first_name'] . ' ' . $name['last_name'] . '</li>';
+							$name = MySQL::single(
+							  "SELECT `first_name`,`last_name` FROM `{$database}`.`member_database` WHERE `id` = '{$member['member_id']}';");
+							  
+							$tmp_name = $name['first_name'] . ' ' . $name['last_name'];
+							$parms = '"' . str_replace(' ', ',', $tmp_name) . '", ' . $event['id'];
+							echo "<li><a href='javascript:void(0);' onclick='this.style.textDecoration=\"line-through\";remove({$parms});'>" . $tmp_name . '</a></li>';
 						}
 					?>
 				</ul>
