@@ -48,13 +48,7 @@ function print_fb_script() {
 
 function get_more_fb_data($fb_id, $access_token) {
 	
-	// https://graph.facebook.com/me?method=GET&metadata=true&format=json&callback=___GraphExplorerAsyncCallback___
-	// &access_token=AAACEdEose0cBABQbfnTQ7ajexjxEfOo8gTZCYvxZCDhUpsZBg6HpgvsVZBrFBaoCgQSCy6oQuC20V29ojHVd2mbGkNe5B1Tw
-	// zZCUwPS2YUx57K0ZCY5nqZB
 	$url = 'https://graph.facebook.com/me?access_token=' . $access_token . '&fields=id,first_name,last_name,gender,hometown,email';
-	//$url = 'https://graph.facebook.com/me?method=GET&metadata=true&format=json';
-	//$url .= '&access_token=' . $access_token . 'fields=first_name,last_name,gender,hometown,email';
-	//echo $access_token;
 	$ch = curl_init();
 		curl_setopt($ch, CURLOPT_FRESH_CONNECT, true);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -65,7 +59,6 @@ function get_more_fb_data($fb_id, $access_token) {
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_USERAGENT, SITE_TITLE);
 	
-	print_r(json_decode(curl_exec($ch), true));
 	return json_decode(curl_exec($ch), true);
 }
 
