@@ -17,6 +17,9 @@ $hometown = MySQL::clean($_POST['hometown']);
 $phone = MySQL::clean($_POST['phone']);
 $email = MySQL::clean($_POST['email']);
 
+// Strip any non-numeric characters from the phone number
+$phone = preg_replace("/[^0-9]/i", '', $phone);
+
 // `users`
 $id = '0';
 // $first_name
