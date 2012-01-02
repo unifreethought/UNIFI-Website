@@ -30,6 +30,9 @@ $texting = MySQL::clean($_GET['texting']);
 $positions = MySQL::clean(arr_join($_GET['positions']));
 $tags = MySQL::clean(arr_join($_GET['tags']));
 
+// Strip any non-numeric characters from the phone number
+$phone = preg_replace("/[^0-9]/i", '', $phone);
+
 $sql = "INSERT INTO `{$database}`.`member_database` (`id`,`first_name`,`last_name`,`year`,`major`,`hometown`,`dorm`,`recruit_date`,`recruit_place`,`phone`,`email`,`texting`,";
 $sql .= "`positions`,`tags`) ";
 $sql .= "VALUES ('0', '{$first_name}', '{$last_name}','{$year}','{$major}','{$hometown}','{$dorm}','{$recruit_date}','{$recruit_place}','{$phone}','{$email}',";
