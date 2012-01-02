@@ -5,22 +5,6 @@
  * 2010-11-21
  */
 
-function get_facebook_cookie($app_id, $application_secret) {
-  $args = array();
-  parse_str(trim($_COOKIE['fbs_' . $app_id], '\\"'), $args);
-  ksort($args);
-  $payload = '';
-  foreach ($args as $key => $value) {
-    if ($key != 'sig') {
-      $payload .= $key . '=' . $value;
-    }
-  }
-  if (md5($payload . $application_secret) != $args['sig']) {
-    return null;
-  }
-  return $args;
-}
-
 function print_fb_button() {
 	echo "<fb:login-button id='fb_button' autologoutlink='true'></fb:login-button>";
 }
@@ -87,19 +71,23 @@ function get_user_id_on_exist($fb_id) {
 	}
 }
 
-// Both of the following constants are found in:
-// application/config/config.php
-$fb_cookie_response = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
-if ($fb_cookie_response) {
-	$fb_id = $fb_cookie_response['uid'];
-	$user_id = get_user_id_on_exist($fb_id);
-	//echo $fb_id . ' ' . $user_id;
-	
-	if (!$user_id) {
-		// redirect to a page where you get the details from the user.
+// Use the FB-SDK
+$facebook = new Facebook(
+	array(
+		'appId' => FACEBOOK_APP_ID,
+		'secret' =>	FACEBOOK_SECRET,
+		'fileUpload' => false
+	)
+);
+
+$fb_id = $facebook->getUser();
+$user_id = get_user_id_on_exist($fb_id);
+
+	// Does the user need to register?
+	if (!$user_id && $fb_id > 0) {
 		$show_register_form = true;
 		$fb_data = get_more_fb_data($fb_id);
 	} else {
 		$show_register_form = false;	
 	}
-}
+
