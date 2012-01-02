@@ -126,7 +126,10 @@
 				</label>
 			
 				<label>
-					Hometown: <input type="text" name="hometown" value="" /><br />
+					Hometown: <input type="text" name="hometown" 
+					value="<?php 
+						echo substr($fb_data['hometown']['name'], 0,strpos($fb_data['hometown']['name'], ',')); 
+					?>" /><br />
 				</label>
 			
 				<label>
@@ -134,7 +137,7 @@
 				</label>
 			
 				<label>
-					Email: <input type="text" name="email" value="" /><br />
+					Email: <input type="text" name="email" value="<?php echo $fb_data['email']; ?>" /><br />
 				</label>
 				
 				<input type="hidden" name="page" value="new-user" />

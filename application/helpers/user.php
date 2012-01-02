@@ -46,9 +46,15 @@ function print_fb_script() {
     </script>';
 }
 
-function get_more_fb_data($fb_id) {
-	$url = 'https://graph.facebook.com/' . $fb_id;
-	//$url .= '?metadata=1';
+function get_more_fb_data($fb_id, $access_token) {
+	
+	// https://graph.facebook.com/me?method=GET&metadata=true&format=json&callback=___GraphExplorerAsyncCallback___
+	// &access_token=AAACEdEose0cBABQbfnTQ7ajexjxEfOo8gTZCYvxZCDhUpsZBg6HpgvsVZBrFBaoCgQSCy6oQuC20V29ojHVd2mbGkNe5B1Tw
+	// zZCUwPS2YUx57K0ZCY5nqZB
+	$url = 'https://graph.facebook.com/me?access_token=' . $access_token . '&fields=id,first_name,last_name,gender,hometown,email';
+	//$url = 'https://graph.facebook.com/me?method=GET&metadata=true&format=json';
+	//$url .= '&access_token=' . $access_token . 'fields=first_name,last_name,gender,hometown,email';
+	//echo $access_token;
 	$ch = curl_init();
 		curl_setopt($ch, CURLOPT_FRESH_CONNECT, true);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -58,7 +64,8 @@ function get_more_fb_data($fb_id) {
 		curl_setopt($ch, CURLOPT_REFERER, BASE_URL);
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_USERAGENT, SITE_TITLE);
-		
+	
+	print_r(json_decode(curl_exec($ch), true));
 	return json_decode(curl_exec($ch), true);
 }
 
@@ -82,11 +89,13 @@ $facebook = new Facebook(
 
 $fb_id = $facebook->getUser();
 $user_id = get_user_id_on_exist($fb_id);
+$access_token = $facebook->getAccessToken();
+
 
 	// Does the user need to register?
 	if (!$user_id && $fb_id > 0) {
 		$show_register_form = true;
-		$fb_data = get_more_fb_data($fb_id);
+		$fb_data = get_more_fb_data($fb_id, $access_token);
 	} else {
 		$show_register_form = false;	
 	}
