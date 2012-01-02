@@ -102,6 +102,10 @@ define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_GET_USER_DESC', 'Editing permissio
 	define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_EDIT_CUSTOM_PAGES', 'Edit Custom Pages');
 	define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_VIEW_LOG', 'View Log');
 	
+define('ADMIN_DASHBORD_DELETE_USER_CONFORM_DESC', 'Click the users you wish to delete.');
+define('ADMIN_DASHBORD_DELETE_USER_SUBMIT', 'Delete User(s)');
+define('ADMIN_DASHBORD_DELETE_USER_GO_HOME', 'Cancel Deletion');
+	
 // Common Errors
 define('NO_USER_ID', 'Whoops, you need to specify a user.');
 define('NO_FB_ID_HELP', 'Login with Facebook: ');
