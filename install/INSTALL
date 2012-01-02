@@ -1,0 +1,43 @@
+== Install ==
+
+Welcome to the UNI Freethinkers and Inquirers website! This is the code for 
+http://unifreethought.com. It was created by Adam Shannon for the group, and you
+can contact him at adam@unifreethought.com or the current webmaster at
+webmaster@unifreethought.com
+
+REQUIREMENTS
+In order to run this site you will need a webserver running, a knowledge of PHP,
+MySQL, JavaScript, HTML, CSS, and of course git. This site is designed to be easy
+to install, and works best on a Linux environment.
+
+INSTALL
+There are four major steps to getting this site running.
+
+1) Setting up the Database
+We currently run the site off of a MySQL Database (version 5+ should work fine).
+You will need to create a database and user with basic permissions. (SELECT, 
+INSERT, UPDATE, DELETE)
+
+2) Setting up the config file
+Once you have the database running and a fresh copy of the sql inserted. You 
+should look into application/config/, modify and save config.sample.php as 
+config.php with the DB information.
+
+3) Setting up the Facebook app
+You will need to setup a Facebook app for the site to use. If you're doing this 
+as part of UNIFI, then you should be given access to the app already. If not, ask
+the current president. (Or Adam Shannon, adam@unifreethought.com)
+
+Once you have the Facebook app setup on Facebook's servers, you can put the
+information in application/config/config.php (notice it should be renamed by now)
+
+3.5) Setting the error display level.
+PHP has a build in error reporting system, which is really nice and useful during
+development, but some of the errors it gives off are meaningless during production
+usage. So, it's best to change the error_reporting from E_ALL to E_NONE when you
+put the site into production.
+
+4) Uploading the files
+After those three steps you should be ready to upload the php, html, js, css, and
+images to the server. You should have FTP access, and if not contact the President
+or Adam. Then, visit the site and verify that everything is working.
