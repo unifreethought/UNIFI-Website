@@ -1,47 +1,47 @@
 
 	<div id="wrapper">
-		<span>Create a report of members</span>
+		<span><?php echo ADMIN_DASHBOARD_CREATE_MEMBER_REPORT; ?></span>
 		<form action="index.php" method="GET">
 			<input type="hidden" name="page" value="report_response" />
 			
 			<br />
 			
 			<fieldset>
-				<label>Select Grade(s):</label><br />
+				<label><?php echo ADMIN_DASHBOARD_CREATE_MEMBER_REPORT_GRADES; ?></label><br />
 				<?php print_options($years, 'year'); ?>
 			</fieldset>
 
 			<br />
 			
 			<fieldset>
-				<label>Dorm(s):</label><br />
+				<label><?php echo ADMIN_DASHBOARD_CREATE_MEMBER_REPORT_DORMS; ?></label><br />
 				<?php print_options($dorms, 'dorm'); ?>
 			</fieldset>
 			
 			<br />
 			
 			<fieldset>
-				<label>Position(s):</label><br />
+				<label><?php echo ADMIN_DASHBOARD_CREATE_MEMBER_REPORT_POSITIONS; ?></label><br />
 				<?php print_options($positions, 'position'); ?>
 			</fieldset>
 			
 			<br />
 			
 			<fieldset>
-				<label>Tags(s):</label><br />
+				<label><?php echo ADMIN_DASHBOARD_CREATE_MEMBER_REPORT_TAGS; ?></label><br />
 				<?php print_options($tags, 'tag'); ?>
 			</fieldset>
 			
 			<br />
 			
 			<fieldset>
-				<label>Attended Events</label><br />
+				<label><?php echo ADMIN_DASHBOARD_CREATE_MEMBER_REPORT_EVENTS; ?></label><br />
 				<?php print_options($events, 'event'); ?>
 			</fieldset>
 			
 			<br />
 			
-			<input type="submit" value="Submit" />
+			<input type="submit" value="<?php echo ADMIN_DASHBOARD_SUBMIT; ?>" />
 		</form>
 	
 	</div>

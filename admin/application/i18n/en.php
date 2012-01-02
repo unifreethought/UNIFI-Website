@@ -11,6 +11,8 @@ define('ADMIN_ACCESS_DISABLED', 'We\'re sorry, but admin access to the site is d
 define('ADMIN_HEADER', 'UNIFI - ADMIN');
 define('MAIN_PAGE_ADMIN_TO_REGULAR_HOME', 'Back to home');
 define('ADMIN_DASHBOARD_TITLE', 'Dashboard');
+define('ADMIN_DASHBOARD_SUBMIT', 'Submit');
+define('ADMIN_DASHBOARD_UPDATE', 'Update');
 
 define('ADMIN_DASHBOARD_LIST_NAME', 'Items');
 
@@ -87,8 +89,8 @@ define('ADMIN_DASHBOARD_VIEW_EVENTS', 'View Events');
 	define('ADMIN_DASHBOARD_VIEW_EVENTS_DESCRIPTION', 'Description');
 	
 define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS', 'Edit Member Permissions');
-define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_GET_USER', 'Enter the user to edit.');
-define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_GET_USER_DESC', 'Editing permissions for: ');
+define('ADMIN_DASHBOARD_EDIT_MEMBER_PERMISSIONS_GET_USER', 'Enter the user to edit.');
+define('ADMIN_DASHBOARD_EDIT_MEMBER_PERMISSIONS_GET_USER_DESC', 'Editing permissions for: ');
 	define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_GET_USER_FORM', 'User: ');
 	define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_GET_USER_SUBMIT', 'Edit User');
 	define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_POST_TO_BLOG', 'Post to blog');
@@ -105,6 +107,33 @@ define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_GET_USER_DESC', 'Editing permissio
 define('ADMIN_DASHBORD_DELETE_USER_CONFORM_DESC', 'Click the users you wish to delete.');
 define('ADMIN_DASHBORD_DELETE_USER_SUBMIT', 'Delete User(s)');
 define('ADMIN_DASHBORD_DELETE_USER_GO_HOME', 'Cancel Deletion');
+
+// Copy a user to the member db.
+define('ADMIN_DASHBOARD_COPY_USER_TO_MEMBER_DB', 'Copy Website User to Member Database');
+define('ADMIN_DASHBOARD_COPY_USER_TO_MEMBER_DB_USER_ID', 'User ID #:');
+
+// Create a member report
+define('ADMIN_DASHBOARD_CREATE_MEMBER_REPORT', 'Create a report of members');
+define('ADMIN_DASHBOARD_CREATE_MEMBER_REPORT_GRADES', 'Select Grade(s):');
+define('ADMIN_DASHBOARD_CREATE_MEMBER_REPORT_DORMS', 'Dorm(s):');
+define('ADMIN_DASHBOARD_CREATE_MEMBER_REPORT_POSITIONS', 'Position(s):');
+define('ADMIN_DASHBOARD_CREATE_MEMBER_REPORT_TAGS', 'Tags(s):');
+define('ADMIN_DASHBOARD_CREATE_MEMBER_REPORT_EVENTS', 'Attended Events:');
+
+// Create a newsletter
+define('ADMIN_DASHBOARD_NEWSLETTER', 'Create a Newsletter');
+define('ADMIN_DASHBOARD_NEWSLETTER_SUBJECT', 'Subject');
+define('ADMIN_DASHBOARD_NEWSLETTER_SEND', 'Send Newsletter');
+
+// The response from a member report request
+define('ADMIN_DASHBOARD_REPORT_FIRST', 'First');
+define('ADMIN_DASHBOARD_REPORT_LAST', 'Last');
+
+// [Un]Subscribe someone to the newsletter
+define('ADMIN_DASHBOARD_SUBSCRIBE', 'Subscribe an Email to the newsletter');
+define('ADMIN_DASHBOARD_UNSUBSCRIBE', 'Unsubscribe an Email to the newsletter');
+define('ADMIN_DASHBOARD_VIEW_ALL_SUBSCRIBED', 'View all newsletter emails');
+define('ADMIN_DASHBOARD_THEIR_EMAIL', 'Their Email');
 	
 // Common Errors
 define('NO_USER_ID', 'Whoops, you need to specify a user.');
@@ -203,6 +232,7 @@ define('LIST_MEMBERS_Tags', 'Tag(s)');
 define('LIST_MEMBERS_Notes', 'Notes');
 define('LIST_MEMBERS_Recruit_Place', 'Recruit Place');
 define('LIST_MEMBERS_Hometown', 'Hometown');
+define('LIST_MEMBERS_SUBMIT', 'Search Members');
 
 // Creating Members
 define('CREATE_MEMBER_FACEBOOK', 'Facebook');

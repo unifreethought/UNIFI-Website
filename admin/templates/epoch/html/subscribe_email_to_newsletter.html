@@ -1,14 +1,14 @@
 
 	<div id="wrapper">
 		
-		Subscribe an Email to the newsletter
+		<?php echo ADMIN_DASHBOARD_SUBSCRIBE; ?>
 		<br /><br />
 		<form action="index.php" method="POST">
 			<input type="hidden" name="add_email_to_newsletter" value="yes" />
-			Their Email: 
+			<?php echo ADMIN_DASHBOARD_THEIR_EMAIL; ?>: 
 				<input type="text" name="email" autofocus />
 			<br />
-			<input type="submit" value="Add Email" />
+			<input type="submit" value="<?php echo ADMIN_DASHBOARD_SUBMIT; ?>" />
 		</form>
 		
 	</div>

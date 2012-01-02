@@ -1,14 +1,14 @@
 
 	<div id="wrapper">
 		
-		Unsubscribe an Email to the newsletter
+		<?php echo ADMIN_DASHBOARD_UNSUBSCRIBE; ?>
 		<br /><br />
 		<form action="index.php" method="POST">
 			<input type="hidden" name="delete_email_from_newsletter" value="yes" />
-			Their Email: 
+			<?php echo ADMIN_DASHBOARD_THEIR_EMAIL; ?>: 
 				<input type="text" name="email" autofocus />
 			<br />
-			<input type="submit" value="Delete Email" />
+			<input type="submit" value="<?php echo ADMIN_DASHBOARD_SUBMIT; ?>" />
 		</form>
 		
 	</div>

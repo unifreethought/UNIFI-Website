@@ -1,16 +1,17 @@
 
 	<div id="wrapper">
 	
-		<h4>Create a Newsletter</h4>
+		<h4><?php echo ADMIN_DASHBOARD_NEWSLETTER; ?></h4>
 	
 		<form action="index.php" method="POST">
 			<input type="hidden" name="send_newsletter" value="yes" />
 			
-			Subject: <input type="text" name="subject" size="50" autofocus /><br />
+			<?php echo ADMIN_DASHBOARD_NEWSLETTER_SUBJECT; ?>: 
+				<input type="text" name="subject" size="50" autofocus /><br />
 			
 			<textarea cols="70" rows="10" placeholder="Enter the raw HTML code." name="message"></textarea>
 			<br />
-			<input type="submit" value="Send Newsletter" />
+			<input type="submit" value="<?php echo ADMIN_DASHBOARD_NEWSLETTER_SEND; ?>" />
 		</form>
 	
 	</div>
