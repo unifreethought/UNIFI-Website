@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `blog-comments` (
   `content` varchar(10000) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 
 --
 -- Table structure for table `blog-posts`
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `blog-posts` (
   `content` longtext NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 
 
 --
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `dorm` (
   `desc` varchar(20) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13;
 
 --
 -- Dumping data for table `dorm`
@@ -67,7 +67,8 @@ INSERT INTO `dorm` (`id`, `desc`) VALUES
 (8, 'ROTH'),
 (9, 'Rider'),
 (10, 'Shull'),
-(11, 'Off Campus');
+(11, 'Off Campus')
+(12, 'Unknown');
 
 --
 -- Table structure for table `events`
@@ -82,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `events` (
   `description` text NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 
 --
 -- Table structure for table `event_attendance`
@@ -106,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `log` (
   `unique_data` varchar(1000) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 
 --
 -- Table structure for table `log-messages`
@@ -118,7 +119,7 @@ CREATE TABLE IF NOT EXISTS `log-messages` (
   `message` varchar(1000) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11;
 
 --
 -- Dumping data for table `log-messages`
@@ -145,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `major` (
   `desc` varchar(20) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=165 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=166;
 
 --
 -- Dumping data for table `major`
@@ -315,7 +316,8 @@ INSERT INTO `major` (`id`, `desc`) VALUES
 (161, 'World History'),
 (162, 'Writing'),
 (163, 'Writing: Professiona'),
-(164, 'Youth Services Admin');
+(164, 'Youth Services Admin')
+(165, 'Unknown');
 
 -- --------------------------------------------------------
 
@@ -355,7 +357,7 @@ CREATE TABLE IF NOT EXISTS `pages` (
   `content` text NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8;
 
 --
 -- Dumping data for table `pages`
@@ -379,7 +381,7 @@ CREATE TABLE IF NOT EXISTS `positions` (
   `desc` varchar(20) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6;
 
 --
 -- Dumping data for table `positions`
@@ -401,7 +403,7 @@ CREATE TABLE IF NOT EXISTS `recruit_place` (
   `desc` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5;
 
 --
 -- Dumping data for table `recruit_place`
@@ -410,7 +412,8 @@ CREATE TABLE IF NOT EXISTS `recruit_place` (
 INSERT INTO `recruit_place` (`id`, `desc`) VALUES
 (1, 'Tabling'),
 (2, 'FSM Dinner'),
-(3, 'Other');
+(3, 'Other'),
+(4, 'Unknown');
 
 --
 -- Table structure for table `tags`
@@ -421,7 +424,7 @@ CREATE TABLE IF NOT EXISTS `tags` (
   `desc` varchar(20) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5;
 
 --
 -- Dumping data for table `tags`
@@ -485,7 +488,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `cookie` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 
 --
 -- Table structure for table `users-deleted`
@@ -510,7 +513,7 @@ CREATE TABLE IF NOT EXISTS `year` (
   `desc` varchar(20) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10;
 
 --
 -- Dumping data for table `year`
@@ -524,4 +527,5 @@ INSERT INTO `year` (`id`, `desc`) VALUES
 (5, 'Super Senior'),
 (6, 'Grad Student'),
 (7, 'High School'),
-(8, 'Post College');
+(8, 'Post College'),
+(9, 'Unknown');
