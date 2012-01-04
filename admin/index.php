@@ -200,6 +200,22 @@ if ($url['post']) {
 			exit(ADMIN_NOT_AUTHORIZED);
 	}
 	
+	if (!empty($_POST['merge_members_setup'])) {
+		if (Auth::edit_users()) {
+			include 'application/helpers/merge_members_setup.php';
+			include 'templates/' . $config['template'] . '/html/merge_members_setup.html';
+		} else {
+			exit(ADMIN_NOT_AUTHORIZED);
+		}
+	}
+	
+	if (!empty($_POST['merge_members_run'])) {
+		if (Auth::edit_users())
+			include 'application/helpers/merge_members_run.php';
+		else
+			exit(ADMIN_NOT_AUTHORIZED);
+	}
+	
 	exit('');
 	
 } else {
@@ -548,6 +564,15 @@ if ($url['post']) {
 			if (Auth::edit_users()) {
 				include 'application/helpers/member_database.php';
 				include 'templates/' . $config['template'] . '/html/member_database.html';
+			} else {
+				exit(ADMIN_NOT_AUTHORIZED);
+			}
+		break;
+		
+		case 'merge_members':
+			if (Auth::edit_users()) {
+				//include 'application/helpers/merge_members.php';
+				include 'templates/' . $config['template'] . '/html/merge_members.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}

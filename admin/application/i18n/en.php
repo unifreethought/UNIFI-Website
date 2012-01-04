@@ -134,6 +134,11 @@ define('ADMIN_DASHBOARD_SUBSCRIBE', 'Subscribe an Email to the newsletter');
 define('ADMIN_DASHBOARD_UNSUBSCRIBE', 'Unsubscribe an Email to the newsletter');
 define('ADMIN_DASHBOARD_VIEW_ALL_SUBSCRIBED', 'View all newsletter emails');
 define('ADMIN_DASHBOARD_THEIR_EMAIL', 'Their Email');
+
+// Merge two members
+define('ADMIN_DASHBOARD_MERGE_MEMBERS', 'Enter the member_id for the two members you wish to merge.');
+define('ADMIN_DASHBOARD_MERGE_MEMBERS_ONE', 'First ID: ');
+define('ADMIN_DASHBOARD_MERGE_MEMBERS_TWO', 'Second ID: ');
 	
 // Common Errors
 define('NO_USER_ID', 'Whoops, you need to specify a user.');
