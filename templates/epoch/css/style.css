@@ -6,7 +6,6 @@
  */
  
 body {
-	/* background-color: #36317d; */
 	background-color: #000000;
 	overflow-x: hidden;
 	width: 99%;
@@ -21,35 +20,12 @@ div.right {
 	margin-left: 1%;
 }
 
-img.right {
-	border: 0px;
-	float: right;
-	margin-right: 1%;
-}
-
-span.right {
-	float: right;
-	margin-right: 1%;
-}
-
 div.no-border, div.border-top, div.border-left, div.border-bottom, div.border-right {
 	border: 0px;
 }
 
-div.border-top {
-	border-top: 1px solid #000000;
-}
-
-div.border-right {
-	border-right: 1px solid #000000;
-}
-
 div.border-bottom {
 	border-bottom: 1px solid #000000;
-}
-
-div.border-left {
-	border-left: 1px solid #000000;
 }
 
 hr.no-hr {
@@ -72,7 +48,6 @@ header {
 }
 
 	header nav {
-		/* border: 1px solid #000000; */
 		margin-left: 5%;
 		width: 90%;
 	}
@@ -88,7 +63,6 @@ header {
 		}
 
 			header nav ul li {
-				/* Check header.html */
 				border: 1px solid #000000;
 				cursor: pointer;
 				display: inline-block;
@@ -99,27 +73,10 @@ header {
 				width: 11%;
 			}
 
-				header nav ul li:hover {
-					/* In header.html */
-					/* background: #000000 url('images/nav-bg-hover.png') repeat-x; */
-				}
-
 				header nav ul li a {
 					color: #FFFFFF;
 					text-decoration: none;
 				}
-
-	header div#quote-and-search {
-		/* background: #EEEEEE; */
-		margin-left: 5%;
-		width: 90%;
-	}
-
-		header div#search {
-			float: right;
-			margin-top: -6px;
-		}
-
 	aside {
 		float: right;
 		margin-right: 2%;
@@ -168,10 +125,6 @@ header {
 			width: 100%;
 		}
 
-		aside section#profile-box-container {
-			/* */
-		}
-
 			aside section#profile-box-container div#profile-box span {
 				width: auto;
 			}
@@ -180,10 +133,6 @@ header {
 					height: 19px;
 					overflow: hidden;
 				}
-
-		aside section#admin-box {
-			/* */
-		}
 
 		aside section#connect-with-us {
 			width: 100%;
@@ -257,10 +206,6 @@ header {
 						color: #000000;
 					}
 
-		aside section div#labels-and-authors {
-			/* */
-		}
-
 			aside section div#labels-and-authors ul {
 				list-style-type: none;
 				padding-left: 10px;
@@ -269,10 +214,6 @@ header {
 				aside section div#labels-and-authors ul li {
 					margin-bottom: 2px;
 				}
-				
-		aside section div#guest-submissions {
-			/* */
-		}
 		
 			aside section div#guest-submissions a {
 				color: #000000;
@@ -284,78 +225,6 @@ article {
 	min-height: 1500px;
 	width: 70%;
 }
-
-	article div#blog-wrapper {
-		/* */
-	}
-
-	article section {
-		width: 95%;
-	}
-
-		article section.blog-post {
-			border-bottom: 1px solid #000000;
-			margin: 5px 5px 5px 5px;
-		}
-
-			article section.blog-post:last-child {
-				border-bottom: 0px;
-			}
-
-			article section.blog-post h2 {
-				font-family: "Helvetica";
-				margin-bottom: 0px;
-			}
-
-				article section.blog-post h2 a {
-					color: #000000;
-				}
-
-			article section.blog-post span.blog-post-author {
-				font-family: Arial;
-				font-size: 0.8em;
-				margin: 0px 0px 5px 1%;
-			}
-
-				article section.blog-post span.blog-post-author a {
-					color: #000000;
-					margin-right: 10px;
-				}
-
-			article section.blog-post span.blog-post-comments {
-				font-family: Arial;
-				font-size: 0.8em;
-				margin-bottom: 5px;
-			}
-
-				article section.blog-post span.blog-post-comments a {
-					color: #000000;
-				}
-
-			article section.blog-post p {
-				font-family: Arial;
-				text-indent: 10px;
-				font-size: 12pt;
-			}
-
-				article section.comment {
-					border-bottom: 1px solid #000000;
-					padding-left: 6px;
-					padding-top: 5px;
-					padding-bottom: 3px;
-				}
-
-					article section.comment:nth-child(odd) {
-						background-color: #CCCCCC;
-					}
-				div section#comment_reply {
-					/* */
-				}
-
-					div section#comment_reply form textarea {
-						height: 200px;
-						width: 550px;
-					}
 
 footer {
 	background-color: #36317d;
