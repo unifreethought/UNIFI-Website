@@ -66,7 +66,11 @@ function custom_firefox_css() {
  */
 function fix_content_wrapper_height() {
 	var elm = document.querySelector("#blog-wrapper");
-		elm.style.height = document.height + 'px';
+		try {
+			elm.style.height = document.height + 'px';
+		} catch (e) {
+			console.log(e);
+		}
 }
 
 window.onload = function () {
