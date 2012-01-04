@@ -1,10 +1,4 @@
 application/config/config.php
-application/config/config.remote.php
 *~
-todo
-unifi-website.sql
-security
-majors.txt
-line-count.sh
-member-db-todo
+*.swp
 
