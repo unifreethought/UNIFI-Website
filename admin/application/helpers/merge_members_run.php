@@ -69,8 +69,8 @@ foreach ($second_events as $event) {
 	$new_events[] = $event['event_id'];
 }
 foreach ($new_events as $event) {
-	$sql = "INSERT INTO `{$database}`.`event_attendance` (`event_id`,`member_id`) VALUES ('{$event}', '{$new_id}');";
-	MySQL::query($sql);
+	$sqla = "INSERT INTO `{$database}`.`event_attendance` (`event_id`,`member_id`) VALUES ('{$event}', '{$new_id}');";
+	MySQL::query($sqla);
 }
 
 // 6) Delete the members at $first_id and $second_id
@@ -79,8 +79,8 @@ $sql .= " OR `member_database`.`id` = '{$second_id}';";
 MySQL::query($sql);
 
 // 7) Delete the attendence for both $first_id and $second_id
-$sql = "DELETE FROM `{$database}`.`event_attendance` WHERE `event_attendance`.`event_id` = '{$first_id}'";
-$sql .= " OR `event_attendance`.`event_id` = '{$second_id}';";
+$sql = "DELETE FROM `{$database}`.`event_attendance` WHERE `event_attendance`.`member_id` = '{$first_id}'";
+$sql .= " OR `event_attendance`.`member_id` = '{$second_id}';";
 MySQL::query($sql);
 
 header("Location: index.php");
