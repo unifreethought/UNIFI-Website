@@ -33,4 +33,4 @@ $sql = "UPDATE  `{$database}`.`member_database`";
 $sql .= " WHERE  `member_database`.`id` = '{$member_id}';";
 
 MySQL::query($sql);
-header("Location: index.php?page=view_member&member={$member_id}");
+header("Location: index.php?page=page=member_database}");
