@@ -75,7 +75,8 @@ foreach ($new_events as $event) {
 
 // 6) Delete the members at $first_id and $second_id
 $sql = "DELETE FROM `{$database}`.`member_database` WHERE `member_database`.`id` = '{$first_id}'";
-$sql .= " OR `member_database`.`id` = '{$second_id}';";
+MySQL::query($sql);
+$sql = "DELETE FROM `{$database}`.`member_database` WHERE `member_database`.`id` = '{$second_id}'";
 MySQL::query($sql);
 
 // 7) Delete the attendence for both $first_id and $second_id
