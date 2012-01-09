@@ -11,6 +11,7 @@ $dorm = MySQL::clean($_GET['dorm']);
 $year = MySQL::clean($_GET['year']);
 $major = MySQL::clean($_GET['major']);
 $hometown = MySQL::clean($_GET['hometown']);
+$address = MySQL::clean($_GET['address']);
 $recruit_place = MySQL::clean($_GET['recruit_place']);
 $phone = MySQL::clean($_GET['phone']);
 $email = MySQL::clean($_GET['email']);
@@ -25,6 +26,7 @@ $sql = "UPDATE  `{$database}`.`member_database`";
 	$sql .= ", `major` =  '{$major}'";
 	
 	$sql .= ", `hometown` =  '{$hometown}'";
+	$sql .= ", `address` = '{$address}'";
 	$sql .= ", `recruit_place` =  '{$recruit_place}'";
 	$sql .= ", `phone` =  '{$phone}'";
 	$sql .= ", `email` =  '{$email}'";

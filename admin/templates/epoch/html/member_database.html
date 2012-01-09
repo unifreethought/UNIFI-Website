@@ -29,6 +29,8 @@
 				
 				<input type="text" class="member_field" id="hometown" placeholder="Hometown" />
 				
+				<input type="text" class="member_field" id="address" placeholder="Address" />
+				
 				<br />
 				
 				<!-- Dorm -->
@@ -114,6 +116,8 @@
 				
 				<input type="text" class="member_field" id="search_hometown" placeholder="Hometown" />
 				
+				<input type="text" class="member_field" id="search_address" placeholder="Address" />
+				
 				<br />
 				
 				<!-- Dorm -->
@@ -183,6 +187,7 @@
 						<td>Year</td>
 						<td>Major</td>
 						<td>Hometown</td>
+						<td>Address</td>
 						<td>Dorm</td>
 						<!-- <td>Recruit Date</td> -->
 						<td>Recruit Place</td>
@@ -202,6 +207,7 @@
 							echo "<td>" . User_Parse::parse_year($member['year']) . "</td>";
 							echo "<td>" . User_Parse::parse_major($member['major']) . "</td>";
 							echo "<td>" . $member['hometown'] . "</td>";
+							echo "<td>" . $member['address'] . "</td>";
 							echo "<td>" . User_Parse::parse_dorm($member['dorm']) . "</td>";
 							//echo "<td>" . @date('Y-m-d H:i:s', $member['recruit_date']) . "</td>";
 							echo "<td>" . User_Parse::parse_recruit_place($member['recruit_place']) . "</td>";
@@ -228,6 +234,7 @@
 				phone = encodeURIComponent(document.getElementById('phone').value),
 				texting = encodeURIComponent(document.getElementById('texting').value),
 				hometown = encodeURIComponent(document.getElementById('hometown').value),
+				address = encodeURIComponent(document.getElementById('address').value),
 				email = encodeURIComponent(document.getElementById('email').value),
 				
 				positions = document.getElementsByClassName('positions'),
@@ -250,7 +257,7 @@
 			var query_string = "&first_name=" + first_name + "&last_name=" + last_name + "&year=" + year + "&major=" + major;
 				query_string += "&dorm=" + dorm + "&recruit_place=" + recruit_place + "&phone=" + phone + "&texting=" + texting;
 				query_string += "&positions=" + append_positions.toString() + "&tags=" + append_tags.toString();
-				query_string += "&hometown=" + hometown + "&email=" + email;
+				query_string += "&hometown=" + hometown + "&email=" + email + "&address=" + address;
 				
 			console.log(href + query_string);
 				
@@ -272,6 +279,7 @@
 				phone = encodeURIComponent(document.getElementById('search_phone').value),
 				texting = encodeURIComponent(document.getElementById('search_texting').value),
 				hometown = encodeURIComponent(document.getElementById('search_hometown').value),
+				address = encodeURIComponent(document.getElementById('search_address').value),
 				email = encodeURIComponent(document.getElementById('search_email').value),
 				
 				positions = document.getElementsByClassName('search_positions'),
@@ -294,7 +302,7 @@
 			var query_string = "&first_name=" + first_name + "&last_name=" + last_name + "&year=" + year + "&major=" + major;
 				query_string += "&dorm=" + dorm + "&recruit_place=" + recruit_place + "&phone=" + phone + "&texting=" + texting;
 				query_string += "&positions=" + append_positions.toString() + "&tags=" + append_tags.toString();
-				query_string += "&hometown=" + hometown + "&email=" + email;
+				query_string += "&hometown=" + hometown + "&email=" + email + "&address=" + address;
 				
 			location.href = href + query_string;
 		}

@@ -25,6 +25,9 @@
 				Hometown: <input type="radio" name="hometown" value="<?php echo $first_sql['hometown']; ?>" /> 
 					<?php echo $first_sql['hometown']; ?><br />
 					
+				Address: <input type="radio" name="address" value="<?php echo $first_sql['address']; ?>" />
+					<?php echo $first_sql['address']; ?><br />
+					
 				Dorm: <input type="radio" name="dorm" value="<?php echo $first_sql['dorm']; ?>" /> 
 					<?php echo User_Parse::parse_dorm($first_sql['dorm']); ?><br />
 					
@@ -58,6 +61,9 @@
 					
 				Hometown: <input type="radio" name="hometown" value="<?php echo $second_sql['hometown']; ?>" /> 
 					<?php echo $second_sql['hometown']; ?><br />
+				
+				Address: <input type="radio" name="address" value="<?php echo $second_sql['address']; ?>" />
+					<?php echo $second_sql['address']; ?><br />
 					
 				Dorm: <input type="radio" name="dorm" value="<?php echo $second_sql['dorm']; ?>" /> 
 					<?php echo User_Parse::parse_dorm($second_sql['dorm']); ?><br />

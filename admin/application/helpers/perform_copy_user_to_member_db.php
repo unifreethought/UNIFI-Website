@@ -14,7 +14,7 @@ $sql = "DELETE FROM `{$database}`.`member_database` WHERE `member_database`.`fir
 
 MySQL::query($sql);
 
-$sql = "INSERT INTO `{$database}`.`member_database` (`id`, `first_name`,  `last_name`, `year`, `major`, `hometown`, `dorm`, `recruit_date`, `recruit_place`, `phone`, `email`, `texting`, `positions`, `tags`, `notes`) VALUES (0, '{$names['first_name']}', '{$names['last_name']}', '{$data['year']}', '{$data['major']}', '{$data['hometown']}', '{$data['dorm']}', '0', '{$data['recruit_place']}', '{$data['phone']}', '{$data['email']}', '{$data['texting']}', '{$data['positions']}', '{$data['tags']}', '{$date['notes']}');";
+$sql = "INSERT INTO `{$database}`.`member_database` (`id`, `first_name`,  `last_name`, `year`, `major`, `hometown`, `address`, `dorm`, `recruit_date`, `recruit_place`, `phone`, `email`, `texting`, `positions`, `tags`, `notes`) VALUES (0, '{$names['first_name']}', '{$names['last_name']}', '{$data['year']}', '{$data['major']}', '{$data['hometown']}', '{$data['address']}', '{$data['dorm']}', '0', '{$data['recruit_place']}', '{$data['phone']}', '{$data['email']}', '{$data['texting']}', '{$data['positions']}', '{$data['tags']}', '{$date['notes']}');";
 
 MySQL::query($sql);
 header("Location: index.php");

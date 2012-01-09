@@ -238,6 +238,7 @@ define('LIST_MEMBERS_Tags', 'Tag(s)');
 define('LIST_MEMBERS_Notes', 'Notes');
 define('LIST_MEMBERS_Recruit_Place', 'Recruit Place');
 define('LIST_MEMBERS_Hometown', 'Hometown');
+define('LIST_MEMBERS_Address', 'Address');
 define('LIST_MEMBERS_SUBMIT', 'Search Members');
 
 // Creating Members

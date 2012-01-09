@@ -21,6 +21,7 @@ $dorm = MySQL::clean($_GET['dorm']);
 $year = MySQL::clean($_GET['year']);
 $major = MySQL::clean($_GET['major']);
 $hometown = MySQL::clean($_GET['hometown']);
+$address = MySQL::clean($_GET['address']);
 $dorm = MySQL::clean($_GET['dorm']);
 $recruit_date = MySQL::clean(@time());
 $recruit_place = MySQL::clean($_GET['recruit_place']);
@@ -33,9 +34,9 @@ $tags = MySQL::clean(arr_join($_GET['tags']));
 // Strip any non-numeric characters from the phone number
 $phone = preg_replace("/[^0-9]/i", '', $phone);
 
-$sql = "INSERT INTO `{$database}`.`member_database` (`id`,`first_name`,`last_name`,`year`,`major`,`hometown`,`dorm`,`recruit_date`,`recruit_place`,`phone`,`email`,`texting`,";
+$sql = "INSERT INTO `{$database}`.`member_database` (`id`,`first_name`,`last_name`,`year`,`major`,`hometown`, `address`,`dorm`,`recruit_date`,`recruit_place`,`phone`,`email`,`texting`,";
 $sql .= "`positions`,`tags`) ";
-$sql .= "VALUES ('0', '{$first_name}', '{$last_name}','{$year}','{$major}','{$hometown}','{$dorm}','{$recruit_date}','{$recruit_place}','{$phone}','{$email}',";
+$sql .= "VALUES ('0', '{$first_name}', '{$last_name}','{$year}','{$major}','{$hometown}', '{$address},'{$dorm}','{$recruit_date}','{$recruit_place}','{$phone}','{$email}',";
 $sql .= "'{$texting}','{$positions}','{$tags}');";
 //echo $sql;
 MySQL::query($sql);

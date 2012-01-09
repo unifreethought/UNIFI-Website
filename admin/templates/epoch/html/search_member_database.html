@@ -12,6 +12,7 @@
 						<td><?php echo LIST_MEMBERS_Year; ?></td>
 						<td><?php echo LIST_MEMBERS_Major; ?></td>
 						<td><?php echo LIST_MEMBERS_Hometown; ?></td>
+						<td><?php echo LIST_MEMBERS_Address; ?></td>
 						<td><?php echo LIST_MEMBERS_Dorm; ?></td>
 						<!-- <td>Recruit Date</td> -->
 						<td><?php echo LIST_MEMBERS_Recruit_Place; ?></td>
@@ -31,6 +32,7 @@
 							echo "<td>" . User_Parse::parse_year((string)$member['year']) . "</td>";
 							echo "<td>" . User_Parse::parse_major((string)$member['major']) . "</td>";
 							echo "<td>" . $member['hometown'] . "</td>";
+							echo "<td>" . $member['address'] . "</td>";
 							echo "<td>" . User_Parse::parse_dorm((string)$member['dorm']) . "</td>";
 							//echo "<td>" . @date('Y-m-d H:i:s', $member['recruit_date']) . "</td>";
 							echo "<td>" . User_Parse::parse_recruit_place((string)$member['recruit_place']) . "</td>";

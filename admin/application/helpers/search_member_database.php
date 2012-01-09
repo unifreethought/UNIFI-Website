@@ -17,6 +17,7 @@ $recruit_place 	= ($_GET['recruit_place'] == '') ? '' : " `recruit_place` = '" .
 $phone 			= ($_GET['phone'] == '') ? '' : " `phone` = '" . MySQL::clean($_GET['phone']) . "' AND ";
 $texting 		= ($_GET['texting'] == '') ? '' : " `texting` = '" . MySQL::clean($_GET['texting']) . "' AND ";
 $hometown 		= ($_GET['hometown'] == '') ? '' : " `hometown` = '" . MySQL::clean($_GET['hometown']) . "' AND ";
+$address 		= ($_GET['address'] == '') ? '' : " `address` = '" . MySQL::clean($_GET['address']) . "' AND ";
 $email 			= ($_GET['email'] == '') ? '' : " `email` = '" . MySQL::clean($_GET['email']) . "' AND ";
 
 $positions_bad 	= explode(',', $_GET['positions']);
@@ -44,7 +45,7 @@ if (!empty($positions_bad)) {
 
 // Build the query
 $sql = "SELECT * FROM `{$database}`.`member_database` WHERE {$first_name}{$last_name}{$year}{$major}{$dorm}{$recruit_place}";
-$sql .= "{$phone}{$texting}{$hometown}{$email}{$tags}{$positions}";
+$sql .= "{$phone}{$texting}{$hometown}{$address}{$email}{$tags}{$positions}";
 
 $sql = substr($sql, 0, -5);
 $members = MySQL::search($sql);

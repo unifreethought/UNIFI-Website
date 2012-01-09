@@ -20,6 +20,7 @@ $dorm 			= ($_GET['dorm'] == '0') ? '' : " `dorm` = '" . MySQL::clean($_GET['dor
 $recruit_place 	= ($_GET['recruit_place'] == '0') ? '' : " `recruit_place` = '" . MySQL::clean($_GET['recruit_place']) . "' AND ";
 $texting 		= ($_GET['texting'] == '-1') ? '' : " `texting` = '" . MySQL::clean($_GET['texting']) . "' AND ";
 $hometown 		= ($_GET['hometown'] == '') ? '' : " `hometown` = '" . MySQL::clean($_GET['hometown']) . "' AND ";
+$address 		= ($_GET['address'] == '') ? '' : " `address` = '" . MySQL::clean($_GET['address']) . "' AND ";
 $phone 			= ($_GET['phone'] == '') ? '' : " `phone` = '" . MySQL::clean($_GET['phone']) . "' AND ";
 $email 			= ($_GET['email'] == '') ? '' : " `email` = '" . MySQL::clean($_GET['email']) . "' AND ";
 
@@ -99,6 +100,7 @@ foreach ($possible_results as $user) {
 	
 	// Direct Copying of data
 	$users[$user['id']]['hometown'] = $tmp['hometown'];
+	$users[$user['id']]['address'] = $tmp['address'];
 	$users[$user['id']]['phone'] = $tmp['phone'];
 	$users[$user['id']]['email'] = $tmp['email'];
 	$users[$user['id']]['notes'] = $tmp['notes'];
