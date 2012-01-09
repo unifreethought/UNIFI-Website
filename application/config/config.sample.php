@@ -18,6 +18,8 @@ $database = '';
 define('FACEBOOK_APP_ID', '');
 define('FACEBOOK_SECRET', '');
 
+$base_href = "http://www.unifreethought.com";
+
 // Connect
 MySQL::set_vars($hostname, $username, $password, $database);
 
