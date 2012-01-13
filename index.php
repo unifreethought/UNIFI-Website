@@ -58,6 +58,10 @@ if ($url['post'] == true) {
 	if ($_POST['add_email_to_newsletter'] == 'yes') {
 		include 'application/helpers/add_email_to_newsletter.php';
 	}
+	
+	if ($_POST['alumni_signup'] == 'yes') {
+		include 'application/helpers/process_alumni_signup.php';
+	}
 
 	exit();
 }
@@ -83,7 +87,6 @@ if ($url['get'] == true) {
 	if ($_GET['page'] == 'attend_event') {
 		$url['page'] = 'attend_event';
 	}
-	
 	
 	// Load specific pages.
 	if (empty($url['page'])) {
@@ -140,6 +143,12 @@ if ($url['get'] == true) {
 		case 'subscribe_to_newsletter':
 		    include 'application/helpers/show_authors_and_labels.php';
 			require 'templates/' . $config['template'] . '/html/subscribe_to_newsletter.html';
+		break;
+		
+		case 'alumni_signup':
+			include 'application/helpers/alumni_signup.php';
+			include 'application/helpers/show_authors_and_labels.php';
+			include 'templates/' . $config['template'] . '/html/alumni_signup.html';
 		break;
 		
 		default:

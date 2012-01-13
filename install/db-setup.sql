@@ -12,6 +12,35 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- Database: `unifi-website`
 --
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `alumni_database`
+--
+
+CREATE TABLE IF NOT EXISTS `alumni_database` (
+  `id` int(32) NOT NULL AUTO_INCREMENT,
+  `member_id` int(32) NOT NULL,
+  `user_id` int(32) NOT NULL,
+  `first_name` varchar(128) NOT NULL,
+  `last_name` varchar(128) NOT NULL,
+  `unifi_start_date` varchar(20) NOT NULL,
+  `unifi_end_date` varchar(20) NOT NULL,
+  `positions` varchar(1000) NOT NULL,
+  `major` int(32) NOT NULL,
+  `grad_school` varchar(500) NOT NULL,
+  `current_location` varchar(100) NOT NULL,
+  `current_location_coords` varchar(10) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `current_job` varchar(150) NOT NULL,
+  `phone` varchar(12) NOT NULL,
+  `notes` text NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
 --
 -- Table structure for table `blog-comments`
 --

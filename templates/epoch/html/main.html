@@ -27,6 +27,11 @@
 	<article>
 	<div id="blog-wrapper" class="border-right">
 		<?php
+			// Check to see if an alumni just signed up.
+			if (isset($_GET['thanks_alumni'])) {
+				echo "<h4>Thanks for becoming an alumni!</h4>";
+			}
+		
 			foreach ($posts as $post) {
 				echo "<section class='blog-post'>";
 					echo "<h2><a href='index.php?page=post&id=" . $post['id'] . "'>" . Clean::output($post['title']) . "</a></h2>";
