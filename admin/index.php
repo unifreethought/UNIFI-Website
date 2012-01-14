@@ -670,6 +670,24 @@ if ($url['post']) {
 			
 		break;
 		
+		case 'manage_alumni_members':
+			if (Auth::edit_members()) {
+				include 'application/helpers/manage_alumni_members.php';
+				include 'templates/' . $config['template'] . '/html/manage_alumni_members.html';
+			} else {
+				exit(ADMIN_NOT_AUTHORIZED);
+			}
+		break;
+		
+		case 'edit_alumni_member':
+			if (Auth::edit_members()) {
+				include 'application/helpers/edit_alumni_member.php';
+				include 'templates/' . $config['template'] . '/html/edit_alumni_member.html';
+			} else {
+				exit(ADMIN_NOT_AUTHORIZED);
+			}
+		break;
+		
 		
 		default:
 			

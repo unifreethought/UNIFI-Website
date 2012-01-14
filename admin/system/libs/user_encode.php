@@ -20,6 +20,7 @@ class User_Encode {
 	
 	// A crude cache system
 	static $years = array();
+	static $terms = array('Spring' => '0', 'Fall' => '0');
 	static $majors = array();
 	static $dorms = array();
 	static $recruit_places = array();
@@ -38,6 +39,13 @@ class User_Encode {
 			self::$years[$year] = $tmp['id'];
 			return $tmp['id'];
 		}
+	}
+	
+	// For when an alumni was part of unifi
+	// They follow the format of {term}-{year}
+	// 0-2010 => Spring 2010; 1-1992 => Fall 1992;
+	static function encode_alumni_date($term, $year) {
+		return self::$terms[$term] . '-' . $year;
 	}
 	
 	static function encode_major($major) {

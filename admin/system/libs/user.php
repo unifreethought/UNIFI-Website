@@ -20,6 +20,7 @@ class User_Parse {
 	
 	// A simple cache system.
 	static $years = array();
+	static $terms = array('0' => 'Spring', '1' => 'Fall');
 	static $majors = array();
 	static $dorms = array();
 	static $recruit_places = array();
@@ -39,6 +40,15 @@ class User_Parse {
 		// Add to the cache
 		self::$years[$year] = $tmp['desc'];
 		return $tmp['desc'];
+	}
+	
+	// For when an alumni was part of unifi
+	// They follow the format of {term}-{year}
+	// 0-2010 => Spring 2010; 1-1992 => Fall 1992;
+	static function parse_alumni_date($raw_date) {
+		$term = substr($raw_date, 0, 1);
+		$year = substr($raw_date, 2);
+		return self::$terms[$term] . ' ' . $year;
 	}
 	
 	// Parse the major from the cache and db

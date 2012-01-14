@@ -1,0 +1,41 @@
+
+	<div id="wrapper">
+		<table style="width: 100%;">
+			<thead>
+				<tr>
+					<!-- <td>Id</td> -->
+					<!-- <td>Member Id</td> -->
+					<!-- <td>User Id</td> -->
+					<td>First Name</td>
+					<td>Last Name</td>
+					<td>Start Date</td>
+					<td>End Date</td>
+					<td>Positions</td>
+					<td>Major</td>
+					<td>Grad School</td>
+					<td>Current Location</td>
+					<!-- <td>Current Location Coords</td> -->
+					<td>Email</td>
+				</tr>
+			</thead>
+			
+			<?php
+				foreach ($alumnis as $alumni) {
+					echo '<tr style="cursor:pointer;" onclick="window.location=\'index.php?page=edit_alumni_member&id=' . $alumni['id'] . '\';">';
+						//echo '<td>' . $alumni['user_id'] . '</td>';
+						//echo '<td>' . $alumni['member_id'] . '</td>';
+						echo '<td>' . $alumni['first_name'] . '</td>';
+						echo '<td>' . $alumni['last_name'] . '</td>';
+						echo '<td>' . User_Parse::parse_alumni_date($alumni['unifi_start_date']) . '</td>';
+						echo '<td>' . User_Parse::parse_alumni_date($alumni['unifi_end_date']) . '</td>';
+						//echo '<td>' . User_Parse::parse_positions($alumni['positions']) . '</td>';
+						echo '<td>...</td>';
+						echo '<td>' . User_Parse::parse_major($alumni['major']) . '</td>';
+						echo '<td>' . $alumni['grad_school'] . '</td>';
+						echo '<td>' . $alumni['current_location'] . '</td>';
+						echo '<td>' . $alumni['email'] . '</td>';
+					echo '</tr>';
+				}
+			?>
+	</div>
+	
