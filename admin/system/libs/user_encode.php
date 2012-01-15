@@ -20,7 +20,7 @@ class User_Encode {
 	
 	// A crude cache system
 	static $years = array();
-	static $terms = array('Spring' => '0', 'Fall' => '0');
+	static $terms = array('Spring' => '0', 'Fall' => '1');
 	static $majors = array();
 	static $dorms = array();
 	static $recruit_places = array();

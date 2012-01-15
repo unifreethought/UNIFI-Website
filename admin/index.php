@@ -216,6 +216,14 @@ if ($url['post']) {
 			exit(ADMIN_NOT_AUTHORIZED);
 	}
 	
+	if (!empty($_POST['edit_alumni_member'])) {
+		if (Auth::edit_users()) {
+			include 'application/helpers/process_edit_alumni_member.php';
+		} else {
+			exit(ADMIN_NOT_AUTHORIZED);
+		}
+	}
+	
 	exit('');
 	
 } else {
