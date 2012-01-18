@@ -153,7 +153,8 @@ class MySQL {
 	
 		$result = mysql_query($sql, self::$connection);
 		if (!$result)
-			mail("errors@unifreethought.com", "Error: SQL Query Failure", $sql, "From: contact@unifreethought.com\r\n");
+			mail("errors@unifreethought.com", "Error: SQL Query Failure", 
+				$sql . '\n\n' . mysql_error($result), "From: contact@unifreethought.com\r\n");
 		return $result;
 	}
 	
