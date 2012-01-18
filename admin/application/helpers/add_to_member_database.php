@@ -36,7 +36,7 @@ $phone = preg_replace("/[^0-9]/i", '', $phone);
 
 $sql = "INSERT INTO `{$database}`.`member_database` (`id`,`first_name`,`last_name`,`year`,`major`,`hometown`, `address`,`dorm`,`recruit_date`,`recruit_place`,`phone`,`email`,`texting`,";
 $sql .= "`positions`,`tags`) ";
-$sql .= "VALUES ('0', '{$first_name}', '{$last_name}','{$year}','{$major}','{$hometown}', '{$address},'{$dorm}','{$recruit_date}','{$recruit_place}','{$phone}','{$email}',";
+$sql .= "VALUES ('0', '{$first_name}', '{$last_name}','{$year}','{$major}','{$hometown}', '{$address}','{$dorm}','{$recruit_date}','{$recruit_place}','{$phone}','{$email}',";
 $sql .= "'{$texting}','{$positions}','{$tags}');";
 //echo $sql;
 MySQL::query($sql);
