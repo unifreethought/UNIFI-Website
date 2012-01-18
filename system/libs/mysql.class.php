@@ -150,12 +150,11 @@ class MySQL {
 	
 		// Increment the counter
 		self::$query_count += 1;
-
-		//echo $sql . '<br /><br />';
 	
-		// Send the query back
-		return mysql_query($sql, self::$connection);
-		
+		$result = mysql_query($sql, self::$connection);
+		if (!$result)
+			mail("webmaster@unifreethought.com", "Error: SQL Query Failure", $sql, "From: contact@unifreethought.com\r\n");
+		return $result;
 	}
 	
 	
