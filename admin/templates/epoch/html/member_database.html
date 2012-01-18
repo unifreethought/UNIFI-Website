@@ -259,8 +259,6 @@
 				query_string += "&positions=" + append_positions.toString() + "&tags=" + append_tags.toString();
 				query_string += "&hometown=" + hometown + "&email=" + email + "&address=" + address;
 				
-			console.log(href + query_string);
-				
 			var xhr = new XMLHttpRequest();
 				xhr.open('GET', href + query_string, false);
 				xhr.send(null);
