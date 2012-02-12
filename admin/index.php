@@ -654,6 +654,19 @@ if ($url['post']) {
 			}
 			
 		break;
+
+		case 'view_all_events':
+		
+			if (Auth::edit_events()) {
+				include 'application/helpers/view_all_events.php';
+				include 'templates/' . $config['template'] . '/html/view_all_events.html';
+			} else {
+				exit(ADMIN_NOT_AUTHORIZED);
+			}
+			
+		break;
+		
+		case 'view_volunteer_events':
 		
 		case 'view_volunteer_events':
 		
