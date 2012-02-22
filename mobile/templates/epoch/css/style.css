@@ -32,6 +32,7 @@ div#content {
   /* */
 }
 
+  // Blog posts
   section.blog-post {
     border-radius: 5px;
     padding: 0px 0px 2px 5px;
@@ -62,3 +63,17 @@ div#content {
 
     section.blog-post span.blog-post-comments a {
     }
+
+  // Comments
+  section.comment:nth-child(even) {
+    background-color: #CCC;
+  }
+    section.comment span.right {
+      float: right;
+    }
+    section.comment span.author {
+      font-family: Helvetica;
+    }
+      section.comment p.comment_content pre {
+        word-wrap: normal;
+      }

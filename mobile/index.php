@@ -51,24 +51,28 @@ include 'templates/' . $config['template'] . '/html/header.html';
 // Find what page to load
 if ($url['get'] == true) {
 
-	switch ($url['page']) {	
-          default:
-            //include 'application/helpers/detect_page.php';
-            //$url_stubs = get_possible_url_stubs();
+  switch ($url['page']) {	
+    case 'post':
+      include 'application/helpers/show_post.php';
+      include 'templates/' . $config['template'] . '/html/show_post.html';
+    break;
+
+    default:
+      include '../application/helpers/detect_page.php';
+      $url_stubs = get_possible_url_stubs();
             
-            //if (in_array($url['page'], $url_stubs)) {
-                // Load that specifc page from the db and display it.
-                //include 'application/helpers/load_db_page.php';
-                //include 'templates/' . $config['template'] . '/html/load_db_page.html';
-            //} else {
-                //if ($url['page'] != 'register') {
-                  include 'application/helpers/main.php';
-                  include 'templates/' . $config['template'] . '/html/main.html';
-                //}
-            //}
-          break;
-	}
-	
+      if (in_array($url['page'], $url_stubs)) {
+          // Load that specifc page from the db and display it.
+          include 'application/helpers/load_db_page.php';
+          include 'templates/' . $config['template'] . '/html/load_db_page.html';
+      } else {
+          if ($url['page'] != 'register') {
+            include 'application/helpers/main.php';
+            include 'templates/' . $config['template'] . '/html/main.html';
+          }
+      }
+    break;
+  }	
 }
 
 include 'templates/' . $config['template'] . '/html/footer.html';
