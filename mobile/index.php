@@ -11,7 +11,7 @@ require '../system/libs/sanitize.class.php';
 
 // Load the config
 require '../application/config/config.php';
-require '../application/i18n/' . $config['i18n'];
+require 'application/i18n/' . $config['i18n'];
 if ($config['web'] !== 'enabled') {
 	exit(WEB_ACCESS_DISABLED);
 }
