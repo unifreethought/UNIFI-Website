@@ -4,6 +4,59 @@
  */
 
 body {
-  background-color: #000000;
-  color: #FFFFFF;
+  background-color: #FFF;
+  background-size: auto;
+  color: #000;
 }
+
+a {
+  color: #28B;
+}
+
+div#wrapper {
+  display: block;
+  width: 100%;
+}
+
+  header h1 {
+    font-family: "Trebuchet MS", Trebuchet, Verdana, sans-serif;
+    font-size: 2em;
+  }
+    
+    header h1 a {
+      color: #000;
+      text-decoration: none;
+    }
+
+div#content {
+  /* */
+}
+
+  section.blog-post {
+    border-radius: 5px;
+    padding: 0px 0px 2px 5px;
+  }
+
+    section.blog-post:nth-child(even) {
+      background-color: #CCC;
+    }
+
+    section.blog-post:nth-child(odd) {
+      background-color: #FFF;
+    }
+
+    section.blog-post h2 {
+      font-family: 'Trebuchet MS', Trebuchet, Verdana, sans-serif;
+    }
+
+    section.blog-post span.blog-post-author {
+    }
+
+      section.blog-post span.blog-post-author a {
+      }
+
+    section.blog-post p {
+    }
+
+    section.blog-post span.blog-post-comments a {
+    }
