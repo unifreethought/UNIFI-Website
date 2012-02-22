@@ -7,7 +7,7 @@
       echo "<span class='blog-post-author'>" . BLOG_AUTHOR_PREFIX . 
         "<a href='index.php?page=profile&profile={$post['author']}'>";
       echo Clean::output($authors[$post['author']]) . '</a>' . Date::parse($post['timestamp']) . '</span>';
-    echo '<p>' . Clean::output(substr($post['content'], 0, 400)) . '...</p>';
+    echo '<p>' . Clean::output(substr($post['content'], 0, 400)) . '...</p><br />';
     echo "<span class='blog-post-comments'><a href='?page=post&id=" . $post['id'] . "'>" . BLOG_POST_COMMENTS . "</a></span>";
     echo "</section>";
     }

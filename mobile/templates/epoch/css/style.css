@@ -21,6 +21,7 @@ div#wrapper {
   header h1 {
     font-family: "Trebuchet MS", Trebuchet, Verdana, sans-serif;
     font-size: 2em;
+    margin-right: 5px;
   }
     
     header h1 a {
@@ -56,6 +57,7 @@ div#content {
       }
 
     section.blog-post p {
+      margin-bottom: 0px;
     }
 
     section.blog-post span.blog-post-comments a {
