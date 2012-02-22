@@ -30,6 +30,7 @@ $config = array(
 	'i18n' => 'en.php',
 	'i18n-admin' => 'en.php',
 	'allowable_blog_tags' => '<strong><b><em><i><img><a><iframe>',
-	'template' => 'epoch', // Don't include the trailing slash
+        'template' => 'epoch', // Don't include the trailing slash
+        'mobile_template' => 'epoch',
 	'admin_email' => ''
 );
