@@ -724,3 +724,4 @@ if ($url['post']) {
 	
 	include 'templates/' . $config['template'] . '/html/footer.html';
 }
+MySQL::close();

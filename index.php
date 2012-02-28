@@ -171,3 +171,4 @@ if ($url['get'] == true) {
 }
 
 include 'templates/' . $config['template'] . '/html/footer.html';
+MySQL::close();
