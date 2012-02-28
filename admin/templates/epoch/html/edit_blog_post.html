@@ -2,7 +2,7 @@
 	<div id="wrapper">
 		<?php echo EDIT_BLOG_POST_HEADER; ?>
 		
-		<div style="float: right; width: 40%;">
+		<div style="float: right; width: 20%;">
 			<ul id="blogTags" style="list-style-type: none; margin: 2px;">
 				<?php
 					$checked = '';
@@ -69,12 +69,15 @@
 			
 			<label>
 				<?php echo EDIT_BLOG_POST_TITLE; ?>: 
-				<input type="text" name="title" value="<?php echo $data['title']; ?>" />
+				<input type="text" name="title" value="<?php echo $data['title']; ?>" size="80" />
 			</label>
 			
 			<br />
 			
-			<textarea name="content"  cols="70" rows="15"><?php echo $data['content']; ?></textarea>
+			<textarea cols="40" id="content" name="content" rows="10"><?php echo htmlentities($data['content']); ?></textarea>
+			<script>
+			CKEDITOR.replace('content', {extraPlugins : 'docprops', width: '800px'});
+			</script>
 			
 			<br />
 			
