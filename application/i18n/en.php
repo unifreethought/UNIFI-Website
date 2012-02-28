@@ -142,3 +142,6 @@ define('PAGE_POST_TO_BLOG_CREATE_TAG', 'Create Tag');
 define('PAGE_LIST_EVENTS_TITLE', 'List Events');
 define('PAGE_LIST_BLOG_POSTS', 'Our Blog Posts');
 define('PAGE_EDIT_EVENT_HEADER', 'Edit an Event');
+
+// Edit member permissions
+define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_GET_USER_DESC', 'Edit Permissions For: ');
