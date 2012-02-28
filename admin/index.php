@@ -330,8 +330,8 @@ if ($url['post']) {
 		case 'post':
 			
 			if (Auth::can_post_blog()) {
-				include 'application/helpers/post_to_blog.php';
-				include 'templates/' . $config['template'] . '/html/post_to_blog.html';
+				include 'application/helpers/edit_blog_post.php';
+				include 'templates/' . $config['template'] . '/html/edit_blog_post.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}

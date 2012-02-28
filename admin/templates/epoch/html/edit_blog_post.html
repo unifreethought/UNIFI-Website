@@ -74,7 +74,7 @@
 			
 			<br />
 			
-			<textarea cols="40" id="content" name="content" rows="10"><?php echo htmlentities($data['content']); ?></textarea>
+			<textarea cols="40" id="content" name="content" rows="10"><?php echo $data['content']; ?></textarea>
 			<script>
 			CKEDITOR.replace('content', {extraPlugins : 'docprops', width: '800px'});
 			</script>
