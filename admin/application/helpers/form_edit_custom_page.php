@@ -13,5 +13,5 @@ $content = MySQL::clean($_POST['content']);
 $sql = "UPDATE `{$database}`.`pages` SET `url_stub` = '{$url_stub}', `page_title` = '{$page_title}', `content` = '{$content}' WHERE `pages`.`id` = '{$id}';";
 MySQL::query($sql);
 
-header("Location: index.php");
+header("Location: index.php?page=list_custom_pages");
 exit();
