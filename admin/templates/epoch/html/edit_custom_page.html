@@ -25,7 +25,11 @@
 			
 			<label>
 			<?php echo ADMIN_DASHBOARD_EDIT_CUSTOM_PAGE_CONTENT; ?><br />
-			<textarea name="content" rows="15" cols="70"><?php echo $data['content']; ?></textarea>
+                        <textarea cols="40" id="content" name="content" rows="10"><?php echo $data['content']; ?></textarea>
+                        <script>
+                        CKEDITOR.replace('content', {extraPlugins : 'docprops', width: '800px'});
+                        </script>
+
 			</label>
 			
 			<br />
