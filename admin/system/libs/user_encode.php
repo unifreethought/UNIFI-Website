@@ -23,7 +23,6 @@ class User_Encode {
 	static $terms = array('Spring' => '0', 'Fall' => '1');
 	static $majors = array();
 	static $dorms = array();
-	static $recruit_places = array();
 	static $texting = array( 0 => 'No', 1 => 'Yes' );
 	static $positions = array();
 	static $tags = array();
@@ -70,19 +69,6 @@ class User_Encode {
 		
 			// Add to the cache
 			self::$dorms[$dorm] = $tmp['id'];
-			return $tmp['id'];
-		}
-	}
-	
-	static function encode_recruit_place($recruit_place) {
-		if (!empty($recruit_places[$recruit_place])) {
-			return $recruit_places[$recruit_place];
-		} else {
-			$recruit_place = MySQL::clean($recruit_place);
-			$tmp = MySQL::single("SELECT `id` FROM `" . self::$database . "`.`recruit_place` WHERE `desc` = '{$recruit_place}' LIMIT 1");
-		
-			// Add to the cache
-			self::$recruit_places[$recruit_place] = $tmp['id'];
 			return $tmp['id'];
 		}
 	}

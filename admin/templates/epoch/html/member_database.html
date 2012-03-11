@@ -44,11 +44,7 @@
 				
 				<!-- Recruit Place -->
 				<?php
-				echo "<select class='member_select' id='recruit_place'>";
-				foreach ($recruit_places as $recruit_place) {
-					echo "<option value='{$recruit_place['id']}' id='recruit_place{$recruit_place['id']}'>{$recruit_place['desc']}</option>";
-				}
-				echo "</select>";
+				echo "<input type='text' class='member_select' id='recruit_place' placeholder='Recruit Place' />";
 				?>
 				
 				<input type="text" class="member_field" id="phone" placeholder="Phone Number" />
@@ -132,12 +128,7 @@
 				
 				<!-- Recruit Place -->
 				<?php
-				echo "<select class='member_select' id='search_recruit_place'>";
-					echo "<option value='' selected> -- </option>";
-				foreach ($recruit_places as $recruit_place) {
-					echo "<option value='{$recruit_place['id']}' id='recruit_place{$recruit_place['id']}'>{$recruit_place['desc']}</option>";
-				}
-				echo "</select>";
+                                echo "<input type='text' class='member_select' id='search_recruit_place' placeholder='Recruit Place' />";
 				?>
 				
 				<input type="text" class="member_field" id="search_phone" placeholder="Phone Number" />
@@ -210,7 +201,7 @@
 							echo "<td>" . $member['address'] . "</td>";
 							echo "<td>" . User_Parse::parse_dorm($member['dorm']) . "</td>";
 							//echo "<td>" . @date('Y-m-d H:i:s', $member['recruit_date']) . "</td>";
-							echo "<td>" . User_Parse::parse_recruit_place($member['recruit_place']) . "</td>";
+							echo "<td>" . $member['recruit_place'] . "</td>";
 							echo "<td>" . $member['phone'] . "</td>";
 							echo "<td>" . User_Parse::parse_texting($member['texting']) . "</td>";
 							echo "<td>" . $member['email'] . "</td>";

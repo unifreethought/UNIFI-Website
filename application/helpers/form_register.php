@@ -41,7 +41,7 @@ $tmp_user_id = MySQL::single("SELECT `id` FROM `{$database}`.`users` WHERE `face
 // $hometown
 // $dorm
 $recruit_date = '0';
-$recruit_place = '0';
+$recruit_place = '';
 // $phone
 // $email
 // $texting

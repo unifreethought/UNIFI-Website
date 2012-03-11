@@ -299,12 +299,6 @@ if ($url['post']) {
 		exit();
 	}
 	
-	if ($_GET['page'] == 'add_recruit_place') {
-		if (Auth::edit_users())
-			include 'application/helpers/add_recruit_place.php';
-		exit();
-	}
-	
 	if ($_GET['page'] == 'perform_copy_user_to_member_db') {
 		if (Auth::edit_users())
 			include 'application/helpers/perform_copy_user_to_member_db.php';
@@ -423,15 +417,6 @@ if ($url['post']) {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
 			
-		break;
-		
-		case 'new_recruit_place':
-			if (Auth::edit_users()) {
-				include 'application/helpers/new_recruit_place.php';
-				include 'templates/' . $config['template'] . '/html/new_recruit_place.html';
-			} else {
-				exit(ADMIN_NOT_AUTHORIZED);
-			}
 		break;
 		
 		case 'create_event':

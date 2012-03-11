@@ -349,6 +349,31 @@ INSERT INTO `major` (`id`, `desc`) VALUES
 (165, 'Unknown');
 
 -- --------------------------------------------------------
+--
+-- Table structure for table `member_database`
+--
+
+CREATE TABLE IF NOT EXISTS `member_database` (
+  `id` int(32) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(250) NOT NULL,
+  `last_name` varchar(250) NOT NULL,
+  `year` int(8) NOT NULL,
+  `major` int(8) NOT NULL,
+  `hometown` varchar(250) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `dorm` int(8) NOT NULL,
+  `recruit_date` int(20) NOT NULL,
+  `recruit_place` varchar(32) NOT NULL,
+  `phone` varchar(15) NOT NULL,
+  `email` varchar(500) NOT NULL,
+  `texting` int(8) NOT NULL,
+  `positions` varchar(150) NOT NULL,
+  `tags` varchar(150) NOT NULL,
+  `notes` text NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`),
+  UNIQUE KEY `first_name` (`first_name`,`last_name`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 
 --
 -- Table structure for table `nav-items`
@@ -424,27 +449,6 @@ INSERT INTO `positions` (`id`, `desc`) VALUES
 (5, 'Webmaster');
 
 --
--- Table structure for table `recruit_place`
---
-
-CREATE TABLE IF NOT EXISTS `recruit_place` (
-  `id` int(8) NOT NULL AUTO_INCREMENT,
-  `desc` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5;
-
---
--- Dumping data for table `recruit_place`
---
-
-INSERT INTO `recruit_place` (`id`, `desc`) VALUES
-(1, 'Tabling'),
-(2, 'FSM Dinner'),
-(3, 'Other'),
-(4, 'Unknown');
-
---
 -- Table structure for table `tags`
 --
 
@@ -476,7 +480,7 @@ CREATE TABLE IF NOT EXISTS `user-data` (
   `hometown` varchar(50) NOT NULL,
   `dorm` int(8) NOT NULL,
   `recruit_date` int(20) NOT NULL,
-  `recruit_place` int(8) NOT NULL,
+  `recruit_place` VARCHAR( 32 ) NOT NULL,
   `phone` varchar(10) NOT NULL,
   `email` varchar(120) NOT NULL,
   `texting` int(2) NOT NULL,

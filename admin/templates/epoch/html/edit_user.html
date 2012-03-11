@@ -64,17 +64,7 @@
 			
 			<label>
 				<?php echo LIST_MEMBERS_Recruit_Place; ?>:
-					<select name="recruit_place">
-						<?php
-						foreach ($recruit_places as $recruit_place) {
-							echo "<option value='{$recruit_place['id']}' id='recruit_place{$recruit_place['id']}'>{$recruit_place['desc']}</option>";
-						}
-						?>
-					</select><br />
-					
-					<script>
-						document.getElementById("recruit_place<?php echo $user_info['numeric']['recruit_place']; ?>").selected = 'selected';
-					</script>
+                                        <input type=text" name="recruit_place" value="<?php echo $user_info['recruit_place']; ?>" /><br />
 			</label>
 			
 			<label>

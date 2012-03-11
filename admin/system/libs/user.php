@@ -23,7 +23,6 @@ class User_Parse {
 	static $terms = array('0' => 'Spring', '1' => 'Fall');
 	static $majors = array();
 	static $dorms = array();
-	static $recruit_places = array();
 	static $texting = array( 0 => 'No', 1 => 'Yes' );
 	static $positions = array();
 	static $tags = array();
@@ -76,20 +75,6 @@ class User_Parse {
 		
 		// Add to the cache
 		self::$dorms[$dorm] = $tmp['desc'];
-		return $tmp['desc'];
-	}
-	
-	// Parse the recruit_place from the cache and db
-	static function parse_recruit_place($place) {
-		if (!empty(self::$recruit_places[$place])) {
-			return self::$recruit_places[$place];
-		}
-		
-		$place = MySQL::clean($place);
-		$tmp = MySQL::single("SELECT `desc` FROM `" . self::$database . "`.`recruit_place` WHERE `id` = '{$place}' LIMIT 1");
-		
-		// Add to the cache
-		self::$recruit_places[$place] = $tmp['desc'];
 		return $tmp['desc'];
 	}
 	
