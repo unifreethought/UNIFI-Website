@@ -80,13 +80,7 @@
 			
 			<label>
 				<?php echo LIST_MEMBERS_Recruit_Place; ?>:
-					<select name="recruit_place">
-						<?php
-						foreach ($recruit_places as $recruit_place) {
-							echo "<option value='{$recruit_place['id']}' id='recruit_place{$recruit_place['id']}'>{$recruit_place['desc']}</option>";
-						}
-						?>
-					</select><br />
+                                        <input type="text" name="recruit_place" /><br />
 			</label>
 			
 			<label>
