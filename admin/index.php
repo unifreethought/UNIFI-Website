@@ -693,7 +693,15 @@ if ($url['post']) {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
 		break;
-		
+
+                case 'backup_db':
+                  if (Auth::view_log()) {
+                    include 'application/helpers/backup_db.php';
+                    include 'templates/' . $config['template'] . '/html/backup_db.html';
+                  } else {
+                    exit(ADMIN_NOT_AUTHORIZED);
+                  }
+                break;
 		
 		default:
 			
