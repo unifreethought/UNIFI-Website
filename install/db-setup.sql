@@ -100,6 +100,18 @@ INSERT INTO `dorm` (`id`, `desc`) VALUES
 (12, 'Unknown');
 
 --
+-- Table structure for table `email_lists`
+--
+
+CREATE TABLE IF NOT EXISTS `email_lists` (
+  `id` int(32) NOT NULL AUTO_INCREMENT,
+  `desc` varchar(100) NOT NULL,
+  `emails` text NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
 -- Table structure for table `events`
 --
 

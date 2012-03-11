@@ -223,6 +223,22 @@ if ($url['post']) {
 			exit(ADMIN_NOT_AUTHORIZED);
 		}
 	}
+
+        if (!empty($_POST['edit_posting_emails'])) {
+          if (Auth::post_to_blog()) {
+            include 'application/helpers/form_edit_posting_emails.php';
+          } else {
+            exit(ADMIN_NOT_AUTHORIZED);
+          }
+        }
+
+        if (!empty($_POST['edit_commenting_emails'])) {
+          if (Auth::post_to_blog()) {
+            include 'application/helpers/form_edit_commenting_emails.php';
+          } else {
+            exit(ADMIN_NOT_AUTHORIZED);
+          }
+        }
 	
 	exit('');
 	
@@ -693,6 +709,24 @@ if ($url['post']) {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
 		break;
+
+                case 'edit_posting_emails':
+                  if (Auth::post_to_blog()) {
+                    include 'application/helpers/edit_posting_emails.php';
+                    include 'templates/'. $config['template'] . '/html/edit_posting_emails.html';
+                  } else {
+                    exit(ADMIN_NOT_AUTHORIZED);
+                  }
+                break;
+
+                case 'edit_comment_emails':
+                  if (Auth::post_to_blog()) {
+                    include 'application/helpers/edit_commenting_emails.php';
+                    include 'templates/'. $config['template'] . '/html/edit_commenting_emails.html';
+                  } else {
+                    exit(ADMIN_NOT_AUTHORIZED);
+                  }
+                break;
 
                 case 'backup_db':
                   if (Auth::view_log()) {

@@ -19,6 +19,13 @@ if (empty($id)) {
 
   // Log the new post.
   Log::create($user_id, 'new_blog_post', 'date:' . Date::parse($time) . '<br>title:' . $title);
+  
+  // Email all of the people setup for it.
+  $emails_raw = MySQL::single("SELECT `emails` from `{$database}`.`email_lists` WHERE `desc` = 'posting_emails' LIMIT 1");
+  $emails = explode(',', $emails_raw['emails']);
+  foreach ($emails as $email) {
+    mail($email, "A new blog post: " . $title, $content, "From: {$config['admin_email']}");
+  }
 
 } else {
   $sql = "UPDATE `{$database}`.`blog-posts` SET `title` = '{$title}', `content` =  '{$content}' WHERE  `blog-posts`.`id` = '{$id}';";
