@@ -109,7 +109,15 @@ CREATE TABLE IF NOT EXISTS `email_lists` (
   `emails` text NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3;
+
+--
+-- Dumping data for table `email_lists`
+--
+
+INSERT INTO `email_lists` (`id`, `desc`, `emails`) VALUES
+(1, 'posting_emails', ''),
+(2, 'commenting_emails', '');
 
 --
 -- Table structure for table `events`
