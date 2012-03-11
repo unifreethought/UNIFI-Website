@@ -7,7 +7,6 @@
  
 body {
 	background-color: #000000;
-	overflow-x: hidden;
 	width: 99%;
 }
 
@@ -61,7 +60,7 @@ div#wrapper {
 	margin-right: auto;
 	margin-top: 2%;
 	padding: 5px;
-	width: 1050px;
+	width: 85%;
 }
 
 header {
