@@ -24,7 +24,7 @@ Log::set($database);
 require '../system/errors/errors.php';
 
 // Load the user stuff. (Facebook)
-require_once "../facebook/facebook.php";
+require_once "../system/libs/facebook/facebook.php";
 require '../application/helpers/user.php';
 
 // Check any cookies
