@@ -4,4 +4,5 @@ Options -Indexes
 DirectoryIndex index.php
 
 # To keep up with the old site's links
+RewriteEngine on
 RewriteRule ^/p/247-service-week.html$ http://unifreethought.com/index.php?page=service [NC,L,R=301]
