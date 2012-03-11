@@ -4,5 +4,5 @@
  * Adam Shannon
  */
 
-$cmd = "mysqldump -u {$username} -p{$password} {$database}";
+$cmd = "mysqldump -u {$username} -p'{$password}' {$database}";
 $data = shell_exec($cmd);
