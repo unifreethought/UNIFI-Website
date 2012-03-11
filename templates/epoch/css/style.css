@@ -324,6 +324,10 @@ article {
 						width: 550px;
 					}
 
+pre {
+ font-family: Times New Roman;
+}
+
 footer {
 	background-color: #36317d;
 	display: block;
