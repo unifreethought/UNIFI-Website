@@ -18,7 +18,7 @@ if ($config['web'] !== 'enabled') {
 }
 
 // Is it a mobile browser?
-require_once ('TeraWurflRemoteClient/TeraWurflRemoteClient.php');
+require_once ('system/libs/TeraWurflRemoteClient.php');
   $wurflObj = new TeraWurflRemoteClient('http://wurfl.thesedays.com/webservice.php');
   $capabilities = array("product_info");
   $data_format = TeraWurflRemoteClient::$FORMAT_JSON;
@@ -37,7 +37,7 @@ Log::set($database);
 require 'system/errors/errors.php';
 
 // Load the user stuff. (Facebook)
-require_once "facebook/facebook.php";
+require_once "system/libs/facebook/facebook.php";
 require 'application/helpers/user.php';
 //echo $fb_id . '<br />';
 //echo $user_id . '<br />';
