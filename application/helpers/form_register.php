@@ -73,7 +73,7 @@ Log::create($user_id, 'register', "name:{$first_name} {$last_name}");
 
 // Send an email out about the registration.
 $subject = 'A new user registration';
-$message = "A <a href='{$base_href}/admin/index.php?page=edit_user&user=14' target='_blank'>new user</a> has registered on the website!";
+$message = "A new user ({$first_name} {$last_name}) has registered on the website!";
 $headers = 'From: contact@unifreethought.com\n\r';
 mail('membership@unifreethought.com', $subject, $message, $headers);
 mail('webmaster@unifreethought.com', $subject, $message, $headers);
