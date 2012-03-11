@@ -65,7 +65,6 @@ function get_user_id_on_exist($fb_id) {
 	}
 }
 
-// Use the FB-SDK
 $facebook = new Facebook(
 	array(
 		'appId' => FACEBOOK_APP_ID,
@@ -78,8 +77,6 @@ $fb_id = $facebook->getUser();
 $user_id = get_user_id_on_exist($fb_id);
 $access_token = $facebook->getAccessToken();
 
-
-	// Does the user need to register?
 	if (!$user_id && $fb_id > 0) {
 		$show_register_form = true;
 		$fb_data = get_more_fb_data($fb_id, $access_token);

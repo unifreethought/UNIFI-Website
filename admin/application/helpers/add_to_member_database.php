@@ -38,5 +38,4 @@ $sql = "INSERT INTO `{$database}`.`member_database` (`id`,`first_name`,`last_nam
 $sql .= "`positions`,`tags`) ";
 $sql .= "VALUES ('0', '{$first_name}', '{$last_name}','{$year}','{$major}','{$hometown}', '{$address}','{$dorm}','{$recruit_date}','{$recruit_place}','{$phone}','{$email}',";
 $sql .= "'{$texting}','{$positions}','{$tags}');";
-//echo $sql;
 MySQL::query($sql);

@@ -17,7 +17,6 @@ $first = build_query_part($first_stub, $first_clean);
 $last  = build_query_part($last_stub, $last_clean);
 $or = ' OR ';
 
-// The order in these two if's is supposed to be like so.
 if ($first_clean == "" || $first_clean == "undefined") {
 	$first = build_query_part($first_stub, $last_clean);
 }

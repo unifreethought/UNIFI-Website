@@ -7,8 +7,7 @@
 require 'system/libs/user.php';
 User_Parse::set($database);
 
-// I'm neglecting positions AND tags right now..
-// Also, we should be grabbing results for each item and comparing them
+// We should be grabbing results for each item and comparing them
 // to get the "most relevant" results. That way we can filter them in
 // relevance.
 $first_name 	= ($_GET['first_name'] == '') ? '' : " `first_name` = '" . MySQL::clean($_GET['first_name']) . "' AND ";
@@ -24,7 +23,6 @@ $address 		= ($_GET['address'] == '') ? '' : " `address` = '" . MySQL::clean($_G
 $phone 			= ($_GET['phone'] == '') ? '' : " `phone` = '" . MySQL::clean($_GET['phone']) . "' AND ";
 $email 			= ($_GET['email'] == '') ? '' : " `email` = '" . MySQL::clean($_GET['email']) . "' AND ";
 
-// Parse out the tags and positions
 $tags_bad = (empty($_GET['tags'])) ? array() : $_GET['tags'];
 $positions_bad = (empty($_GET['positions'])) ? array() : $_GET['positions'];
 
@@ -48,18 +46,9 @@ if (empty($tags)) {
 	$positions = substr($positions, 5);
 }
 
-//print $tags . '<br />' . $positions . '<br /><br />';
-
-//print "\"{$first_name}{$last_name}\"<br />";
-//print "\"{$year}{$major}{$dorm}{$recruit_place}{$texting}{$hometown}{$phone}{$email}\"<br/ >";
-
 if ($first_name !== '' || $last_name !== '') {
 	// Generate results to search within
-	//echo "SELECT `id` FROM `{$database}`.`users` WHERE " . substr($first_name . $last_name, 0, -5) . '<br />';
 	$possible_results = MySQL::search("SELECT `id` FROM `{$database}`.`users` WHERE " . substr($first_name . $last_name, 0, -5));
-	//echo 'First or Last Name:';
-	//print_r($possible_results);
-	//echo '<br /><br />';
 } else {
 	// Alright, so I'm not completely sure how I want to go about this.
 	// I'm thinking that I should pull each result down and inter-compare,
@@ -68,11 +57,7 @@ if ($first_name !== '' || $last_name !== '') {
 	$sql2 = "SELECT `id` FROM `{$database}`.`user-data` WHERE ";
 	$sql2 .= substr($year . $major . $dorm . $recruit_place . $texting . $hometown . $phone . $email, 0, -5);
 	$sql2 .= $tags . $positions;
-	//echo $sql2;
 	$possible_results = MySQL::search($sql2);
-	//echo 'Other:';
-	//print_r($possible_results);
-	//echo '<br /><br />';
 }
 
 $users = array();
@@ -86,10 +71,8 @@ foreach ($possible_results as $user) {
 		'last_name' => $tmp_data['last_name']
 	);
 	
-	// Join the arrays together with the cryptic database data
 	$users[$user['id']]['id'] = $user['id'];
 	
-	// The db parsing requests
 	$users[$user['id']]['year'] = User_Parse::parse_year($tmp['year']);
 	$users[$user['id']]['major'] = User_Parse::parse_major($tmp['major']);
 	$users[$user['id']]['dorm'] = User_Parse::parse_dorm($tmp['dorm']);
@@ -98,14 +81,12 @@ foreach ($possible_results as $user) {
 	$users[$user['id']]['positions'] = User_Parse::parse_positions($tmp['positions']);
 	$users[$user['id']]['tags'] = User_Parse::parse_tags($tmp['tags']);
 	
-	// Direct Copying of data
 	$users[$user['id']]['hometown'] = $tmp['hometown'];
 	$users[$user['id']]['address'] = $tmp['address'];
 	$users[$user['id']]['phone'] = $tmp['phone'];
 	$users[$user['id']]['email'] = $tmp['email'];
 	$users[$user['id']]['notes'] = $tmp['notes'];
 	
-	// Date parsing
 	$users[$user['id']]['recruit_date'] = Date::parse($tmp['recruit_date']);
 }
 

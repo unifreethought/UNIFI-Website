@@ -4,8 +4,6 @@
  * Adam Shannon
  */
  
-//include 'system/libs/user_encode.php';
-
 function clean_each($arr) {
 	if (empty($arr))
 		return;
@@ -40,7 +38,6 @@ $tags = clean_each($_GET['tag']);
 
 $sql = "SELECT `id`,`first_name`,`last_name` FROM `{$database}`.`member_database` WHERE ";
 
-// Minor SQL strings
 $years_str = build_sql_part($years, 'year');
 $dorms_str = build_sql_part($dorms, 'dorm');
 $positions_str = build_sql_part($positions, 'positions');
@@ -52,7 +49,6 @@ $sql = substr($sql, 0, -5) . ';';
 
 $people = MySQL::search($sql);
 
-// Pull the events
 $events = clean_each($_GET['event']);
 $events_str = "";
 
@@ -65,7 +61,6 @@ $sql = substr($sql, 0, -4) . ';';
 
 $events = MySQL::search($sql);
 
-// Join them together
 $results = array();
 
 if (empty($people) || empty($events)) {
@@ -79,4 +74,3 @@ if (empty($people) || empty($events)) {
 	}
 }
 
-//print_r($results);

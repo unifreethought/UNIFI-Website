@@ -5,7 +5,6 @@
  * 2010-11-21
  */
  
-// Pull the latest items from the log, with respect to time.
 if (empty($_GET['older_than'])) {
 	$_GET['older_than'] = @time();
 }
@@ -28,5 +27,3 @@ foreach ($data as $item) {
 		'unique' => $unique
 	);
 }
-
-//print_r($results);

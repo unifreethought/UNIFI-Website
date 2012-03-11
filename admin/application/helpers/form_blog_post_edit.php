@@ -17,7 +17,6 @@ if (empty($id)) {
   $sql .= "('0', '{$user_id}', '{$time}', '{$title}', '{$content}');";
   MySQL::query($sql);
 
-  // Log the new post.
   Log::create($user_id, 'new_blog_post', 'date:' . Date::parse($time) . '<br>title:' . $title);
   
   // Email all of the people setup for it.

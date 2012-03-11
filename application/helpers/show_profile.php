@@ -10,10 +10,6 @@ include 'show_authors_and_labels.php';
 include 'admin/system/libs/user.php';
 User_Parse::set($database);
 
-// Pull the relevant profile data about a user.
-// Eventually, we'll only pull the data that you want to give access to,
-// which will be based on the auth of the user requesting the page.
-// But, for now show all of the data!!
 $id = MySQL::clean($_GET['profile']);
 
 $generic_data = MySQL::single("SELECT `first_name`,`last_name`,`facebook` FROM `{$database}`.`users` WHERE `id` = '{$id}' LIMIT 1");

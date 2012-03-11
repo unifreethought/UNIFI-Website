@@ -9,10 +9,8 @@ $first_name = "`first_name` LIKE '" . MySQL::clean($_POST['first_name']) . "%'";
 $last_name = "`last_name` LIKE '" . MySQL::clean($_POST['last_name']) . "%'";
 
 $sql = "SELECT `id`,`first_name`,`last_name` FROM `{$database}`.`users` WHERE {$first_name} AND {$last_name} LIMIT 100";
-//echo $sql . '<br /><br />';
 
 $data = MySQL::search($sql);
-//print_r($data);
 
 echo ADMIN_DASHBORD_DELETE_USER_CONFORM_DESC . '<br />';
 echo "<form action='index.php' method='POST'>";

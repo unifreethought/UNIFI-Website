@@ -6,7 +6,6 @@
 
 include 'system/libs/show_date.php';
  
-// Pull all comments from the db
 $comments = MySQL::search("SELECT `blog_post`,`author`,`timestamp`,`content` FROM `{$database}`.`blog-comments` ORDER BY `timestamp` DESC");
 $authors = array();
 $post_titles = array();

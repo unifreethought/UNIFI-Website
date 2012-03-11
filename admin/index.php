@@ -27,7 +27,6 @@ require '../system/errors/errors.php';
 // Load the user stuff. (Facebook)
 require '../system/libs/facebook/facebook.php';
 require '../application/helpers/user.php';
-//echo $fb_id . ' ' . $user_id . '<br />';
 
 // Load up the auth library
 include '../system/libs/auth.php';
@@ -36,7 +35,6 @@ Auth::set($user_id, $database);
 // Check the url
 require '../application/helpers/url.php';
 $url = check_url();
-//print_r($url);
 
 if ($url['post']) {
 	// Load the helper to change a user's details.
@@ -253,8 +251,6 @@ if ($url['post']) {
 	// This is due to the lack of true cross site request compatability.
 	if (!empty($_GET['getFBID'])) {
 		$ch = curl_init();
-		//echo "http://graph.facebook.com/" . $_GET['getFBID'] . '<br />';
-		//echo 'a';
 			curl_setopt($ch, CURLOPT_FRESH_CONNECT, true);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
@@ -328,7 +324,6 @@ if ($url['post']) {
 
 	include 'templates/' . $config['template'] . '/html/header.html';
 	
-	// Clean the $user_id for each action. 
 	$user_id = MySQL::clean($user_id);
 	
 	switch ($url['page']) {

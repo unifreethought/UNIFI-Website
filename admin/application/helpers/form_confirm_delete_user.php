@@ -13,16 +13,13 @@ foreach ($user_ids as $id) {
 	
 	$data = MySQL::single("SELECT * FROM `{$database}`.`users` WHERE `id` = '{$id}' LIMIT 1");
 	
-	// Delete the row!!
 	$sql = "DELETE FROM `{$database}`.`users` WHERE `users`.`id` = '{$id}'";
 	MySQL::query($sql);
 	
-	// Add the user to the other table
 	$sql = "INSERT INTO `{$database}`.`users-deleted` (`id`,`first_name`,`last_name`,`facebook`,`cookie`) VALUES ";
 	$sql .= "('{$data['id']}','{$data['first_name']}','{$data['last_name']}','{$data['facebook']}','{$data['cookie']}');";
 	MySQL::query($sql);
 	
-	// Log the action
 	Log::create($user_id, 'delete_user', "user:{$data['first_name']} {$data['last_name']}");
 }
 

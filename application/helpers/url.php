@@ -11,7 +11,6 @@ function check_url() {
 	$get = $_GET;
 	$url = array();
 	
-	// Set the ['post'] or ['get'] flag
 	if (!empty($post) && empty($get)) {
 		$url['get'] = (bool) false;
 		$url['post'] = (bool) true;
@@ -20,12 +19,9 @@ function check_url() {
 		$url['post'] = (bool) false;
 	}
 	
-	// Set the ['page'] entry
-	// Here we can check for array_key_exists.
 	if (!empty($get['page'])) {
 		$url['page'] = $get['page'];
 		
-		// Now, set the relevant fields per the ['page'].
 		foreach ($get as $key => $value) {
 			if (empty($url[$key])) {
 				$url[$key] = $value;

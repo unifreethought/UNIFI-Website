@@ -25,7 +25,6 @@ $tags_bad		= explode(',', $_GET['tags']);
 $tags = $positions = '';
 
 if (!empty($tags_bad)) {
-	// Clean up positions and tags
 	foreach ($tags_bad as $item) {
 		if ($item != '')
 			$tags .= "LIKE '%" . MySQL::clean($item) . "%' AND ";
@@ -43,7 +42,6 @@ if (!empty($positions_bad)) {
 	$positions = '';
 }
 
-// Build the query
 $sql = "SELECT * FROM `{$database}`.`member_database` WHERE {$first_name}{$last_name}{$year}{$major}{$dorm}{$recruit_place}";
 $sql .= "{$phone}{$texting}{$hometown}{$address}{$email}{$tags}{$positions}";
 

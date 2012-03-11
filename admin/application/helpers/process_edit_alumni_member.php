@@ -25,11 +25,9 @@ $current_job = MySQL::clean($_POST['current_job']);
 $phone = MySQL::clean($_POST['phone']);
 $notes = MySQL::clean($_POST['notes']);
 
-// Merge the start and end dates
 $start_date = User_Encode::encode_alumni_date($start_date_term, $start_date_year);
 $end_date = User_Encode::encode_alumni_date($end_date_term, $end_date_year);
 
-// Merge the positions
 $raw_positions = $_POST['positions'];
 $positions = '';
 foreach ($raw_positions as $p) {
@@ -37,7 +35,6 @@ foreach ($raw_positions as $p) {
 }
 $positions = substr($positions, 0, -1);
 
-// Create the sql now.
 $sql = "UPDATE `{$database}`.`alumni_database` SET `id` = '{$id}', `member_id` = '{$member_id}', `user_id` = '{$user_id}', ";
 $sql .= "`first_name` = '{$first_name}', `last_name` = '{$last_name}', `unifi_start_date` = '{$start_date}', ";
 $sql .= "`unifi_end_date` = '{$end_date}', `positions` = '{$positions}', `major` = '{$major}', `grad_school` = '{$grad_school}',";

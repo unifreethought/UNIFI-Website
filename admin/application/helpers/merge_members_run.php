@@ -4,18 +4,6 @@
  * Adam Shannon
  */
  
-/**
- Steps
-	1) Grab the information to make the new user. (From the radio buttons)
-	2) Collect that all into an sql query.
-	3) Create a new member with the details from #2 and then pull the new id.
-	4) Pull the events attended for $first_id and $second_id
-	5) Mark all of those events from #4 attended by the new member id.
-	6) Delete the members at $first_id and $second_id
-	7) Delete the attendence for both $first_id and $second_id
- 
- */
- 
 function arr_join($arr) {
 	$tmp = '';
 	foreach ($arr as $item) {

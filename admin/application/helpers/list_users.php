@@ -8,7 +8,6 @@
 require 'system/libs/user.php';
 User_Parse::set($database);
  
-// Load the user data which can be edited.
 $raw_user_data = MySQL::search("SELECT `id`,`first_name`,`last_name` FROM `{$database}`.`users` ORDER BY `first_name` ASC");
 $users = array();
 
@@ -21,10 +20,8 @@ foreach ($raw_user_data as $user) {
 		'last_name' => $user['last_name']
 	);
 	
-	// Join the arrays together with the cryptic database data
 	$users[$user['id']]['id'] = $user['id'];
 	
-	// The db parsing requests
 	$users[$user['id']]['year'] = User_Parse::parse_year($tmp['year']);
 	$users[$user['id']]['major'] = User_Parse::parse_major($tmp['major']);
 	$users[$user['id']]['dorm'] = User_Parse::parse_dorm($tmp['dorm']);
@@ -33,7 +30,6 @@ foreach ($raw_user_data as $user) {
 	$users[$user['id']]['positions'] = User_Parse::parse_positions($tmp['positions']);
 	$users[$user['id']]['tags'] = User_Parse::parse_tags($tmp['tags']);
 	
-	// Direct Copying of data
 	$users[$user['id']]['first_name'] = $user['first_name'];
 	$users[$user['id']]['last_name'] = $user['last_name'];
 	$users[$user['id']]['hometown'] = $tmp['hometown'];
@@ -41,9 +37,5 @@ foreach ($raw_user_data as $user) {
 	$users[$user['id']]['email'] = $tmp['email'];
 	$users[$user['id']]['notes'] = $tmp['notes'];
 	
-	// Date parsing
 	$users[$user['id']]['recruit_date'] = Date::parse($tmp['recruit_date']);
 }
-
-//print_r($users);
-

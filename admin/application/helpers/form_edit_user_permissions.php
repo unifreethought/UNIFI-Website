@@ -11,7 +11,6 @@ if (empty($user_id)) {
 	exit(NO_USER_ID);
 }
 
-// Fill the values
 $post_to_blog 			= (!empty($_POST['post_to_blog']) 			&& $_POST['post_to_blog'] == 'yes')				? '1' : '0';
 $access_admin_dashboard = (!empty($_POST['access_admin_dashboard']) && $_POST['access_admin_dashboard'] == 'yes')	? '1' : '0';
 $view_members 			= (!empty($_POST['view_members']) 			&& $_POST['view_members'] == 'yes')				? '1' : '0';

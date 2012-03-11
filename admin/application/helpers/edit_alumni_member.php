@@ -6,10 +6,7 @@
 include 'system/libs/user.php';
 User_Parse::set($database);
  
-// Pull info about the user.
 $id = MySQL::clean($_GET['id']);
-
-// Pull the info now.
 $sql = "SELECT * FROM `{$database}`.`alumni_database` WHERE `id` = '{$id}' LIMIT 1;";
 $alumni = MySQL::single($sql);
 
@@ -19,4 +16,3 @@ $end_date = explode(' ', User_Parse::parse_alumni_date($alumni['unifi_end_date']
 $positions = explode(',', $alumni['positions']);
 $all_positions = MySQL::search("SELECT * FROM `{$database}`.`positions`;");
 $majors = MySQL::search("SELECT * FROM `{$database}`.`major`;");
-

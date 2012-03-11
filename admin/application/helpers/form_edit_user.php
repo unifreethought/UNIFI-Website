@@ -5,15 +5,13 @@
  * 2010-11-21
  */
 
-//print_r($_POST);
-
 $id = MySQL::clean($_POST['id']);
 $first_name = MySQL::clean($_POST['first_name']);
 $last_name = MySQL::clean($_POST['last_name']);
 $sql = "UPDATE  `{$database}`.`users` SET  `first_name` =  '{$first_name}', `last_name` = '{$last_name}' WHERE  `users`.`id` = '{$id}';";
 MySQL::query($sql);
 
-// Now for `user-data`
+// `user-data`
 $year = MySQL::clean($_POST['year']);
 $major = MySQL::clean($_POST['major']);
 $dorm = MySQL::clean($_POST['dorm']);
@@ -44,7 +42,6 @@ if (!empty($_POST['tags'])) {
 	$tags = '';
 }
 
-// Build the query.
 $sql = "UPDATE `{$database}`.`user-data` SET `year` = '{$year}', `major` = '{$major}', `dorm` = '{$dorm}', `recruit_place` = '{$recruit_place}'";
 $sql .= ", `texting` = '{$texting}', `hometown` = '{$hometown}', `phone` = '{$phone}', `email` = '{$email}', `notes` = '{$notes}'";
 $sql .= ", `positions` = '{$positions}', `tags` = '{$tags}' WHERE `user-data`.`id` = '{$id}'";
@@ -52,6 +49,5 @@ MySQL::query($sql);
 
 Log::create($user_id, 'edit_user', "name:{$first_name} {$last_name}");
 
-// Btw, this is a SECURITY HOLE!!
 header("Location: {$_SERVER['HTTP_REFERER']}");
 exit();

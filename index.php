@@ -39,12 +39,6 @@ require 'system/errors/errors.php';
 // Load the user stuff. (Facebook)
 require_once "system/libs/facebook/facebook.php";
 require 'application/helpers/user.php';
-//echo $fb_id . '<br />';
-//echo $user_id . '<br />';
-
-// Check any cookies
-//require 'application/helpers/cookie.php';
-//$user_id = check_cookies();
 
 // Check the url
 require 'application/helpers/url.php';

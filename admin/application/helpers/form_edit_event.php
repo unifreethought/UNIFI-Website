@@ -25,8 +25,6 @@ $end_min = $_POST['end_hour'][1];
 $start = Show_Date::timestamp($start_hour, $start_min, $_POST['start_day'], $_POST['start_month'], $_POST['start_year']);
 $end = Show_Date::timestamp($end_hour, $end_min, $_POST['end_day'], $_POST['end_month'], $_POST['end_year']);
 
-//exit("start:{$start}, end:{$end}");
-
 $sql = "UPDATE  `{$database}`.`events` SET `title` = '{$title}',`start_time` = '{$start}',`end_time` = '{$end}',";
 $sql .= "`location` = '{$location}',`description` = '{$description}' WHERE `events`.`id` = {$id};";
 
