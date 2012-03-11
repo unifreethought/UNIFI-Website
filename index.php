@@ -17,6 +17,18 @@ if ($config['web'] !== 'enabled') {
 	exit(WEB_ACCESS_DISABLED);
 }
 
+// Is it a mobile browser?
+require_once ('TeraWurflRemoteClient/TeraWurflRemoteClient.php');
+  $wurflObj = new TeraWurflRemoteClient('http://wurfl.thesedays.com/webservice.php');
+  $capabilities = array("product_info");
+  $data_format = TeraWurflRemoteClient::$FORMAT_JSON;
+  $wurflObj->getCapabilitiesFromAgent(null, $capabilities, $data_format);
+
+if (!empty($wurflObj->capabilities['mobile_browser'])) {
+  header("Location: mobile/");
+  exit();
+}
+
 // Load the logging library
 include 'admin/system/libs/log-actions.php';
 Log::set($database);
