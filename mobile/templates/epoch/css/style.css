@@ -24,7 +24,6 @@ div#wrapper {
   }
     
     header h1 a {
-      color: #000;
       text-decoration: none;
     }
 
@@ -35,6 +34,7 @@ div#content {
   /* Blog posts */
   section.blog-post {
     border-radius: 5px;
+    cursor: pointer;
     padding: 0px 0px 2px 5px;
   }
 
@@ -47,6 +47,7 @@ div#content {
     }
 
     section.blog-post h2 {
+      color: #28B;
       font-family: 'Trebuchet MS', Trebuchet, Verdana, sans-serif;
     }
 

@@ -2,8 +2,8 @@
 <div id="content">
   <?php
   foreach ($posts as $post) {
-    echo "<section class='blog-post'>";
-    echo "<h2><a href='index.php?page=post&id=" . $post['id'] . "'>" . Clean::output($post['title']) . "</a></h2>";
+    echo "<section class='blog-post' onclick='window.location=\"index.php?page=post&id=" . $post['id'] . "\";'>";
+    echo "<h2>" . Clean::output($post['title']) . "</h2>";
       echo "<span class='blog-post-author'>" . BLOG_AUTHOR_PREFIX;
       echo Clean::output($authors[$post['author']]) . ' ' . Date::parse($post['timestamp']) . '</span>';
     echo '<p><span style="float:right;"><img src="templates/epoch/images/arrow.png" /></span>';
