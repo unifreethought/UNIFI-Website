@@ -243,6 +243,11 @@ if ($url['post']) {
 	exit('');
 	
 } else {
+
+        // Do a general check on viewing the DASHBOARD.
+        if (!Auth::view_DASHBOARD()) {
+                exit(ADMIN_NOT_AUTHORIZED);
+        }
 	
 	// Sometimes we need to check for a FB ID request
 	// This is due to the lack of true cross site request compatability.
@@ -325,11 +330,6 @@ if ($url['post']) {
 	
 	// Clean the $user_id for each action. 
 	$user_id = MySQL::clean($user_id);
-	
-	// Do a general check on viewing the DASHBOARD.
-	if (!Auth::view_DASHBOARD()) {
-		exit(ADMIN_NOT_AUTHORIZED);
-	}
 	
 	switch ($url['page']) {
 	
