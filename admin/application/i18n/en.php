@@ -5,7 +5,7 @@
  * 2010-11-21
  */
  
-define('ADMIN_NOT_AUTHORIZED', 'Sorry, but you are not allowed to see this.');
+define('ADMIN_NOT_AUTHORIZED', '<div id="wrapper">Sorry, but you are not allowed to see this.</div>');
 define('ADMIN_TITLE', 'UNIFI -- Admin');
 define('ADMIN_ACCESS_DISABLED', 'We\'re sorry, but admin access to the site is down.');
 define('ADMIN_HEADER', 'UNIFI - ADMIN');
