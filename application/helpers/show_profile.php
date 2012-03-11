@@ -26,5 +26,7 @@ if (empty($generic_data['first_name'])) {
 }
 
 $full_data = MySQL::single("SELECT * FROM `{$database}`.`user-data` WHERE `id` = '{$id}' LIMIT 1");
+
+$full_data['phone'] = '(' . substr($full_data['phone'], 0, 3) . ') ' . substr($full_data['phone'], 3, 3) . '-' . substr($full_data['phone'], 5, 4);
 //print_r($full_data);
 
