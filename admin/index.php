@@ -369,6 +369,14 @@ if ($url['post']) {
 			}
 			
 		break;
+
+                case 'delete_blog_post':
+                  if (Auth::can_post_blog()) {
+                    include 'application/helpers/delete_blog_post.php';
+                  } else {
+                    exit(ADMIN_NOT_AUTHORIZED);
+                  }
+                break;
 		
 		case 'create_user':
 			
