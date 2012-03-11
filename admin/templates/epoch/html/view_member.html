@@ -59,17 +59,7 @@
 				?>
 				
 				<!-- Recruit Place -->
-				<?php
-				echo "<select class='member_select' id='recruit_place' name='recruit_place'>";
-				foreach ($recruit_places as $recruit_place) {
-					if ($member['recruit_place'] == $recruit_place['id'])
-						$selected = " selected";
-					else
-						$selected = ""; 
-					echo "<option value='{$recruit_place['id']}' id='recruit_place{$recruit_place['id']}'{$selected}>{$recruit_place['desc']}</option>";
-				}
-				echo "</select>";
-				?>
+				<input type="text" id="recruit_place" name="recruit_place" value="<?php echo $member['recruit_place']; ?>" />
 				
 				<input type="text" class="member_field" id="phone" placeholder="Phone Number" name="phone" value="<?php echo $member['phone']; ?>" />
 				
