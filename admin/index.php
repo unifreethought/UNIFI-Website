@@ -213,6 +213,13 @@ if ($url['post']) {
 		else
 			exit(ADMIN_NOT_AUTHORIZED);
 	}
+
+        if (!empty($_POST['delete_member'])) {
+          if (Auth::edit_users())
+            include 'application/helpers/delete_member.php';
+          else
+            exit(ADMIN_NOT_AUTHORIZED);
+        }
 	
 	if (!empty($_POST['edit_alumni_member'])) {
 		if (Auth::edit_users()) {
@@ -598,6 +605,15 @@ if ($url['post']) {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
 		break;
+
+                case 'delete_member':
+			if (Auth::edit_users()) {
+				include 'templates/' . $config['template'] . '/html/delete_member.html';
+			} else {
+				exit(ADMIN_NOT_AUTHORIZED);
+			}
+		break;
+
 		
 		case 'create_report':
 			if (Auth::edit_users()) {
