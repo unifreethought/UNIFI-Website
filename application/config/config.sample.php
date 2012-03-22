@@ -32,6 +32,7 @@ $config = array(
         'allowable_blog_tags' => '<strong><b><em><i><img><a><iframe><p>',
         'allowable_mobile_tags' => '<p><div><br>',
         'template' => 'epoch', // Don't include the trailing slash
+        'admin_template' => 'epoch',
         'mobile_template' => 'epoch',
 	'admin_email' => ''
 );

@@ -201,7 +201,7 @@ if ($url['post']) {
 	if (!empty($_POST['merge_members_setup'])) {
 		if (Auth::edit_users()) {
 			include 'application/helpers/merge_members_setup.php';
-			include 'templates/' . $config['template'] . '/html/merge_members_setup.html';
+			include 'templates/' . $config['admin_template'] . '/html/merge_members_setup.html';
 		} else {
 			exit(ADMIN_NOT_AUTHORIZED);
 		}
@@ -329,21 +329,21 @@ if ($url['post']) {
 		exit();
 	}
 
-	include 'templates/' . $config['template'] . '/html/header.html';
+	include 'templates/' . $config['admin_template'] . '/html/header.html';
 	
 	$user_id = MySQL::clean($user_id);
 	
 	switch ($url['page']) {
 	
 		case 'view_all_options':
-			include 'templates/' . $config['template'] . '/html/view_all_options.html';
+			include 'templates/' . $config['admin_template'] . '/html/view_all_options.html';
 		break;
 	
 		case 'post':
 			
 			if (Auth::can_post_blog()) {
 				include 'application/helpers/edit_blog_post.php';
-				include 'templates/' . $config['template'] . '/html/edit_blog_post.html';
+				include 'templates/' . $config['admin_template'] . '/html/edit_blog_post.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -354,7 +354,7 @@ if ($url['post']) {
 		
 			if (Auth::can_post_blog()) {
 				include 'application/helpers/list_blog_posts.php';
-				include 'templates/' . $config['template'] . '/html/list_blog_posts.html';
+				include 'templates/' . $config['admin_template'] . '/html/list_blog_posts.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -365,7 +365,7 @@ if ($url['post']) {
 			
 			if (Auth::can_post_blog()) {
 				include 'application/helpers/edit_blog_post.php';
-				include 'templates/' . $config['template'] . '/html/edit_blog_post.html';
+				include 'templates/' . $config['admin_template'] . '/html/edit_blog_post.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -384,7 +384,7 @@ if ($url['post']) {
 			
 			if (Auth::edit_users()) {
 				include 'application/helpers/create_user.php';
-				include 'templates/' . $config['template'] . '/html/create_user.html';
+				include 'templates/' . $config['admin_template'] . '/html/create_user.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -395,7 +395,7 @@ if ($url['post']) {
 		
 			if (Auth::edit_users()) {
 				include 'application/helpers/delete_user.php';
-				include 'templates/' . $config['template'] . '/html/delete_user.html';
+				include 'templates/' . $config['admin_template'] . '/html/delete_user.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -406,7 +406,7 @@ if ($url['post']) {
 		
 			if (Auth::edit_users()) {
 				include 'application/helpers/list_users.php';
-				include 'templates/' . $config['template'] . '/html/list_users.html';
+				include 'templates/' . $config['admin_template'] . '/html/list_users.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -417,7 +417,7 @@ if ($url['post']) {
 		
 			if (Auth::edit_users()) {
 				include 'application/helpers/edit_user.php';
-				include 'templates/' . $config['template'] . '/html/edit_user.html';
+				include 'templates/' . $config['admin_template'] . '/html/edit_user.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -427,7 +427,7 @@ if ($url['post']) {
 			
 			if (Auth::edit_users()) {
 				include 'application/helpers/search_users.php';
-				include 'templates/' . $config['template'] . '/html/search_users.html';
+				include 'templates/' . $config['admin_template'] . '/html/search_users.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -438,7 +438,7 @@ if ($url['post']) {
 			
 			if (Auth::edit_users()) {
 				include 'application/helpers/perform_search.php';
-				include 'templates/' . $config['template'] . '/html/perform_search.html';
+				include 'templates/' . $config['admin_template'] . '/html/perform_search.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -449,7 +449,7 @@ if ($url['post']) {
 		
 			if (Auth::edit_events()) {
 				include 'application/helpers/create_event.php';
-				include 'templates/' . $config['template'] . '/html/create_event.html';
+				include 'templates/' . $config['admin_template'] . '/html/create_event.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -460,7 +460,7 @@ if ($url['post']) {
 			
 			if (Auth::edit_events()) {
 				include 'application/helpers/create_volunteer_event.php';
-				include 'templates/' . $config['template'] . '/html/create_volunteer_event.html';
+				include 'templates/' . $config['admin_template'] . '/html/create_volunteer_event.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -471,7 +471,7 @@ if ($url['post']) {
 		
 			if (Auth::edit_events()) {
 				include 'application/helpers/list_events.php';
-				include 'templates/' . $config['template'] . '/html/list_events.html';
+				include 'templates/' . $config['admin_template'] . '/html/list_events.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -482,7 +482,7 @@ if ($url['post']) {
 		
 			if (Auth::edit_events()) {
 				include 'application/helpers/edit_event.php';
-				include 'templates/' . $config['template'] . '/html/edit_event.html';
+				include 'templates/' . $config['admin_template'] . '/html/edit_event.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -493,7 +493,7 @@ if ($url['post']) {
 		
 			if (Auth::edit_events()) {
 				include 'application/helpers/edit_volunteer_event.php';
-				include 'templates/' . $config['template'] . '/html/edit_volunteer_event.html';
+				include 'templates/' . $config['admin_template'] . '/html/edit_volunteer_event.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -504,7 +504,7 @@ if ($url['post']) {
 		
 			if (Auth::edit_custom_pages()) {
 				include 'application/helpers/create_custom_page.php';
-				include 'templates/' . $config['template'] . '/html/create_custom_page.html';
+				include 'templates/' . $config['admin_template'] . '/html/create_custom_page.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -515,7 +515,7 @@ if ($url['post']) {
 		
 			if (Auth::edit_custom_pages()) {
 				include 'application/helpers/list_custom_pages.php';
-				include 'templates/' . $config['template'] . '/html/list_custom_pages.html';
+				include 'templates/' . $config['admin_template'] . '/html/list_custom_pages.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -527,7 +527,7 @@ if ($url['post']) {
 		
 			if (Auth::edit_custom_pages()) {
 				include 'application/helpers/edit_custom_page.php';
-				include 'templates/' . $config['template'] . '/html/edit_custom_page.html';
+				include 'templates/' . $config['admin_template'] . '/html/edit_custom_page.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -538,14 +538,14 @@ if ($url['post']) {
 			
 			// No need to auth this, if they can see the dashboard then they're fine for viewing comments.
 			include 'application/helpers/list_comments.php';
-			include 'templates/' . $config['template'] . '/html/list_comments.html';
+			include 'templates/' . $config['admin_template'] . '/html/list_comments.html';
 			
 		break;
 		
 		case 'newsletter':
 			if (Auth::edit_users()) {
 				include 'application/helpers/newsletter.php';
-				include 'templates/' . $config['template'] . '/html/newsletter.html';
+				include 'templates/' . $config['admin_template'] . '/html/newsletter.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -553,14 +553,14 @@ if ($url['post']) {
 		
 		case 'subscribe_email_to_newsletter':
 			if (Auth::edit_users())
-				include 'templates/' . $config['template'] . '/html/subscribe_email_to_newsletter.html';
+				include 'templates/' . $config['admin_template'] . '/html/subscribe_email_to_newsletter.html';
 			else
 				exit(ADMIN_NOT_AUTHORIZED);
 		break;
 		
 		case 'unsubscribe_email_from_newsletter':
 			if (Auth::edit_users())
-				include 'templates/' . $config['template'] . '/html/unsubscribe_email_from_newsletter.html';
+				include 'templates/' . $config['admin_template'] . '/html/unsubscribe_email_from_newsletter.html';
 			else
 				exit(ADMIN_NOT_AUTHORIZED);
 		break;
@@ -568,7 +568,7 @@ if ($url['post']) {
 		case 'view_all_newsletter_emails':
 			if (Auth::edit_users()) {
 				include 'application/helpers/view_all_newsletter_emails.php';
-				include 'templates/' . $config['template'] . '/html/view_all_newsletter_emails.html';
+				include 'templates/' . $config['admin_template'] . '/html/view_all_newsletter_emails.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -576,13 +576,13 @@ if ($url['post']) {
 		
 		case 'list_guest_submissions':
 			include 'application/helpers/list_guest_submissions.php';
-			include 'templates/' . $config['template'] . '/html/list_guest_submissions.html';
+			include 'templates/' . $config['admin_template'] . '/html/list_guest_submissions.html';
 		break;
 		
 		case 'member_database':
 			if (Auth::edit_users()) {
 				include 'application/helpers/member_database.php';
-				include 'templates/' . $config['template'] . '/html/member_database.html';
+				include 'templates/' . $config['admin_template'] . '/html/member_database.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -591,7 +591,7 @@ if ($url['post']) {
 		case 'merge_members':
 			if (Auth::edit_users()) {
 				//include 'application/helpers/merge_members.php';
-				include 'templates/' . $config['template'] . '/html/merge_members.html';
+				include 'templates/' . $config['admin_template'] . '/html/merge_members.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -600,7 +600,7 @@ if ($url['post']) {
 		case 'search_member_database':
 			if (Auth::edit_users()) {
 				include 'application/helpers/search_member_database.php';
-				include 'templates/' . $config['template'] . '/html/search_member_database.html';
+				include 'templates/' . $config['admin_template'] . '/html/search_member_database.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -618,7 +618,7 @@ if ($url['post']) {
 		case 'create_report':
 			if (Auth::edit_users()) {
 				include 'application/helpers/create_report.php';
-				include 'templates/' . $config['template'] . '/html/create_report.html';
+				include 'templates/' . $config['admin_template'] . '/html/create_report.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -627,7 +627,7 @@ if ($url['post']) {
 		case 'report_response':
 			if (Auth::edit_users()) {
 				include 'application/helpers/report_response.php';
-				include 'templates/' . $config['template'] . '/html/report_response.html';
+				include 'templates/' . $config['admin_template'] . '/html/report_response.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -636,7 +636,7 @@ if ($url['post']) {
 		case 'copy_user_to_member_db':
 			if (Auth::edit_users()) {
 				include 'application/helpers/copy_user_to_member_db.php';
-				include 'templates/' . $config['template'] . '/html/copy_user_to_member_db.html';
+				include 'templates/' . $config['admin_template'] . '/html/copy_user_to_member_db.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -646,7 +646,7 @@ if ($url['post']) {
 			
 			if (Auth::edit_users()) {
 				include 'application/helpers/view_member.php';
-				include 'templates/' . $config['template'] . '/html/view_member.html';
+				include 'templates/' . $config['admin_template'] . '/html/view_member.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -657,7 +657,7 @@ if ($url['post']) {
 		
 			if (Auth::view_log()) {
 				include 'application/helpers/view_log.php';
-				include 'templates/' . $config['template'] . '/html/view_log.html';
+				include 'templates/' . $config['admin_template'] . '/html/view_log.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -668,7 +668,7 @@ if ($url['post']) {
 		
 			if (Auth::edit_events()) {
 				include 'application/helpers/view_events.php';
-				include 'templates/' . $config['template'] . '/html/view_events.html';
+				include 'templates/' . $config['admin_template'] . '/html/view_events.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -679,7 +679,7 @@ if ($url['post']) {
 		
 			if (Auth::edit_events()) {
 				include 'application/helpers/view_all_events.php';
-				include 'templates/' . $config['template'] . '/html/view_all_events.html';
+				include 'templates/' . $config['admin_template'] . '/html/view_all_events.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -692,7 +692,7 @@ if ($url['post']) {
 		
 			if (Auth::edit_events()) {
 				include 'application/helpers/view_volunteer_events.php';
-				include 'templates/' . $config['template'] . '/html/view_volunteer_events.html';
+				include 'templates/' . $config['admin_template'] . '/html/view_volunteer_events.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -714,7 +714,7 @@ if ($url['post']) {
 		case 'manage_alumni_members':
 			if (Auth::edit_members()) {
 				include 'application/helpers/manage_alumni_members.php';
-				include 'templates/' . $config['template'] . '/html/manage_alumni_members.html';
+				include 'templates/' . $config['admin_template'] . '/html/manage_alumni_members.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -723,7 +723,7 @@ if ($url['post']) {
 		case 'edit_alumni_member':
 			if (Auth::edit_members()) {
 				include 'application/helpers/edit_alumni_member.php';
-				include 'templates/' . $config['template'] . '/html/edit_alumni_member.html';
+				include 'templates/' . $config['admin_template'] . '/html/edit_alumni_member.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -732,7 +732,7 @@ if ($url['post']) {
                 case 'edit_posting_emails':
                   if (Auth::post_to_blog()) {
                     include 'application/helpers/edit_posting_emails.php';
-                    include 'templates/'. $config['template'] . '/html/edit_posting_emails.html';
+                    include 'templates/'. $config['admin_template'] . '/html/edit_posting_emails.html';
                   } else {
                     exit(ADMIN_NOT_AUTHORIZED);
                   }
@@ -741,7 +741,7 @@ if ($url['post']) {
                 case 'edit_comment_emails':
                   if (Auth::post_to_blog()) {
                     include 'application/helpers/edit_commenting_emails.php';
-                    include 'templates/'. $config['template'] . '/html/edit_commenting_emails.html';
+                    include 'templates/'. $config['admin_template'] . '/html/edit_commenting_emails.html';
                   } else {
                     exit(ADMIN_NOT_AUTHORIZED);
                   }
@@ -750,7 +750,7 @@ if ($url['post']) {
                 case 'backup_db':
                   if (Auth::view_log()) {
                     include 'application/helpers/backup_db.php';
-                    include 'templates/' . $config['template'] . '/html/backup_db.html';
+                    include 'templates/' . $config['admin_template'] . '/html/backup_db.html';
                   } else {
                     exit(ADMIN_NOT_AUTHORIZED);
                   }
@@ -759,7 +759,7 @@ if ($url['post']) {
 		default:
 			
 			if (Auth::view_DASHBOARD()) {
-				include 'templates/' . $config['template'] . '/html/dashboard.html';
+				include 'templates/' . $config['admin_template'] . '/html/dashboard.html';
 			} else {
 				exit(ADMIN_NOT_AUTHORIZED);
 			}
@@ -768,6 +768,6 @@ if ($url['post']) {
 		
 	}
 	
-	include 'templates/' . $config['template'] . '/html/footer.html';
+	include 'templates/' . $config['admin_template'] . '/html/footer.html';
 }
 MySQL::close();
