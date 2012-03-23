@@ -244,6 +244,13 @@ if ($url['post']) {
       exit(ADMIN_NOT_AUTHORIZED);
     }
   }
+
+  if (!empty($_POST['form_apply_group'])) {
+    if (Auth::view_log()) 
+      include 'application/helpers/form_apply_groups.php';
+    else
+      exit(ADMIN_NOT_AUTHORIZED);
+  }
   
   exit('');
   
@@ -664,6 +671,16 @@ if ($url['post']) {
       
     break;
     
+    case 'apply_groups':
+      
+      if (Auth::view_log()) {
+        include 'templates/' . $config['admin_template'] . '/html/apply_groups.html';
+      } else {
+        exit(ADMIN_NOT_AUTHORIZED);
+      }
+
+    break;
+
     case 'view_events':
     
       if (Auth::edit_events()) {
