@@ -12,18 +12,18 @@ $sql = "SELECT `post_id` FROM `" . MySQL::$database . "`.`blog-tags` WHERE `tag_
 $pull = MySQL::search($sql);
 $posts = array();
 
-	foreach ($pull as $i) {
-		$sql = "SELECT * FROM `" . MySQL::$database . "`.`blog-posts` WHERE `id` = '{$i['post_id']}' LIMIT 1;";
-		$posts[] = MySQL::single($sql);
-	}
+  foreach ($pull as $i) {
+    $sql = "SELECT * FROM `" . MySQL::$database . "`.`blog-posts` WHERE `id` = '{$i['post_id']}' LIMIT 1;";
+    $posts[] = MySQL::single($sql);
+  }
 
 // Create an array of authors, organized by their user id.
 $authors = array();
 foreach ($posts as $post) {
-	if (@empty($authors[$post['author']]) && @$authors[$post['author']] != '0') {
-		$result = MySQL::single("SELECT `first_name`,`last_name` FROM `" . MySQL::$database . "`.`users` WHERE `id` = '" . MySQL::clean($post['author']) . "' LIMIT 1");
-		$authors[$post['author']] = $result['first_name'] . ' ' . $result['last_name'];
-	}
+  if (@empty($authors[$post['author']]) && @$authors[$post['author']] != '0') {
+    $result = MySQL::single("SELECT `first_name`,`last_name` FROM `" . MySQL::$database . "`.`users` WHERE `id` = '" . MySQL::clean($post['author']) . "' LIMIT 1");
+    $authors[$post['author']] = $result['first_name'] . ' ' . $result['last_name'];
+  }
 }
 
 // Get the last post and send a link to the next set.

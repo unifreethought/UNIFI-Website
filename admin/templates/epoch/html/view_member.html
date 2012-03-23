@@ -1,116 +1,116 @@
 
-	<div id="wrapper">
-		<h3>Information</h3>
-		
-		<!-- Create a new member -->
-		<div>
-			<form action="index.php" method="GET">
-			<fieldset>
-				<input type="hidden" name="page" value="edit_member_in_database" />
-				<input type="hidden" name="member" value="<?php echo $member_id; ?>" />
-				
-			New Member:<br /> 
-				<input type="text" class="member_field" id="first_name" placeholder="First Name" name="first_name" value="<?php echo $member['first_name']; ?>" />
-				<input type="text" class="member_field" id="last_name" placeholder="Last Name" name="last_name" value="<?php echo $member['last_name']; ?>" />	
-				
-				<!-- Year in School -->
-				<?php
-				echo "<select class='member_select' id='year' name='year'>";
-				foreach ($years as $year) {
-					if ($member['year'] == $year['id'])
-						$selected = " selected";
-					else
-						$selected = ""; 
-					echo "<option value='{$year['id']}' id='year{$year['id']}'{$selected}>{$year['desc']}</option>";
-				}
-				echo "</select>";
-				?>
-				
-				<!-- Major -->
-				<?php
-				echo "<select class='member_select' id='major' name='major'>";
-				foreach ($majors as $major) {
-					if ($member['major'] == $major['id'])
-						$selected = " selected";
-					else
-						$selected = "";
-					echo "<option value='{$major['id']}' id='major{$major['id']}'{$selected}>{$major['desc']}</option>";
-				}
-				echo "</select>";
-				?>
-				
-				<input type="text" class="member_field" id="hometown" placeholder="Hometown" name="hometown" value="<?php echo $member['hometown']; ?>" />
-				
-				<input type="text" class="member_field" id="address" placeholder="Address" name="address" value="<?php echo $member['address']; ?>" />
-				
-				<br />
-				
-				<!-- Dorm -->
-				<?php
-				echo "<select class='member_select' id='dorm' name='dorm'>";
-				foreach ($dorms as $dorm) {
-					if ($member['dorm'] == $dorm['id'])
-						$selected = " selected";
-					else
-						$selected = ""; 
-					echo "<option value='{$dorm['id']}' id='dorm{$dorm['id']}'{$selected}>{$dorm['desc']}</option>";
-				}
-				echo "</select>";
-				?>
-				
-				<!-- Recruit Place -->
-				<input type="text" id="recruit_place" name="recruit_place" value="<?php echo $member['recruit_place']; ?>" />
-				
-				<input type="text" class="member_field" id="phone" placeholder="Phone Number" name="phone" value="<?php echo $member['phone']; ?>" />
-				
-				<!-- Texting Allowed -->
-				<select class='member_select' id="texting" name="texting">
-					<?php
-					if ($texting['texting'] == '0')
-						$selected = " selected";
-					else
-						$selected = ""; 
-					?>
-					<option value="0" id='texting0'<?php echo $selected; ?>>No Texting</option>
-					
-					<?php
-					if ($texting['texting'] == '1')
-						$selected = " selected";
-					else
-						$selected = ""; 
-					?>
-					<option value="1" id='texting1'<?php echo $selected; ?>>Yes, Texting</option>
-				</select>
-				
-				<!-- Email -->
-				<input type="text" class="member_field" id="email" placeholder="Email" name="email" value="<?php echo $member['email']; ?>" />
-				
-				<br />
-				
-				<!-- Notes -->
-				<textarea name="notes"><?php echo $member['notes']; ?></textarea>
-				
-				<br />
-				<input type="submit" value="Edit Member!" />
-			</fieldset>
-			</form>
-		</div>
-	
-		<br />
-	
-		<h3>Events</h3>
-		<table>
-			<tr>
-				<td>Event</td>
-				<td>Start Time</td>
-			</tr>
-			
-			<?php
-				foreach ($events as $e) {
-					echo "<tr><td>{$e['title']}</td>";
-					echo "<td>" . Show_Date::human($e['start_time']) . "</td></tr>";
-				}
-			?>
-		</table>
-	</div>
-	
+  <div id="wrapper">
+    <h3>Information</h3>
+    
+    <!-- Create a new member -->
+    <div>
+      <form action="index.php" method="GET">
+      <fieldset>
+        <input type="hidden" name="page" value="edit_member_in_database" />
+        <input type="hidden" name="member" value="<?php echo $member_id; ?>" />
+        
+      New Member:<br /> 
+        <input type="text" class="member_field" id="first_name" placeholder="First Name" name="first_name" value="<?php echo $member['first_name']; ?>" />
+        <input type="text" class="member_field" id="last_name" placeholder="Last Name" name="last_name" value="<?php echo $member['last_name']; ?>" />  
+        
+        <!-- Year in School -->
+        <?php
+        echo "<select class='member_select' id='year' name='year'>";
+        foreach ($years as $year) {
+          if ($member['year'] == $year['id'])
+            $selected = " selected";
+          else
+            $selected = ""; 
+          echo "<option value='{$year['id']}' id='year{$year['id']}'{$selected}>{$year['desc']}</option>";
+        }
+        echo "</select>";
+        ?>
+        
+        <!-- Major -->
+        <?php
+        echo "<select class='member_select' id='major' name='major'>";
+        foreach ($majors as $major) {
+          if ($member['major'] == $major['id'])
+            $selected = " selected";
+          else
+            $selected = "";
+          echo "<option value='{$major['id']}' id='major{$major['id']}'{$selected}>{$major['desc']}</option>";
+        }
+        echo "</select>";
+        ?>
+        
+        <input type="text" class="member_field" id="hometown" placeholder="Hometown" name="hometown" value="<?php echo $member['hometown']; ?>" />
+        
+        <input type="text" class="member_field" id="address" placeholder="Address" name="address" value="<?php echo $member['address']; ?>" />
+        
+        <br />
+        
+        <!-- Dorm -->
+        <?php
+        echo "<select class='member_select' id='dorm' name='dorm'>";
+        foreach ($dorms as $dorm) {
+          if ($member['dorm'] == $dorm['id'])
+            $selected = " selected";
+          else
+            $selected = ""; 
+          echo "<option value='{$dorm['id']}' id='dorm{$dorm['id']}'{$selected}>{$dorm['desc']}</option>";
+        }
+        echo "</select>";
+        ?>
+        
+        <!-- Recruit Place -->
+        <input type="text" id="recruit_place" name="recruit_place" value="<?php echo $member['recruit_place']; ?>" />
+        
+        <input type="text" class="member_field" id="phone" placeholder="Phone Number" name="phone" value="<?php echo $member['phone']; ?>" />
+        
+        <!-- Texting Allowed -->
+        <select class='member_select' id="texting" name="texting">
+          <?php
+          if ($texting['texting'] == '0')
+            $selected = " selected";
+          else
+            $selected = ""; 
+          ?>
+          <option value="0" id='texting0'<?php echo $selected; ?>>No Texting</option>
+          
+          <?php
+          if ($texting['texting'] == '1')
+            $selected = " selected";
+          else
+            $selected = ""; 
+          ?>
+          <option value="1" id='texting1'<?php echo $selected; ?>>Yes, Texting</option>
+        </select>
+        
+        <!-- Email -->
+        <input type="text" class="member_field" id="email" placeholder="Email" name="email" value="<?php echo $member['email']; ?>" />
+        
+        <br />
+        
+        <!-- Notes -->
+        <textarea name="notes"><?php echo $member['notes']; ?></textarea>
+        
+        <br />
+        <input type="submit" value="Edit Member!" />
+      </fieldset>
+      </form>
+    </div>
+  
+    <br />
+  
+    <h3>Events</h3>
+    <table>
+      <tr>
+        <td>Event</td>
+        <td>Start Time</td>
+      </tr>
+      
+      <?php
+        foreach ($events as $e) {
+          echo "<tr><td>{$e['title']}</td>";
+          echo "<td>" . Show_Date::human($e['start_time']) . "</td></tr>";
+        }
+      ?>
+    </table>
+  </div>
+  

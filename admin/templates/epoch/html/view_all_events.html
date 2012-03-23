@@ -1,5 +1,5 @@
 
-	<div id="wrapper">
+  <div id="wrapper">
 
     <select onchange="changeYear(this.value);">
       <?php
@@ -20,31 +20,31 @@
         window.location = 'index.php?page=view_all_events&year=' + year;
       }
     </script>
-	
-		<table style="width:100%;">
-			<thead>
-				<tr>
-					<td><?php echo ADMIN_DASHBOARD_VIEW_EVENTS_TITLE; ?></td>
-					<td><?php echo ADMIN_DASHBOARD_VIEW_EVENTS_START_TIME; ?></td>
-					<td><?php echo ADMIN_DASHBOARD_VIEW_EVENTS_END_TIME; ?></td>
-					<td><?php echo ADMIN_DASHBOARD_VIEW_EVENTS_LOCATION; ?></td>
-					<td><?php echo ADMIN_DASHBOARD_VIEW_EVENTS_DESCRIPTION; ?></td>
-				</tr>
-			</thead>
-		
-		<?php
-			foreach ($events as $event) {
-				echo '<tr style="cursor:pointer;" onclick="javascript:(function(){window.location=\'index.php?page=edit_event&event=' . $event['id'] . '\';})();">';
-					echo '<td>' . $event['title'] . '</td>';
-					echo '<td>' . Date::parse($event['start_time']) . '</td>';
-					echo '<td>' . Date::parse($event['end_time']) . '</td>';
-					echo '<td>' . $event['location'] . '</td>';
-					echo '<td>' . $event['description'] . '</td>';
-				echo '</tr>';
-			}
-		?>
-		
-		</table>
-	
-	</div>
-	
+  
+    <table style="width:100%;">
+      <thead>
+        <tr>
+          <td><?php echo ADMIN_DASHBOARD_VIEW_EVENTS_TITLE; ?></td>
+          <td><?php echo ADMIN_DASHBOARD_VIEW_EVENTS_START_TIME; ?></td>
+          <td><?php echo ADMIN_DASHBOARD_VIEW_EVENTS_END_TIME; ?></td>
+          <td><?php echo ADMIN_DASHBOARD_VIEW_EVENTS_LOCATION; ?></td>
+          <td><?php echo ADMIN_DASHBOARD_VIEW_EVENTS_DESCRIPTION; ?></td>
+        </tr>
+      </thead>
+    
+    <?php
+      foreach ($events as $event) {
+        echo '<tr style="cursor:pointer;" onclick="javascript:(function(){window.location=\'index.php?page=edit_event&event=' . $event['id'] . '\';})();">';
+          echo '<td>' . $event['title'] . '</td>';
+          echo '<td>' . Date::parse($event['start_time']) . '</td>';
+          echo '<td>' . Date::parse($event['end_time']) . '</td>';
+          echo '<td>' . $event['location'] . '</td>';
+          echo '<td>' . $event['description'] . '</td>';
+        echo '</tr>';
+      }
+    ?>
+    
+    </table>
+  
+  </div>
+  

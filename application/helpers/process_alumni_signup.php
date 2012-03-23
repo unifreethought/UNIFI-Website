@@ -37,7 +37,7 @@ MySQL::query($sql);
 
 // Send an email
 mail("alumni@unifreethought.com", "A new alumni signup!", 
-	"{$first_name} {$last_name} has just signed up to become an alumni!", "From: webmaster@unifreethought.com\r\n");
+  "{$first_name} {$last_name} has just signed up to become an alumni!", "From: webmaster@unifreethought.com\r\n");
 
 header("Location: index.php?thanks_alumni");
 exit();

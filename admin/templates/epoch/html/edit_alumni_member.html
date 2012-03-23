@@ -1,92 +1,92 @@
 
-	<div id="wrapper">
-		<h3>Edit an Alumni Member</h3>
-		
-		<form action="index.php" method="POST">
-			<input type="hidden" name="edit_alumni_member" value="yes" />
-			<input type="hidden" name="id" value="<?php echo $alumni['id']; ?>" />
-			User Id: 
-				<input type="text" name="user_id" value="<?php echo $alumni['user_id']; ?>" /><br />
-				
-			Member Id: 
-				<input type="text" name="member_id" value="<?php echo $alumni['member_id']; ?>" /><br />
-			<br />
-			First Name: 
-				<input type="text" name="first_name" value="<?php echo $alumni['first_name']; ?>" /><br />
-				
-			Last Name:
-				<input type="text" name="last_name" value="<?php echo $alumni['last_name']; ?>" /><br />
-				
-			Start Date:
-				<select name="start_date_term">
-					<option value="Spring"<?php if ($start_date[0] == 'Spring') echo 'selected'; ?>>Spring</option>
-					<option value="Fall"<?php if ($start_date[0] == 'Fall') echo 'selected'; ?>>Fall</option>
-				</select>
-				<input type="text" size="6" name="start_date_year" value="<?php echo $start_date[1]; ?>" />
-			<br />
-			
-			End Date:
-				<select name="end_date_term">
-					<option value="Spring"<?php if ($end_date[0] == 'Spring') echo 'selected'; ?>>Spring</option>
-					<option value="Fall"<?php if ($end_date[0] == 'Fall') echo 'selected'; ?>>Fall</option>
-				</select>
-				<input type="text" size="6" name="end_date_year" value="<?php echo $end_date[1]; ?>" />
-			<br />
-			
-			Positions:
-			<?php
-				foreach ($all_positions as $p) {
-					$selected = '';
-					if (in_array($p['id'], array_values($positions))) {
-						$selected = ' checked';
-					}
-					echo "<br /><input type='checkbox' name='positions[]' value='{$p['id']}'{$selected} />" . $p['desc'];
-				}
-			?>
-			<br />
-			
-			Major: 
-				<select name="major">
-					<?php
-						foreach ($majors as $m) {
-							$selected = '';
-							if ($m['id'] == $alumni['major'])
-								$selected = ' selected';
-							echo "<option value='{$m['id']}'{$selected}>{$m['desc']}</option>";
-						}
-					?>
-				</select>
-			<br />
-			
-			Grad School: 
-				<input type="text" name="grad_school" value="<?php echo $alumni['grad_school']; ?>" />
-			<br />
-			
-			Current Location: 
-				<input type="text" name="current_location" value="<?php echo $alumni['current_location']; ?>" />
-			<br />
-			
-			Current Location Coords: 
-				<input type="text" name="current_location_coords" value="<?php echo $alumni['current_location_coords']; ?>" />
-			<br />
-			
-			Email: 
-				<input type="text" name="email" value="<?php echo $alumni['email']; ?>" />
-			<br />
-			
-			Current Job: 
-				<input type="text" name="current_job" value="<?php echo $alumni['current_job']; ?>" />
-			<br />
-			
-			Phone: 
-				<input type="text" name="phone" value="<?php echo $alumni['phone']; ?>" />
-			<br />
-			
-			Notes: 
-				<textarea name="notes"><?php echo $alumni['notes']; ?></textarea>
-			<br />
-			
-			<input type="submit" value="Edit Alumni" />
-		</form>
-	</div>
-	
+  <div id="wrapper">
+    <h3>Edit an Alumni Member</h3>
+    
+    <form action="index.php" method="POST">
+      <input type="hidden" name="edit_alumni_member" value="yes" />
+      <input type="hidden" name="id" value="<?php echo $alumni['id']; ?>" />
+      User Id: 
+        <input type="text" name="user_id" value="<?php echo $alumni['user_id']; ?>" /><br />
+        
+      Member Id: 
+        <input type="text" name="member_id" value="<?php echo $alumni['member_id']; ?>" /><br />
+      <br />
+      First Name: 
+        <input type="text" name="first_name" value="<?php echo $alumni['first_name']; ?>" /><br />
+        
+      Last Name:
+        <input type="text" name="last_name" value="<?php echo $alumni['last_name']; ?>" /><br />
+        
+      Start Date:
+        <select name="start_date_term">
+          <option value="Spring"<?php if ($start_date[0] == 'Spring') echo 'selected'; ?>>Spring</option>
+          <option value="Fall"<?php if ($start_date[0] == 'Fall') echo 'selected'; ?>>Fall</option>
+        </select>
+        <input type="text" size="6" name="start_date_year" value="<?php echo $start_date[1]; ?>" />
+      <br />
+      
+      End Date:
+        <select name="end_date_term">
+          <option value="Spring"<?php if ($end_date[0] == 'Spring') echo 'selected'; ?>>Spring</option>
+          <option value="Fall"<?php if ($end_date[0] == 'Fall') echo 'selected'; ?>>Fall</option>
+        </select>
+        <input type="text" size="6" name="end_date_year" value="<?php echo $end_date[1]; ?>" />
+      <br />
+      
+      Positions:
+      <?php
+        foreach ($all_positions as $p) {
+          $selected = '';
+          if (in_array($p['id'], array_values($positions))) {
+            $selected = ' checked';
+          }
+          echo "<br /><input type='checkbox' name='positions[]' value='{$p['id']}'{$selected} />" . $p['desc'];
+        }
+      ?>
+      <br />
+      
+      Major: 
+        <select name="major">
+          <?php
+            foreach ($majors as $m) {
+              $selected = '';
+              if ($m['id'] == $alumni['major'])
+                $selected = ' selected';
+              echo "<option value='{$m['id']}'{$selected}>{$m['desc']}</option>";
+            }
+          ?>
+        </select>
+      <br />
+      
+      Grad School: 
+        <input type="text" name="grad_school" value="<?php echo $alumni['grad_school']; ?>" />
+      <br />
+      
+      Current Location: 
+        <input type="text" name="current_location" value="<?php echo $alumni['current_location']; ?>" />
+      <br />
+      
+      Current Location Coords: 
+        <input type="text" name="current_location_coords" value="<?php echo $alumni['current_location_coords']; ?>" />
+      <br />
+      
+      Email: 
+        <input type="text" name="email" value="<?php echo $alumni['email']; ?>" />
+      <br />
+      
+      Current Job: 
+        <input type="text" name="current_job" value="<?php echo $alumni['current_job']; ?>" />
+      <br />
+      
+      Phone: 
+        <input type="text" name="phone" value="<?php echo $alumni['phone']; ?>" />
+      <br />
+      
+      Notes: 
+        <textarea name="notes"><?php echo $alumni['notes']; ?></textarea>
+      <br />
+      
+      <input type="submit" value="Edit Alumni" />
+    </form>
+  </div>
+  

@@ -1,112 +1,112 @@
 
-	<div id="wrapper">
-		
-		<form action="index.php" method="post">
-			<input type="hidden" name="merge_members_run" value="yes" />
-			<input type="hidden" name="first_id" value="<?php echo $first; ?>" />
-			<input type="hidden" name="second_id" value="<?php echo $second; ?>" />
-			
-			<h3>Merge Two Members!</h3>
-			
-			<!-- Create the right box of fields. -->
-			<div style="float:right;border:1px solid #000000;width:40%;">
-				First Name: <input type="radio" name="first_name" value="<?php echo $first_sql['first_name']; ?>" /> 
-					<?php echo $first_sql['first_name']; ?><br />
-					
-				Last Name: <input type="radio" name="last_name" value="<?php echo $first_sql['last_name']; ?>" /> 
-					<?php echo $first_sql['last_name']; ?><br />
-					
-				Year: <input type="radio" name="year" value="<?php echo $first_sql['year']; ?>" /> 
-					<?php echo User_Parse::parse_year($first_sql['year']); ?><br />
-					
-				Major: <input type="radio" name="major" value="<?php echo $first_sql['major']; ?>" /> 
-					<?php echo User_Parse::parse_major($first_sql['major']); ?><br />
-					
-				Hometown: <input type="radio" name="hometown" value="<?php echo $first_sql['hometown']; ?>" /> 
-					<?php echo $first_sql['hometown']; ?><br />
-					
-				Address: <input type="radio" name="address" value="<?php echo $first_sql['address']; ?>" />
-					<?php echo $first_sql['address']; ?><br />
-					
-				Dorm: <input type="radio" name="dorm" value="<?php echo $first_sql['dorm']; ?>" /> 
-					<?php echo User_Parse::parse_dorm($first_sql['dorm']); ?><br />
-					
-				Recruit Place: <input type="radio" name="recruit_place" value="<?php echo $first_sql['recruit_place']; ?>" /> 
-					<?php echo User_Parse::parse_recruit_place($first_sql['recruit_place']); ?><br />
-					
-				Phone: <input type="radio" name="phone" value="<?php echo $first_sql['phone']; ?>" /> 
-					<?php echo $first_sql['phone']; ?><br />
-				
-				Email: <input type="radio" name="email" value="<?php echo $first_sql['email']; ?>" /> 
-					<?php echo $first_sql['email']; ?><br />
-					
-				Texting: <input type="radio" name="texting" value="<?php echo $first_sql['texting']; ?>" /> 
-					<?php echo User_Parse::parse_texting($first_sql['texting']); ?><br />
-					
-				<textarea><?php echo $first_sql['notes']; ?></textarea>
-			</div>
-			
-			<div style="border: 1px solid #000000;width:40%;">
-				First Name: <input type="radio" name="first_name" value="<?php echo $second_sql['first_name']; ?>" /> 
-					<?php echo $second_sql['first_name']; ?><br />
-					
-				Last Name: <input type="radio" name="last_name" value="<?php echo $second_sql['last_name']; ?>" /> 
-					<?php echo $second_sql['last_name']; ?><br />
-					
-				Year: <input type="radio" name="year" value="<?php echo $second_sql['year']; ?>" /> 
-					<?php echo User_Parse::parse_year($second_sql['year']); ?><br />
-					
-				Major: <input type="radio" name="major" value="<?php echo $second_sql['major']; ?>" /> 
-					<?php echo User_Parse::parse_major($second_sql['major']); ?><br />
-					
-				Hometown: <input type="radio" name="hometown" value="<?php echo $second_sql['hometown']; ?>" /> 
-					<?php echo $second_sql['hometown']; ?><br />
-				
-				Address: <input type="radio" name="address" value="<?php echo $second_sql['address']; ?>" />
-					<?php echo $second_sql['address']; ?><br />
-					
-				Dorm: <input type="radio" name="dorm" value="<?php echo $second_sql['dorm']; ?>" /> 
-					<?php echo User_Parse::parse_dorm($second_sql['dorm']); ?><br />
-					
-				Recruit Place: <input type="radio" name="recruit_place" value="<?php echo $second_sql['recruit_place']; ?>" /> 
-					<?php echo User_Parse::parse_recruit_place($second_sql['recruit_place']); ?><br />
-					
-				Phone: <input type="radio" name="phone" value="<?php echo $second_sql['phone']; ?>" /> 
-					<?php echo $second_sql['phone']; ?><br />
-				
-				Email: <input type="radio" name="email" value="<?php echo $second_sql['email']; ?>" /> 
-					<?php echo $second_sql['email']; ?><br />
-					
-				Texting: <input type="radio" name="texting" value="<?php echo $second_sql['texting']; ?>" /> 
-					<?php echo User_Parse::parse_texting($second_sql['texting']); ?><br />
-					
-				<textarea><?php echo $second_sql['notes']; ?></textarea>
-			</div>
-			
-			<div>
-				<!-- Positions -->
-				<br />Positions: 
-				<?php 
-					foreach ($positions as $position) {
-						echo "<label>" . $position['desc'] . " <input type='checkbox' name='positions[]' value='{$position['id']}'";
-						echo "/> | </label>";
-					}
-				?>
-				
-				<!-- Tags -->
-				<br />Tags: 
-				<?php 
-					foreach ($tags as $tag) {
-						echo "<label>" . $tag['desc'] . " <input type='checkbox' name='tags[]' value='{$tag['id']}'";
-						echo "/> | </label>";
-					}
-				?>
-			</div>
-			
-			<textarea name="notes"></textarea>
-			
-			<input type="submit" value="<?php echo ADMIN_DASHBOARD_SUBMIT; ?>" />
-		</form>
-		
-	</div>
-	
+  <div id="wrapper">
+    
+    <form action="index.php" method="post">
+      <input type="hidden" name="merge_members_run" value="yes" />
+      <input type="hidden" name="first_id" value="<?php echo $first; ?>" />
+      <input type="hidden" name="second_id" value="<?php echo $second; ?>" />
+      
+      <h3>Merge Two Members!</h3>
+      
+      <!-- Create the right box of fields. -->
+      <div style="float:right;border:1px solid #000000;width:40%;">
+        First Name: <input type="radio" name="first_name" value="<?php echo $first_sql['first_name']; ?>" /> 
+          <?php echo $first_sql['first_name']; ?><br />
+          
+        Last Name: <input type="radio" name="last_name" value="<?php echo $first_sql['last_name']; ?>" /> 
+          <?php echo $first_sql['last_name']; ?><br />
+          
+        Year: <input type="radio" name="year" value="<?php echo $first_sql['year']; ?>" /> 
+          <?php echo User_Parse::parse_year($first_sql['year']); ?><br />
+          
+        Major: <input type="radio" name="major" value="<?php echo $first_sql['major']; ?>" /> 
+          <?php echo User_Parse::parse_major($first_sql['major']); ?><br />
+          
+        Hometown: <input type="radio" name="hometown" value="<?php echo $first_sql['hometown']; ?>" /> 
+          <?php echo $first_sql['hometown']; ?><br />
+          
+        Address: <input type="radio" name="address" value="<?php echo $first_sql['address']; ?>" />
+          <?php echo $first_sql['address']; ?><br />
+          
+        Dorm: <input type="radio" name="dorm" value="<?php echo $first_sql['dorm']; ?>" /> 
+          <?php echo User_Parse::parse_dorm($first_sql['dorm']); ?><br />
+          
+        Recruit Place: <input type="radio" name="recruit_place" value="<?php echo $first_sql['recruit_place']; ?>" /> 
+          <?php echo User_Parse::parse_recruit_place($first_sql['recruit_place']); ?><br />
+          
+        Phone: <input type="radio" name="phone" value="<?php echo $first_sql['phone']; ?>" /> 
+          <?php echo $first_sql['phone']; ?><br />
+        
+        Email: <input type="radio" name="email" value="<?php echo $first_sql['email']; ?>" /> 
+          <?php echo $first_sql['email']; ?><br />
+          
+        Texting: <input type="radio" name="texting" value="<?php echo $first_sql['texting']; ?>" /> 
+          <?php echo User_Parse::parse_texting($first_sql['texting']); ?><br />
+          
+        <textarea><?php echo $first_sql['notes']; ?></textarea>
+      </div>
+      
+      <div style="border: 1px solid #000000;width:40%;">
+        First Name: <input type="radio" name="first_name" value="<?php echo $second_sql['first_name']; ?>" /> 
+          <?php echo $second_sql['first_name']; ?><br />
+          
+        Last Name: <input type="radio" name="last_name" value="<?php echo $second_sql['last_name']; ?>" /> 
+          <?php echo $second_sql['last_name']; ?><br />
+          
+        Year: <input type="radio" name="year" value="<?php echo $second_sql['year']; ?>" /> 
+          <?php echo User_Parse::parse_year($second_sql['year']); ?><br />
+          
+        Major: <input type="radio" name="major" value="<?php echo $second_sql['major']; ?>" /> 
+          <?php echo User_Parse::parse_major($second_sql['major']); ?><br />
+          
+        Hometown: <input type="radio" name="hometown" value="<?php echo $second_sql['hometown']; ?>" /> 
+          <?php echo $second_sql['hometown']; ?><br />
+        
+        Address: <input type="radio" name="address" value="<?php echo $second_sql['address']; ?>" />
+          <?php echo $second_sql['address']; ?><br />
+          
+        Dorm: <input type="radio" name="dorm" value="<?php echo $second_sql['dorm']; ?>" /> 
+          <?php echo User_Parse::parse_dorm($second_sql['dorm']); ?><br />
+          
+        Recruit Place: <input type="radio" name="recruit_place" value="<?php echo $second_sql['recruit_place']; ?>" /> 
+          <?php echo User_Parse::parse_recruit_place($second_sql['recruit_place']); ?><br />
+          
+        Phone: <input type="radio" name="phone" value="<?php echo $second_sql['phone']; ?>" /> 
+          <?php echo $second_sql['phone']; ?><br />
+        
+        Email: <input type="radio" name="email" value="<?php echo $second_sql['email']; ?>" /> 
+          <?php echo $second_sql['email']; ?><br />
+          
+        Texting: <input type="radio" name="texting" value="<?php echo $second_sql['texting']; ?>" /> 
+          <?php echo User_Parse::parse_texting($second_sql['texting']); ?><br />
+          
+        <textarea><?php echo $second_sql['notes']; ?></textarea>
+      </div>
+      
+      <div>
+        <!-- Positions -->
+        <br />Positions: 
+        <?php 
+          foreach ($positions as $position) {
+            echo "<label>" . $position['desc'] . " <input type='checkbox' name='positions[]' value='{$position['id']}'";
+            echo "/> | </label>";
+          }
+        ?>
+        
+        <!-- Tags -->
+        <br />Tags: 
+        <?php 
+          foreach ($tags as $tag) {
+            echo "<label>" . $tag['desc'] . " <input type='checkbox' name='tags[]' value='{$tag['id']}'";
+            echo "/> | </label>";
+          }
+        ?>
+      </div>
+      
+      <textarea name="notes"></textarea>
+      
+      <input type="submit" value="<?php echo ADMIN_DASHBOARD_SUBMIT; ?>" />
+    </form>
+    
+  </div>
+  

@@ -18,10 +18,10 @@ echo "<input type='hidden' name='confirm_delete' value='yes' />";
 echo "<ul style='list-style-type:none;'>";
 
 foreach ($data as $person) {
-	echo '<li>';
-		echo "<input type='checkbox' name='users_to_delete[]' value='{$person['id']}' />";
-		echo $person['first_name'] . ' ' . $person['last_name'];
-	echo '</li>';
+  echo '<li>';
+    echo "<input type='checkbox' name='users_to_delete[]' value='{$person['id']}' />";
+    echo $person['first_name'] . ' ' . $person['last_name'];
+  echo '</li>';
 }
 
 echo '</ul>';

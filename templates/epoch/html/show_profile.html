@@ -1,51 +1,51 @@
 
-<div id="wrapper">	
-	<!-- 
-		Create the header secion, this will be the main image, navigation elements,
-		rotating quote, and search button.
-	-->
-	<header>
-		<?php include 'templates/epoch/html/show_nav.html'; ?>
-	</header>
-	
-	<hr />
-	
-	<!--
-		The "right side" of the page which contains: "You" box, [Admin Dashboard], 
-		social media icons, labels/authors, and the blogroll.
-	-->
-	<aside>
-		<?php include 'templates/epoch/html/show_sidebar.html'; ?>
-	</aside>
-	
-	<!--
-		The main section of the page, which has the blog posts (for the home page),
-		and the main content for other pages.
-		
-		P.S. Where needed content should be separated by the <section> element.
-	-->
-	<article>
+<div id="wrapper">  
+  <!-- 
+    Create the header secion, this will be the main image, navigation elements,
+    rotating quote, and search button.
+  -->
+  <header>
+    <?php include 'templates/epoch/html/show_nav.html'; ?>
+  </header>
+  
+  <hr />
+  
+  <!--
+    The "right side" of the page which contains: "You" box, [Admin Dashboard], 
+    social media icons, labels/authors, and the blogroll.
+  -->
+  <aside>
+    <?php include 'templates/epoch/html/show_sidebar.html'; ?>
+  </aside>
+  
+  <!--
+    The main section of the page, which has the blog posts (for the home page),
+    and the main content for other pages.
+    
+    P.S. Where needed content should be separated by the <section> element.
+  -->
+  <article>
 
-	<div id="main">
-		
-		<h3><?php echo $generic_data['first_name'] . ' ' . $generic_data['last_name'] . PROFILE_HEADER_SUFFIX; ?></h3>
-		
-		<?php
-			echo "<img src='http://graph.facebook.com/{$generic_data['facebook']}/picture?type=large' style='float:right; margin-right: 150px;' />";
-			echo "<ul style='list-style-type:none;'>";
-				echo '<li>' . LIST_MEMBERS_Positions . ': ' . User_Parse::parse_positions($full_data['positions']) . '</li>';
-				echo '<li>' . LIST_MEMBERS_Year . ': ' . User_Parse::parse_year($full_data['year']) . '</li>';
-				echo '<li>' . LIST_MEMBERS_Major . ': ' . User_Parse::parse_major($full_data['major']) . '</li>';
-				echo '<li>' . LIST_MEMBERS_Dorm . ': ' . User_Parse::parse_dorm($full_data['dorm']) . '</li>';
-				
-				echo '<br />';
-				
-				echo '<li>' . LIST_MEMBERS_Hometown . ': ' . $full_data['hometown'] . '</li>';
-				echo '<li>' . LIST_MEMBERS_Phone . ': ' . $full_data['phone'] . '</li>';
-				echo '<li>' . LIST_MEMBERS_Email . ': ' . $full_data['email'] . '</li>';
-			echo '</ul>';
-		?>
-		
-	</div>
-	</article>
-	
+  <div id="main">
+    
+    <h3><?php echo $generic_data['first_name'] . ' ' . $generic_data['last_name'] . PROFILE_HEADER_SUFFIX; ?></h3>
+    
+    <?php
+      echo "<img src='http://graph.facebook.com/{$generic_data['facebook']}/picture?type=large' style='float:right; margin-right: 150px;' />";
+      echo "<ul style='list-style-type:none;'>";
+        echo '<li>' . LIST_MEMBERS_Positions . ': ' . User_Parse::parse_positions($full_data['positions']) . '</li>';
+        echo '<li>' . LIST_MEMBERS_Year . ': ' . User_Parse::parse_year($full_data['year']) . '</li>';
+        echo '<li>' . LIST_MEMBERS_Major . ': ' . User_Parse::parse_major($full_data['major']) . '</li>';
+        echo '<li>' . LIST_MEMBERS_Dorm . ': ' . User_Parse::parse_dorm($full_data['dorm']) . '</li>';
+        
+        echo '<br />';
+        
+        echo '<li>' . LIST_MEMBERS_Hometown . ': ' . $full_data['hometown'] . '</li>';
+        echo '<li>' . LIST_MEMBERS_Phone . ': ' . $full_data['phone'] . '</li>';
+        echo '<li>' . LIST_MEMBERS_Email . ': ' . $full_data['email'] . '</li>';
+      echo '</ul>';
+    ?>
+    
+  </div>
+  </article>
+  

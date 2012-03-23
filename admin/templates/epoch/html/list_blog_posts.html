@@ -1,32 +1,32 @@
 
-	<div id="wrapper">
-		<?php echo PAGE_LIST_BLOG_POSTS; ?>
-		
-		<br /><br />
-		
-		<table id="list-blog-posts">
-			<thead>
-				<tr>
-					<td><?php echo LIST_BLOG_ID; ?></td>
-					<td><?php echo LIST_BLOG_AUTHOR; ?></td>
-					<td><?php echo LIST_BLOG_TIMESTAMP; ?></td>
-					<td><?php echo LIST_BLOG_TITLE; ?></td>
-					<td><?php echo LIST_BLOG_CONTENT; ?></td>
-				</tr>
-			</thead>
-			
-			<?php
-				foreach ($posts as $post) {
-					$tmp = "window.location=\"index.php?page=edit_blog_post&blog_post=" . $post['id'] . '";';
-					echo "<tr style='cursor:pointer;' onclick='{$tmp}'>";
-						echo "<td>{$post['id']}</td>";
-						echo "<td>{$authors[$post['author']]}</td>";
-						echo '<td>' . Date::parse($post['timestamp']) . '</td>';
-						echo "<td>{$post['title']}</td>";
-						echo '<td>' . htmlentities(substr($post['content'], 0, 200)) . '</td>';
-					echo '</tr>';
-				}
-			?>
-		</table>	
-	</div>
+  <div id="wrapper">
+    <?php echo PAGE_LIST_BLOG_POSTS; ?>
+    
+    <br /><br />
+    
+    <table id="list-blog-posts">
+      <thead>
+        <tr>
+          <td><?php echo LIST_BLOG_ID; ?></td>
+          <td><?php echo LIST_BLOG_AUTHOR; ?></td>
+          <td><?php echo LIST_BLOG_TIMESTAMP; ?></td>
+          <td><?php echo LIST_BLOG_TITLE; ?></td>
+          <td><?php echo LIST_BLOG_CONTENT; ?></td>
+        </tr>
+      </thead>
+      
+      <?php
+        foreach ($posts as $post) {
+          $tmp = "window.location=\"index.php?page=edit_blog_post&blog_post=" . $post['id'] . '";';
+          echo "<tr style='cursor:pointer;' onclick='{$tmp}'>";
+            echo "<td>{$post['id']}</td>";
+            echo "<td>{$authors[$post['author']]}</td>";
+            echo '<td>' . Date::parse($post['timestamp']) . '</td>';
+            echo "<td>{$post['title']}</td>";
+            echo '<td>' . htmlentities(substr($post['content'], 0, 200)) . '</td>';
+          echo '</tr>';
+        }
+      ?>
+    </table>  
+  </div>
 

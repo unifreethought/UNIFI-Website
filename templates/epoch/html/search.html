@@ -1,40 +1,40 @@
 
-<div id="wrapper">	
-	<!-- 
-		Create the header secion, this will be the main image, navigation elements,
-		rotating quote, and search button.
-	-->
-	<header>
-		<?php include 'templates/epoch/html/show_nav.html'; ?>
-	</header>
-	
-	<hr />
-	
-	<!--
-		The "right side" of the page which contains: "You" box, [Admin Dashboard], 
-		social media icons, labels/authors, and the blogroll.
-	-->
-	<aside>
-		<?php include 'templates/epoch/html/show_sidebar.html'; ?>
-	</aside>
-	
-	<!--
-		The main section of the page, which has the blog posts (for the home page),
-		and the main content for other pages.
-		
-		P.S. Where needed content should be separated by the <section> element.
-	-->
-	<article>
-		<?php
-			foreach ($posts as $post) {
-				echo "<section class='blog-post'>";
-					echo "<h2><a href='index.php?page=post&id=" . $post['id'] . "'>" . Clean::output($post['title']) . "</a></h2>";
-					echo "<span class='blog-post-author'>" . BLOG_AUTHOR_PREFIX . "<a href='index.php?page=profile&profile={$post['id']}'>";
-						echo Clean::output($authors[$post['author']]) . '</a>' . Date::parse($post['timestamp']) . '</span>';
-					echo '<p>' . wordwrap(Clean::output($post['content']), 70) . '</p>';
-					echo "<span class='blog-post-comments'><a href='?page=post&id=" . $post['id'] . "'>" . BLOG_POST_COMMENTS . "</a></span>";
-				echo "</section>";
-			}
-		?>
-	</article>
+<div id="wrapper">  
+  <!-- 
+    Create the header secion, this will be the main image, navigation elements,
+    rotating quote, and search button.
+  -->
+  <header>
+    <?php include 'templates/epoch/html/show_nav.html'; ?>
+  </header>
+  
+  <hr />
+  
+  <!--
+    The "right side" of the page which contains: "You" box, [Admin Dashboard], 
+    social media icons, labels/authors, and the blogroll.
+  -->
+  <aside>
+    <?php include 'templates/epoch/html/show_sidebar.html'; ?>
+  </aside>
+  
+  <!--
+    The main section of the page, which has the blog posts (for the home page),
+    and the main content for other pages.
+    
+    P.S. Where needed content should be separated by the <section> element.
+  -->
+  <article>
+    <?php
+      foreach ($posts as $post) {
+        echo "<section class='blog-post'>";
+          echo "<h2><a href='index.php?page=post&id=" . $post['id'] . "'>" . Clean::output($post['title']) . "</a></h2>";
+          echo "<span class='blog-post-author'>" . BLOG_AUTHOR_PREFIX . "<a href='index.php?page=profile&profile={$post['id']}'>";
+            echo Clean::output($authors[$post['author']]) . '</a>' . Date::parse($post['timestamp']) . '</span>';
+          echo '<p>' . wordwrap(Clean::output($post['content']), 70) . '</p>';
+          echo "<span class='blog-post-comments'><a href='?page=post&id=" . $post['id'] . "'>" . BLOG_POST_COMMENTS . "</a></span>";
+        echo "</section>";
+      }
+    ?>
+  </article>
 </div>

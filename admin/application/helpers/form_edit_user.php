@@ -25,21 +25,21 @@ $positions = '';
 $tags = '';
 
 if (!empty($_POST['positions'])) {
-	foreach ($_POST['positions'] as $p) {
-		$positions .= $p . ', ';
-	}
-	$positions = substr($positions, 0, -2);
+  foreach ($_POST['positions'] as $p) {
+    $positions .= $p . ', ';
+  }
+  $positions = substr($positions, 0, -2);
 } else {
-	$positions = '';
+  $positions = '';
 }
 
 if (!empty($_POST['tags'])) {
-	foreach ($_POST['tags'] as $t) {
-		$tags .= $t . ', ';
-	}
-	$tags = substr($tags, 0, -2);
+  foreach ($_POST['tags'] as $t) {
+    $tags .= $t . ', ';
+  }
+  $tags = substr($tags, 0, -2);
 } else {
-	$tags = '';
+  $tags = '';
 }
 
 $sql = "UPDATE `{$database}`.`user-data` SET `year` = '{$year}', `major` = '{$major}', `dorm` = '{$dorm}', `recruit_place` = '{$recruit_place}'";

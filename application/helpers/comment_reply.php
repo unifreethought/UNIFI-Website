@@ -12,10 +12,10 @@ $content = MySQL::clean(htmlentities($_POST['content']));
 
 // Make sure that $user_id is set!!
 if (!empty($user_id)) {
-	// Insert the comment from the $user_id global variable.
-	$sql = "INSERT INTO `{$database}`.`blog-comments` (`id`,`blog_post`,`author`,`timestamp`,`content`) VALUES ";
-	$sql .= "('0','{$post}','{$author}','{$timestamp}','{$content}');";
-	MySQL::query($sql);
+  // Insert the comment from the $user_id global variable.
+  $sql = "INSERT INTO `{$database}`.`blog-comments` (`id`,`blog_post`,`author`,`timestamp`,`content`) VALUES ";
+  $sql .= "('0','{$post}','{$author}','{$timestamp}','{$content}');";
+  MySQL::query($sql);
 
         // Send out the emails
         $emails_raw = MySQL::single("SELECT `emails` from `{$database}`.`email_lists` WHERE `desc` = 'commenting_emails' LIMIT 1");
@@ -26,7 +26,7 @@ if (!empty($user_id)) {
         }
 
 } else {
-	$post = $post . '&commentFail';
+  $post = $post . '&commentFail';
 }
 
 header('Location: index.php?page=post&id=' . $post);

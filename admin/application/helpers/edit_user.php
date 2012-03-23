@@ -14,9 +14,9 @@ $user = MySQL::clean($_GET['user']);
 $tmp = MySQL::single("SELECT `first_name`,`last_name` FROM `{$database}`.`users` WHERE `id` = '{$user}' LIMIT 1");
 
 $user_info = array(
-	'id' => $user,
-	'first_name' => $tmp['first_name'],
-	'last_name' => $tmp['last_name']
+  'id' => $user,
+  'first_name' => $tmp['first_name'],
+  'last_name' => $tmp['last_name']
 );
 
 $tmp = MySQL::single("SELECT * FROM `{$database}`.`user-data` WHERE `id` = '{$user}' LIMIT 1");

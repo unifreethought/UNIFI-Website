@@ -1,49 +1,49 @@
-	
-<div id="wrapper">	
-	<!-- 
-		Create the header secion, this will be the main image, navigation elements,
-		rotating quote, and search button.
-	-->
-	<header>
-		<?php include 'templates/epoch/html/show_nav.html'; ?>
-	</header>
-	
-	<hr />
-	
-	<!--
-		The "right side" of the page which contains: "You" box, [Admin Dashboard], 
-		social media icons, labels/authors, and the blogroll.
-	-->
-	<aside>
-		<?php include 'templates/epoch/html/show_sidebar.html'; ?>
-	</aside>
-	
-	<!--
-		The main section of the page, which has the blog posts (for the home page),
-		and the main content for other pages.
-		
-		P.S. Where needed content should be separated by the <section> element.
-	-->
-	<article>
-		<div id="main">
-			
-			<h6>Subscribe to the newsletter</h6>
-			
-			<p>
-			UNIFI will send out a newsletter with updates and information on our
-			events. We keep any mailings to a minimum but we would love to keep
-			you in the news about UNIFI!
-			</p>
-			
-			<form action="index.php" method="POST">
-				<input type="hidden" name="add_email_to_newsletter" value="yes" />
-			
-				Your Email: <input type="text" name="email" placeholder="contact@unifreethought.com" autofocus />
-				<br />
-				<input type="submit" value="Subscribe" />
-			
-			</form>	
-				
-		</div>
-	</article>
-		
+  
+<div id="wrapper">  
+  <!-- 
+    Create the header secion, this will be the main image, navigation elements,
+    rotating quote, and search button.
+  -->
+  <header>
+    <?php include 'templates/epoch/html/show_nav.html'; ?>
+  </header>
+  
+  <hr />
+  
+  <!--
+    The "right side" of the page which contains: "You" box, [Admin Dashboard], 
+    social media icons, labels/authors, and the blogroll.
+  -->
+  <aside>
+    <?php include 'templates/epoch/html/show_sidebar.html'; ?>
+  </aside>
+  
+  <!--
+    The main section of the page, which has the blog posts (for the home page),
+    and the main content for other pages.
+    
+    P.S. Where needed content should be separated by the <section> element.
+  -->
+  <article>
+    <div id="main">
+      
+      <h6>Subscribe to the newsletter</h6>
+      
+      <p>
+      UNIFI will send out a newsletter with updates and information on our
+      events. We keep any mailings to a minimum but we would love to keep
+      you in the news about UNIFI!
+      </p>
+      
+      <form action="index.php" method="POST">
+        <input type="hidden" name="add_email_to_newsletter" value="yes" />
+      
+        Your Email: <input type="text" name="email" placeholder="contact@unifreethought.com" autofocus />
+        <br />
+        <input type="submit" value="Subscribe" />
+      
+      </form>  
+        
+    </div>
+  </article>
+    

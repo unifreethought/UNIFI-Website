@@ -19,19 +19,19 @@ $texting = MySQL::clean($_GET['texting']);
 $notes = MySQL::clean($_GET['notes']);
 
 $sql = "UPDATE  `{$database}`.`member_database`";
-	$sql .= " SET  `first_name` =  '{$first_name}'";
-	$sql .= ", `last_name` =  '{$last_name}'";
-	$sql .= ", `dorm` =  '{$dorm}'";
-	$sql .= ", `year` =  '{$year}'";
-	$sql .= ", `major` =  '{$major}'";
-	
-	$sql .= ", `hometown` =  '{$hometown}'";
-	$sql .= ", `address` = '{$address}'";
-	$sql .= ", `recruit_place` =  '{$recruit_place}'";
-	$sql .= ", `phone` =  '{$phone}'";
-	$sql .= ", `email` =  '{$email}'";
-	$sql .= ", `texting` =  '{$texting}'";
-	$sql .= ", `notes` = '{$notes}'";
+  $sql .= " SET  `first_name` =  '{$first_name}'";
+  $sql .= ", `last_name` =  '{$last_name}'";
+  $sql .= ", `dorm` =  '{$dorm}'";
+  $sql .= ", `year` =  '{$year}'";
+  $sql .= ", `major` =  '{$major}'";
+  
+  $sql .= ", `hometown` =  '{$hometown}'";
+  $sql .= ", `address` = '{$address}'";
+  $sql .= ", `recruit_place` =  '{$recruit_place}'";
+  $sql .= ", `phone` =  '{$phone}'";
+  $sql .= ", `email` =  '{$email}'";
+  $sql .= ", `texting` =  '{$texting}'";
+  $sql .= ", `notes` = '{$notes}'";
 $sql .= " WHERE  `member_database`.`id` = '{$member_id}';";
 
 MySQL::query($sql);

@@ -13,8 +13,8 @@ $post = MySQL::single("SELECT * FROM `{$database}`.`blog-posts` WHERE `id` = '{$
 
 // Check to see if the post actually exists
 if (empty($post['title'])) {
-	include 'templates/' . $config['template'] . '/html/show_no_post.html';
-	exit();
+  include 'templates/' . $config['template'] . '/html/show_no_post.html';
+  exit();
 }
 
 $comments = MySQL::search("SELECT * FROM `{$database}`.`blog-comments` WHERE `blog_post` = '{$post_id}';");
@@ -27,8 +27,8 @@ $authors[$post['author']] = $post_author['first_name'] . ' ' . $post_author['las
 
 // Load the commenters real names.
 foreach ($comments as $comment) {
-	if (empty($authors[$comment['author']]) && $authors[$comment['author']] != '0') {
-		$result = MySQL::single("SELECT `first_name`,`last_name` FROM `" . MySQL::$database . "`.`users` WHERE `id` = '" . MySQL::clean($comment['author']) . "' LIMIT 1");
-		$authors[$comment['author']] = $result['first_name'] . ' ' . $result['last_name'];
-	}
+  if (empty($authors[$comment['author']]) && $authors[$comment['author']] != '0') {
+    $result = MySQL::single("SELECT `first_name`,`last_name` FROM `" . MySQL::$database . "`.`users` WHERE `id` = '" . MySQL::clean($comment['author']) . "' LIMIT 1");
+    $authors[$comment['author']] = $result['first_name'] . ' ' . $result['last_name'];
+  }
 }

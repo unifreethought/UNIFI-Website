@@ -1,127 +1,127 @@
 <section id="search" class="no-border">
-			<div class="no-border">
-				<form action="index.php" method="GET">
-					<input type="hidden" name="page" value="search" />
-					<input type="search" id="search-box" name="query" placeholder="Search..." />
-				</form>
-			</div>
-		</section>
-	
-		<section id="profile-box-container">
-			<h3>You:</h3>
-			<div id="profile-box">
-			
-				<div class="right no-border" id="fb-button-container">
-					<?php print_fb_button(); ?>
-				</div>
-				
-				<div class="no-border">
-					<span>
-						<?php print_profile_button($user_id); ?>
-					</span>
-				</div>
-			</div>
-		</section>
-		
-		<?php print_admin_link($user_id, $database); ?>
-		
-		<section id="connect-with-us">
-			<h3>Connect with us:</h3>
-			<div id="social-media" class="no-border border-bottom">
-				<ul>
-					<li><a href="http://www.facebook.com/unifreethinkers"><img class="social-media-icon" src="templates/<?php echo $config['template']; ?>/images/facebook.png" /></a></li>
-					<li><a href="http://twitter.com/unifreethought"><img class="social-media-icon" src="templates/<?php echo $config['template']; ?>/images/twitter.png" /></a></li>
-					<li><a href="http://reddit.com/user/unifreethought"><img class="social-media-icon" src="templates/<?php echo $config['template']; ?>/images/reddit.png" /></a></li>
-					<li><a href="http://youtube.com/unifreethought"><img class="social-media-icon" src="templates/<?php echo $config['template']; ?>/images/youtube.png" /></a></li>
-					<li><a href="mailto:contact@unifreethought.com"><img class="social-media-icon" src="templates/<?php echo $config['template']; ?>/images/email.png" /></a></li>
-				</ul>
-				
-				Subscribe to our <a href="index.php?page=subscribe_to_newsletter" style="color:black;">newsletter</a>.
-			</div>
-		</section>
-		
-		<section id="quote-and-search" class="no-border">
-			<!-- Rotating Quote -->
-			<div id="quote" class="no-border border-bottom">
-				"I can't believe the special stories about our relationship to the universe at large."
-				<br />-- Richard Feynman
-			</div>
-		</section>
-			
-		<section class="no-border">
-			<!-- Lables / Authors -->
-			<div id="blogroll" class="no-border border-bottom">
-				<h4>Blogroll</h4>
-				<ul>
-					<!-- -->
-					<li>
-						<img src="templates/<?php echo $config['template']; ?>/images/blogroll/a.ico" />
-						
-						<span class="blogroll-title">
-							<a href="http://scienceblogs.com/pharyngula/">Pharyngula</a>
-						</span>
-						<span class="blogroll-desc">
-							Ken Ham was expelled! Ha haa! - Amazingly, a gang of ignorant young-earth creationist crazies who are running fundamentalist home-schooling conferences decided that Ken Ham and Answers ...
-						</span>
-					</li>
-					
-					<!-- -->
-					<li>
-						<img src="templates/<?php echo $config['template']; ?>/images/blogroll/b.ico" />
-					
-						<span class="blogroll-title">
-							<a href="http://whywontgodhealamputees.com/blog">WhyWontGodHealAmputees</a>
-						</span>
-						<span class="blogroll-desc">
-							The problem with religion… - The problem with religion… is that religious people want to cram religion down every throat. Case in point: GOP House Judiciary Committee Votes to Put ‘In ...
-						</span>
-					</li>
-					
-					<!-- -->
-					<li>
-						<img src="templates/<?php echo $config['template']; ?>/images/blogroll/c.ico" />
-						
-						<span class="blogroll-title">
-							<a href="http://friendlyatheist.com/">Friendly Atheist by Hemant Mehta</a>
-						</span>
-						<span class="blogroll-desc">
-							Rapture Day at Wichita State University - You know how the Bible says the Rapture is coming on May 21st? According to [Family Radio founder Harold] Camping’s prediction, the Rapture will happen exa...
-						</span>
-					</li>
-					
-					<!-- -->
-					<li>
-						<img src="templates/<?php echo $config['template']; ?>/images/blogroll/d.ico" />
-						
-						<span class="blogroll-title">
-							<a href="http://uiucatheists.blogspot.com/">Atheists, Agnostics, and Freethinkers</a>
-						</span>
-						<span class="blogroll-desc">
-							4 Last-Minute Lent Suggestions for the Catholic Church - For a week now, the Catholic world has been in the period of Lent between Mardi Gras and Easter Sunday. This means that all over the globe, upwards of a bi...
-						</span>
-					</li>
-				</ul>
-			</div>
-			
-			<!-- Authors -->
-			<div id="labels-and-authors" class="no-border border-bottom">
-				<h4>Authors</h4>
-				<ul>
-					<?php show_authors_in_sidebar(); ?>
-				</ul>
-			</div>
-			
-			<!-- Labels -->
-			<div id="labels-and-authors" class="no-border border-bottom">
-				<h4>Labels</h4>
-				<ul>
-					<?php show_labels_in_sidebar(); ?>
-				</ul>
-			</div>
-			
-			<!-- Guest Submissions -->
-			<div id="guest-submissions" class="no-border">
-				<h4>Guest Submissions</h4>
-				- <a href="index.php?page=guest_submission">Want to write a post?</a>
-			</div>
-		</section>
+      <div class="no-border">
+        <form action="index.php" method="GET">
+          <input type="hidden" name="page" value="search" />
+          <input type="search" id="search-box" name="query" placeholder="Search..." />
+        </form>
+      </div>
+    </section>
+  
+    <section id="profile-box-container">
+      <h3>You:</h3>
+      <div id="profile-box">
+      
+        <div class="right no-border" id="fb-button-container">
+          <?php print_fb_button(); ?>
+        </div>
+        
+        <div class="no-border">
+          <span>
+            <?php print_profile_button($user_id); ?>
+          </span>
+        </div>
+      </div>
+    </section>
+    
+    <?php print_admin_link($user_id, $database); ?>
+    
+    <section id="connect-with-us">
+      <h3>Connect with us:</h3>
+      <div id="social-media" class="no-border border-bottom">
+        <ul>
+          <li><a href="http://www.facebook.com/unifreethinkers"><img class="social-media-icon" src="templates/<?php echo $config['template']; ?>/images/facebook.png" /></a></li>
+          <li><a href="http://twitter.com/unifreethought"><img class="social-media-icon" src="templates/<?php echo $config['template']; ?>/images/twitter.png" /></a></li>
+          <li><a href="http://reddit.com/user/unifreethought"><img class="social-media-icon" src="templates/<?php echo $config['template']; ?>/images/reddit.png" /></a></li>
+          <li><a href="http://youtube.com/unifreethought"><img class="social-media-icon" src="templates/<?php echo $config['template']; ?>/images/youtube.png" /></a></li>
+          <li><a href="mailto:contact@unifreethought.com"><img class="social-media-icon" src="templates/<?php echo $config['template']; ?>/images/email.png" /></a></li>
+        </ul>
+        
+        Subscribe to our <a href="index.php?page=subscribe_to_newsletter" style="color:black;">newsletter</a>.
+      </div>
+    </section>
+    
+    <section id="quote-and-search" class="no-border">
+      <!-- Rotating Quote -->
+      <div id="quote" class="no-border border-bottom">
+        "I can't believe the special stories about our relationship to the universe at large."
+        <br />-- Richard Feynman
+      </div>
+    </section>
+      
+    <section class="no-border">
+      <!-- Lables / Authors -->
+      <div id="blogroll" class="no-border border-bottom">
+        <h4>Blogroll</h4>
+        <ul>
+          <!-- -->
+          <li>
+            <img src="templates/<?php echo $config['template']; ?>/images/blogroll/a.ico" />
+            
+            <span class="blogroll-title">
+              <a href="http://scienceblogs.com/pharyngula/">Pharyngula</a>
+            </span>
+            <span class="blogroll-desc">
+              Ken Ham was expelled! Ha haa! - Amazingly, a gang of ignorant young-earth creationist crazies who are running fundamentalist home-schooling conferences decided that Ken Ham and Answers ...
+            </span>
+          </li>
+          
+          <!-- -->
+          <li>
+            <img src="templates/<?php echo $config['template']; ?>/images/blogroll/b.ico" />
+          
+            <span class="blogroll-title">
+              <a href="http://whywontgodhealamputees.com/blog">WhyWontGodHealAmputees</a>
+            </span>
+            <span class="blogroll-desc">
+              The problem with religion… - The problem with religion… is that religious people want to cram religion down every throat. Case in point: GOP House Judiciary Committee Votes to Put ‘In ...
+            </span>
+          </li>
+          
+          <!-- -->
+          <li>
+            <img src="templates/<?php echo $config['template']; ?>/images/blogroll/c.ico" />
+            
+            <span class="blogroll-title">
+              <a href="http://friendlyatheist.com/">Friendly Atheist by Hemant Mehta</a>
+            </span>
+            <span class="blogroll-desc">
+              Rapture Day at Wichita State University - You know how the Bible says the Rapture is coming on May 21st? According to [Family Radio founder Harold] Camping’s prediction, the Rapture will happen exa...
+            </span>
+          </li>
+          
+          <!-- -->
+          <li>
+            <img src="templates/<?php echo $config['template']; ?>/images/blogroll/d.ico" />
+            
+            <span class="blogroll-title">
+              <a href="http://uiucatheists.blogspot.com/">Atheists, Agnostics, and Freethinkers</a>
+            </span>
+            <span class="blogroll-desc">
+              4 Last-Minute Lent Suggestions for the Catholic Church - For a week now, the Catholic world has been in the period of Lent between Mardi Gras and Easter Sunday. This means that all over the globe, upwards of a bi...
+            </span>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Authors -->
+      <div id="labels-and-authors" class="no-border border-bottom">
+        <h4>Authors</h4>
+        <ul>
+          <?php show_authors_in_sidebar(); ?>
+        </ul>
+      </div>
+      
+      <!-- Labels -->
+      <div id="labels-and-authors" class="no-border border-bottom">
+        <h4>Labels</h4>
+        <ul>
+          <?php show_labels_in_sidebar(); ?>
+        </ul>
+      </div>
+      
+      <!-- Guest Submissions -->
+      <div id="guest-submissions" class="no-border">
+        <h4>Guest Submissions</h4>
+        - <a href="index.php?page=guest_submission">Want to write a post?</a>
+      </div>
+    </section>

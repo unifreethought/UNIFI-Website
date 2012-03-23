@@ -10,7 +10,7 @@ $keywords = explode(' ', htmlentities($_GET['query']));
 $search = '';
 
 foreach ($keywords as $word) {
-	$search .= '%' . $word . '% OR ';
+  $search .= '%' . $word . '% OR ';
 }
 $search = substr($search, 0, -4);
 
@@ -20,8 +20,8 @@ $posts = MySQL::search($sql);
 // Populate the authors
 $authors = array();
 foreach ($posts as $post) {
-	if (@empty($authors[$post['author']]) && @$authors[$post['author']] != '0') {
-		$result = MySQL::single("SELECT `first_name`,`last_name` FROM `" . MySQL::$database . "`.`users` WHERE `id` = '" . MySQL::clean($post['author']) . "' LIMIT 1");
-		$authors[$post['author']] = $result['first_name'] . ' ' . $result['last_name'];
-	}
+  if (@empty($authors[$post['author']]) && @$authors[$post['author']] != '0') {
+    $result = MySQL::single("SELECT `first_name`,`last_name` FROM `" . MySQL::$database . "`.`users` WHERE `id` = '" . MySQL::clean($post['author']) . "' LIMIT 1");
+    $authors[$post['author']] = $result['first_name'] . ' ' . $result['last_name'];
+  }
 }

@@ -1,23 +1,23 @@
 
 
-	<div id="wrapper">
-		<table style="width:50%;">
-			<thead>
-				<tr>
-					<td><?php echo ADMIN_DASHBOARD_REPORT_FIRST; ?></td>
-					<td><?php echo ADMIN_DASHBOARD_REPORT_LAST; ?></td>
-				</tr>
-			</thead>
-			
-		<?php
-			foreach ($results as $person) {
-				echo '<tr>';
-					echo '<td>' . $person['first_name'] . '</td>';
-					echo '<td>' . $person['last_name'] . '</td>';
-				echo '</tr>';
-			}
-		?>
-		</table>
-	
-	</div>
-	
+  <div id="wrapper">
+    <table style="width:50%;">
+      <thead>
+        <tr>
+          <td><?php echo ADMIN_DASHBOARD_REPORT_FIRST; ?></td>
+          <td><?php echo ADMIN_DASHBOARD_REPORT_LAST; ?></td>
+        </tr>
+      </thead>
+      
+    <?php
+      foreach ($results as $person) {
+        echo '<tr>';
+          echo '<td>' . $person['first_name'] . '</td>';
+          echo '<td>' . $person['last_name'] . '</td>';
+        echo '</tr>';
+      }
+    ?>
+    </table>
+  
+  </div>
+  

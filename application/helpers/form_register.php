@@ -46,9 +46,9 @@ MySQL::query($sql);
 $sql = "SELECT `id` FROM `{$database}`.`member_database` WHERE `first_name` = '{$first_name}' AND `last_name` = '{$last_name}';";
 $result = MySQL::single($sql);
 if (empty($result['id'])) {
-	$sql = "INSERT INTO `{$database}`.`member_database` (`id`, `first_name`, `last_name`, `year`, `major`, `hometown`, `dorm`, `recruit_date`, `recruit_place`, `phone`, `email`, `texting`, `positions`, `tags`, `notes`)";
-	$sql .= " VALUES ('0', '{$first_name}', '{$last_name}', '{$year}', '{$major}', '{$hometown}', '{$dorm}', '{$recruit_date}', '{$recruit_place}', '{$phone}', '{$email}', '{$texting}', '{$positions}', '{$tags}', '');";
-	MySQL::query($sql);
+  $sql = "INSERT INTO `{$database}`.`member_database` (`id`, `first_name`, `last_name`, `year`, `major`, `hometown`, `dorm`, `recruit_date`, `recruit_place`, `phone`, `email`, `texting`, `positions`, `tags`, `notes`)";
+  $sql .= " VALUES ('0', '{$first_name}', '{$last_name}', '{$year}', '{$major}', '{$hometown}', '{$dorm}', '{$recruit_date}', '{$recruit_place}', '{$phone}', '{$email}', '{$texting}', '{$positions}', '{$tags}', '');";
+  MySQL::query($sql);
 }
 
 // `user-permissions`

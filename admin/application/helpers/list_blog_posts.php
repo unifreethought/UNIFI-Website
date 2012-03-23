@@ -9,8 +9,8 @@ $posts = MySQL::search("SELECT * FROM `{$database}`.`blog-posts` ORDER BY `times
 
 $authors = array();
 foreach ($posts as $post) {
-	if (empty($authors[$post['author']])) {
-		$tmp = MySQL::single("SELECT `first_name`, `last_name` FROM `{$database}`.`users` WHERE `id` = '{$post['author']}' LIMIT 1");
-		$authors[$post['author']] = $tmp['first_name'] . ' ' . $tmp['last_name'];
-	}
+  if (empty($authors[$post['author']])) {
+    $tmp = MySQL::single("SELECT `first_name`, `last_name` FROM `{$database}`.`users` WHERE `id` = '{$post['author']}' LIMIT 1");
+    $authors[$post['author']] = $tmp['first_name'] . ' ' . $tmp['last_name'];
+  }
 }

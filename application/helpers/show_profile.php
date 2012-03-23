@@ -16,8 +16,8 @@ $generic_data = MySQL::single("SELECT `first_name`,`last_name`,`facebook` FROM `
 
 // Check to see if the user actually exists
 if (empty($generic_data['first_name']) || empty($user_id)) {
-	include 'templates/' . $config['template'] . '/html/show_no_profile.html';
-	exit();
+  include 'templates/' . $config['template'] . '/html/show_no_profile.html';
+  exit();
 }
 
 $full_data = MySQL::single("SELECT * FROM `{$database}`.`user-data` WHERE `id` = '{$id}' LIMIT 1");

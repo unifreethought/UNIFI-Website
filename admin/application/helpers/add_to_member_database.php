@@ -5,12 +5,12 @@
  */
 
 function arr_join($arr) {
-	$tmp = '';
-	$arr = explode(',', $arr);
-	foreach ($arr as $item) {
-		$tmp .= $item . ',';
-	}
-	return substr($tmp, 0, -1);
+  $tmp = '';
+  $arr = explode(',', $arr);
+  foreach ($arr as $item) {
+    $tmp .= $item . ',';
+  }
+  return substr($tmp, 0, -1);
 }
 
 

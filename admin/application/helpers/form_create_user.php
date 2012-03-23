@@ -6,11 +6,11 @@
  */
  
 function arr_join($arr) {
-	$tmp = '';
-	foreach ($arr as $item) {
-		$tmp .= $item . ',';
-	}
-	return substr($tmp, 0, -1);
+  $tmp = '';
+  foreach ($arr as $item) {
+    $tmp .= $item . ',';
+  }
+  return substr($tmp, 0, -1);
 }
 
 // users
