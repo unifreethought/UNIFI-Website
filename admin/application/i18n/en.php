@@ -7,7 +7,7 @@
  
 define('ADMIN_NOT_AUTHORIZED', '<div id="wrapper">Sorry, but you are not allowed to see this.</div>');
 define('ADMIN_TITLE', 'UNIFI -- Admin');
-define('ADMIN_ACCESS_DISABLED', 'We\'re sorry, but admin access to the site is down.');
+define('ADMIN_ACCESS_DISABLED', 'We\'re sorry, but admin access to the site is down for a bit. It will be back up shortly');
 define('ADMIN_HEADER', 'UNIFI - ADMIN');
 define('MAIN_PAGE_ADMIN_TO_REGULAR_HOME', 'Back to home');
 define('ADMIN_DASHBOARD_TITLE', 'Dashboard');

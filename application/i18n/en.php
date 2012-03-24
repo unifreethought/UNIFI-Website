@@ -12,7 +12,7 @@ define('ADMIN_DASHBOARD_TITLE', 'Admin Dashboard');
 define('MAIN_PAGE_ADMIN_NAV_LINK', 'Admin Dashboard');
 define('MAIN_PAGE_ADMIN_TO_REGULAR_HOME', 'Back to Site');
 
-define('WEB_ACCESS_DISABLED', 'We\'re sorry, but this website is down.');
+define('WEB_ACCESS_DISABLED', 'We\'re sorry, but this website is down for a short time. It will be back up shortly');
 
 // Admin Auth Errors
 define('ADMIN_NOT_AUTHORIZED', 'Sorry, but you\'re not authorized to view this page.');

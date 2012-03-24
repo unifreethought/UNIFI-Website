@@ -14,7 +14,7 @@ require '../system/libs/sanitize.class.php';
 require '../application/config/config.php';
 require 'application/i18n/' . $config['i18n-admin'];
 if ($config['admin']!== 'enabled') {
-  exit(WEB_ACCESS_DISABLED);
+  exit(ADMIN_ACCESS_DISABLED);
 }
 
 // Load the logging library
