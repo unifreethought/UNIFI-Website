@@ -31,8 +31,12 @@
       if (isset($_GET['thanks_alumni'])) {
         echo "<h4>Thanks for becoming an alumni!</h4>";
       }
-    
+   
+      $oldestPost = 9999999999; 
       foreach ($posts as $post) {
+        if ((int) $post['timestamp'] < $oldestPost) 
+          $oldestPost = $post['timestamp'];
+
         echo "<section class='blog-post'>";
           echo "<h2><a href='index.php?page=post&id=" . $post['id'] . "'>" . Clean::output($post['title']) . "</a></h2>";
           echo "<span class='blog-post-author'>" . BLOG_AUTHOR_PREFIX . "<a href='index.php?page=profile&profile={$post['author']}'>";
@@ -41,6 +45,8 @@
           echo "<span class='blog-post-comments'><a href='?page=post&id=" . $post['id'] . "'>" . BLOG_POST_COMMENTS . "</a></span>";
         echo "</section>";
       }
+
+      echo "<a href='index.php?older_than={$oldestPost}' style='color:black;'>Older Posts</a>";
     ?>
     
   </div>

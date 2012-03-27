@@ -7,12 +7,14 @@
  
 include 'show_authors_and_labels.php';
 
-if (empty($url['older_than'])) {
-  $url['older_than'] = @time();
+if (empty($_GET['older_than'])) {
+  $olderThan = MySQL::clean(@time());
+} else {
+  $olderThan = MySQL::clean($_GET['older_than']);
 }
 
 // For now we want the blog posts pulled and displayed.
-$posts = MySQL::search("SELECT * FROM `" . MySQL::$database . "`.`blog-posts` WHERE `timestamp` < " . MySQL::clean($url['older_than']) . " ORDER BY `timestamp` DESC LIMIT 10");
+$posts = MySQL::search("SELECT * FROM `" . MySQL::$database . "`.`blog-posts` WHERE `timestamp` < " . $olderThan . " ORDER BY `timestamp` DESC LIMIT 10");
 
 // Create an array of authors, organized by their user id.
 $authors = array();
