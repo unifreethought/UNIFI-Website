@@ -19,11 +19,16 @@ if (empty($id)) {
 
   Log::create($user_id, 'new_blog_post', 'date:' . Date::parse($time) . '<br>title:' . $title);
   
+  // Set the headers for the email
+  $headers  = "From: UNI Freethinkers and Inquirers <contact@unifreethought.com>\r\n";  
+  $headers .= "MIME-Version: 1.0\r\n";
+  $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
   // Email all of the people setup for it.
   $emails_raw = MySQL::single("SELECT `emails` from `{$database}`.`email_lists` WHERE `desc` = 'posting_emails' LIMIT 1");
   $emails = explode(',', $emails_raw['emails']);
   foreach ($emails as $email) {
-    mail($email, "A new blog post: " . $title, $content, "From: {$config['admin_email']}");
+    mail($email, "A new blog post: " . $title, $content, "From: {$config['admin_email']}", $headers);
   }
 
 } else {
