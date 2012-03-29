@@ -7,11 +7,10 @@
 class SocialMedia {
 
   private function buildUrl($postId, $encode = false) {
-    $str = "http://www.unifreethought.com/index.php?page=post&id=" . $postId;  
     if ($encode == true) {
-      return htmlspecialchars($str);
+      return "http%3A%2F%2Funifreethought.com%2Findex.php%3Fpage%3Dpost%26id%3D" . $postId;
     }
-    return $str;
+    return "http://www.unifreethought.com/index.php?page=post&id=" . $postId;
   }
   
   static function facebookLike($postId) { 
