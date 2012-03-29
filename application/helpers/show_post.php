@@ -6,6 +6,7 @@
  */
  
 include 'show_authors_and_labels.php';
+include 'system/libs/social_media.class.php';
  
 $post_id = MySQL::clean($url['id']);
 

@@ -6,6 +6,7 @@
  */
  
 include 'show_authors_and_labels.php';
+include 'system/libs/social_media.class.php';
 
 if (empty($_GET['older_than'])) {
   $olderThan = MySQL::clean(@time());

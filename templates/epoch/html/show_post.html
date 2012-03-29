@@ -31,6 +31,17 @@
         echo "<h2><a href='index.php?page=post&id=" . $post['id'] . "'>" . Clean::output($post['title']) . "</a></h2>";
         echo "<span class='blog-post-author'>" . BLOG_AUTHOR_PREFIX . "<a href='index.php?page=profile&profile={$post['author']}'>";
           echo Clean::output($authors[$post['author']]) . '</a>' . Date::parse($post['timestamp']) . '</span>';
+        // Social media buttons!
+        echo '<p>';
+          echo "<div style='float:right;'>";
+            SocialMedia::redditPost($post['id']);
+            SocialMedia::googlePlus($post['id']);
+          echo "</div>";
+          echo "<div>";
+            SocialMedia::facebookLike($post['id']);
+            SocialMedia::twitterButton($post['id']);
+          echo "</div>";
+        echo '</p>';
         echo '<p>' . wordwrap(Clean::output($post['content']), 70) . '</p>';
         echo "<a name='comments'></a>";
         echo "<span class='blog-post-comments'><a href='?page=post&id=" . $post['id'] . "#comments'>" . BLOG_POST_COMMENTS . "</a></span>";
