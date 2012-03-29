@@ -25,7 +25,7 @@ require_once ('system/libs/TeraWurflRemoteClient.php');
   $wurflObj->getCapabilitiesFromAgent(null, $capabilities, $data_format);
 
 if (!empty($wurflObj->capabilities['mobile_browser']) && !array_key_exists("fullsite",$arr)) {
-  header("Location: mobile/");
+  header("Location: mobile/" . $_SERVER['REQUEST_URI']);
   exit();
 }
 
