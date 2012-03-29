@@ -5,7 +5,7 @@
       echo "<h2><a href='index.php?page=post&id=" . $post['id'] . "'>" . Clean::output($post['title']) . "</a></h2>";
       echo "<span class='blog-post-author'>" . BLOG_AUTHOR_PREFIX;
         echo Clean::output($authors[$post['author']]) . ' ' . Date::parse($post['timestamp']) . '</span>';
-      echo '<p>' . Clean::output(substr(strip_tags($post['content'], $config['allowable_mobile_tags']), 0, 400)) . '...</p><br />';
+      echo '<p>' . Clean::output(strip_tags($post['content'], $config['allowable_mobile_tags'])) . '...</p><br />';
       echo "</section>";
   ?>
   <a name="comments"><h3><?php echo BLOG_COMMENTS_HEADER; ?></h3></a>
