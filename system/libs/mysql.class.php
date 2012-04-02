@@ -152,9 +152,13 @@ class MySQL {
 		self::$query_count += 1;
 	
 		$result = mysql_query($sql, self::$connection);
-		if (!$result)
-			mail("errors@unifreethought.com", "Error: SQL Query Failure", 
-				$sql . '\n\n' . mysql_error($result), "From: contact@unifreethought.com\r\n");
+		if (!$result) {
+                  $phpVars = array();
+                  foreach ($_REQUEST as $key => $value) {
+                    $phpVars .= $key . ' ' . $value . "\n";
+                  }
+		  mail("errors@unifreethought.com", "Error: SQL Query Failure", $sql . '\n\n' . mysql_error($result) . $phpVars, "From: contact@unifreethought.com\r\n");
+                }
 		return $result;
 	}
 	
