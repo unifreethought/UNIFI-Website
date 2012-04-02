@@ -22,15 +22,11 @@ class SocialMedia {
   }
 
   static function googlePlus($postId) {
-    echo "<div><div class='g-plusone' data-annotation='inline' data-width='300' href='" . self::buildUrl($postId) . "'></div><script>(function(){var po = document.createElement('script');po.type='text/javascript';po.async=true;po.src = 'https://apis.google.com/js/plusone.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(po, s);})();</script></div>";
+    echo "<div><div class='g-plusone' data-annotation='inline' data-width='300' href='" . self::buildUrl($postId) . "'></div></div>";
   }
 
   static function redditPost($postId) {
-    echo "<div><script>reddit_url='" . self::buildUrl($postId) . "'</script><script src='http://www.reddit.com/static/button/button1.js'></script></div>";
-  }
-
-  static function twitterButton($postId) {
-    echo "<a href='https://twitter.com/share' class='twitter-share-button' data-url='{self::buildUrl($postId)' data-via='unifreethought'>Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.async=true;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');</script>";
+    echo "<div><script>reddit_url='" . self::buildUrl($postId) . "'</script></div>";
   }
 
 }

@@ -49,7 +49,6 @@
             echo "</div>";
             echo "<div>";
               SocialMedia::facebookLike($post['id'], true);
-              SocialMedia::twitterButton($post['id']);
             echo "</div>";
           echo '</p>';
           echo '<p>' . wordwrap(Clean::output($post['content']), 70) . '</p>';
