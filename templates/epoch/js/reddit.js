@@ -31,5 +31,5 @@ function redditButton() {
   if (window.reddit_newwindow) { 
       write_string += '&newwindow=' + encodeURIComponent(window.reddit_newwindow);}
   write_string += "\" height=\"22\" width=\"120\" scrolling='no' frameborder='0'></iframe>";
-  document.write(write_string);
+  document.querySelector("#redditButton").innerHTML += write_string;
 }

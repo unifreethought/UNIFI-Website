@@ -26,7 +26,7 @@ class SocialMedia {
   }
 
   static function redditPost($postId) {
-    echo "<div><script>reddit_url='" . self::buildUrl($postId) . "'</script></div>";
+    echo "<div id='redditButton'><script>reddit_url='" . self::buildUrl($postId) . "';</script></div>";
   }
 
 }
