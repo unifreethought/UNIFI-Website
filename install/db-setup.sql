@@ -71,6 +71,20 @@ CREATE TABLE IF NOT EXISTS `blog-posts` (
 
 
 --
+-- Table structure for table `blog-drafts`
+--
+CREATE TABLE IF NOT EXISTS `blog-drafts` (
+  `id` int(32) NOT NULL AUTO_INCREMENT,
+  `author` int(32) NOT NULL,
+  `timestamp` int(20) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `content` longtext NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+
+
+--
 -- Table structure for table `dorm`
 --
 
