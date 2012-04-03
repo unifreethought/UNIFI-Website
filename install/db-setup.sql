@@ -42,6 +42,15 @@ CREATE TABLE IF NOT EXISTS `alumni_database` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `blog-authors`
+--
+CREATE TABLE IF NOT EXISTS `blog-authors` (
+  `user_id` int(32) NOT NULL,
+  `count` int(20) NOT NULL,
+  UNIQUE KEY `user_id` (`user_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
 -- Table structure for table `blog-comments`
 --
 
@@ -83,6 +92,38 @@ CREATE TABLE IF NOT EXISTS `blog-drafts` (
   UNIQUE KEY `id` (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 
+--
+-- Table structure for table `blog-guest-submissions`
+--
+CREATE TABLE IF NOT EXISTS `blog-guest-submissions` (
+  `id` int(32) NOT NULL AUTO_INCREMENT,
+  `author` int(32) NOT NULL,
+  `timestamp` int(20) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `content` longtext NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+
+--
+-- Table structure for table `blog-tag-names`
+--
+CREATE TABLE IF NOT EXISTS `blog-tag-names` (
+  `id` int(32) NOT NULL AUTO_INCREMENT,
+  `tag` varchar(100) NOT NULL,
+  `count` int(20) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+
+--
+-- Table structure for table `blog-tags`
+--
+CREATE TABLE IF NOT EXISTS `blog-tags` (
+  `post_id` int(32) NOT NULL,
+  `tag_id` int(32) NOT NULL,
+  KEY `post_id` (`post_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Table structure for table `dorm`
@@ -435,6 +476,16 @@ INSERT INTO `nav-items` (`position`, `url_stub`, `name`, `href`, `style`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `newsletter_emails`
+--
+
+CREATE TABLE IF NOT EXISTS `newsletter_emails` (
+  `email` varchar(250) NOT NULL,
+  `unsubscribe_code` varchar(250) NOT NULL,
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
 -- Table structure for table `pages`
 --
 
@@ -569,6 +620,32 @@ CREATE TABLE IF NOT EXISTS `users-deleted` (
   `cookie` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Table structure for table `volunteer_events`
+--
+
+CREATE TABLE IF NOT EXISTS `volunteer_events` (
+  `id` int(32) NOT NULL AUTO_INCREMENT,
+  `title` varchar(200) NOT NULL,
+  `start_time` int(20) NOT NULL,
+  `end_time` int(20) NOT NULL,
+  `location` varchar(100) NOT NULL,
+  `description` text NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Table structure for table `volunteer_event_attendance`
+--
+
+CREATE TABLE IF NOT EXISTS `volunteer_event_attendance` (
+  `event_id` int(32) NOT NULL,
+  `member_id` int(32) NOT NULL,
+  PRIMARY KEY (`event_id`,`member_id`),
+  KEY `event_id` (`event_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
