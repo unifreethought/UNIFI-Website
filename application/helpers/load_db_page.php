@@ -5,6 +5,7 @@
  * 2010-11-21
  */
  
+include 'system/libs/social_media.class.php';
 include 'show_authors_and_labels.php';
  
 // Load the contents for a page from the db, then display 
