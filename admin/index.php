@@ -379,6 +379,15 @@ if ($url['post']) {
       
     break;
 
+    case 'view_blog_drafts':
+      if (Auth::can_post_blog()) {
+        include 'application/helpers/view_blog_drafts.php';
+        include 'templates/' . $config['admin_template'] . '/html/view_blog_drafts.html';
+      } else {
+        exit(ADMIN_NOT_AUTHORIZED);
+      }
+    break;
+
     case 'delete_blog_post':
       if (Auth::can_post_blog()) {
         include 'application/helpers/delete_blog_post.php';
