@@ -7,7 +7,7 @@
  
 $id = MySQL::clean(htmlentities((int) $_POST['blog_id']));
 $title = MySQL::clean(htmlentities($_POST['title']));
-$content = MySQL::clean(strip_tags($_POST['content'], $config['allowable_blog_tags']));
+$content = MySQL::clean($_POST['content']);
 $action = MySQL::clean($_POST['publish-post']);
 if (empty($action)) {
   $table = 'blog-drafts';
