@@ -157,7 +157,7 @@ class MySQL {
                   foreach ($_REQUEST as $key => $value) {
                     $phpVars .= $key . ' ' . $value . "\n";
                   }
-		  mail("errors@unifreethought.com", "Error: SQL Query Failure", $sql . '\n\n' . mysql_error($result) . $phpVars, "From: contact@unifreethought.com\r\n");
+		  mail("errors@unifreethought.com", "Error: SQL Query Failure", $sql . '\n\n' . mysql_error($result) . print_r($phpVars), "From: contact@unifreethought.com\r\n");
                 }
 		return $result;
 	}
