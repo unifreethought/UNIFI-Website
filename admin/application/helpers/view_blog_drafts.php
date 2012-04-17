@@ -4,7 +4,13 @@
  * Adam Shannon
  */
 
-$drafts = MySQL::search("SELECT * FROM `{$database}`.`blog-drafts` ORDER BY `timestamp` DESC;");
+if (empty($_GET['olderThan'])) {
+  $olderThan = MySQL::clean(@time());
+} else {
+  $olderThan = MySQL::clean($_GET['olderThan']);
+}
+
+$drafts = MySQL::search("SELECT * FROM `{$database}`.`blog-drafts` WHERE `timestamp` < " . $olderThan . " ORDER BY `timestamp` DESC LIMIT 50;");
 
 $authors = array();
 foreach ($drafts as $draft) {

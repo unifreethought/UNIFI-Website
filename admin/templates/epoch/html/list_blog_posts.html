@@ -28,5 +28,10 @@
         }
       ?>
     </table>
+
+    <?php
+      if (count($posts) >= 50)
+        echo "<a href='index.php?page=list_blog_posts&olderThan=" . $post['timestamp'] . "'>Older Drafts</a>";
+    ?>
   </div>
 

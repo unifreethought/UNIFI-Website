@@ -5,7 +5,13 @@
  * 2010-11-21
  */
 
-$posts = MySQL::search("SELECT * FROM `{$database}`.`blog-posts` ORDER BY `timestamp` DESC LIMIT 1000");
+if (empty($_GET['olderThan'])) {
+  $olderThan = MySQL::clean(@time());
+} else {
+  $olderThan = MySQL::clean($_GET['olderThan']);
+}
+
+$posts = MySQL::search("SELECT * FROM `{$database}`.`blog-posts` WHERE `timestamp` < " . $olderThan . " ORDER BY `timestamp` DESC LIMIT 50;");
 
 $authors = array();
 foreach ($posts as $post) {
