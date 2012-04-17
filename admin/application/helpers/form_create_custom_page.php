@@ -4,7 +4,7 @@
  * Adam Shannon
  * 2010-11-21
  */
- 
+
 $position = MySQL::clean($_POST['position']);
 $url_stub = MySQL::clean($_POST['url_stub']);
 $name = MySQL::clean($_POST['name']);

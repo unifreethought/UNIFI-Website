@@ -1,14 +1,14 @@
 
   <div id="wrapper">
     <h3><?php echo PAGE_MEMBER_DATABASE; ?></h3>
-    
+
     <!-- Create a new member -->
     <div>
       <fieldset>
-      New Member:<br /> 
+      New Member:<br />
         <input type="text" class="member_field" id="first_name" placeholder="First Name" />
-        <input type="text" class="member_field" id="last_name" placeholder="Last Name" />  
-        
+        <input type="text" class="member_field" id="last_name" placeholder="Last Name" />
+
         <!-- Year in School -->
         <?php
         echo "<select class='member_select' id='year'>";
@@ -17,7 +17,7 @@
         }
         echo "</select>";
         ?>
-        
+
         <!-- Major -->
         <?php
         echo "<select class='member_select' id='major'>";
@@ -26,13 +26,13 @@
         }
         echo "</select>";
         ?>
-        
+
         <input type="text" class="member_field" id="hometown" placeholder="Hometown" />
-        
+
         <input type="text" class="member_field" id="address" placeholder="Address" />
-        
+
         <br />
-        
+
         <!-- Dorm -->
         <?php
         echo "<select class='member_select' id='dorm'>";
@@ -41,55 +41,55 @@
         }
         echo "</select>";
         ?>
-        
+
         <!-- Recruit Place -->
         <?php
         echo "<input type='text' class='member_select' id='recruit_place' placeholder='Recruit Place' />";
         ?>
-        
+
         <input type="text" class="member_field" id="phone" placeholder="Phone Number" />
-        
+
         <!-- Texting Allowed -->
         <select class='member_select' id="texting">
           <option value="0" id='texting0'>No Texting</option>
           <option value="1" id='texting1'>Yes, Texting</option>
         </select>
-        
+
         <!-- Email -->
         <input type="text" class="member_field" id="email" placeholder="Email" />
-        
+
         <!-- Positions -->
-        <br />[Positions]: 
-        <?php 
+        <br />[Positions]:
+        <?php
           foreach ($positions as $position) {
             echo "<label>" . $position['desc'] . " <input type='checkbox' name='positions[]' class='positions' id='position{$position['id']}' value='{$position['id']}'";
             echo "/> | </label>";
           }
         ?>
-        
+
         <!-- Tags -->
-        <br />[Tags]: 
-        <?php 
+        <br />[Tags]:
+        <?php
           foreach ($tags as $tag) {
             echo "<label>" . $tag['desc'] . " <input type='checkbox' name='tags[]' class='tags' id='tag{$tag['id']}' value='{$tag['id']}'";
             echo "/> | </label>";
           }
         ?>
-        
+
         <br />
         <input type="button" onclick="addMember();" value="Add Member!" />
       </fieldset>
     </div>
-    
+
     <!-- Search and Filter Members -->
     <br />
     <div>
       <fieldset>
         Search / Filter: (<em>Separate Fields by Commas</em>)<br />
-        
+
         <input type="text" id="search_first_name" placeholder="First Name" />
         <input type="text" id="search_last_name" placeholder="Last Name" />
-        
+
         <!-- Year in School -->
         <?php
         echo "<select class='member_select' id='search_year'>";
@@ -99,7 +99,7 @@
         }
         echo "</select>";
         ?>
-        
+
         <!-- Major -->
         <?php
         echo "<select class='member_select' id='search_major'>";
@@ -109,13 +109,13 @@
         }
         echo "</select>";
         ?>
-        
+
         <input type="text" class="member_field" id="search_hometown" placeholder="Hometown" />
-        
+
         <input type="text" class="member_field" id="search_address" placeholder="Address" />
-        
+
         <br />
-        
+
         <!-- Dorm -->
         <?php
         echo "<select class='member_select' id='search_dorm'>";
@@ -125,48 +125,48 @@
         }
         echo "</select>";
         ?>
-        
+
         <!-- Recruit Place -->
         <?php
                                 echo "<input type='text' class='member_select' id='search_recruit_place' placeholder='Recruit Place' />";
         ?>
-        
+
         <input type="text" class="member_field" id="search_phone" placeholder="Phone Number" />
-        
+
         <!-- Texting Allowed -->
         <select class='member_select' id="search_texting">
           <option value='' selected> -- </option>
           <option value="0" id='texting0'>No Texting</option>
           <option value="1" id='texting1'>Yes, Texting</option>
         </select>
-        
+
         <!-- Email -->
         <input type="text" class="member_field" id="search_email" placeholder="Email" />
-        
+
         <!-- Positions -->
-        <br />[Positions]: 
-        <?php 
+        <br />[Positions]:
+        <?php
           foreach ($positions as $position) {
             echo "<label>" . $position['desc'] . " <input type='checkbox' name='positions[]' class='search_positions' id='position{$position['id']}' value='{$position['id']}'";
             echo "/> | </label>";
           }
         ?>
-        
+
         <!-- Tags -->
-        <br />[Tags]: 
-        <?php 
+        <br />[Tags]:
+        <?php
           foreach ($tags as $tag) {
             echo "<label>" . $tag['desc'] . " <input type='checkbox' name='tags[]' class='search_tags' id='tag{$tag['id']}' value='{$tag['id']}'";
             echo "/> | </label>";
           }
         ?>
-        
+
         <br />
-        
+
         <input type="button" onclick="searchMembers();" value="Search!" />
       </fieldset>
     </div>
-    
+
     <!-- Show the members -->
     <br />
     <div>
@@ -189,7 +189,7 @@
             <td>Tags</td>
           </tr>
         </thead>
-        
+
         <?php
           foreach ($members as $member) {
             echo "<tr style='cursor:pointer;' onclick=window.location='index.php?page=view_member&member={$member['id']}';>";
@@ -212,7 +212,7 @@
         ?>
       </table>
     </div>
-    
+
     <script>
     function addMember() {
       var
@@ -227,36 +227,36 @@
         hometown = encodeURIComponent(document.getElementById('hometown').value),
         address = encodeURIComponent(document.getElementById('address').value),
         email = encodeURIComponent(document.getElementById('email').value),
-        
+
         positions = document.getElementsByClassName('positions'),
         tags = document.getElementsByClassName('tags');
-      
+
       var append_positions = [];
       var append_tags = [];
-        
+
       for (var i = 0; i < positions.length; i++) {
         if (positions[i].checked)
           append_positions.push(positions[i].value);
       }
-      
+
       for (i = 0; i < tags.length; i++) {
         if (tags[i].checked)
           append_tags.push(tags[i].value);
       }
-      
+
       var href = "index.php?page=add_to_member_database";
       var query_string = "&first_name=" + first_name + "&last_name=" + last_name + "&year=" + year + "&major=" + major;
         query_string += "&dorm=" + dorm + "&recruit_place=" + recruit_place + "&phone=" + phone + "&texting=" + texting;
         query_string += "&positions=" + append_positions.toString() + "&tags=" + append_tags.toString();
         query_string += "&hometown=" + hometown + "&email=" + email + "&address=" + address;
-        
+
       var xhr = new XMLHttpRequest();
         xhr.open('GET', href + query_string, false);
         xhr.send(null);
-        
+
       location.reload();
     }
-    
+
     function searchMembers() {
       var
         first_name = encodeURIComponent(document.getElementById('search_first_name').value),
@@ -270,29 +270,29 @@
         hometown = encodeURIComponent(document.getElementById('search_hometown').value),
         address = encodeURIComponent(document.getElementById('search_address').value),
         email = encodeURIComponent(document.getElementById('search_email').value),
-        
+
         positions = document.getElementsByClassName('search_positions'),
         tags = document.getElementsByClassName('search_tags');
-      
+
       var append_positions = [];
       var append_tags = [];
-        
+
       for (var i = 0; i < positions.length; i++) {
         if (positions[i].checked)
           append_positions.push(positions[i].value);
       }
-      
+
       for (i = 0; i < tags.length; i++) {
         if (tags[i].checked)
           append_tags.push(tags[i].value);
       }
-      
+
       var href = "index.php?page=search_member_database";
       var query_string = "&first_name=" + first_name + "&last_name=" + last_name + "&year=" + year + "&major=" + major;
         query_string += "&dorm=" + dorm + "&recruit_place=" + recruit_place + "&phone=" + phone + "&texting=" + texting;
         query_string += "&positions=" + append_positions.toString() + "&tags=" + append_tags.toString();
         query_string += "&hometown=" + hometown + "&email=" + email + "&address=" + address;
-        
+
       location.href = href + query_string;
     }
     </script>

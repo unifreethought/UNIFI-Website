@@ -1,34 +1,34 @@
-  
-<div id="wrapper">  
-  <!-- 
+
+<div id="wrapper">
+  <!--
     Create the header secion, this will be the main image, navigation elements,
     rotating quote, and search button.
   -->
   <header>
     <?php include 'templates/epoch/html/show_nav.html'; ?>
   </header>
-  
+
   <hr />
-  
+
   <!--
-    The "right side" of the page which contains: "You" box, [Admin Dashboard], 
+    The "right side" of the page which contains: "You" box, [Admin Dashboard],
     social media icons, labels/authors, and the blogroll.
   -->
   <aside>
     <?php include 'templates/epoch/html/show_sidebar.html'; ?>
   </aside>
-  
+
   <!--
     The main section of the page, which has the blog posts (for the home page),
     and the main content for other pages.
-    
+
     P.S. Where needed content should be separated by the <section> element.
   -->
   <article>
     <div id="main">
-      
+
       <h6>Alumni Signup Form</h6>
-      
+
       <p>
       Greetings! The UNI Freethinkers and Inquirers are launching an exciting new program. Since the group’s founding in 2007, we have grown rapidly. The seven-person brunches that many of you remember now have 25 attendees each week. Our Darwin Week celebration is now recognized as one of the best secular student events in the country. With all of this growth, we are watching more and more members graduate and leave the group, and we don’t want to lose touch with them.
 <br /><br />
@@ -38,16 +38,16 @@ The second, and more important goal, is to connect current UNIFI members to you.
 <br /><br />
 If you’re interested in being a part of the alumni program, please fill out the form below. Your contact information will only be available with your permission and your other information will only be available to UNIFI members. Don’t hesitate to <a href="index.php?page=contact" style="color:#000000;">contact us</a> with any questions, concerns, or suggestions. We are excited to see this program get started and look forward to being in touch with you in the future.
       </p>
-      
+
       <form action="index.php" method="POST">
         <input type="hidden" name="alumni_signup" value="yes" />
-      
+
         First Name:<br />
         <input type="text" name="first_name" placeholder="Uni" /><br /><br />
-        
+
         Last Name:<br />
         <input type="text" name="last_name" placeholder="Freethought" /><br /><br />
-        
+
         Your Major:<br />
         <?php
         echo "<select name='major'>";
@@ -56,26 +56,26 @@ If you’re interested in being a part of the alumni program, please fill out th
         }
         echo "</select><br /><br />";
         ?>
-        
-        If you went to grad school, which did you attend?<br /> 
+
+        If you went to grad school, which did you attend?<br />
         <input type="text" name="grad_school" placeholder="University of Northern Iowa" /><br /><br />
-        
+
         Where do you live now?<br />
         <input type="text" name="current_location" placeholder="Cedar Falls, IA" /><br /><br />
-        
+
         What is your current email address?<br />
         <input type="text" name="email" placeholder="contact@unifreethought.com" /><br /><br />
-        
+
         What is your current occupation?<br />
         <input type="text" name="current_job" placeholder="Secular Activist" /><br /><br />
-        
+
         What is your phone number?<br />
         <input type="text" name="phone" placeholder="319-555-1234" /><br /><br />
-        
+
         <input type="submit" value="Become an Alumni" />
-      
-      </form>  
-        
+
+      </form>
+
     </div>
   </article>
-    
+

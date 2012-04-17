@@ -3,10 +3,10 @@
  * UNIFI Website
  * Adam Shannon
  */
- 
+
 include 'system/libs/user.php';
 User_Parse::set($database);
- 
+
 $first = MySQL::clean($_POST['first_id']);
 $second = MySQL::clean($_POST['second_id']);
 

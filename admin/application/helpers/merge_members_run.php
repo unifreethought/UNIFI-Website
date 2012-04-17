@@ -3,7 +3,7 @@
  * UNIFI Website
  * Adam Shannon
  */
- 
+
 function arr_join($arr) {
 	$tmp = '';
 	foreach ($arr as $item) {

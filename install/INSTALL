@@ -1,6 +1,6 @@
 == Install ==
 
-Welcome to the UNI Freethinkers and Inquirers website! This is the code for 
+Welcome to the UNI Freethinkers and Inquirers website! This is the code for
 http://unifreethought.com. It was created by Adam Shannon for the group, and you
 can contact him at adam@unifreethought.com or the current webmaster at
 webmaster@unifreethought.com
@@ -15,16 +15,16 @@ There are four major steps to getting this site running.
 
 1) Setting up the Database
 We currently run the site off of a MySQL Database (version 5+ should work fine).
-You will need to create a database and user with basic permissions. (SELECT, 
+You will need to create a database and user with basic permissions. (SELECT,
 INSERT, UPDATE, DELETE)
 
 2) Setting up the config file
-Once you have the database running and a fresh copy of the sql inserted. You 
-should look into application/config/, modify and save config.sample.php as 
+Once you have the database running and a fresh copy of the sql inserted. You
+should look into application/config/, modify and save config.sample.php as
 config.php with the DB information.
 
 3) Setting up the Facebook app
-You will need to setup a Facebook app for the site to use. If you're doing this 
+You will need to setup a Facebook app for the site to use. If you're doing this
 as part of UNIFI, then you should be given access to the app already. If not, ask
 the current president. (Or Adam Shannon, adam@unifreethought.com)
 

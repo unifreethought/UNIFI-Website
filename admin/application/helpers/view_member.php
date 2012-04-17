@@ -4,11 +4,11 @@
  * Adam Shannon
  * 2011-11-19
  */
- 
+
 include 'system/libs/user.php';
 include 'system/libs/show_date.php';
 User_Parse::set($database);
- 
+
 $member_id = MySQL::clean($_GET['member']);
 $sql = "SELECT * FROM `{$database}`.`member_database` WHERE `id` = '{$member_id}' LIMIT 1";
 $member = MySQL::single($sql);

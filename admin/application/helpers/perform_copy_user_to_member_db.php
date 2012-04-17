@@ -3,7 +3,7 @@
  * UNIFI Website
  * Adam Shannon
  */
- 
+
 $user_id = MySQL::clean($_GET['user_id']);
 
 $names = MySQL::single("SELECT `first_name`,`last_name` FROM `{$database}`.`users` WHERE `id` = '{$user_id}';");

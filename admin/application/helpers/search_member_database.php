@@ -1,9 +1,9 @@
 <?php
-/** 
+/**
  * UNIFI Website
  * Adam Shannon
  */
- 
+
 include 'system/libs/user.php';
 User_Parse::set($database);
 

@@ -3,7 +3,7 @@
  * UNIFI Website
  * Adam Shannon
  */
- 
+
 function clean_each($arr) {
 	if (empty($arr))
 		return;
@@ -13,12 +13,12 @@ function clean_each($arr) {
 		$ret[] = MySQL::clean($a);
 	}
 	return $ret;
-} 
+}
 
 function build_sql_part($arr, $field) {
 	if (empty($arr))
 		return "";
-	
+
 	$ret = "";
 	foreach ($arr as $a) {
 		$ret .= "`{$field}` = '{$a}' OR ";
@@ -43,7 +43,7 @@ $dorms_str = build_sql_part($dorms, 'dorm');
 $positions_str = build_sql_part($positions, 'positions');
 $tags_str = build_sql_part($tags, 'tags');
 
-$sql .= print_sql_part($years_str) . print_sql_part($dorms_str) . 
+$sql .= print_sql_part($years_str) . print_sql_part($dorms_str) .
 	print_sql_part($positions_str) . print_sql_part($tags_str);
 $sql = substr($sql, 0, -5) . ';';
 

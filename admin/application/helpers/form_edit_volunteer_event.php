@@ -4,9 +4,9 @@
  * Adam Shannon
  * 2010-11-21
  */
- 
+
 include 'system/libs/show_date.php';
- 
+
 $id = MySQL::clean($_POST['event_id']);
 $title = MySQL::clean(htmlentities($_POST['title']));
 $location = MySQL::clean(htmlentities($_POST['location']));

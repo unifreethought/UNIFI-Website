@@ -14,17 +14,17 @@ header {
 		font-family: Verdana;
 		font-size: 2em;
 	}
-	
+
 	header a {
 		color: #000000;
 		text-decoration: none;
 	}
-	
+
 section#container {
 	margin-left: 5%;
 	width: 80%;
 }
-	
+
 section.row {
 	padding: 2%;
 	width: 90%;
@@ -35,44 +35,44 @@ section.row {
 		height: 150px;
 		width: 250px;
 	}
-	
+
 		span.box-title {
 			margin: 5px 0px 0px 5px;
 		}
-		
+
 			span.box-title a {
 				color: #000000;
 				font-family: Verdana;
 				font-size: 1.3em;
 				text-decoration: none;
 			}
-			
+
 		ul.box-links {
 			list-style-type: square;
 		}
-		
+
 			ul.box-links li {
 				/* */
 			}
-			
+
 				ul.box-links li a {
 					color: #000000;
 				}
-	
+
 	div.box-of-one {
 		float: right;
 	}
-	
+
 	div.box-of-two {
 		float: right;
 		width: 62.5%;
 	}
-	
+
 	div.box-of-three {
 		margin-left: 7%;
 		width: 90%;
 	}
-	
+
 div#wrapper {
 	margin-left: 5%;
 	width: 90%;
@@ -82,7 +82,7 @@ div#wrapper {
 		border: 1px solid #CCCCCC;
 		border-radius: 5px;
 	}
-	
+
 		div#wrapper table thead {
 			font-weight: bold;
 			text-align: center;

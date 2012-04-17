@@ -1,12 +1,12 @@
 <?php
 /**
  * Tera_WURFL - PHP MySQL driven WURFL
- * 
+ *
  * Tera-WURFL was written by Steve Kamerman, and is based on the
  * Java WURFL Evolution package by Luca Passani and WURFL PHP Tools by Andrea Trassati.
  * This version uses a MySQL database to store the entire WURFL file, multiple patch
  * files, and a persistent caching mechanism to provide extreme performance increases.
- * 
+ *
  * @package TeraWurflRemoteClient
  * @author Steve Kamerman <stevekamerman AT gmail.com>
  * @version Stable 2.1.2 $Date: 2010/05/14 15:53:02
@@ -17,7 +17,7 @@
  * @package TeraWurflRemoteClient
  */
 class TeraWurflRemoteClient {
-	
+
 	/**
 	 * XML Data Format - this should only be used to communicate with Tera-WURFL 2.1.1 and older
 	 * @var String
@@ -25,7 +25,7 @@ class TeraWurflRemoteClient {
 	public static $FORMAT_XML = 'xml';
 	/**
 	 * The JSON Data Format is the default transport for Tera-WURFL 2.1.2 and newer due to it's smaller size
-	 * and better performance with the builtin PHP functions 
+	 * and better performance with the builtin PHP functions
 	 * @var String
 	 */
 	public static $FORMAT_JSON = 'json';
@@ -65,10 +65,10 @@ class TeraWurflRemoteClient {
 	protected $json;
 	protected $clientVersion = '2.1.2';
 	protected $apiVersion;
-	
+
 	/**
 	 * Creates a TeraWurflRemoteClient object.  NOTE: in Tera-WURFL 2.1.2 the default data format is JSON.
-	 * This format is not supported in Tera-WURFL 2.1.1 or earlier, so if you must use this client with 
+	 * This format is not supported in Tera-WURFL 2.1.1 or earlier, so if you must use this client with
 	 * an earlier version of the server, set the second parameter to TeraWurflRemoteClient::$FORMAT_XML
 	 * @param String URL to the master Tera-WURFL Server's webservice.php
 	 * @param String TeraWurflRemoteClient::$FORMAT_JSON or TeraWurflRemoteClient::$FORMAT_XML
@@ -92,7 +92,7 @@ class TeraWurflRemoteClient {
 	public function getCapabilitiesFromAgent($userAgent, Array $capabilities){
 		$this->userAgent = (is_null($userAgent))? self::getUserAgent(): $userAgent;
 		// build request string
-		$uri = $this->webserviceUrl . (strpos($this->webserviceUrl,'?')===false?'?':'&') 
+		$uri = $this->webserviceUrl . (strpos($this->webserviceUrl,'?')===false?'?':'&')
 		. 'ua=' . urlencode($this->userAgent)
 		. '&format=' . $this->format
 		. '&search=' . implode('|',$capabilities);
@@ -132,7 +132,7 @@ class TeraWurflRemoteClient {
 		return $this->apiVersion;
 	}
 	/**
-	 * Make the webservice call to the server using the GET method and load the XML response into $this->xml 
+	 * Make the webservice call to the server using the GET method and load the XML response into $this->xml
 	 * @param String The URI of the master server
 	 * @return void
 	 */
@@ -221,7 +221,7 @@ class TeraWurflRemoteClient {
 	protected static function validURL($url){
 		if(preg_match('/^(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/',$url)) return true;
 		return false;
-	}	
+	}
 	/**
 	 * Return the requesting client's User Agent
 	 * @param $source

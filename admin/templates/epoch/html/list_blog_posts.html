@@ -1,9 +1,9 @@
 
   <div id="wrapper">
     <?php echo PAGE_LIST_BLOG_POSTS; ?>
-    
+
     <br /><br />
-    
+
     <table id="list-blog-posts">
       <thead>
         <tr>
@@ -14,7 +14,7 @@
           <td><?php echo LIST_BLOG_CONTENT; ?></td>
         </tr>
       </thead>
-      
+
       <?php
         foreach ($posts as $post) {
           $tmp = "window.location=\"index.php?page=edit_blog_post&blog_post=" . $post['id'] . '";';
@@ -27,6 +27,6 @@
           echo '</tr>';
         }
       ?>
-    </table>  
+    </table>
   </div>
 

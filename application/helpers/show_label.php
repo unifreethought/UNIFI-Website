@@ -4,7 +4,7 @@
  * Adam Shannon
  * 2010-11-21
  */
- 
+
 include 'show_authors_and_labels.php';
 $_label = MySQL::clean($_GET['label']);
 

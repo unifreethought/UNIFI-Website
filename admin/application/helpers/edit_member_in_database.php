@@ -24,7 +24,7 @@ $sql = "UPDATE  `{$database}`.`member_database`";
   $sql .= ", `dorm` =  '{$dorm}'";
   $sql .= ", `year` =  '{$year}'";
   $sql .= ", `major` =  '{$major}'";
-  
+
   $sql .= ", `hometown` =  '{$hometown}'";
   $sql .= ", `address` = '{$address}'";
   $sql .= ", `recruit_place` =  '{$recruit_place}'";

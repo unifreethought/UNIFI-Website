@@ -1,5 +1,5 @@
 <?php
-/** 
+/**
  * UNIFI Mobile Site
  * Adam Shannon
  */
@@ -51,7 +51,7 @@ include 'templates/' . $config['template'] . '/html/header.html';
 // Find what page to load
 if ($url['get'] == true) {
 
-  switch ($url['page']) {	
+  switch ($url['page']) {
     case 'post':
       include 'application/helpers/show_post.php';
       include 'templates/' . $config['template'] . '/html/show_post.html';
@@ -60,7 +60,7 @@ if ($url['get'] == true) {
     default:
       include '../application/helpers/detect_page.php';
       $url_stubs = get_possible_url_stubs();
-            
+
       if (in_array($url['page'], $url_stubs)) {
           // Load that specifc page from the db and display it.
           include 'application/helpers/load_db_page.php';
@@ -72,7 +72,7 @@ if ($url['get'] == true) {
           }
       }
     break;
-  }	
+  }
 }
 
 include 'templates/' . $config['template'] . '/html/footer.html';

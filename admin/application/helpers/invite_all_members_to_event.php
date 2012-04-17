@@ -4,7 +4,7 @@
  * Adam Shannon
  * 2011-03-06
  */
- 
+
 $event_id = MySQL::clean($_GET['event_id']);
 $user_ids = MySQL::search("SELECT `id` FROM `{$database}`.`users`");
 $timestamp = MySQL::single("SELECT `end_time` FROM `{$database}`.`events` WHERE `id` = '{$event_id}' LIMIT 1");

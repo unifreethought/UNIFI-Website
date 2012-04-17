@@ -4,7 +4,7 @@
  * Adam Shannon
  * 2010-11-21
  */
- 
+
 $id = MySQL::clean(htmlentities((int) $_POST['blog_id']));
 $title = MySQL::clean(htmlentities($_POST['title']));
 $content = MySQL::clean($_POST['content']);
@@ -25,9 +25,9 @@ if (empty($id)) {
 
   if ($table == "blog-posts") {
     Log::create($user_id, 'new_blog_post', 'date:' . Date::parse($time) . '<br>title:' . $title);
-    
+
     // Set the headers for the email
-    $headers  = "From: UNI Freethinkers and Inquirers <contact@unifreethought.com>\r\n";  
+    $headers  = "From: UNI Freethinkers and Inquirers <contact@unifreethought.com>\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 

@@ -4,7 +4,7 @@
  * Adam Shannon
  * 2010-11-21
  */
- 
+
 require 'system/libs/user.php';
 require 'system/libs/user_encode.php';
 User_Encode::set($database);

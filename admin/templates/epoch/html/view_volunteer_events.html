@@ -1,6 +1,6 @@
 
   <div id="wrapper">
-  
+
     <table style="width:100%;">
       <thead>
         <tr>
@@ -11,7 +11,7 @@
           <td><?php echo ADMIN_DASHBOARD_VIEW_EVENTS_DESCRIPTION; ?></td>
         </tr>
       </thead>
-    
+
     <?php
       foreach ($events as $event) {
         echo '<tr style="cursor:pointer;" onclick="javascript:(function(){window.location=\'index.php?page=edit_volunteer_event&event=' . $event['id'] . '\';})();">';
@@ -23,8 +23,8 @@
         echo '</tr>';
       }
     ?>
-    
+
     </table>
-  
+
   </div>
-  
+

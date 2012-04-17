@@ -4,7 +4,7 @@
  * Adam Shannon
  * 2010-11-21
  */
- 
+
 $posts = MySQL::search("SELECT * FROM `{$database}`.`blog-posts` ORDER BY `timestamp` DESC LIMIT 1000");
 
 $authors = array();

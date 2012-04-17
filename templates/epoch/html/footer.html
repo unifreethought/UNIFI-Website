@@ -7,16 +7,16 @@
     <div id="copyright" class="right">
       Copyright &copy; 2011 University of Northern Iowa Freethinkers and Inquirers
     </div>
-    
+
     <div id="footer-links">
       <ul>
         <li><a href="index.php?page=legal"><?php echo FOOTER_LEGAL; ?></a></li>
         <li><a href="index.php?page=contact"><?php echo FOOTER_CONTACT; ?></a></li>
         <li><a href="#top"><?php echo FOOTER_TOP; ?></a></li>
-      </ul>  
+      </ul>
     </div>
   </footer>
-  
+
 </section> <!-- #wrapper -->
 
 <script>
@@ -25,12 +25,12 @@
  */
 function bind_quote_rotate() {
   var quotes = Array(5);
-    quotes[0] = "\"We are star stuff\"<br \/\>-- Carl Sagan";  
+    quotes[0] = "\"We are star stuff\"<br \/\>-- Carl Sagan";
     quotes[1] = "\"The secrets of evolution are time and death.\"<br \/\>-- Carl Sagan";
     quotes[2] = "\"Scientists love mysteries, they love not knowing.\"<br \/\>-- Lawrence Krauss";
     quotes[3] = "\"Don't panic.\"<br \/\>-- Douglas Adams";
     quotes[4] = "\"I can\'t believe the special stories about our relationship to the universe at large.\"<br \/\>-- Richard Feynman";
-  
+
   var elm = document.querySelector("#quote");
     elm.onclick = function (e) {
       var pick = Math.floor(Math.random() * quotes.length);
@@ -76,13 +76,13 @@ function fix_content_wrapper_height() {
 window.onload = function () {
   // Bind the rotating quote function to the page.
   bind_quote_rotate();
-  
+
   // Map the nav elements to their first child's href.
   bind_nav_links();
-  
+
   // Attempt to fix some CSS issues
   custom_firefox_css();
-  
+
   // Make sure that the wrapper is the right height.
   fix_content_wrapper_height();
 };

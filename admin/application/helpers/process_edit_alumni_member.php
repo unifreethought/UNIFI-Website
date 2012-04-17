@@ -3,10 +3,10 @@
  * UNIFI Website
  * Adam Shannon
  */
- 
+
 include 'system/libs/user_encode.php';
 User_Encode::set($database);
- 
+
 $id = MySQL::clean($_POST['id']);
 $user_id = MySQL::clean($_POST['user_id']);
 $member_id = MySQL::clean($_POST['member_id']);

@@ -4,7 +4,7 @@
  * Adam Shannon
  * 2010-11-21
  */
- 
+
 if (empty($_GET['older_than'])) {
 	$_GET['older_than'] = @time();
 }
@@ -18,7 +18,7 @@ foreach ($data as $item) {
 	$time = Date::parse($item['timestamp']);
 	$message = MySQL::single("SELECT `message` FROM `{$database}`.`log-messages` WHERE `id` = '{$item['message_id']}' LIMIT 1");
 	$unique = $item['unique_data'];
-	
+
 	$results[] = array(
 		'id' => $id,
 		'user' => $user['first_name'] . ' ' . $user['last_name'],

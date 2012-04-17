@@ -4,7 +4,7 @@
  * Adam Shannon
  * 2011-03-06
  */
- 
+
 include 'show_authors_and_labels.php';
 $keywords = explode(' ', htmlentities($_GET['query']));
 $search = '';

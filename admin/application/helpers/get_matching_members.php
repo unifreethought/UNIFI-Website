@@ -1,5 +1,5 @@
 <?php
-/** 
+/**
  * UNIFI Member Database
  * Adam Shannon
  */

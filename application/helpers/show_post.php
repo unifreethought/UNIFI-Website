@@ -4,10 +4,10 @@
  * Adam Shannon
  * 2010-11-21
  */
- 
+
 include 'show_authors_and_labels.php';
 include 'system/libs/social_media.class.php';
- 
+
 $post_id = MySQL::clean($url['id']);
 
 $post = MySQL::single("SELECT * FROM `{$database}`.`blog-posts` WHERE `id` = '{$post_id}' LIMIT 1;");

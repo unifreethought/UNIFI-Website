@@ -3,7 +3,7 @@
  * UNIFI Website
  * Adam Shannon
  */
- 
+
 // Submitted Values
 $first_name = MySQL::clean($_POST['first_name']);
 $last_name = MySQL::clean($_POST['last_name']);
@@ -36,7 +36,7 @@ $sql .= "'{$major}','{$grad_school}','{$current_location}','{$current_location_c
 MySQL::query($sql);
 
 // Send an email
-mail("alumni@unifreethought.com", "A new alumni signup!", 
+mail("alumni@unifreethought.com", "A new alumni signup!",
   "{$first_name} {$last_name} has just signed up to become an alumni!", "From: webmaster@unifreethought.com\r\n");
 
 header("Location: index.php?thanks_alumni");

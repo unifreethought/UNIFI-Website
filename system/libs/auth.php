@@ -6,10 +6,10 @@
  */
 
 class Auth {
-	
+
 	static $user_id;
 	static $database;
-	
+
 	/**
 	 * Set the user_id variable on self.
 	 */
@@ -17,7 +17,7 @@ class Auth {
 		self::$user_id = $id;
 		self::$database = $db;
 	}
-	
+
 	/**
 	 * Check to see if the user can edit members
 	 */
@@ -29,8 +29,8 @@ class Auth {
 			return false;
 		}
 	}
-	
-	
+
+
 	/**
 	 * Check to see if the user can post to the blog.
 	 */
@@ -42,7 +42,7 @@ class Auth {
 			return false;
 		}
 	}
-	
+
 	/**
 	 * Check to see if the user can edit events.
 	 */
@@ -51,10 +51,10 @@ class Auth {
 		if ($tmp['add_events'] == '1' && $tmp['list_events'] == '1') {
 			return true;
 		} else {
-			return false;		
+			return false;
 		}
 	}
-	
+
 	/**
 	 * Check to see if the user can edit custom pages.
 	 */
@@ -66,7 +66,7 @@ class Auth {
 			return false;
 		}
 	}
-	
+
 	/**
 	 * Auth the user to see if they can view the admin dashboard.
 	 */
@@ -78,7 +78,7 @@ class Auth {
 			return false;
 		}
 	}
-	
+
 	/**
 	 * Auth the user to see if they can post to the blog.
 	 */
@@ -90,7 +90,7 @@ class Auth {
 			return false;
 		}
 	}
-	
+
 	/**
 	 * Auth the user to see if they can edit users.
 	 */
@@ -102,7 +102,7 @@ class Auth {
 			return false;
 		}
 	}
-	
+
 	/**
 	 * Auth the user to see if they can view the log.
 	 */
@@ -114,7 +114,7 @@ class Auth {
 			return false;
 		}
 	}
-	
+
 	/**
 	 * Auth the user to see if they can edit member permissions.
 	 */

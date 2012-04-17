@@ -20,7 +20,7 @@
         window.location = 'index.php?page=view_all_events&year=' + year;
       }
     </script>
-  
+
     <table style="width:100%;">
       <thead>
         <tr>
@@ -31,7 +31,7 @@
           <td><?php echo ADMIN_DASHBOARD_VIEW_EVENTS_DESCRIPTION; ?></td>
         </tr>
       </thead>
-    
+
     <?php
       foreach ($events as $event) {
         echo '<tr style="cursor:pointer;" onclick="javascript:(function(){window.location=\'index.php?page=edit_event&event=' . $event['id'] . '\';})();">';
@@ -43,8 +43,8 @@
         echo '</tr>';
       }
     ?>
-    
+
     </table>
-  
+
   </div>
-  
+

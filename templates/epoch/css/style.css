@@ -4,7 +4,7 @@
  * Adam Shannon
  * 2011-03-20
  */
- 
+
 body {
 	background-color: #000000;
 	width: 99%;
@@ -223,7 +223,7 @@ header {
 			padding: 5px;
 			padding-left: 0px;
 			width: 100%;
-		}		
+		}
 
 			aside section div#blogroll ul {
 				list-style-type: none;
@@ -248,7 +248,7 @@ header {
 				aside section div#labels-and-authors ul li {
 					margin-bottom: 2px;
 				}
-		
+
 			aside section div#guest-submissions a {
 				color: #000000;
 				font-size: 0.85em;

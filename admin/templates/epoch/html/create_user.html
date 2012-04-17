@@ -1,52 +1,52 @@
 
   <div id="wrapper">
     <?php echo PAGE_CREATE_USER_HEADER; ?>
-    
+
     <p><?php echo PAGE_CREATE_USER_DESC; ?></p>
-    
+
     <!-- The form with the user's details -->
     <form action="index.php" method="POST" />
       <input type="hidden" name="create_user" value="yes" />
-      
+
       <label>
         <?php echo LIST_MEMBERS_First; ?>: <input type="text" name="first_name" value="" /><br />
       </label>
-      
+
       <label>
         <?php echo LIST_MEMBERS_Last; ?>: <input type="text" name="last_name" value="" /><br />
       </label>
-      
+
       <label>
         <?php echo CREATE_MEMBER_FACEBOOK; ?>: <input type="text" id="facebook-id" name="facebook" value="" /><br />
         <input type="button" onclick="getFacebookID();" id="getFBIDButton" value="<?php echo CREATE_MEMBER_FACEBOOK_ID; ?>" /><br />
-        
+
         <script>
         function getFacebookID() {
           var elm = document.getElementById('facebook-id');
-          
+
           // Change the value of the "getFBID" button once it's clicked.
           var button = document.getElementById('getFBIDButton');
             tmp = button.value;
             button.value = '<?php echo CREATE_MEMBER_FACEBOOK_ID_BUTTON; ?>';
-            
+
           // Fetch the page via the site its self.
           var xhr = new XMLHttpRequest();
             xhr.open('GET', 'index.php?getFBID=' + elm.value, false);
             xhr.send();
-            
+
           // Parse the response and put the id into the form.
           var response = JSON.parse(xhr.response);
           elm.value = response.id;
-          
+
           // Set the "getFBID" button's value back.
           button.value = tmp;
         }
         </script>
          - P.S. Include a button to grab the FB id of any user (given a link to their profile).<br />
       </label>
-      
+
       <label>
-        <?php echo LIST_MEMBERS_Year; ?>: 
+        <?php echo LIST_MEMBERS_Year; ?>:
           <select name="year">
             <?php
             foreach ($years as $year) {
@@ -54,8 +54,8 @@
             }
             ?>
           </select><br />
-      </label>      
-      
+      </label>
+
       <label>
         <?php echo LIST_MEMBERS_Major; ?>:
           <select name="major">
@@ -66,7 +66,7 @@
             ?>
           </select><br />
       </label>
-      
+
       <label>
         <?php echo LIST_MEMBERS_Dorm; ?>:
           <select name="dorm">
@@ -77,12 +77,12 @@
             ?>
           </select><br />
       </label>
-      
+
       <label>
         <?php echo LIST_MEMBERS_Recruit_Place; ?>:
                                         <input type="text" name="recruit_place" /><br />
       </label>
-      
+
       <label>
         <?php echo LIST_MEMBERS_Texting; ?>:
           <select name="texting">
@@ -90,57 +90,57 @@
             <option value="1" id='texting1'>Yes</option>
           </select><br />
       </label>
-      
+
       <label>
         <?php echo LIST_MEMBERS_Positions; ?>:
-        
+
           <fieldset>
-          <?php             
+          <?php
             foreach ($positions as $position) {
-              
+
               echo "<label>" . $position['desc'] . " <input type='checkbox' name='positions[]' id='position{$position['id']}' value='{$position['id']}'";
-              
+
               echo "/> | </label>";
             }
           ?>
           </fieldset>
-          
+
         <br />
       </label>
-      
+
       <label>
         <?php echo LIST_MEMBERS_Tags; ?>:
-        
+
           <fieldset>
-          <?php 
+          <?php
             foreach ($tags as $tag) {
-              
+
               echo "<label>" . $tag['desc'] . " <input type='checkbox' name='tags[]' id='tag{$tag['id']}' value='{$tag['id']}'";
-              
+
               echo "/> | </label>";
             }
           ?>
           </fieldset>
-        
+
         <br />
       </label>
-      
+
       <label>
         <?php echo LIST_MEMBERS_Hometown; ?>: <input type="text" name="hometown" value="" /><br />
       </label>
-      
+
       <label>
         <?php echo LIST_MEMBERS_Phone; ?>: <input type="text" name="phone" value="" /><br />
       </label>
-      
+
       <label>
         <?php echo LIST_MEMBERS_Email; ?>: <input type="text" name="email" value="" /><br />
       </label>
-      
+
       <label>
         <textarea rows="12" cols="60" name="notes"></textarea><br />
       </label>
-      
+
       <input type="submit" value="<?php echo ADMIN_DASHBOARD_SUBMIT; ?>" />
     </form>
   </div>

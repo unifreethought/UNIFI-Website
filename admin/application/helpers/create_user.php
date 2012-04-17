@@ -10,7 +10,7 @@ require 'system/libs/user_encode.php';
 User_Encode::set($database);
 User_Parse::set($database);
 
-// Now, get all of the possible values for each 
+// Now, get all of the possible values for each
 $years = MySQL::search("SELECT * FROM `{$database}`.`year` ORDER BY `id` ASC");
 $majors = MySQL::search("SELECT * FROM `{$database}`.`major` ORDER BY `id` ASC");
 $dorms = MySQL::search("SELECT * FROM `{$database}`.`dorm` ORDER BY `id` ASC");

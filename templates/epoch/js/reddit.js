@@ -7,10 +7,10 @@ function redditButton() {
 
   var write_string="<iframe src=\"" + prefix + "/static/button/button1.html?width=120&url=";
 
-  if (window.reddit_url)  { 
-      write_string += encodeURIComponent(reddit_url); 
+  if (window.reddit_url)  {
+      write_string += encodeURIComponent(reddit_url);
   }
-  else { 
+  else {
       write_string += encodeURIComponent(window.location.href);
   }
   if (window.reddit_title) {
@@ -23,12 +23,12 @@ function redditButton() {
       write_string += '&css=' + encodeURIComponent(window.reddit_css);
   }
   if (window.reddit_bgcolor) {
-      write_string += '&bgcolor=' + encodeURIComponent(window.reddit_bgcolor); 
+      write_string += '&bgcolor=' + encodeURIComponent(window.reddit_bgcolor);
   }
   if (window.reddit_bordercolor) {
-      write_string += '&bordercolor=' + encodeURIComponent(window.reddit_bordercolor); 
+      write_string += '&bordercolor=' + encodeURIComponent(window.reddit_bordercolor);
   }
-  if (window.reddit_newwindow) { 
+  if (window.reddit_newwindow) {
       write_string += '&newwindow=' + encodeURIComponent(window.reddit_newwindow);}
   write_string += "\" height=\"22\" width=\"120\" scrolling='no' frameborder='0'></iframe>";
   document.querySelector("#redditButton").innerHTML += write_string;

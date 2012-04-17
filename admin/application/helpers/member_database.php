@@ -3,10 +3,10 @@
  * UNIFI Website
  * Adam Shannon
  */
- 
+
 include 'system/libs/user.php';
 User_Parse::set($database);
- 
+
 $members = MySQL::search("SELECT * FROM `{$database}`.`member_database` ORDER BY `first_name` ASC");
 
 $years = MySQL::search("SELECT * FROM `{$database}`.`year` ORDER BY `id` ASC");

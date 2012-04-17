@@ -4,13 +4,13 @@
  * Adam Shannon
  * 2010-11-21
  */
- 
+
 function check_url() {
-  
+
   $post = $_POST;
   $get = $_GET;
   $url = array();
-  
+
   if (!empty($post) && empty($get)) {
     $url['get'] = (bool) false;
     $url['post'] = (bool) true;
@@ -18,10 +18,10 @@ function check_url() {
     $url['get'] = (bool) true;
     $url['post'] = (bool) false;
   }
-  
+
   if (!empty($get['page'])) {
     $url['page'] = $get['page'];
-    
+
     foreach ($get as $key => $value) {
       if (empty($url[$key])) {
         $url[$key] = $value;
@@ -30,7 +30,7 @@ function check_url() {
   } else {
     $url['page'] = 'main';
   }
-  
-  
+
+
   return $url;
 }

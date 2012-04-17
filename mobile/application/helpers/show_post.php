@@ -4,7 +4,7 @@
  * Adam Shannon
  * 2010-11-21
  */
- 
+
 $post_id = MySQL::clean($url['id']);
 
 $post = MySQL::single("SELECT * FROM `{$database}`.`blog-posts` WHERE `id` = '{$post_id}' LIMIT 1;");

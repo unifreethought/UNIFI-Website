@@ -4,7 +4,7 @@
  * Adam Shannon
  * 2010-11-21
  */
- 
+
 $tag = MySQL::clean($_GET['addBlogTag']);
 $post = MySQL::clean($_GET['blog_post']);
 $checked = MySQL::clean($_GET['checked']);

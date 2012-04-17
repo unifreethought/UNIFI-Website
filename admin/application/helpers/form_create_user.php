@@ -4,7 +4,7 @@
  * Adam Shannon
  * 2010-11-21
  */
- 
+
 function arr_join($arr) {
   $tmp = '';
   foreach ($arr as $item) {

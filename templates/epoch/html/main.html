@@ -1,27 +1,27 @@
 
-<div id="wrapper">  
-  <!-- 
+<div id="wrapper">
+  <!--
     Create the header secion, this will be the main image, navigation elements,
     rotating quote, and search button.
   -->
   <header>
     <?php include 'templates/epoch/html/show_nav.html'; ?>
   </header>
-  
+
   <hr />
-  
+
   <!--
-    The "right side" of the page which contains: "You" box, [Admin Dashboard], 
+    The "right side" of the page which contains: "You" box, [Admin Dashboard],
     social media icons, labels/authors, and the blogroll.
   -->
   <aside>
     <?php include 'templates/epoch/html/show_sidebar.html'; ?>
   </aside>
-  
+
   <!--
     The main section of the page, which has the blog posts (for the home page),
     and the main content for other pages.
-    
+
     P.S. Where needed content should be separated by the <section> element.
   -->
   <article>
@@ -31,10 +31,10 @@
       if (isset($_GET['thanks_alumni'])) {
         echo "<h4>Thanks for becoming an alumni!</h4>";
       }
-   
-      $oldestPost = 9999999999; 
+
+      $oldestPost = 9999999999;
       foreach ($posts as $post) {
-        if ((int) $post['timestamp'] < $oldestPost) 
+        if ((int) $post['timestamp'] < $oldestPost)
           $oldestPost = $post['timestamp'];
 
         echo "<section class='blog-post'>";
@@ -58,7 +58,7 @@
 
       echo "<a href='index.php?older_than={$oldestPost}' style='color:black;'>Older Posts</a>";
     ?>
-    
+
   </div>
   </article>
 

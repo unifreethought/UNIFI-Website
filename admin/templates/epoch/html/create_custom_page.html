@@ -1,35 +1,35 @@
 
   <div id="wrapper">
-    
+
     <?php echo ADMIN_DASHBOARD_CREATE_CUSTOM_PAGE; ?>
-    
+
     <br /><br />
-    
+
     <form action="index.php" method="POST">
       <input type="hidden" name="create_custom_page" value="yes" />
-      
+
       <label>
         <?php echo ADMIN_DASHBOARD_CREATE_CUSTOM_PAGE_POSITION; ?>
         <input type="text" name="position" value="" /><br />
       </label>
-      
+
       <label>
         <?php echo ADMIN_DASHBOARD_CREATE_CUSTOM_PAGE_URL_STUB; ?>
         <input type="text" name="url_stub" value="" /><br />
       </label>
-      
+
       <label>
         <?php echo ADMIN_DASHBOARD_CREATE_CUSTOM_PAGE_NAME; ?>
         <input type="text" name="name" value="" /><br />
       </label>
-      
+
       <label>
         <?php echo ADMIN_DASHBOARD_CREATE_CUSTOM_PAGE_STYLE; ?>
         <input type="text" name="style" value="" /><br />
       </label>
-      
+
       <input type="submit" value="<?php echo ADMIN_DASHBOARD_CREATE_CUSTOM_PAGE_SUBMIT; ?>" />
     </form>
-    
+
   </div>
-  
+

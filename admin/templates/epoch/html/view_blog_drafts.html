@@ -12,7 +12,7 @@
           <td><?php echo LIST_BLOG_CONTENT; ?></td>
         </tr>
       </thead>
-      
+
       <?php
         foreach ($drafts as $draft) {
           $tmp = "window.location=\"index.php?page=edit_blog_draft&blog_draft=" . $draft['id'] . '";';
@@ -25,5 +25,5 @@
           echo '</tr>';
         }
       ?>
-    </table>  
+    </table>
   </div>

@@ -4,7 +4,7 @@
  * Adam Shannon
  * 2011-03-14
  */
- 
+
 $user_id = MySQL::clean($_POST['user_id']);
 
 if (empty($user_id)) {

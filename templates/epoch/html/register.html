@@ -1,35 +1,35 @@
-<div id="wrapper">  
-  <!-- 
+<div id="wrapper">
+  <!--
     Create the header secion, this will be the main image, navigation elements,
     rotating quote, and search button.
   -->
   <header>
     <?php include 'templates/epoch/html/show_nav.html'; ?>
   </header>
-  
+
   <hr />
-  
+
   <!--
-    The "right side" of the page which contains: "You" box, [Admin Dashboard], 
+    The "right side" of the page which contains: "You" box, [Admin Dashboard],
     social media icons, labels/authors, and the blogroll.
   -->
   <aside>
     <?php include 'templates/epoch/html/show_sidebar.html'; ?>
   </aside>
-  
+
   <!--
     The main section of the page, which has the blog posts (for the home page),
     and the main content for other pages.
-    
+
     P.S. Where needed content should be separated by the <section> element.
   -->
   <article>
     <div id="register">
       <h3><?php echo REGISTER_HEADER; ?></h3>
       <p><?php echo REGISTER_MESSAGE; ?></p>
-      
+
       <hr />
-      
+
       <form action="index.php" method="POST">
         <!-- $fb_data :: id, name, first_name, last_name, link, gender, locale -->
         <?php
@@ -44,13 +44,13 @@
         <label for="register_fb_id"><?php echo REGISTER_FB_ID; ?></label>
           <input type="text" id="register_fb_id" name="fb_id" value="<?php echo $fb_data['id']; ?>" readonly disabled /><br />
         -->
-      
+
         <label for="register_first_name"><?php echo REGISTER_FIRST_NAME; ?></label>
           <input type="text" id="register_first_name" name="first_name" value="<?php echo $fb_data['first_name']; ?>" /><br />
-      
+
         <label for="register_last_name"><?php echo REGISTER_LAST_NAME; ?></label>
           <input type="text" id="register_last_name" name="last_name" value="<?php echo $fb_data['last_name']; ?>" /><br />
-      
+
         <label for="register_gender"><?php echo REGISTER_GENDER; ?></label>
           <select name="gender">
             <option id="register_gender_female" value="female"><?php echo REGISTER_FEMALE; ?></option>
@@ -60,19 +60,19 @@
           <script>
             (function () {
               var fb_gender = "<?php echo $fb_data['gender']; ?>";
-          
+
               if (fb_gender == 'female') {
                 document.getElementById('register_gender_female').selected = 'selected';
               }
-          
+
               if (fb_gender == 'male') {
                 document.getElementById('register_gender_male').selected = 'selected';
               }
             })();
           </script>
-        
+
         <label>
-          Year: 
+          Year:
             <select name="year">
               <?php
               foreach ($years as $year) {
@@ -80,8 +80,8 @@
               }
               ?>
             </select><br />
-        </label>      
-      
+        </label>
+
         <label>
           Major:
             <select name="major">
@@ -92,7 +92,7 @@
               ?>
             </select><br />
         </label>
-      
+
         <label>
           Dorm:
             <select name="dorm">
@@ -103,7 +103,7 @@
               ?>
             </select><br />
         </label>
-      
+
         <label>
           Texting:
             <select name="texting">
@@ -111,22 +111,22 @@
               <option value="1" id='texting1'>Yes</option>
             </select><br />
         </label>
-      
+
         <label>
-          Hometown: <input type="text" name="hometown" 
-          value="<?php 
-            echo substr($fb_data['hometown']['name'], 0,strpos($fb_data['hometown']['name'], ',')); 
+          Hometown: <input type="text" name="hometown"
+          value="<?php
+            echo substr($fb_data['hometown']['name'], 0,strpos($fb_data['hometown']['name'], ','));
           ?>" /><br />
         </label>
-      
+
         <label>
           Phone: <input type="text" name="phone" value="" /><br />
         </label>
-      
+
         <label>
           Email: <input type="text" name="email" value="<?php echo $fb_data['email']; ?>" /><br />
         </label>
-        
+
         <input type="hidden" name="page" value="new-user" />
         <input type="submit" value="<?php echo REGISTER_SUBMIT; ?>" />
       </form>

@@ -4,7 +4,7 @@
  * Adam Shannon
  * 2010-11-21
  */
- 
+
 $tag = MySQL::clean($_GET['createBlogTag']);
 
 $sql = "INSERT INTO `{$database}`.`blog-tag-names` (`id`,`tag`) VALUES ('0','{$tag}');";

@@ -64,15 +64,15 @@ $users = array();
 foreach ($possible_results as $user) {
 	$user['id'] = MySQL::clean($user['id']);
 	$tmp = MySQL::single("SELECT * FROM `{$database}`.`user-data` WHERE `id` = '{$user['id']}' LIMIT 1");
-	
+
 	$tmp_data = MySQL::single("SELECT `first_name`,`last_name` FROM `{$database}`.`users` WHERE `id` = '{$user['id']}' LIMIT 1");
 	$users[$user['id']] = array(
 		'first_name' => $tmp_data['first_name'],
 		'last_name' => $tmp_data['last_name']
 	);
-	
+
 	$users[$user['id']]['id'] = $user['id'];
-	
+
 	$users[$user['id']]['year'] = User_Parse::parse_year($tmp['year']);
 	$users[$user['id']]['major'] = User_Parse::parse_major($tmp['major']);
 	$users[$user['id']]['dorm'] = User_Parse::parse_dorm($tmp['dorm']);
@@ -80,13 +80,13 @@ foreach ($possible_results as $user) {
 	$users[$user['id']]['texting'] = User_Parse::parse_texting($tmp['texting']);
 	$users[$user['id']]['positions'] = User_Parse::parse_positions($tmp['positions']);
 	$users[$user['id']]['tags'] = User_Parse::parse_tags($tmp['tags']);
-	
+
 	$users[$user['id']]['hometown'] = $tmp['hometown'];
 	$users[$user['id']]['address'] = $tmp['address'];
 	$users[$user['id']]['phone'] = $tmp['phone'];
 	$users[$user['id']]['email'] = $tmp['email'];
 	$users[$user['id']]['notes'] = $tmp['notes'];
-	
+
 	$users[$user['id']]['recruit_date'] = Date::parse($tmp['recruit_date']);
 }
 

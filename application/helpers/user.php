@@ -27,7 +27,7 @@ function print_fb_script() {
         e.async = true;
         document.getElementById(\'fb-root\').appendChild(e);
       }());
-      
+
       /**
       document.getElementById(\'fb_button\').onclick = function () {
          setTimeout(function () {
@@ -41,7 +41,7 @@ function print_fb_script() {
 }
 
 function get_more_fb_data($fb_id, $access_token) {
-  
+
   $url = 'https://graph.facebook.com/me?access_token=' . $access_token . '&fields=id,first_name,last_name,gender,hometown,email';
   $ch = curl_init();
     curl_setopt($ch, CURLOPT_FRESH_CONNECT, true);
@@ -52,7 +52,7 @@ function get_more_fb_data($fb_id, $access_token) {
     curl_setopt($ch, CURLOPT_REFERER, BASE_URL);
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_USERAGENT, SITE_TITLE);
-  
+
   return json_decode(curl_exec($ch), true);
 }
 
@@ -81,6 +81,6 @@ $access_token = $facebook->getAccessToken();
     $show_register_form = true;
     $fb_data = get_more_fb_data($fb_id, $access_token);
   } else {
-    $show_register_form = false;  
+    $show_register_form = false;
   }
 

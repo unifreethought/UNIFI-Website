@@ -4,7 +4,7 @@
  * Adam Shannon
  * 2010-11-21
  */
- 
+
 define('ADMIN_NOT_AUTHORIZED', '<div id="wrapper">Sorry, but you are not allowed to see this.</div>');
 define('ADMIN_TITLE', 'UNIFI -- Admin');
 define('ADMIN_ACCESS_DISABLED', 'We\'re sorry, but admin access to the site is down for a bit. It will be back up shortly');
@@ -21,7 +21,7 @@ define('ADMIN_DASHBOARD_LIST_BLOG_POSTS', 'List Blog Posts');
 	define('ADMIN_DASHBOARD_LIST_BLOG_POSTS_DESC', ' (list all of the posts)');
 define('ADMIN_DASHBOARD_EDIT_BLOG_POST', 'Edit Blog Post');
 	define('ADMIN_DASHBOARD_EDIT_BLOG_POST_DESC', ' (content changes, draft/live changing, deleting, etc..)');
-	
+
 define('ADMIN_DASHBOARD_LIST_MEMBERS', 'List Members');
 define('ADMIN_DASHBOARD_EDIT_MEMBER', 'Edit Member');
 	define('ADMIN_DASHBOARD_EDIT_MEMBER_DESC', '(Feature requires a user to edit)');
@@ -72,14 +72,14 @@ define('ADMIN_DASHBOARD_EDIT_CUSTOM_PAGES', 'Edit Custom Page');
 	define('ADMIN_DASHBOARD_EDIT_CUSTOM_PAGE_PAGE_TITLE', 'Page Title: ');
 	define('ADMIN_DASHBOARD_EDIT_CUSTOM_PAGE_CONTENT', 'Content: ');
 	define('ADMIN_DASHBOARD_EDIT_CUSTOM_PAGE_SUBMIT', 'Submit');
-	
+
 define('ADMIN_DASHBOARD_VIEW_LOG_TITLE', 'View the central log');
 	define('ADMIN_DASHBOARD_VIEW_LOG_ID', 'id');
 	define('ADMIN_DASHBOARD_VIEW_LOG_USER', 'User');
 	define('ADMIN_DASHBOARD_VIEW_LOG_TIME', 'Time');
 	define('ADMIN_DASHBOARD_VIEW_LOG_MESSAGE', 'Message');
 	define('ADMIN_DASHBOARD_VIEW_LOG_UNIQUE', 'Unique');
-	
+
 // Also covers volunteer events
 define('ADMIN_DASHBOARD_VIEW_EVENTS', 'View Events');
 	define('ADMIN_DASHBOARD_VIEW_EVENTS_TITLE', 'Title');
@@ -87,7 +87,7 @@ define('ADMIN_DASHBOARD_VIEW_EVENTS', 'View Events');
 	define('ADMIN_DASHBOARD_VIEW_EVENTS_END_TIME', 'End Time');
 	define('ADMIN_DASHBOARD_VIEW_EVENTS_LOCATION', 'Location');
 	define('ADMIN_DASHBOARD_VIEW_EVENTS_DESCRIPTION', 'Description');
-	
+
 define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS', 'Edit Member Permissions');
 define('ADMIN_DASHBOARD_EDIT_MEMBER_PERMISSIONS_GET_USER_FORM', 'Enter the user id: ');
 define('ADMIN_DASHBOARD_EDIT_MEMBER_PERMISSIONS_GET_USER', 'Enter the user to edit.');
@@ -104,7 +104,7 @@ define('ADMIN_DASHBOARD_EDIT_MEMBER_PERMISSIONS_GET_USER_DESC', 'Editing permiss
 	define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_EDIT_EVENT_ATTENDANCE', 'Edit Event Attendance');
 	define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_EDIT_CUSTOM_PAGES', 'Edit Custom Pages');
 	define('ADMIN_DASHBOR_EDIT_MEMBER_PERMISSIONS_VIEW_LOG', 'View Log');
-	
+
 define('ADMIN_DASHBORD_DELETE_USER_CONFORM_DESC', 'Click the users you wish to delete.');
 define('ADMIN_DASHBORD_DELETE_USER_SUBMIT', 'Delete User(s)');
 define('ADMIN_DASHBORD_DELETE_USER_GO_HOME', 'Cancel Deletion');
@@ -140,7 +140,7 @@ define('ADMIN_DASHBOARD_THEIR_EMAIL', 'Their Email');
 define('ADMIN_DASHBOARD_MERGE_MEMBERS', 'Enter the member_id for the two members you wish to merge.');
 define('ADMIN_DASHBOARD_MERGE_MEMBERS_ONE', 'First ID: ');
 define('ADMIN_DASHBOARD_MERGE_MEMBERS_TWO', 'Second ID: ');
-	
+
 // Common Errors
 define('NO_USER_ID', 'Whoops, you need to specify a user.');
 define('NO_FB_ID_HELP', 'Login with Facebook: ');

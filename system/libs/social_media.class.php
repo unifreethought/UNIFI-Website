@@ -12,8 +12,8 @@ class SocialMedia {
     }
     return "http://www.unifreethought.com/index.php?page=post&id=" . $postId;
   }
-  
-  static function facebookLike($postId) { 
+
+  static function facebookLike($postId) {
     $fbUrl = "//www.facebook.com/plugins/like.php?href=" . self::buildUrl($postId, true);
     $fbUrl .= "&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=80";
     $fbUrl .= "&amp;appId=175996285780738";
