@@ -1,7 +1,7 @@
 
   <div id="wrapper">
     <?php echo EDIT_BLOG_POST_HEADER; ?>
-    
+
     <div style="float: right; width: 20%;">
       <ul id="blogTags" style="list-style-type: none; margin: 2px;">
         <?php
@@ -25,14 +25,14 @@
         var elms = document.getElementsByClassName('tags');
         var xhr = new XMLHttpRequest();
         var checked = 'yes';
-        
+
         for (var i = 0; i < elms.length; i++) {
           if (elms[i].checked) {
             checked = 'yes';
           } else {
             checked = 'no';
           }
-          
+
           var url = window.location.origin + window.location.pathname + '?addBlogTag=' + elms[i].name + '&blog_post=';
             url += "<?php echo $data['id']; ?>" + '&checked=' + checked;
           xhr.open('GET', url, false);
@@ -41,7 +41,7 @@
         }
       }
       </script>
-      
+
       <br /><br />
       <!-- Create a new tag -->
       <div style="margin-left: 10%;">
@@ -54,7 +54,7 @@
           var xhr = new XMLHttpRequest();
             xhr.open('GET', window.location.origin + window.location.pathname + '?createBlogTag=' + encodeURIComponent(newTag.value), false);
             xhr.send(null);
-            
+
           // Now append the new tag to the list.
           // Remember, this returns some HTML, which is terrible practice!!
           tagList.innerHTML += xhr.responseText;
@@ -67,25 +67,25 @@
                           <button onclick="window.location='index.php?page=delete_blog_post&post_id=<?php echo $data['id'];?>';">Delete Post</button>
                         </div>
     </div>
-    
+
     <form action="index.php" method="POST" id="edit_blog_post_form">
       <input type="hidden" name="edit_blog_post" value="yes" />
       <input type="hidden" name="blog_id" value="<?php echo $data['id']; ?>" />
-      
+
       <label>
-        <?php echo EDIT_BLOG_POST_TITLE; ?>: 
+        <?php echo EDIT_BLOG_POST_TITLE; ?>:
         <input type="text" name="title" value="<?php echo $data['title']; ?>" size="80" />
       </label>
-      
+
       <br />
-      
+
       <textarea cols="40" id="content" name="content" rows="10"><?php echo $data['content']; ?></textarea>
       <script>
       CKEDITOR.replace('content', {extraPlugins : 'docprops', width: '800px'});
       </script>
-      
+
       <br />
-      
+
       <input type="submit" name="publish-post" value="<?php echo ADMIN_DASHBOARD_SUBMIT; ?>" />
     </form>
   </div>
