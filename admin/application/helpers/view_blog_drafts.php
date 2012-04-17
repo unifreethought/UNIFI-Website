@@ -4,7 +4,7 @@
  * Adam Shannon
  */
 
-$drafts = MySQL::search("SELECT * FROM `{$database}`.`blog-drafts`");
+$drafts = MySQL::search("SELECT * FROM `{$database}`.`blog-drafts` ORDER BY `timestamp` DESC;");
 
 $authors = array();
 foreach ($drafts as $draft) {
