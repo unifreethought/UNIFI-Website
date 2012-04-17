@@ -49,17 +49,6 @@ function bind_nav_links() {
   }
 }
 
-/**
- * Do some custom CSS for Firefox...
- */
-function custom_firefox_css() {
-  if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
-    // The #blog-wrapper is broken, fix that.
-    document.querySelector('#blog-wrapper').style.paddingLeft = '1%';
-    document.querySelector('#blog-wrapper').style.paddingRight = "1%";
-    document.querySelector('#blog-wrapper').style.width = "70%";
-  }
-}
 
 /**
  * Fix the content wrapper's height.
@@ -79,9 +68,6 @@ window.onload = function () {
 
   // Map the nav elements to their first child's href.
   bind_nav_links();
-
-  // Attempt to fix some CSS issues
-  custom_firefox_css();
 
   // Make sure that the wrapper is the right height.
   fix_content_wrapper_height();
