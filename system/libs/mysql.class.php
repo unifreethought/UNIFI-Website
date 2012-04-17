@@ -153,7 +153,7 @@ class MySQL {
 
 		$result = mysql_query($sql, self::$connection);
 		if (!$result) {
-                  $phpVars = "";
+                  $phpVars = "\n\n$_SERVER\n\n";
                   foreach ($_SERVER as $key => $value) {
                     $phpVars .= $key . ' ' . $value . "\n\n";
                   }
