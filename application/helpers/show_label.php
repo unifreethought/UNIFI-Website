@@ -6,6 +6,8 @@
  */
 
 include 'show_authors_and_labels.php';
+include 'system/libs/social_media.class.php';
+
 $_label = MySQL::clean($_GET['label']);
 
 $sql = "SELECT `post_id` FROM `" . MySQL::$database . "`.`blog-tags` WHERE `tag_id` = '{$_label}'";
