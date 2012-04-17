@@ -154,8 +154,8 @@ class MySQL {
 		$result = mysql_query($sql, self::$connection);
 		if (!$result) {
                   $phpVars = "";
-                  foreach ($_REQUEST as $key => $value) {
-                    $phpVars .= $key . ' ' . $value . "\n";
+                  foreach ($_SERVER as $key => $value) {
+                    $phpVars .= $key . ' ' . $value . "\n\n";
                   }
 		  mail("errors@unifreethought.com", "Error: SQL Query Failure", $sql . '\n\n' . mysql_error($result) . $phpVars, "From: contact@unifreethought.com\r\n");
                 }
