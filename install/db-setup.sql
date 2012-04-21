@@ -420,7 +420,7 @@ INSERT INTO `major` (`id`, `desc`) VALUES
 (161, 'World History'),
 (162, 'Writing'),
 (163, 'Writing: Professiona'),
-(164, 'Youth Services Admin')
+(164, 'Youth Services Admin'),
 (165, 'Unknown');
 
 -- --------------------------------------------------------
