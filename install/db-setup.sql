@@ -151,7 +151,7 @@ INSERT INTO `dorm` (`id`, `desc`) VALUES
 (8, 'ROTH'),
 (9, 'Rider'),
 (10, 'Shull'),
-(11, 'Off Campus')
+(11, 'Off Campus'),
 (12, 'Unknown');
 
 --
