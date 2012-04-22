@@ -495,8 +495,8 @@ if ($url['post']) {
     case 'list_events':
 
       if (Auth::edit_events()) {
-        include 'application/helpers/list_events.php';
-        include 'templates/' . $config['admin_template'] . '/html/list_events.html';
+        include 'application/helpers/view_events.php';
+        include 'templates/' . $config['admin_template'] . '/html/view_events.html';
       } else {
         exit(ADMIN_NOT_AUTHORIZED);
       }
