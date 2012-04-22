@@ -47,7 +47,11 @@ $sql .= print_sql_part($years_str) . print_sql_part($dorms_str) .
 	print_sql_part($positions_str) . print_sql_part($tags_str);
 $sql = substr($sql, 0, -5) . ';';
 
-$people = MySQL::search($sql);
+if (substr($sql, -2) != "W;") {
+  $people = MySQL::search($sql);
+} else {
+  $people = array();
+}
 
 $events = clean_each($_GET['event']);
 $events_str = "";
@@ -58,19 +62,46 @@ foreach ($events as $e) {
 }
 
 $sql = substr($sql, 0, -4) . ';';
-
-$events = MySQL::search($sql);
+if (substr($sql, -4) != " WH;") {
+  $events = MySQL::search($sql);
+} else {
+  $events = array();
+}
 
 $results = array();
 
-if (empty($people) || empty($events)) {
-	$results = $people;
-} else {
-	foreach ($people as $p) {
-		foreach ($events as $e) {
-			if ($p['id'] == $e['member_id'])
-				$results[] = $p;
-		}
-	}
+foreach ($people as $person) {
+  $results[] = $person;
+}
+
+// Filter out people not already in the array
+function checkEventAttendance($person) {
+  $needToAdd = true;
+  foreach ($results as $alreadyIn) {
+    if ($alreadyIn['user_id'] == $person['id'])
+      $needToAdd = false;
+  }
+  return $needToAdd;
+}
+
+$pplToAdd = array_filter($events, "checkEventAttendance");
+$pplAlreadyAdded = array();
+
+foreach ($pplToAdd as $person) {
+  $needToGrabData = true;
+  foreach ($results as $alreadyIn) {
+    if ($alreadyIn['id'] == $person['user_id']) {
+      $needToGrabData = false;
+    }
+  }
+
+  if ($needToGrabData) {
+    $sql = "SELECT `first_name`,`last_name` FROM `{$database}`.`member_database` WHERE `id` = '{$person['user_id']}' LIMIT 1;";
+    if (!in_array($sql, $pplAlreadyAdded)) {
+      $results[] = MySQL::single($sql);
+    }
+    $pplAlreadyAdded[] = $sql;
+  }
+  $needToGrabData = true;
 }
 
