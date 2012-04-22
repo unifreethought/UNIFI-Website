@@ -1,5 +1,9 @@
 
   <div id="wrapper">
+    <h2>Edit Commenting Emails</h2>
+    <p>
+    These emails are sent a message to everytime a comment is left.
+    </p>
     <form action="index.php" method="POST">
       <input type="hidden" name="edit_commenting_emails" value="yes" />
       <textarea cols="100" rows="10" name="emails"><?php echo $emails['emails']; ?></textarea>
