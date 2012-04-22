@@ -7,6 +7,7 @@
           <td><?php echo ADMIN_DASHBOARD_VIEW_EVENTS_TITLE; ?></td>
           <td><?php echo ADMIN_DASHBOARD_VIEW_EVENTS_START_TIME; ?></td>
           <td><?php echo ADMIN_DASHBOARD_VIEW_EVENTS_END_TIME; ?></td>
+          <td><?php echo ADMIN_DASHBOARD_VIEW_EVENTS_TOTAL_ATTENDED; ?></td>
           <td><?php echo ADMIN_DASHBOARD_VIEW_EVENTS_LOCATION; ?></td>
           <td><?php echo ADMIN_DASHBOARD_VIEW_EVENTS_DESCRIPTION; ?></td>
         </tr>
@@ -18,6 +19,7 @@
           echo '<td>' . $event['title'] . '</td>';
           echo '<td>' . Date::parse($event['start_time']) . '</td>';
           echo '<td>' . Date::parse($event['end_time']) . '</td>';
+          echo '<td>' . $attendance[$event['id']] . '</td>';
           echo '<td>' . $event['location'] . '</td>';
           echo '<td>' . $event['description'] . '</td>';
         echo '</tr>';
