@@ -723,8 +723,6 @@ if ($url['post']) {
 
     case 'view_volunteer_events':
 
-    case 'view_volunteer_events':
-
       if (Auth::edit_events()) {
         include 'application/helpers/view_volunteer_events.php';
         include 'templates/' . $config['admin_template'] . '/html/view_volunteer_events.html';
