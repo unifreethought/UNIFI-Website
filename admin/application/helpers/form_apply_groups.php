@@ -7,7 +7,7 @@
 $user_id = MySQL::clean($_POST['user_id']);
 $group_desc = MySQL::clean($_POST['group_desc']);
 
-$base_sql = "UPDATE  `unifi_website_new`.`user-permissions` SET ";
+$base_sql = "UPDATE  `{$database}`.`user-permissions` SET ";
 $end_sql = "WHERE  `user-permissions`.`user_id` = '{$user_id}';";
 $sqls = array(
   'president' => " `post_to_blog` =  '1', `access_admin_dashbord` =  '1', `view_members` =  '1', `edit_members` =  '1', `add_events` =  '1', `list_events` =  '1', `edit_events` =  '1', `edit_event_attendance` =  '1', `edit_custom_pages` =  '1', `view_log` =  '1' ",
