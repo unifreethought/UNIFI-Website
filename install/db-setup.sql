@@ -239,7 +239,8 @@ INSERT INTO `log-messages` (`id`, `keyword`, `message`) VALUES
 (7, 'view_log', 'Someone has viewed the log.'),
 (8, 'edit_user', 'A user''s data has been modified.'),
 (9, 'failed_user_edit_permissions', 'An unauthorized attempt to access user permission editing.'),
-(10, 'create_volunteer_event', 'Created a volunteer event!');
+(10, 'create_volunteer_event', 'Created a volunteer event!'),
+(11, 'apply_groups', 'Permissions for a user has changed.');
 
 --
 -- Table structure for table `major`

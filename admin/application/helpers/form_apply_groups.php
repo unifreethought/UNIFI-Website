@@ -23,5 +23,10 @@ if (!in_array($group_desc, $sqls)) {
 
 MySQL::query($sql);
 
+// Log it
+$sql = "SELECT `first_name`,`last_name` FROM `{$database}`.`users` WHERE `id` = '{$user_id}' LIMIT 1;";
+$name = MySQL::single($sql);
+Log::create($user_id, 'apply_groups', "name: {$first_name} {$last_name} was upgraded to: {$group_desc}");
+
 header("Location: index.php");
 exit();

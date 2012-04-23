@@ -5,7 +5,6 @@
  * 2011-01-10
  */
 
-//print_r($_POST);
 $first_name = MySQL::clean($_POST['first_name']);
 $last_name = MySQL::clean($_POST['last_name']);
 $gender = MySQL::clean($_POST['gender']);
