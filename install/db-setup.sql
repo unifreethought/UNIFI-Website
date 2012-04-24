@@ -240,7 +240,15 @@ INSERT INTO `log-messages` (`id`, `keyword`, `message`) VALUES
 (8, 'edit_user', 'A user''s data has been modified.'),
 (9, 'failed_user_edit_permissions', 'An unauthorized attempt to access user permission editing.'),
 (10, 'create_volunteer_event', 'Created a volunteer event!'),
-(11, 'apply_groups', 'Permissions for a user has changed.');
+(11, 'apply_groups', 'Permissions for a user has changed.'),
+(12, 'sent_newsletter', 'The newsletter was sent.'),
+(13, 'merge_members', 'Two members were merged.'),
+(14, 'alumni_signup', 'A new alumni signed up!'),
+(15, 'edit_posting_emails', 'The posting emails were changed.'),
+(16, 'edit_commentnig_emails', 'The commenting emails were changed.'),
+(17, 'delete_blog_post', 'A blog post was deleted.'),
+(18, 'backup_db', 'The database was backed up.'),
+(19, 'restore_db', 'The database was restored.');
 
 --
 -- Table structure for table `major`

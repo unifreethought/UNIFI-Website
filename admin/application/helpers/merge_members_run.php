@@ -72,5 +72,7 @@ $sql = "DELETE FROM `{$database}`.`event_attendance` WHERE `event_attendance`.`m
 $sql .= " OR `event_attendance`.`member_id` = '{$second_id}';";
 MySQL::query($sql);
 
+Log::create($user_id, "merge_members", "Members Merged: {$first_id} and {$second_id}");
+
 header("Location: index.php");
 exit();

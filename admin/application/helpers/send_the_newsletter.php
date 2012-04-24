@@ -18,5 +18,7 @@ foreach ($emails as $email) {
 	mail($email['email'], $subject, stripslashes($message), $headers);
 }
 
+Log::create($user_id, "sent_newsletter", "Subject: " . $subject);
+
 header("Location: index.php");
 exit();
