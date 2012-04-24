@@ -27,7 +27,7 @@ if (!empty($user_id)) {
         $post_title = MySQL::single("SELECT `title` FROM `{$database}`.`blog-posts` WHERE `id` = '{$post}'");
         $emails = explode(',', $emails_raw['emails']);
         foreach ($emails as $email) {
-          mail($email, "A new comment!: " . $post_title['title'], $content, "From: {$config['admin_email']}", $headers);
+          mail($email, "A new comment!: " . $post_title['title'], $content, $headers);
         }
 
 } else {
