@@ -37,7 +37,6 @@
             url += "<?php echo $data['id']; ?>" + '&checked=' + checked;
           xhr.open('GET', url, false);
           xhr.send(null);
-          alert(xhr.responseText);
         }
       }
       </script>
@@ -52,12 +51,11 @@
           var newTag = document.getElementById('createTag');
           var tagList = document.getElementById('blogTags');
           var xhr = new XMLHttpRequest();
-            xhr.open('GET', window.location.origin + window.location.pathname + '?createBlogTag=' + encodeURIComponent(newTag.value), false);
+          var url = window.location.pathname + '?createBlogTag=' + encodeURIComponent(newTag.value);
+            xhr.open("GET", url, false);
             xhr.send(null);
-
-          // Now append the new tag to the list.
-          // Remember, this returns some HTML, which is terrible practice!!
           tagList.innerHTML += xhr.responseText;
+          newTag.value = "";
         }
         </script>
       </div>
