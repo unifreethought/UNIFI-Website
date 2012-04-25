@@ -33,7 +33,7 @@
             checked = 'no';
           }
 
-          var url = window.location.origin + window.location.pathname + '?addBlogTag=' + elms[i].name + '&blog_post=';
+          var url = window.location.pathname + '?addBlogTag=' + elms[i].name + '&blog_post=';
             url += "<?php echo $data['id']; ?>" + '&checked=' + checked;
           xhr.open('GET', url, false);
           xhr.send(null);

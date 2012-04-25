@@ -26,6 +26,19 @@ if (empty($id)) {
   MySQL::query($sql);
 
   if ($table == "blog-posts") {
+
+    // Move all of the tags over for the draft.
+    $sql = "SELECT `id` FROM `{$database}`.`{$table}` WHERE `timestamp` = '{$time}' LIMIT 1 ORDER BY `id` DESC;";
+    $new_post_id = MySQL::single($sql);
+    $sql = "SELECT `tag_id` FROM `{$database}`.`blog-tags` WHERE `post_id` = '{$new_post_id}';";
+    $new_tag_ids = MySQL::search($sql);
+
+    $sql = "INSERT INTO `{$database}`.`blog-tags` (`post_id`,`tag_id`) VALUES ";
+    foreach ($new_tag_ids as $tag) {
+      $sql .= "('{$new_post_id}', '{$tag}'),";
+    }
+    MySQL::query(substr($sql, 0, -1));
+
     Log::create($user_id, 'new_blog_post', 'date:' . Date::parse($time) . '<br>title:' . $title);
 
     // Set the headers for the email
