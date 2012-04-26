@@ -1,0 +1,53 @@
+
+  <div id="wrapper">
+
+    <h3>Edit Positions</h3>
+
+    <ul id="positions" style="list-style-type:none;">
+    <?php
+      foreach ($positions as $position) {
+        echo "<li><input type='checkbox' name='position' value='{$position['id']}' />{$position['desc']}</li>";
+      }
+    ?>
+    </ul>
+
+    <button onclick="deletePositions();">Delete Positions</button>
+
+    <br /><br />
+
+    New Position: <input type="text" id="new_position" /><br />
+    <button onclick="addPosition();">Add Position</button>
+
+  </div>
+
+  <script>
+  function deletePositions() {
+    var all_positions = document.getElementsByName("position");
+    var positions_to_delete = [];
+    for(var i = 0; i < all_positions.length; i++) {
+      if (all_positions[i].checked) {
+        positions_to_delete.push(all_positions[i]);
+      }
+    }
+
+    var xhr = new XMLHttpRequest();
+    for(i = 0; i < positions_to_delete.length; i++) {
+      xhr.open("GET", window.location.pathname + "?deletePosition=" + encodeURIComponent(positions_to_delete[i].value), false);
+      xhr.send(null);
+      positions_to_delete[i].parentNode.style.display = "none";
+    }
+  }
+
+  function addPosition() {
+    var newPosition = document.getElementById("new_position").value;
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", window.location.pathname + "?addPosition=" + encodeURIComponent(newPosition), false);
+    xhr.send(null);
+
+    var positions = document.getElementById("positions");
+    var newElm = document.createElement("li");
+    newElm.innerHTML = "<input type='checkbox' name='position' value='" + xhr.responseText + "' />" + newPosition;
+    positions.appendChild(newElm);
+  }
+  </script>
+

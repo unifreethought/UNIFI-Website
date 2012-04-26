@@ -256,10 +256,10 @@ if ($url['post']) {
 
 } else {
 
-        // Do a general check on viewing the DASHBOARD.
-        if (!Auth::view_DASHBOARD()) {
-                exit(ADMIN_NOT_AUTHORIZED);
-        }
+  // Do a general check on viewing the DASHBOARD.
+  if (!Auth::view_DASHBOARD()) {
+          exit(ADMIN_NOT_AUTHORIZED);
+  }
 
   // Sometimes we need to check for a FB ID request
   // This is due to the lack of true cross site request compatability.
@@ -290,6 +290,16 @@ if ($url['post']) {
   if (!empty($_GET['createBlogTag'])) {
     include 'application/helpers/create_blog_tag.php';
     exit();
+  }
+
+  if (!empty($_GET['addPosition'])) {
+    include 'application/helpers/add_position.php';
+    exit();
+  }
+
+  if (!empty($_GET['deletePosition'])) {
+    include 'application/helpers/delete_position.php';
+    exit("");
   }
 
   if ($_GET['page'] == 'add_to_member_database') {
@@ -443,6 +453,16 @@ if ($url['post']) {
       if (Auth::edit_users()) {
         include 'application/helpers/edit_user.php';
         include 'templates/' . $config['admin_template'] . '/html/edit_user.html';
+      } else {
+        exit(ADMIN_NOT_AUTHORIZED);
+      }
+    break;
+
+    case 'edit_positions':
+
+      if (Auth::edit_users()) {
+        include 'application/helpers/edit_positions.php';
+        include 'templates/' . $config['admin_template'] . '/html/edit_positions.html';
       } else {
         exit(ADMIN_NOT_AUTHORIZED);
       }
