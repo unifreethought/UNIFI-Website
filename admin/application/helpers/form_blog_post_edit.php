@@ -50,7 +50,7 @@ if (empty($id)) {
     $emails_raw = MySQL::single("SELECT `emails` from `{$database}`.`email_lists` WHERE `desc` = 'posting_emails' LIMIT 1");
     $emails = explode(',', $emails_raw['emails']);
     foreach ($emails as $email) {
-      mail($email, "A new blog post: " . $title, $content, $headers);
+      mail($email, "A new blog post: " . $title, "{$content}", $headers);
     }
   }
 
