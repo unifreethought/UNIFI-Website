@@ -33,7 +33,7 @@
           <?php echo User_Parse::parse_dorm($first_sql['dorm']); ?><br />
 
         Recruit Place: <input type="radio" name="recruit_place" value="<?php echo $first_sql['recruit_place']; ?>" />
-          <?php echo User_Parse::parse_recruit_place($first_sql['recruit_place']); ?><br />
+          <?php echo $first_sql['recruit_place']; ?><br />
 
         Phone: <input type="radio" name="phone" value="<?php echo $first_sql['phone']; ?>" />
           <?php echo $first_sql['phone']; ?><br />
@@ -70,7 +70,7 @@
           <?php echo User_Parse::parse_dorm($second_sql['dorm']); ?><br />
 
         Recruit Place: <input type="radio" name="recruit_place" value="<?php echo $second_sql['recruit_place']; ?>" />
-          <?php echo User_Parse::parse_recruit_place($second_sql['recruit_place']); ?><br />
+          <?php echo $second_sql['recruit_place']; ?><br />
 
         Phone: <input type="radio" name="phone" value="<?php echo $second_sql['phone']; ?>" />
           <?php echo $second_sql['phone']; ?><br />
