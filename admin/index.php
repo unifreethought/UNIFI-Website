@@ -297,9 +297,19 @@ if ($url['post']) {
     exit();
   }
 
+  if (!empty($_GET['addTag'])) {
+    include 'application/helpers/add_tag.php';
+    exit();
+  }
+
   if (!empty($_GET['deletePosition'])) {
     include 'application/helpers/delete_position.php';
-    exit("");
+    exit();
+  }
+
+  if (!empty($_GET['deleteTag'])) {
+    include 'application/helpers/delete_tag.php';
+    exit();
   }
 
   if ($_GET['page'] == 'add_to_member_database') {
@@ -453,6 +463,16 @@ if ($url['post']) {
       if (Auth::edit_users()) {
         include 'application/helpers/edit_user.php';
         include 'templates/' . $config['admin_template'] . '/html/edit_user.html';
+      } else {
+        exit(ADMIN_NOT_AUTHORIZED);
+      }
+    break;
+
+    case 'edit_tags':
+
+      if (Auth::edit_users()) {
+        include 'application/helpers/edit_tags.php';
+        include 'templates/' . $config['admin_template'] . '/html/edit_tags.html';
       } else {
         exit(ADMIN_NOT_AUTHORIZED);
       }

@@ -1,0 +1,54 @@
+
+
+  <div id="wrapper">
+
+    <h3>Edit tags</h3>
+
+    <ul id="tags" style="list-style-type:none;">
+    <?php
+      foreach ($tags as $tag) {
+        echo "<li><input type='checkbox' name='tag' value='{$tag['id']}' />{$tag['desc']}</li>";
+      }
+    ?>
+    </ul>
+
+    <button onclick="deleteTags();">Delete tags</button>
+
+    <br /><br />
+
+    New tag: <input type="text" id="new_tag" /><br />
+    <button onclick="addTag();">Add tag</button>
+
+  </div>
+
+  <script>
+  function deleteTags() {
+    var all_tags = document.getElementsByName("tag");
+    var tags_to_delete = [];
+    for(var i = 0; i < all_tags.length; i++) {
+      if (all_tags[i].checked) {
+        tags_to_delete.push(all_tags[i]);
+      }
+    }
+
+    var xhr = new XMLHttpRequest();
+    for(i = 0; i < tags_to_delete.length; i++) {
+      xhr.open("GET", window.location.pathname + "?deleteTag=" + encodeURIComponent(tags_to_delete[i].value), false);
+      xhr.send(null);
+      tags_to_delete[i].parentNode.style.display = "none";
+    }
+  }
+
+  function addTag() {
+    var newtag = document.getElementById("new_tag").value;
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", window.location.pathname + "?addTag=" + encodeURIComponent(newtag), false);
+    xhr.send(null);
+
+    var tags = document.getElementById("tags");
+    var newElm = document.createElement("li");
+    newElm.innerHTML = "<input type='checkbox' name='tag' value='" + xhr.responseText + "' />" + newtag;
+    tags.appendChild(newElm);
+  }
+  </script>
+
