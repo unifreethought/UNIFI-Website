@@ -69,6 +69,10 @@ if ($url['post'] == true) {
     include 'application/helpers/process_alumni_signup.php';
   }
 
+  if ($_POST['feedback_form'] == 'yes') {
+    include 'application/helpers/feedback_form.php';
+  }
+
   exit();
 }
 
@@ -124,6 +128,11 @@ if ($url['get'] == true) {
     case 'legal':
       include 'application/helpers/show_authors_and_labels.php';
       include 'templates/' . $config['template'] . '/html/legal.html';
+    break;
+
+    case 'feedback':
+      include 'application/helpers/show_authors_and_labels.php';
+      include 'templates/' . $config['template'] . '/html/feedback.html';
     break;
 
     case 'search':

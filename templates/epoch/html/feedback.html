@@ -1,0 +1,55 @@
+
+<div id="wrapper">
+  <!--
+    Create the header secion, this will be the main image, navigation elements,
+    rotating quote, and search button.
+  -->
+  <header>
+    <?php include 'templates/epoch/html/show_nav.html'; ?>
+  </header>
+
+  <hr />
+
+  <!--
+    The "right side" of the page which contains: "You" box, [Admin Dashboard],
+    social media icons, labels/authors, and the blogroll.
+  -->
+  <aside>
+    <?php include 'templates/epoch/html/show_sidebar.html'; ?>
+  </aside>
+
+  <!--
+    The main section of the page, which has the blog posts (for the home page),
+    and the main content for other pages.
+
+    P.S. Where needed content should be separated by the <section> element.
+  -->
+  <article>
+  <div id="blog-wrapper" class="border-right">
+
+    <h3>Feedback Form!</h3>
+
+    <p>
+      Hey! We would love to hear your thoughts on anything UNIFI related! If you have any
+      comments, concerns, or questions let us know! You can let us know easily by filling
+      out this form!
+    </p>
+
+    <form action="index.php" method="POST">
+      <input type="hidden" name="feedback_form" value="yes" />
+
+      Your Name:
+        <input type="name" name="name" placeholder="Your Name" /><br />
+
+      Your Email:
+      <input type="email" name="email" placeholder="you@uni.edu" /><br /><br />
+
+      Your Thoughts:<br />
+      <textarea name="comments" rows="15" cols="60"></textarea><br />
+
+      <input type="submit" value="Submit" />
+    </form>
+
+  </div>
+  </article>
+

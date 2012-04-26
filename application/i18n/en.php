@@ -31,6 +31,7 @@ define('FB_LOGIN_OUT_ALERT', 'Press OK to reload the page and finish loggin in/o
 define('FOOTER_LEGAL', 'Legal & Privacy');
 define('FOOTER_CONTACT', 'Contact');
 define('FOOTER_TOP', 'Top');
+define('FOOTER_FEEDBACK', 'Feedback');
 
 // Profile Nav Link
 define('MAIN_PAGE_PROFILE_NAV_LINK', 'Profile');
