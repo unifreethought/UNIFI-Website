@@ -26,7 +26,7 @@
 
         <?php
           foreach ($members as $member) {
-            echo "<tr>";
+            echo "<tr onclick='window.location=\"index.php?page=view_member&member=" . $member['id'] . "\";' style='cursor:pointer;'>";
               echo "<td>" . $member['first_name'] . "</td>";
               echo "<td>" . $member['last_name'] . "</td>";
               echo "<td>" . User_Parse::parse_year((string)$member['year']) . "</td>";
