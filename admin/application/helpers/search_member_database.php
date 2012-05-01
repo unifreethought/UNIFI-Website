@@ -47,3 +47,4 @@ $sql .= "{$phone}{$texting}{$hometown}{$address}{$email}{$tags}{$positions}";
 
 $sql = substr($sql, 0, -5);
 $members = MySQL::search($sql);
+

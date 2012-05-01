@@ -34,8 +34,7 @@
               echo "<td>" . $member['hometown'] . "</td>";
               echo "<td>" . $member['address'] . "</td>";
               echo "<td>" . User_Parse::parse_dorm((string)$member['dorm']) . "</td>";
-              //echo "<td>" . @date('Y-m-d H:i:s', $member['recruit_date']) . "</td>";
-              echo "<td>" . User_Parse::parse_recruit_place((string)$member['recruit_place']) . "</td>";
+              echo "<td>" . $member['recruit_place'] . "</td>";
               echo "<td>" . $member['phone'] . "</td>";
               echo "<td>" . User_Parse::parse_texting((string)$member['texting']) . "</td>";
               echo "<td>" . $member['email'] . "</td>";
