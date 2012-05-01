@@ -18,7 +18,7 @@ class SocialMedia {
     $fbUrl .= "&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=80";
     $fbUrl .= "&amp;appId=175996285780738";
     $fbCSS = "style='border:none; overflow:hidden; width:350px; height:30px;'";
-    echo "<iframe src='{$fbUrl}' scrolling='no' frameborder='0' {$fbCSS} allowTransparency='true'></iframe>";
+    echo "<iframe src='{$fbUrl}' scrolling='no' frameborder='0' {$fbCSS} allowTransparency='true' defer></iframe>";
   }
 
   static function googlePlus($postId) {
