@@ -11,10 +11,8 @@ $content = MySQL::clean($_POST['content']);
 $action = MySQL::clean($_POST['publish-post']);
 if (empty($action)) {
   $table = 'blog-drafts';
-  $directon = "drafts";
 } else {
   $table = 'blog-posts';
-  $direction = "posts";
 }
 
 if (empty($id)) {
@@ -59,4 +57,5 @@ if (empty($id)) {
   MySQL::query($sql);
 }
 
-header('Location: index.php?page=list_blog_' . $direction);
+header('Location: index.php?page=list_blog_' . substr($table, 5));
+

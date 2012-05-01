@@ -408,10 +408,10 @@ if ($url['post']) {
       }
     break;
 
-    case 'view_blog_drafts':
+    case 'list_blog_drafts':
       if (Auth::can_post_blog()) {
-        include 'application/helpers/view_blog_drafts.php';
-        include 'templates/' . $config['admin_template'] . '/html/view_blog_drafts.html';
+        include 'application/helpers/list_blog_drafts.php';
+        include 'templates/' . $config['admin_template'] . '/html/list_blog_drafts.html';
       } else {
         exit(ADMIN_NOT_AUTHORIZED);
       }
