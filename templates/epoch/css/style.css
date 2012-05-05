@@ -54,7 +54,7 @@ hr.no-hr {
 	line-height: 0px;
 }
 
-div#wrapper {
+#wrapper {
 	background-color: #FFFFFF;
 	margin-left: auto;
 	margin-right: auto;
@@ -101,12 +101,12 @@ header {
 					text-decoration: none;
 				}
 
-	header div#quote-and-search {
+	#quote-and-search {
 		margin-left: 5%;
 		width: 90%;
 	}
 
-		header div#search {
+		#search {
 			float: right;
 			margin-top: -6px;
 		}
@@ -153,13 +153,13 @@ header {
 				display: inline;
 			}
 
-		aside section#search input {
+		#search input {
 			font-size: 1.5em;
 			height: 40px;
 			width: 100%;
 		}
 
-			aside section#profile-box-container div#profile-box span {
+			#profile-box-container #profile-box span {
 				width: auto;
 			}
 
@@ -168,20 +168,20 @@ header {
 					overflow: hidden;
 				}
 
-		aside section#connect-with-us {
+		#connect-with-us {
 			width: 100%;
 		}
 
-			aside section#connect-with-us div#social-media ul {
+			#connect-with-us #social-media ul {
 				margin-left: -8%;
 			}
 
-				aside section#connect-with-us div#social-media .social-media-icon {
+				#connect-with-us #social-media .social-media-icon {
 					height: 38px;
 					width: 38px;
 				}
 
-		aside section#quote-and-search div#quote {
+		#quote-and-search #quote {
 			cursor: pointer;
 			font-family: "Georgia", Times New Roman, Sans-Serif;
 			font-size: 0.9em;
@@ -189,67 +189,67 @@ header {
 			padding-bottom: 5px;
 		}
 
-			aside section#quote-and-search div#quote span#quote-body:before {
+			#quote-and-search #quote #quote-body:before {
 				color: #666666;
 				content: "“";
 				font-size: 1.1em;
 			}
 
-			aside section#quote-and-search div#quote span#quote-body:after {
+			#quote-and-search #quote #quote-body:after {
 				color: #666666;
 				content: "”";
 				font-size: 1.1em;
 			}
 
-		aside section div#labels-and-authors {
+		#labels-and-authors {
 			padding-left: 0%;
 			width: 100%;
 		}
 
-			aside section div#labels-and-authors ul {
+			#labels-and-authors ul {
 				list-style-type: square;
 			}
 
-				aside section div#labels-and-authors ul li {
+				#labels-and-authors ul li {
 					display: list-item;
 					font-size: 0.8em;
 				}
 
-					aside section div#labels-and-authors ul li a {
+					#labels-and-authors ul li a {
 						color: #000000;
 					}
 
-		aside section div#blogroll {
+		#blogroll {
 			padding: 5px;
 			padding-left: 0px;
 			width: 100%;
 		}
 
-			aside section div#blogroll ul {
+			#blogroll ul {
 				list-style-type: none;
 				padding-left: 0px;
 			}
 
-				aside section div#blogroll ul li {
+				#blogroll ul li {
 					display: list-item;
 					font-size: 0.8em;
 					margin-bottom: 20px;
 				}
 
-					aside section div#blogroll ul li a {
+					#blogroll ul li a {
 						color: #000000;
 					}
 
-			aside section div#labels-and-authors ul {
+			#labels-and-authors ul {
 				list-style-type: none;
 				padding-left: 10px;
 			}
 
-				aside section div#labels-and-authors ul li {
+				#labels-and-authors ul li {
 					margin-bottom: 2px;
 				}
 
-			aside section div#guest-submissions a {
+			#guest-submissions a {
 				color: #000000;
 				font-size: 0.85em;
 			}
@@ -320,7 +320,7 @@ article {
 						background-color: #CCCCCC;
 					}
 
-					div section#comment_reply form textarea {
+					#comment_reply form textarea {
 						height: 200px;
 						width: 550px;
 					}
@@ -335,34 +335,34 @@ footer {
 	height: 50px;
 }
 
-	footer div#copyright {
+	#copyright {
 		color: #FFFFFF;
 		padding: 15px 0% 0% 5%;
 		width: 50%;
 	}
 
-	footer div#footer-links {
+	#footer-links {
 		padding: 15px 0% 0% 5%;
 	}
 
-		footer div#footer-links ul {
+		#footer-links ul {
 			list-style-type: none;
 			margin: 0px;
 			padding: 0px;
 		}
 
-			footer div#footer-links ul li {
+			#footer-links ul li {
 				display: inline;
 			}
 
-				footer div#footer-links ul li:after {
+				#footer-links ul li:after {
 					content: " | ";
 				}
 
-				footer div#footer-links ul li:last-child:after {
+				#footer-links ul li:last-child:after {
 					content: "";
 				}
 
-				footer div#footer-links ul li a {
+				#footer-links ul li a {
 					color: #EEEEEE;
 				}

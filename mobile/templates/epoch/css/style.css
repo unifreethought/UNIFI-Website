@@ -13,7 +13,7 @@ a {
   color: #28B;
 }
 
-div#wrapper {
+#wrapper {
   display: block;
   width: 100%;
 }
@@ -27,11 +27,6 @@ div#wrapper {
       text-decoration: none;
     }
 
-div#content {
-  /* */
-}
-
-  /* Blog posts */
   section.blog-post {
     border-radius: 5px;
     cursor: pointer;
