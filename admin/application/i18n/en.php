@@ -46,9 +46,7 @@ define('ADMIN_DASHBOARD_EDIT_MEMBER_RIGHTS', 'Edit member admin rights');
 define('ADMIN_DASHBOARD_BACKUP_DB', 'Backup the database.');
 define('ADMIN_DASHBOARD_CREATE_USER', 'Create User');
 define('ADMIN_DASHBOARD_DELETE_USER', 'Delete User');
-	define('ADMIN_DASHBOARD_DELETE_USER_SUBMIT', 'Delete User');
 	define('ADMIN_DASHBOARD_DELETE_USER_CONFORM_DESC', 'Select ONLY the accounts that you wish to delete!!');
-	define('ADMIN_DASHBOARD_DELETE_USER_GO_HOME', 'Go Home (do not delete anyone)');
 define('ADMIN_DASHBOARD_CENTRAL_LOG', 'Central Log');
 define('ADMIN_DASHBOARD_MAIL_USERS', 'Mail Users');
 
@@ -93,7 +91,6 @@ define('ADMIN_DASHBOARD_EDIT_MEMBER_PERMISSIONS', 'Edit Member Permissions');
 define('ADMIN_DASHBOARD_EDIT_MEMBER_PERMISSIONS_GET_USER_FORM', 'Enter the user id: ');
 define('ADMIN_DASHBOARD_EDIT_MEMBER_PERMISSIONS_GET_USER', 'Enter the user to edit.');
 define('ADMIN_DASHBOARD_EDIT_MEMBER_PERMISSIONS_GET_USER_DESC', 'Editing permissions for: ');
-	define('ADMIN_DASHBOARD_EDIT_MEMBER_PERMISSIONS_GET_USER_FORM', 'User: ');
 	define('ADMIN_DASHBOARD_EDIT_MEMBER_PERMISSIONS_GET_USER_SUBMIT', 'Edit User');
 	define('ADMIN_DASHBOARD_EDIT_MEMBER_PERMISSIONS_POST_TO_BLOG', 'Post to blog');
 	define('ADMIN_DASHBOARD_EDIT_MEMBER_PERMISSIONS_ACCESS_ADMIN_DASHBOARD', 'Access Admin Dashboard');
@@ -106,7 +103,6 @@ define('ADMIN_DASHBOARD_EDIT_MEMBER_PERMISSIONS_GET_USER_DESC', 'Editing permiss
 	define('ADMIN_DASHBOARD_EDIT_MEMBER_PERMISSIONS_EDIT_CUSTOM_PAGES', 'Edit Custom Pages');
 	define('ADMIN_DASHBOARD_EDIT_MEMBER_PERMISSIONS_VIEW_LOG', 'View Log');
 
-define('ADMIN_DASHBOARD_DELETE_USER_CONFORM_DESC', 'Click the users you wish to delete.');
 define('ADMIN_DASHBOARD_DELETE_USER_SUBMIT', 'Delete User(s)');
 define('ADMIN_DASHBOARD_DELETE_USER_GO_HOME', 'Cancel Deletion');
 
