@@ -79,6 +79,15 @@ if ($url['post'] == true) {
 // Include the sneaky HTTP headers
 include 'application/eggs/headers.php';
 
+// Sometimes we don't want to include any html content.`
+
+switch($url['page']) {
+    case 'post_rss':
+      include 'application/helpers/post_rss.php';
+      exit();
+    break;
+}
+
 include 'application/helpers/header.php';
 include 'templates/' . $config['template'] . '/html/header.html';
 

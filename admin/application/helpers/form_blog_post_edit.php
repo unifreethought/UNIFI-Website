@@ -37,6 +37,10 @@ if (empty($id)) {
     }
     MySQL::query(substr($sql, 0, -1));
 
+    // Create a new uuid for the blog post
+    $sql = "INSERT INTO `{$database}`.`blog-guids` (`post_id`, `guid`) VALUES ('{$new_post_id['id']}', UUID());";
+    MySQL::query($sql);
+
     Log::create($user_id, 'new_blog_post', 'date:' . Date::parse($time) . '<br>title:' . $title);
 
     // Set the headers for the email

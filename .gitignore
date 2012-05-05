@@ -3,3 +3,5 @@ application/config/beta-config.php
 application/config/prod-config.php
 *~
 *.swp
+
+uuid*

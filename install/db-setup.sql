@@ -106,6 +106,16 @@ CREATE TABLE IF NOT EXISTS `blog-guest-submissions` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 
 --
+-- Table structure for table `blog-guids`
+--
+
+CREATE TABLE IF NOT EXISTS `blog-guids` (
+  `post_id` int(32) NOT NULL,
+  `guid` varchar(36) NOT NULL,
+  UNIQUE KEY `post_id` (`post_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
 -- Table structure for table `blog-tag-names`
 --
 CREATE TABLE IF NOT EXISTS `blog-tag-names` (
