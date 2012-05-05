@@ -12,7 +12,7 @@ $sql = "SELECT `id`,`first_name`,`last_name` FROM `{$database}`.`users` WHERE {$
 
 $data = MySQL::search($sql);
 
-echo ADMIN_DASHBORD_DELETE_USER_CONFORM_DESC . '<br />';
+echo ADMIN_DASHBOARD_DELETE_USER_CONFORM_DESC . '<br />';
 echo "<form action='index.php' method='POST'>";
 echo "<input type='hidden' name='confirm_delete' value='yes' />";
 echo "<ul style='list-style-type:none;'>";
@@ -25,6 +25,6 @@ foreach ($data as $person) {
 }
 
 echo '</ul>';
-echo "<input type='submit' value='" . ADMIN_DASHBORD_DELETE_USER_SUBMIT . "' />";
-echo "<input type='button' onclick='window.location=\"index.php\";' value='" . ADMIN_DASHBORD_DELETE_USER_GO_HOME . "' />";
+echo "<input type='submit' value='" . ADMIN_DASHBOARD_DELETE_USER_SUBMIT . "' />";
+echo "<input type='button' onclick='window.location=\"index.php\";' value='" . ADMIN_DASHBOARD_DELETE_USER_GO_HOME . "' />";
 echo "</form>";

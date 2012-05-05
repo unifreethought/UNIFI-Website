@@ -54,7 +54,7 @@ $sql .= "'{$texting}','{$positions}','{$tags}','{$notes}');";
 //echo $sql . '<br /><br />';
 MySQL::query($sql);
 
-$sql = "INSERT INTO `{$database}`.`user-permissions` (`user_id`,`post_to_blog`,`access_admin_dashbord`,`view_members`,`edit_members`,`add_events`,";
+$sql = "INSERT INTO `{$database}`.`user-permissions` (`user_id`,`post_to_blog`,`access_ADMIN_DASHBOARD`,`view_members`,`edit_members`,`add_events`,";
 $sql .= "`list_events`,`edit_events`,`edit_event_attendance`,`edit_custom_pages`) VALUES ('{$tmp_user_id['id']}','0','0','0','0','0','0','0','0','0');";
 //echo $sql . '<br /><br />';
 MySQL::query($sql);
