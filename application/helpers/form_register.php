@@ -52,7 +52,7 @@ if (empty($result['id'])) {
 
 // `user-permissions`
 $post_to_blog = '0';
-$access_ADMIN_DASHBOARD = '0';
+$access_admin_dashboard = '0';
 $view_members = '0';
 $edit_members = '0';
 $add_events = '0';
@@ -62,8 +62,8 @@ $edit_event_attendance = '0';
 $edit_custom_pages = '0';
 $view_log = 0;
 
-$sql = "INSERT INTO `{$database}`.`user-permissions` (`user_id`, `post_to_blog`, `access_ADMIN_DASHBOARD`, `view_members`, `edit_members`,";
-$sql .= " `add_events`, `list_events`, `edit_events`, `edit_event_attendance`, `edit_custom_pages`, `view_log`) VALUES ('{$tmp_user_id['id']}', '{$post_to_blog}', '{$access_ADMIN_DASHBOARD}',";
+$sql = "INSERT INTO `{$database}`.`user-permissions` (`user_id`, `post_to_blog`, `access_admin_dashboard`, `view_members`, `edit_members`,";
+$sql .= " `add_events`, `list_events`, `edit_events`, `edit_event_attendance`, `edit_custom_pages`, `view_log`) VALUES ('{$tmp_user_id['id']}', '{$post_to_blog}', '{$access_admin_dashboard}',";
 $sql .= " '{$view_members}', '{$edit_members}', '{$add_events}', '{$list_events}', '{$edit_events}', '{$edit_event_attendance}', '{$edit_custom_pages}', '{$view_log}');";
 MySQL::query($sql);
 
