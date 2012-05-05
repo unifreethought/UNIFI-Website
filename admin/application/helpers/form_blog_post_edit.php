@@ -28,7 +28,7 @@ if (empty($id)) {
     // Move all of the tags over for the draft.
     $sql = "SELECT `id` FROM `{$database}`.`{$table}` WHERE `timestamp` = '{$time}' ORDER BY `id` DESC LIMIT 1;";
     $new_post_id = MySQL::single($sql);
-    $sql = "SELECT `tag_id` FROM `{$database}`.`blog-tags` WHERE `post_id` = '{$new_post_id}';";
+    $sql = "SELECT `tag_id` FROM `{$database}`.`blog-tags` WHERE `post_id` = '{$new_post_id['id']}';";
     $new_tag_ids = MySQL::search($sql);
 
     $sql = "INSERT INTO `{$database}`.`blog-tags` (`post_id`,`tag_id`) VALUES ";
