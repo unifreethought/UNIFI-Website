@@ -48,21 +48,21 @@
         <button onclick="createTag();"><?php echo PAGE_POST_TO_BLOG_CREATE_TAG; ?></button>
         <script>
         function createTag() {
-          var newTag = document.getElementById('createTag');
-          var tagList = document.getElementById('blogTags');
-          var xhr = new XMLHttpRequest();
-          var url = window.location.pathname + '?createBlogTag=' + encodeURIComponent(newTag.value);
-            xhr.open("GET", url, false);
-            xhr.send(null);
-          tagList.innerHTML += xhr.responseText;
-          newTag.value = "";
-        }
-        </script>
-      </div>
+        var newTag = document.getElementById('createTag');
+        var tagList = document.getElementById('blogTags');
+        var xhr = new XMLHttpRequest();
+        var url = window.location.pathname + '?createBlogTag=' + encodeURIComponent(newTag.value);
+          xhr.open("GET", url, false);
+          xhr.send(null);
+        tagList.innerHTML += xhr.responseText;
+        newTag.value = "";
+      }
+      </script>
+    </div>
 
-                        <br /><br />
-                        <div style="margin-left: 10%;">
-                          <button onclick="window.location='index.php?page=delete_blog_post&post_id=<?php echo $data['id'];?>';">Delete Post</button>
+                      <br /><br />
+                      <div style="margin-left: 10%;">
+                        <button onclick="window.location='index.php?page=delete_blog_post&post_id=<?php echo $data['id'];?>';">Delete Post</button>
                         </div>
     </div>
 

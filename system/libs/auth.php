@@ -71,8 +71,8 @@ class Auth {
 	 * Auth the user to see if they can view the admin dashboard.
 	 */
 	static function view_dashboard() {
-		$can_view_dashbord = MySQL::single("SELECT `access_admin_dashbord` FROM `" . self::$database . "`.`user-permissions` WHERE `user_id` = '" . self::$user_id . "' LIMIT 1");
-		if ($can_view_dashbord['access_admin_dashbord'] == '1') {
+		$can_view_dashbord = MySQL::single("SELECT `access_admin_dashboard` FROM `" . self::$database . "`.`user-permissions` WHERE `user_id` = '" . self::$user_id . "' LIMIT 1");
+		if ($can_view_dashbord['access_admin_dashboard'] == '1') {
 			return true;
 		} else {
 			return false;
