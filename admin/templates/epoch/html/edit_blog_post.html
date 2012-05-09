@@ -62,7 +62,13 @@
 
                       <br /><br />
                       <div style="margin-left: 10%;">
-                        <button onclick="window.location='index.php?page=delete_blog_post&post_id=<?php echo $data['id'];?>';">Delete Post</button>
+                        <?php
+                        if ($_GET['page'] == 'edit_blog_post')
+                          $page = 'blog_post';
+                        else
+                          $page = 'blog_draft';
+                        ?>
+                        <button onclick="window.location='index.php?page=delete_{$page}&id=<?php echo $data['id'];?>';">Delete Post</button>
                         </div>
     </div>
 
