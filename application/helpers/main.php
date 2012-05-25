@@ -15,7 +15,7 @@ if (empty($_GET['older_than'])) {
 }
 
 // For now we want the blog posts pulled and displayed.
-$posts = MySQL::search("SELECT * FROM `" . MySQL::$database . "`.`blog-posts` WHERE `timestamp` < " . $olderThan . " ORDER BY `timestamp` DESC LIMIT 10");
+$posts = MySQL::search("SELECT `id,author,timestamp,title,content` FROM `" . MySQL::$database . "`.`blog-posts` WHERE `timestamp` < " . $olderThan . " ORDER BY `timestamp` DESC LIMIT 10");
 
 // Create an array of authors, organized by their user id.
 $authors = array();

@@ -42,7 +42,7 @@
             echo "<script>window.setTimeout(function () {redditButton();},500);</script>";
           echo "</div>";
         echo '</p>';
-        echo '<p>' . wordwrap(Clean::output($post['content']), 70) . '</p>';
+        echo '<p>' . wordwrap(html_entity_decode(Clean::output($post['content']), 70)) . '</p>';
         echo "<a name='comments'></a>";
         echo "<span class='blog-post-comments'><a href='?page=post&id=" . $post['id'] . "#comments'>" . BLOG_POST_COMMENTS . "</a></span>";
       echo "</section>";

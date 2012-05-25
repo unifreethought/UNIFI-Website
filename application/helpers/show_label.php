@@ -15,7 +15,7 @@ $pull = MySQL::search($sql);
 $posts = array();
 
   foreach ($pull as $i) {
-    $sql = "SELECT * FROM `" . MySQL::$database . "`.`blog-posts` WHERE `id` = '{$i['post_id']}' LIMIT 1;";
+    $sql = "SELECT `id`,`author`,`timestamp`,`title`,`content` FROM `" . MySQL::$database . "`.`blog-posts` WHERE `id` = '{$i['post_id']}' LIMIT 1;";
     $posts[] = MySQL::single($sql);
   }
 

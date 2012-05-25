@@ -41,17 +41,6 @@ define('PROFILE_DOES_NOT_EXIST', 'We\'re sorry, but this profile doesn\'t seem t
 // Legal
 define('LEGAL_HEADER', 'UNIFI Website Usage and Privacy Policy');
 
-// Events Nav Link
-define('MAIN_PAGE_EVENTS_NAV_LINK', 'Events');
-define('EVENTS_HEADER', 'Your Upcoming Events');
-define('EVENTS_TABLE_TITLE_TITLE', 'Title');
-define('EVENTS_TABLE_TITLE_START_TIME', 'Start Time');
-define('EVENTS_TABLE_TITLE_END_TIME', 'End Time');
-define('EVENTS_TABLE_TITLE_LOCATION', 'Location');
-define('EVENTS_TABLE_TITLE_DESCRIPTION', 'Description');
-define('EVENTS_TABLE_TITLE_RSVP', 'RSVP');
-define('EVENTS_BUTTON_ATTEND', 'Attend');
-
 // Registration
 define('REGISTER_HEADER', 'Please Register');
 define('REGISTER_SUBMIT', 'Register');

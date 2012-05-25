@@ -54,7 +54,7 @@
               SocialMedia::facebookLike($post['id'], true);
             echo "</div>";
           echo '</p>';
-          echo '<p>' . wordwrap(Clean::output($post['content']), 70) . '</p>';
+          echo '<p>' . wordwrap(html_entity_decode(Clean::output($post['content'])), 70) . '</p>';
           echo "<span class='blog-post-comments'><a href='?page=post&id=" . $post['id'] . "'>" . BLOG_POST_COMMENTS . "</a></span>";
         echo "</section>";
       }

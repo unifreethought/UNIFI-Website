@@ -10,7 +10,7 @@ include 'system/libs/social_media.class.php';
 
 $post_id = MySQL::clean($url['id']);
 
-$post = MySQL::single("SELECT * FROM `{$database}`.`blog-posts` WHERE `id` = '{$post_id}' LIMIT 1;");
+$post = MySQL::single("SELECT `id`,`author`,`timestamp`,`title`,`content` FROM `{$database}`.`blog-posts` WHERE `id` = '{$post_id}' LIMIT 1;");
 
 // Check to see if the post actually exists
 if (empty($post['title'])) {

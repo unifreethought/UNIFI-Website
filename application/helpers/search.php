@@ -14,7 +14,7 @@ foreach ($keywords as $word) {
 }
 $search = substr($search, 0, -4);
 
-$sql = "SELECT * FROM `" . MySQL::$database . "`.`blog-posts` WHERE `content` LIKE '{$search}' LIMIT 50";
+$sql = "SELECT `id`,`author`,`timestamp`,`title`,`content` FROM `" . MySQL::$database . "`.`blog-posts` WHERE `content` LIKE '{$search}' LIMIT 50";
 $posts = MySQL::search($sql);
 
 // Populate the authors
