@@ -15,7 +15,7 @@ if (empty($action)) {
   $table = 'blog-posts';
 }
 
-function send_email() {
+function send_email($database) {
   Log::create($user_id, 'new_blog_post', 'date:' . Date::parse($time) . '<br>title:' . $title);
 
   // Set the headers for the email
@@ -24,7 +24,7 @@ function send_email() {
   $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
   // Email all of the people setup for it.
-  $emails_raw = MySQL::single("SELECT `emails` from `{$database}`.`email_lists` WHERE `desc` = 'posting_emails' LIMIT 1");
+  $emails_raw = MySQL::single("SELECT `emails` FROM `{$database}`.`email_lists` WHERE `desc` = 'posting_emails' LIMIT 1");
   $emails = explode(',', $emails_raw['emails']);
   foreach ($emails as $email) {
     mail($email, "A new blog post: " . $title, "{$content}", $headers);
@@ -57,7 +57,7 @@ if (empty($id)) {
     $sql = "INSERT INTO `{$database}`.`blog-guids` (`post_id`, `guid`) VALUES ('{$new_post_id['id']}', UUID());";
     MySQL::query($sql);
 
-    send_email();
+    send_email($database);
   }
 
 } else {
@@ -66,7 +66,7 @@ if (empty($id)) {
   if ($action == 'Submit') {
     $sql = "INSERT INTO `{$database}`.`blog-posts` (`id`,`author`, `timestamp`, `title`, `content`) VALUES ";
     $sql .= "('0', '{$user_id}', " .time() . ", '{$title}', '{$content}');";
-    send_email();
+    send_email($database);
   } else {
     $sql = "UPDATE `{$database}`.`{$table}` SET `title` = '{$title}', `content` =  '{$content}' WHERE  `{$table}`.`id` = '{$id}';";
   }
