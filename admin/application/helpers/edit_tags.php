@@ -1,8 +1,7 @@
-
 <?php
 /**
  * UNIFI Website
- * Adam Shanon
+ * Adam Shannon
  */
 
 $sql = "SELECT * FROM `{$database}`.`tags`;";

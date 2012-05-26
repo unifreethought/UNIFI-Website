@@ -2,7 +2,6 @@
 /**
  * UNIFI WebSite
  * Adam Shannon
- * 2011-02-27
  */
 
 $first_name = "`first_name` LIKE '" . MySQL::clean($_POST['first_name']) . "%'";

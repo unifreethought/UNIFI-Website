@@ -2,7 +2,6 @@
 /**
  * UNIFI Website
  * Adam Shannon
- * 2011-03-14
  */
 
 function show_checked($permission) {

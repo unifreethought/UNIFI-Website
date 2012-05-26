@@ -2,7 +2,6 @@
 /**
  * UNIFI Website
  * Adam Shannon
- * 2010-11-21
  */
 
 // Pull the nav links, the site's header, stylesheet, etc...

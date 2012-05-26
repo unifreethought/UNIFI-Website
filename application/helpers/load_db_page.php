@@ -2,7 +2,6 @@
 /**
  * UNIFI Website
  * Adam Shannon
- * 2010-11-21
  */
 
 include 'system/libs/social_media.class.php';

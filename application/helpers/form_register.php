@@ -2,7 +2,6 @@
 /**
  * UNIFI Website
  * Adam Shannon
- * 2011-01-10
  */
 
 $first_name = MySQL::clean($_POST['first_name']);

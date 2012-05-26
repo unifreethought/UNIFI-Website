@@ -1,8 +1,7 @@
 <?php
 /**
- * UNIFI Admin Member Database
+ * UNIFI Website
  * Adam Shannon
- * 2011-01-20
  */
 require 'system/libs/user.php';
 User_Parse::set($database);

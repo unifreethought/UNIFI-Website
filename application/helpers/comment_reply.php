@@ -2,7 +2,6 @@
 /**
  * UNIFI Website
  * Adam Shannon
- * 2010-11-21
  */
 
 $post = MySQL::clean($_POST['post_id']);

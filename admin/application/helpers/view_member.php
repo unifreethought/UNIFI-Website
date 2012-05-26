@@ -2,7 +2,6 @@
 /**
  * UNIFI Website
  * Adam Shannon
- * 2011-11-19
  */
 
 include 'system/libs/user.php';

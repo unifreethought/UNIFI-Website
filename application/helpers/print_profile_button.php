@@ -2,7 +2,6 @@
 /**
  * UNIFI Website
  * Adam Shannon
- * 2010-11-21
  */
 
 function print_profile_button($user_id) {

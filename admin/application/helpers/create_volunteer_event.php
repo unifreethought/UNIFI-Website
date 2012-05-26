@@ -1,6 +1,6 @@
 <?php
 /**
- * UNIFI  Website
+ * UNIFI Website
  * Adam Shannon
  */
 

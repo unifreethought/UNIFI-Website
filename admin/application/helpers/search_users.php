@@ -1,8 +1,7 @@
 <?php
 /**
- * UNIFI Admin Member Database
+ * UNIFI Website
  * Adam Shannon
- * 2011-01-20
  */
 
 $years = MySQL::search("SELECT * FROM `{$database}`.`year` ORDER BY `id` ASC");

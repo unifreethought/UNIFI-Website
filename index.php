@@ -33,9 +33,6 @@ if (!empty($wurflObj->capabilities['mobile_browser']) && !array_key_exists("full
 include 'admin/system/libs/log-actions.php';
 Log::set($database);
 
-// Include the errors handler
-require 'system/errors/errors.php';
-
 // Load the user stuff. (Facebook)
 require_once "system/libs/facebook/facebook.php";
 require 'application/helpers/user.php';
@@ -76,11 +73,9 @@ if ($url['post'] == true) {
   exit();
 }
 
-// Include the sneaky HTTP headers
 include 'application/eggs/headers.php';
 
 // Sometimes we don't want to include any html content.`
-
 switch($url['page']) {
     case 'post_rss':
       include 'application/helpers/post_rss.php';

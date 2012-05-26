@@ -21,9 +21,6 @@ if ($config['admin']!== 'enabled') {
 include 'system/libs/log-actions.php';
 Log::set($database);
 
-// Include the errors handler
-require '../system/errors/errors.php';
-
 // Load the user stuff. (Facebook)
 require '../system/libs/facebook/facebook.php';
 require '../application/helpers/user.php';
@@ -439,7 +436,6 @@ if ($url['post']) {
     case 'delete_user':
 
       if (Auth::edit_users()) {
-        include 'application/helpers/delete_user.php';
         include 'templates/' . $config['admin_template'] . '/html/delete_user.html';
       } else {
         exit(ADMIN_NOT_AUTHORIZED);
@@ -568,7 +564,6 @@ if ($url['post']) {
     case 'create_custom_page':
 
       if (Auth::edit_custom_pages()) {
-        include 'application/helpers/create_custom_page.php';
         include 'templates/' . $config['admin_template'] . '/html/create_custom_page.html';
       } else {
         exit(ADMIN_NOT_AUTHORIZED);
@@ -609,7 +604,6 @@ if ($url['post']) {
 
     case 'newsletter':
       if (Auth::edit_users()) {
-        include 'application/helpers/newsletter.php';
         include 'templates/' . $config['admin_template'] . '/html/newsletter.html';
       } else {
         exit(ADMIN_NOT_AUTHORIZED);
@@ -671,7 +665,7 @@ if ($url['post']) {
       }
     break;
 
-                case 'delete_member':
+    case 'delete_member':
       if (Auth::edit_users()) {
         include 'templates/' . $config['template'] . '/html/delete_member.html';
       } else {
@@ -700,7 +694,6 @@ if ($url['post']) {
 
     case 'copy_user_to_member_db':
       if (Auth::edit_users()) {
-        include 'application/helpers/copy_user_to_member_db.php';
         include 'templates/' . $config['admin_template'] . '/html/copy_user_to_member_db.html';
       } else {
         exit(ADMIN_NOT_AUTHORIZED);

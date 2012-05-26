@@ -2,7 +2,6 @@
 /**
  * UNIFI Website
  * Adam Shannon
- * 2010-11-21
  */
 
 $posts = MySQL::search("SELECT * FROM `{$database}`.`blog-guest-submissions` ORDER BY `timestamp` DESC LIMIT 1000");

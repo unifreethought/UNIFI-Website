@@ -2,7 +2,6 @@
 /**
  * UNIFI Website
  * Adam Shannon
- * 2010-11-21
  */
 
 $postId = (empty($_GET['blog_post'])) ? "-1" : $_GET['blog_post'];

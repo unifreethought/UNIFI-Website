@@ -2,7 +2,6 @@
 /**
  * UNIFI Website
  * Adam Shannon
- * 2010-11-21
  */
 
 $id = MySQL::clean(htmlentities((int) $_POST['blog_id']));

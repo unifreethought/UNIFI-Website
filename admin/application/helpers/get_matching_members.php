@@ -1,6 +1,6 @@
 <?php
 /**
- * UNIFI Member Database
+ * UNIFI Website
  * Adam Shannon
  */
 function build_query_part($stubs, $middle) {

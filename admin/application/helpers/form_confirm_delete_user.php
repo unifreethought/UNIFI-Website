@@ -1,8 +1,7 @@
 <?php
 /**
- * UNIFI WebSite
+ * UNIFI Website
  * Adam Shannon
- * 2011-02-27
  */
 
 // Move the user to a different db table.

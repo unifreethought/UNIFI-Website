@@ -2,7 +2,6 @@
 /**
  * UNIFI Website
  * Adam Shannon
- * 2011-02-18
  */
 
 $url_stub = MySQL::clean($_GET['url_stub']);

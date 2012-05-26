@@ -3,6 +3,7 @@
  * UNIFI Website
  * Adam Shannon
  */
+
 include 'system/libs/rand_string.class.php';
 RandString::set_extra_characters(array('0','1','2','3','4','5','6','7','8','9'));
 

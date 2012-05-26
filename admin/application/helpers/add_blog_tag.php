@@ -2,7 +2,6 @@
 /**
  * UNIFI Website
  * Adam Shannon
- * 2010-11-21
  */
 
 $tag = MySQL::clean($_GET['addBlogTag']);
