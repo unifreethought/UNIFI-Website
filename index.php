@@ -119,6 +119,11 @@ if ($url['get'] == true) {
       include 'templates/' . $config['template'] . '/html/show_post.html';
     break;
 
+    case 'author':
+      include 'application/helpers/show_author.php';
+      include 'templates/' . $config['template'] . '/html/main.html';
+    break;
+
     case 'label':
       include 'application/helpers/show_label.php';
       include 'templates/' . $config['template'] . '/html/main.html';

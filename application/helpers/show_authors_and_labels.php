@@ -16,7 +16,7 @@ function show_authors_in_sidebar($database) {
   asort($authors);
 
   foreach ($authors as $author) {
-    echo '<li><a href="index.php?page=profile&profile=' . $author[1] . '">' . $author[0] . '</a> (' . $author[2] . ')</li>';
+    echo '<li><a href="index.php?page=author&author=' . $author[1] . '">' . $author[0] . '</a> (' . $author[2] . ')</li>';
   }
 }
 
