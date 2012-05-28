@@ -10,7 +10,7 @@ include 'system/libs/social_media.class.php';
 
 $_author = DB::clean($_GET['author']);
 
-$sql = "SELECT `id`,`author`,`timestamp`,`title`,`content` FROM `" . $database . "`.`blog-posts` WHERE `author` = '{$_author}'";
+$sql = "SELECT `id`,`author`,`timestamp`,`title`,`content` FROM `" . $database . "`.`blog-posts` WHERE `author` = '{$_author}' ORDER BY `timestamp` DESC;";
 $posts = DB::search($sql);
 
 // Create an array of authors, organized by their user id.
