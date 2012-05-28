@@ -553,6 +553,20 @@ INSERT INTO `positions` (`id`, `desc`) VALUES
 (5, 'Webmaster');
 
 --
+-- Table structure for table `presidential-permissions`
+--
+
+CREATE TABLE IF NOT EXISTS `presidential-permissions` (
+  `user_id` int(32) NOT NULL,
+  `edit_site_title` int(2) NOT NULL,
+  `can_edit_web_availably` int(2) NOT NULL,
+  `can_edit_admin_availably` int(2) NOT NULL,
+  `can_edit_default_language` int(2) NOT NULL,
+  `can_edit_user_permissions` int(2) NOT NULL,
+  UNIQUE KEY `id` (`user_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
 -- Table structure for table `tags`
 --
 
