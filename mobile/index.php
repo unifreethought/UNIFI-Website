@@ -20,9 +20,6 @@ if ($config['web'] !== 'enabled') {
 include '../admin/system/libs/log-actions.php';
 Log::set($database);
 
-// Include the errors handler
-require '../system/errors/errors.php';
-
 // Load the user stuff. (Facebook)
 require_once "../system/libs/facebook/facebook.php";
 require '../application/helpers/user.php';
@@ -59,7 +56,7 @@ if ($url['get'] == true) {
 
     default:
       include '../application/helpers/detect_page.php';
-      $url_stubs = get_possible_url_stubs();
+      $url_stubs = get_possible_url_stubs($database);
 
       if (in_array($url['page'], $url_stubs)) {
           // Load that specifc page from the db and display it.

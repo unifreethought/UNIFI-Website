@@ -26,7 +26,7 @@ $authors[$post['author']] = $post_author['first_name'] . ' ' . $post_author['las
 // Load the commenters real names.
 foreach ($comments as $comment) {
 	if (empty($authors[$comment['author']]) && $authors[$comment['author']] != '0') {
-		$result = DB::single("SELECT `first_name`,`last_name` FROM `" . DB::$database . "`.`users` WHERE `id` = '" . DB::clean($comment['author']) . "' LIMIT 1");
+		$result = DB::single("SELECT `first_name`,`last_name` FROM `" . $database . "`.`users` WHERE `id` = '" . DB::clean($comment['author']) . "' LIMIT 1");
 		$authors[$comment['author']] = $result['first_name'] . ' ' . $result['last_name'];
 	}
 }
