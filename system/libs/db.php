@@ -20,6 +20,10 @@ class DB {
     MySQL::close();
   }
 
+  static public function query_count() {
+    return MySQL::$query_count;
+  }
+
   static public function query($sql) {
     return MySQL::query($sql);
   }
