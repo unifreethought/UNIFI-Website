@@ -1,200 +1,90 @@
 <?php
 /**
- * MySQL
- * Adam Shannon
- */
-
+* MySQL Library
+* Adam Shannon
+*/
 
 class MySQL {
+  static private $hostname;
+  static private $username;
+  static private $password;
+  static public $database;
+  static private $connection;
+  static public $query_count = 0;
 
-	// Set some vars (these are used
-	// to connect with the server).
-	static private $hostname;
-	static private $username;
-	static private $password;
-	static public $database;
-	static private $connection;
-	static public $query_count = 0;
+  static public function set_vars($hostname, $username, $password, $database) {
+    self::$hostname = $hostname;
+    self::$username = $username;
+    self::$password = $password;
+    self::$database = $database;
 
-
-	/**
-	 * @name: set_vars
-	 * This function will set the private variables to the specified connection.
-	 *
-	 * @parm: $hostname <- The URI** orIP** to connect to.
-	 * @parm: $username <- The username** to connect with.
-	 * @parm: $password <- The password** to connect with.
-	 * @return: null
-	 */
-	// Notes:
-	// ** - You should use my "validation.class.php" script to check the
-	//       validity of the strings before you use them to connect with.
-	static public function set_vars($hostname, $username, $password, $database) {
-		// Set the vars.
-		self::$hostname = $hostname;
-		self::$username = $username;
-		self::$password = $password;
-		self::$database = $database;
-
-		// Set the connection.
-		self::$connection = self::connect(self::$hostname, self::$username, self::$password);
-
-		return;
-	}
+    self::$connection = self::connect(self::$hostname, self::$username, self::$password);
+  }
 
 
-	/**
-	 * @name: clean
-	 * This function will (in effect) run mysql_real_escape_string() on the string
-	 *  that is submitted.
-	 *
-	 * @parm: $string <- The string to clean
-	 * @return: string
-	 */
-	static public function clean($string) {
-		// Clean the string
-		return mysql_real_escape_string($string);
-	}
+  static public function clean($string) {
+    return mysql_real_escape_string($string);
+  }
 
 
-	/**
-	 * @name: connect
-	 * This function will connect and return a mysql connection
-	 *
-	 * @parm: null <- They should be stored locally
-	 * @return: MySQL Object [Or string on error]
-	 */
-	static public function connect() {
-		// Connect to a mysql DB and return said connection
-		if (self::$hostname == '' || self::$username == '' || self::$password == '') {
+  static public function connect() {
+    if (self::$hostname == '' || self::$username == '' || self::$password == '') {
+      return mysql_error();
+    } else {
+      $tmp = mysql_connect(self::$hostname, self::$username, self::$password);
 
-			// Send a string back with the error
-			// return "Error: You need to run set_vars!";
-			return mysql_error();
+      if (!$tmp) {
+        unset($tmp);
+        return "Error: Your MySQL connection failed.";
+      } else {
+        return $tmp;
+      }
+    }
+  }
 
-		} else {
+  static public function close() {
+    if (mysql_close(self::$connection)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
-			// Connect
-			$tmp = mysql_connect(self::$hostname, self::$username, self::$password);
+  static public function assoc($query) {
+    $data = array();
+    $n = 0;
 
-			// Check to see if it worked
-			if (!$tmp) {
+    while ($row = mysql_fetch_assoc($query)) {
+      $data[$n++] = $row;
+    }
 
-				// Send back an error message
-				unset($tmp);
-				return "Error: Your MySQL connection failed.";
+    mysql_free_result($query);
+    return $data;
+  }
 
-			} else {
+  static public function query($sql) {
+    self::$query_count += 1;
 
-				// Send the connection back
-				return $tmp;
+    $result = mysql_query($sql, self::$connection);
+    if (!$result) {
+    $phpVars = "\n\n$_SERVER\n\n";
+    foreach ($_SERVER as $key => $value) {
+      $phpVars .= $key . ' ' . $value . "\n\n";
+    }
+    mail("errors@unifreethought.com", "Error: SQL Query Failure", $sql . '\n\n' . mysql_error($result) . $phpVars,
+      "From: contact@unifreethought.com\r\n");
+    }
+    return $result;
+  }
 
-			}
+  static public function search($sql) {
+    $tmp_query = self::query($sql);
+    return self::assoc($tmp_query);
+  }
 
-		}
-	}
-
-
-	/**
-	 * @name: close
-	 * This function will (alought not really needed) close a MySQL connection.
-	 *
-	 * @parm: null
-	 * @return: bool
-	 */
-	static public function close() {
-		// Close out the connection
-		if (mysql_close(self::$connection)) {
-
-			// Return true
-			return true;
-
-		} else {
-
-			// Retrurn false
-			return false;
-
-		}
-	}
-
-
-	/**
-	 * @name: assoc
-	 * This function will grab a MYSQL_ASSOC array for the specified query result.
-	 *
-	 * @parm: $query
-	 * @return: array
-	 */
-	static public function assoc($query) {
-		// Send the array back
-		$data = array();
-		$n = 0;
-
-		while ($row = mysql_fetch_assoc($query)) {
-			$data[$n++] = $row;
-		}
-
-		mysql_free_result($query);
-
-		return $data;
-	}
-
-	/**
-	 * @name: query
-	 * This function will perform the all famous mysql_query() function.
-	 *
-	 * @parm: $sql
-	 * @return: mysql_object
-	 */
-	static public function query($sql) {
-
-		// Increment the counter
-		self::$query_count += 1;
-
-		$result = mysql_query($sql, self::$connection);
-		if (!$result) {
-                  $phpVars = "\n\n$_SERVER\n\n";
-                  foreach ($_SERVER as $key => $value) {
-                    $phpVars .= $key . ' ' . $value . "\n\n";
-                  }
-		  mail("errors@unifreethought.com", "Error: SQL Query Failure", $sql . '\n\n' . mysql_error($result) . $phpVars, "From: contact@unifreethought.com\r\n");
-                }
-		return $result;
-	}
-
-
-	/**
-	 * @name: search
-	 * This function will perform a mysql search query.
-	 *
-	 * @parm: $sql
-	 * @return: array
-	 */
-	static public function search($sql) {
-
-		// Perform the query
-		$tmp_query = self::query($sql);
-
-		// Now grab the array.
-		return self::assoc($tmp_query);
-
-	}
-
-	/**
-	 * @name: single
-	 * This will perform a single search in a mysql database.
-	 *
-	 * @parm: $sql
-	 * @return: array
-	 */
-	static public function single($sql) {
-
-		// Perform the query
-		$tmp_query = self::query($sql);
-
-		// Now grab the array.
-		return mysql_fetch_assoc($tmp_query);
-
-	}
+  static public function single($sql) {
+    $tmp_query = self::query($sql);
+    return mysql_fetch_assoc($tmp_query);
+  }
 
 }
