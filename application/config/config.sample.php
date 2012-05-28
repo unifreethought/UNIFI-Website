@@ -21,7 +21,7 @@ define('FACEBOOK_SECRET', '');
 $base_href = "http://www.unifreethought.com";
 
 // Connect
-MySQL::set_vars($hostname, $username, $password, $database);
+DB::init($hostname, $username, $password, $database);
 
 // Set some settings
 $config = array(

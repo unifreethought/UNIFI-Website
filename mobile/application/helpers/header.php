@@ -4,4 +4,4 @@
  * Adam Shannon
  */
 
-$nav_items = MySQL::search("SELECT `name`,`href`,`style` FROM `" . MySQL::$database . "`.`nav-items` ORDER BY `position` ASC");
+$nav_items = DB::search("SELECT `name`,`href`,`style` FROM `" . DB::$database . "`.`nav-items` ORDER BY `position` ASC");

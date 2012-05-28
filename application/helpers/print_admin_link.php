@@ -6,7 +6,7 @@
 
 function print_admin_link($user_id, $database) {
 
-  $tmp = MySQL::single("SELECT `access_admin_dashboard` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
+  $tmp = DB::single("SELECT `access_admin_dashboard` FROM `{$database}`.`user-permissions` WHERE `user_id` = '{$user_id}' LIMIT 1");
 
   if ($tmp['access_admin_dashboard'] == '1') {
     echo '<section id="admin-box">';

@@ -5,4 +5,4 @@
  */
 
 $sql = "SELECT * FROM `{$database}`.`tags`;";
-$tags = MySQL::search($sql);
+$tags = DB::search($sql);

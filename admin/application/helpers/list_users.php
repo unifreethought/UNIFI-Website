@@ -7,12 +7,12 @@
 require 'system/libs/user.php';
 User_Parse::set($database);
 
-$raw_user_data = MySQL::search("SELECT `id`,`first_name`,`last_name` FROM `{$database}`.`users` ORDER BY `first_name` ASC");
+$raw_user_data = DB::search("SELECT `id`,`first_name`,`last_name` FROM `{$database}`.`users` ORDER BY `first_name` ASC");
 $users = array();
 
 foreach ($raw_user_data as $user) {
-  $user['id'] = MySQL::clean($user['id']);
-  $tmp = MySQL::single("SELECT * FROM `{$database}`.`user-data` WHERE `id` = '{$user['id']}' LIMIT 1");
+  $user['id'] = DB::clean($user['id']);
+  $tmp = DB::single("SELECT * FROM `{$database}`.`user-data` WHERE `id` = '{$user['id']}' LIMIT 1");
 
   $users[$user['id']] = array(
     'first_name' => $user['first_name'],

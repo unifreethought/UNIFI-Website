@@ -6,10 +6,10 @@
 
 include 'system/libs/show_date.php';
 
-$id = MySQL::clean($_POST['event_id']);
-$title = MySQL::clean(htmlentities($_POST['title']));
-$location = MySQL::clean(htmlentities($_POST['location']));
-$description = MySQL::clean(htmlentities($_POST['description']));
+$id = DB::clean($_POST['event_id']);
+$title = DB::clean(htmlentities($_POST['title']));
+$location = DB::clean(htmlentities($_POST['location']));
+$description = DB::clean(htmlentities($_POST['description']));
 
 // Break apart the starting hour/minute.
 $_POST['start_hour'] = explode(':', $_POST['start_hour']);
@@ -27,7 +27,7 @@ $end = Show_Date::timestamp($end_hour, $end_min, $_POST['end_day'], $_POST['end_
 $sql = "UPDATE  `{$database}`.`volunteer_events` SET `title` = '{$title}',`start_time` = '{$start}',`end_time` = '{$end}',";
 $sql .= "`location` = '{$location}',`description` = '{$description}' WHERE `volunteer_events`.`id` = {$id};";
 
-MySQL::query($sql);
+DB::query($sql);
 
 header("Location: index.php?page=edit_volunteer_event&event=" . $id);
 exit();

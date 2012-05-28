@@ -4,7 +4,7 @@
  * Adam Shannon
  */
 
-$user_id = MySQL::clean($_POST['user_id']);
+$user_id = DB::clean($_POST['user_id']);
 
 if (empty($user_id)) {
   exit(NO_USER_ID);
@@ -26,6 +26,6 @@ $values .= "`edit_members` = '{$edit_members}', `add_events` = '{$add_events}', 
 $values .= ", `edit_event_attendance` = '{$edit_event_attendance}', `edit_custom_pages` = '{$edit_custom_pages}', `view_log` = '{$view_log}'";
 
 $sql = "UPDATE `{$database}`.`user-permissions` SET {$values} WHERE `user-permissions`.`user_id` = '{$user_id}';";
-MySQL::query($sql);
+DB::query($sql);
 
 header('Location: index.php?page=edit_member_rights&user=' . $user_id);

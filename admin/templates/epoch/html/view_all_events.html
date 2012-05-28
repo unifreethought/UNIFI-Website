@@ -4,7 +4,7 @@
 
     <select onchange="changeYear(this.value);">
       <?php
-        $now = !empty($_GET['year']) ? MySQL::clean($_GET['year']) : @date('Y');
+        $now = !empty($_GET['year']) ? DB::clean($_GET['year']) : @date('Y');
         for ($i = -3; $i < 25; $i++) {
           $year = @date('Y') + $i;
           if ($now == $year)

@@ -123,7 +123,7 @@
         <ul id="membersAttendingList">
           <?php
             foreach ($membersAttending as $member) {
-              $name = MySQL::single(
+              $name = DB::single(
                 "SELECT `first_name`,`last_name` FROM `{$database}`.`member_database` WHERE `id` = '{$member['member_id']}';");
 
               $tmp_name = $name['first_name'] . ' ' . $name['last_name'];

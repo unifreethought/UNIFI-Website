@@ -4,9 +4,9 @@
  * Adam Shannon
  */
 
-$author = MySQL::clean(htmlentities($_POST['author']));
-$title = MySQL::clean(htmlentities($_POST['title']));
-$content = MySQL::clean(htmlentities($_POST['content']));
+$author = DB::clean(htmlentities($_POST['author']));
+$title = DB::clean(htmlentities($_POST['title']));
+$content = DB::clean(htmlentities($_POST['content']));
 $timestamp = @time();
 
 if (empty($author) && !empty($user_id)) {
@@ -17,7 +17,7 @@ if (empty($author) && !empty($user_id)) {
 
 $sql = "INSERT INTO `{$database}`.`blog-guest-submissions` (`id`,`author`,`timestamp`,`title`,`content`) VALUES ";
 $sql .= "('0', '{$author}', '{$timestamp}', '{$title}', '{$content}');";
-MySQL::query($sql);
+DB::query($sql);
 
 $headers = "From: contact@unifreethought.com";
 mail("webmaster@unifreethought.com", "A new guest submission.", "From: {$author}\n\nContent:\n{$content}", $headers);

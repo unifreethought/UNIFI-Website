@@ -6,7 +6,7 @@
  */
 
 // Load some libraries
-require '../system/libs/mysql.class.php';
+require '../system/libs/db.php';
 require '../system/libs/date.class.php';
 require '../system/libs/sanitize.class.php';
 
@@ -355,7 +355,7 @@ if ($url['post']) {
 
   include 'templates/' . $config['admin_template'] . '/html/header.html';
 
-  $user_id = MySQL::clean($user_id);
+  $user_id = DB::clean($user_id);
 
   switch ($url['page']) {
 
@@ -836,4 +836,4 @@ if ($url['post']) {
 
   include 'templates/' . $config['admin_template'] . '/html/footer.html';
 }
-MySQL::close();
+DB::close();

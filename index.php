@@ -6,7 +6,7 @@
  */
 
 // Load some libraries
-require 'system/libs/mysql.class.php';
+require 'system/libs/db.php';
 require 'system/libs/date.class.php';
 require 'system/libs/sanitize.class.php';
 
@@ -167,7 +167,7 @@ if ($url['get'] == true) {
 
     default:
       include 'application/helpers/detect_page.php';
-      $url_stubs = get_possible_url_stubs();
+      $url_stubs = get_possible_url_stubs($database);
 
       if (in_array($url['page'], $url_stubs)) {
         // Load that specifc page from the db and display it.
@@ -185,4 +185,4 @@ if ($url['get'] == true) {
 }
 
 include 'templates/' . $config['template'] . '/html/footer.html';
-MySQL::close();
+DB::close();

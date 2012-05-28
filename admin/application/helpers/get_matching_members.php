@@ -7,8 +7,8 @@ function build_query_part($stubs, $middle) {
   return $stubs[0] . $middle . $stubs[1];
 }
 
-$first_clean = MySQL::clean($_GET['first']);
-$last_clean = MySQL::clean($_GET['last']);
+$first_clean = DB::clean($_GET['first']);
+$last_clean = DB::clean($_GET['last']);
 
 $first_stub = array("`first_name` LIKE '%", "%'");
 $last_stub  = array("`last_name`  LIKE '%", "%'");
@@ -26,6 +26,6 @@ if ($last_clean == "" || $last_clean == "undefined") {
 }
 
 $sql = "SELECT `id`,`first_name`,`last_name` FROM `{$database}`.`member_database` WHERE {$first} {$or} {$last} LIMIT 10;";
-$results = MySQL::search($sql);
+$results = DB::search($sql);
 echo json_encode($results);
 

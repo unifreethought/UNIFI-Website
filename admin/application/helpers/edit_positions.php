@@ -5,4 +5,4 @@
  */
 
 $sql = "SELECT * FROM `{$database}`.`positions`;";
-$positions = MySQL::search($sql);
+$positions = DB::search($sql);

@@ -4,9 +4,9 @@
  * Adam Shannon
  */
 
-$post_id = MySQL::clean($_GET['id']);
+$post_id = DB::clean($_GET['id']);
 $sql = "DELETE FROM `{$database}`.`blog-posts` WHERE `blog-posts`.`id` = '{$post_id}';";
-MySQL::query($sql);
+DB::query($sql);
 
 Log::create($user_id, "delete_blog_post", "Post Deleted: {$post_id}");
 

@@ -5,7 +5,7 @@
  */
 
 // Load some libraries
-require '../system/libs/mysql.class.php';
+require '../system/libs/db.php';
 require '../system/libs/date.class.php';
 require '../system/libs/sanitize.class.php';
 
@@ -76,3 +76,4 @@ if ($url['get'] == true) {
 }
 
 include 'templates/' . $config['template'] . '/html/footer.html';
+DB::close();

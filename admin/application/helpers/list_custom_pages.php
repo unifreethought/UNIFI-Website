@@ -4,4 +4,4 @@
  * Adam Shannon
  */
 
-$pages = MySQL::search("SELECT * FROM `{$database}`.`pages` ORDER BY `id`");
+$pages = DB::search("SELECT * FROM `{$database}`.`pages` ORDER BY `id`");

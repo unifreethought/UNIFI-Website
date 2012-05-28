@@ -20,13 +20,13 @@ $start = Show_Date::timestamp($start_hour, $start_min, $_POST['start_day'], $_PO
 $end = Show_Date::timestamp($end_hour, $end_min, $_POST['end_day'], $_POST['end_month'], $_POST['end_year']);
 
 $id = 0;
-$title = MySQL::clean($_POST['title']);
-$location = MySQL::clean($_POST['location']);
-$desc = MySQL::clean($_POST['description']);
+$title = DB::clean($_POST['title']);
+$location = DB::clean($_POST['location']);
+$desc = DB::clean($_POST['description']);
 
 $sql = "INSERT INTO `{$database}`.`events` (`id`,`title`,`start_time`,`end_time`,`location`,`description`) VALUES ";
 $sql .= "('{$id}','{$title}','{$start}','{$end}','{$location}','{$desc}');";
-MySQL::query($sql);
+DB::query($sql);
 
 Log::create($user_id, 'create_event', "title:{$title}");
 

@@ -4,22 +4,22 @@
  * Adam Shannon
  */
 
-$id = MySQL::clean($_POST['id']);
-$first_name = MySQL::clean($_POST['first_name']);
-$last_name = MySQL::clean($_POST['last_name']);
+$id = DB::clean($_POST['id']);
+$first_name = DB::clean($_POST['first_name']);
+$last_name = DB::clean($_POST['last_name']);
 $sql = "UPDATE  `{$database}`.`users` SET  `first_name` =  '{$first_name}', `last_name` = '{$last_name}' WHERE  `users`.`id` = '{$id}';";
-MySQL::query($sql);
+DB::query($sql);
 
 // `user-data`
-$year = MySQL::clean($_POST['year']);
-$major = MySQL::clean($_POST['major']);
-$dorm = MySQL::clean($_POST['dorm']);
-$recruit_place = MySQL::clean($_POST['recruit_place']);
-$texting = MySQL::clean($_POST['texting']);
-$hometown = MySQL::clean($_POST['hometown']);
-$phone = MySQL::clean($_POST['phone']);
-$email = MySQL::clean($_POST['email']);
-$notes = MySQL::clean($_POST['notes']);
+$year = DB::clean($_POST['year']);
+$major = DB::clean($_POST['major']);
+$dorm = DB::clean($_POST['dorm']);
+$recruit_place = DB::clean($_POST['recruit_place']);
+$texting = DB::clean($_POST['texting']);
+$hometown = DB::clean($_POST['hometown']);
+$phone = DB::clean($_POST['phone']);
+$email = DB::clean($_POST['email']);
+$notes = DB::clean($_POST['notes']);
 $positions = '';
 $tags = '';
 
@@ -44,7 +44,7 @@ if (!empty($_POST['tags'])) {
 $sql = "UPDATE `{$database}`.`user-data` SET `year` = '{$year}', `major` = '{$major}', `dorm` = '{$dorm}', `recruit_place` = '{$recruit_place}'";
 $sql .= ", `texting` = '{$texting}', `hometown` = '{$hometown}', `phone` = '{$phone}', `email` = '{$email}', `notes` = '{$notes}'";
 $sql .= ", `positions` = '{$positions}', `tags` = '{$tags}' WHERE `user-data`.`id` = '{$id}'";
-MySQL::query($sql);
+DB::query($sql);
 
 Log::create($user_id, 'edit_user', "name:{$first_name} {$last_name}");
 

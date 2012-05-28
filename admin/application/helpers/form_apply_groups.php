@@ -4,8 +4,8 @@
  * Adam Shannon
  */
 
-$user_id = MySQL::clean($_POST['user_id']);
-$group_desc = MySQL::clean($_POST['group_desc']);
+$user_id = DB::clean($_POST['user_id']);
+$group_desc = DB::clean($_POST['group_desc']);
 
 $base_sql = "UPDATE  `{$database}`.`user-permissions` SET ";
 $end_sql = "WHERE  `user-permissions`.`user_id` = '{$user_id}';";
@@ -21,11 +21,11 @@ if (!in_array($group_desc, $sqls)) {
   $sql = $base_sql . $sqls['member'] . $end_sql;
 }
 
-MySQL::query($sql);
+DB::query($sql);
 
 // Log it
 $sql = "SELECT `first_name`,`last_name` FROM `{$database}`.`users` WHERE `id` = '{$user_id}' LIMIT 1;";
-$name = MySQL::single($sql);
+$name = DB::single($sql);
 Log::create($user_id, 'apply_groups', "name: {$first_name} {$last_name} was upgraded to: {$group_desc}");
 
 header("Location: index.php");

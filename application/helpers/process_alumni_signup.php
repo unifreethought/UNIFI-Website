@@ -5,14 +5,14 @@
  */
 
 // Submitted Values
-$first_name = MySQL::clean($_POST['first_name']);
-$last_name = MySQL::clean($_POST['last_name']);
-$major = MySQL::clean($_POST['major']);
-$grad_school = MySQL::clean($_POST['grad_school']);
-$current_location = MySQL::clean($_POST['current_location']);
-$email = MySQL::clean($_POST['email']);
-$current_job = MySQL::clean($_POST['current_job']);
-$phone = MySQL::clean($_POST['phone']);
+$first_name = DB::clean($_POST['first_name']);
+$last_name = DB::clean($_POST['last_name']);
+$major = DB::clean($_POST['major']);
+$grad_school = DB::clean($_POST['grad_school']);
+$current_location = DB::clean($_POST['current_location']);
+$email = DB::clean($_POST['email']);
+$current_job = DB::clean($_POST['current_job']);
+$phone = DB::clean($_POST['phone']);
 
 // Strip any non-numeric characters from the phone number
 $phone = preg_replace("/[^0-9]/i", '', $phone);
@@ -33,7 +33,7 @@ $sql .= "`positions`,`major`,`grad_school`,`current_location`,`current_location_
 $sql .= "('{$id}','{$member_id}','{$user_id}','{$first_name}','{$last_name}','{$unifi_start_date}','{$unifi_end_date}','{$positions}',";
 $sql .= "'{$major}','{$grad_school}','{$current_location}','{$current_location_coords}','{$email}','{$current_job}','{$phone}','{$notes}');";
 
-MySQL::query($sql);
+DB::query($sql);
 
 // Send an email
 mail("alumni@unifreethought.com", "A new alumni signup!",

@@ -10,7 +10,7 @@ function clean_each($arr) {
 
 	$ret = array();
 	foreach ($arr as $a) {
-		$ret[] = MySQL::clean($a);
+		$ret[] = DB::clean($a);
 	}
 	return $ret;
 }
@@ -48,7 +48,7 @@ $sql .= print_sql_part($years_str) . print_sql_part($dorms_str) .
 $sql = substr($sql, 0, -5) . ';';
 
 if (substr($sql, -2) != "W;") {
-  $people = MySQL::search($sql);
+  $people = DB::search($sql);
 } else {
   $people = array();
 }
@@ -63,7 +63,7 @@ foreach ($events as $e) {
 
 $sql = substr($sql, 0, -4) . ';';
 if (substr($sql, -4) != " WH;") {
-  $events = MySQL::search($sql);
+  $events = DB::search($sql);
 } else {
   $events = array();
 }
@@ -98,7 +98,7 @@ foreach ($pplToAdd as $person) {
   if ($needToGrabData) {
     $sql = "SELECT `first_name`,`last_name` FROM `{$database}`.`member_database` WHERE `id` = '{$person['user_id']}' LIMIT 1;";
     if (!in_array($sql, $pplAlreadyAdded)) {
-      $results[] = MySQL::single($sql);
+      $results[] = DB::single($sql);
     }
     $pplAlreadyAdded[] = $sql;
   }

@@ -3,11 +3,11 @@
  * UNIFI Website
  * Adam Shannon
  */
-$years = MySQL::search("SELECT * FROM `{$database}`.`year`");
-$dorms = MySQL::search("SELECT * FROM `{$database}`.`dorm`");
-$positions = MySQL::search("SELECT * FROM `{$database}`.`positions");
-$tags = MySQL::search("SELECT * FROM `{$database}`.`tags");
-$events_dirty = MySQL::search("SELECT `id`,`title` FROM `{$database}`.`events` ORDER BY `start_time` DESC LIMIT 10;");
+$years = DB::search("SELECT * FROM `{$database}`.`year`");
+$dorms = DB::search("SELECT * FROM `{$database}`.`dorm`");
+$positions = DB::search("SELECT * FROM `{$database}`.`positions");
+$tags = DB::search("SELECT * FROM `{$database}`.`tags");
+$events_dirty = DB::search("SELECT `id`,`title` FROM `{$database}`.`events` ORDER BY `start_time` DESC LIMIT 10;");
 $events = array();
   foreach ($events_dirty as $event) {
     $events[] = array('id' => $event['id'], 'desc' => $event['title']);

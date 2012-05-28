@@ -4,12 +4,12 @@
  * Adam Shannon
  */
 
-$first_name = "`first_name` LIKE '" . MySQL::clean($_POST['first_name']) . "%'";
-$last_name = "`last_name` LIKE '" . MySQL::clean($_POST['last_name']) . "%'";
+$first_name = "`first_name` LIKE '" . DB::clean($_POST['first_name']) . "%'";
+$last_name = "`last_name` LIKE '" . DB::clean($_POST['last_name']) . "%'";
 
 $sql = "SELECT `id`,`first_name`,`last_name` FROM `{$database}`.`users` WHERE {$first_name} AND {$last_name} LIMIT 100";
 
-$data = MySQL::search($sql);
+$data = DB::search($sql);
 
 echo ADMIN_DASHBOARD_DELETE_USER_CONFORM_DESC . '<br />';
 echo "<form action='index.php' method='POST'>";

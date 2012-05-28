@@ -8,4 +8,4 @@ include 'system/libs/user.php';
 User_Parse::set($database);
 
 $sql = "SELECT * FROM `{$database}`.`alumni_database`;";
-$alumnis = MySQL::search($sql);
+$alumnis = DB::search($sql);

@@ -9,8 +9,8 @@ require 'system/libs/user_encode.php';
 User_Encode::set($database);
 User_Parse::set($database);
 
-$user = MySQL::clean($_GET['user']);
-$tmp = MySQL::single("SELECT `first_name`,`last_name` FROM `{$database}`.`users` WHERE `id` = '{$user}' LIMIT 1");
+$user = DB::clean($_GET['user']);
+$tmp = DB::single("SELECT `first_name`,`last_name` FROM `{$database}`.`users` WHERE `id` = '{$user}' LIMIT 1");
 
 $user_info = array(
   'id' => $user,
@@ -18,7 +18,7 @@ $user_info = array(
   'last_name' => $tmp['last_name']
 );
 
-$tmp = MySQL::single("SELECT * FROM `{$database}`.`user-data` WHERE `id` = '{$user}' LIMIT 1");
+$tmp = DB::single("SELECT * FROM `{$database}`.`user-data` WHERE `id` = '{$user}' LIMIT 1");
 
 $user_info['year'] = User_Parse::parse_year($tmp['year']);
 $user_info['major'] = User_Parse::parse_major($tmp['major']);
@@ -43,9 +43,9 @@ $user_info['notes'] = $tmp['notes'];
 
 $user_info['recruit_date'] = Date::parse($tmp['recruit_date']);
 
-$years = MySQL::search("SELECT * FROM `{$database}`.`year` ORDER BY `id` ASC");
-$majors = MySQL::search("SELECT * FROM `{$database}`.`major` ORDER BY `id` ASC");
-$dorms = MySQL::search("SELECT * FROM `{$database}`.`dorm` ORDER BY `id` ASC");
+$years = DB::search("SELECT * FROM `{$database}`.`year` ORDER BY `id` ASC");
+$majors = DB::search("SELECT * FROM `{$database}`.`major` ORDER BY `id` ASC");
+$dorms = DB::search("SELECT * FROM `{$database}`.`dorm` ORDER BY `id` ASC");
 $texting = array( 0 => array('0', 'No'), 1 => array('1', 'Yes'));
-$positions = MySQL::search("SELECT * FROM `{$database}`.`positions` ORDER BY `id` ASC");
-$tags = MySQL::search("SELECT * FROM `{$database}`.`tags` ORDER BY `id` ASC");
+$positions = DB::search("SELECT * FROM `{$database}`.`positions` ORDER BY `id` ASC");
+$tags = DB::search("SELECT * FROM `{$database}`.`tags` ORDER BY `id` ASC");

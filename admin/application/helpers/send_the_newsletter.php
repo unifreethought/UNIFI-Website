@@ -12,7 +12,7 @@ $subject = $_POST['subject'];
 $message = $_POST['message'];
 
 $sql = "SELECT `email` FROM `{$database}`.`newsletter_emails`";
-$emails = MySQL::search($sql);
+$emails = DB::search($sql);
 
 foreach ($emails as $email) {
 	mail($email['email'], $subject, stripslashes($message), $headers);

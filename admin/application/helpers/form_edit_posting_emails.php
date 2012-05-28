@@ -4,9 +4,9 @@
  * Adam Shannon
  */
 
-$emails = MySQL::clean($_POST['emails']);
+$emails = DB::clean($_POST['emails']);
 $sql = "UPDATE  `{$database}`.`email_lists` SET  `emails` =  '{$emails}' WHERE  `email_lists`.`desc` = 'posting_emails';";
-MySQL::query($sql);
+DB::query($sql);
 
 Log::create($user_id, "edit_posting_emails", "Emails: {$emails}");
 

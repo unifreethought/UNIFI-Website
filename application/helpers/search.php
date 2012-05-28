@@ -13,14 +13,14 @@ foreach ($keywords as $word) {
 }
 $search = substr($search, 0, -4);
 
-$sql = "SELECT `id`,`author`,`timestamp`,`title`,`content` FROM `" . MySQL::$database . "`.`blog-posts` WHERE `content` LIKE '{$search}' LIMIT 50";
-$posts = MySQL::search($sql);
+$sql = "SELECT `id`,`author`,`timestamp`,`title`,`content` FROM `" . $database . "`.`blog-posts` WHERE `content` LIKE '{$search}' LIMIT 50";
+$posts = DB::search($sql);
 
 // Populate the authors
 $authors = array();
 foreach ($posts as $post) {
   if (@empty($authors[$post['author']]) && @$authors[$post['author']] != '0') {
-    $result = MySQL::single("SELECT `first_name`,`last_name` FROM `" . MySQL::$database . "`.`users` WHERE `id` = '" . MySQL::clean($post['author']) . "' LIMIT 1");
+    $result = DB::single("SELECT `first_name`,`last_name` FROM `" . $database . "`.`users` WHERE `id` = '" . DB::clean($post['author']) . "' LIMIT 1");
     $authors[$post['author']] = $result['first_name'] . ' ' . $result['last_name'];
   }
 }

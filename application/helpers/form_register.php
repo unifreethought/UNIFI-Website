@@ -4,30 +4,30 @@
  * Adam Shannon
  */
 
-$first_name = MySQL::clean($_POST['first_name']);
-$last_name = MySQL::clean($_POST['last_name']);
-$gender = MySQL::clean($_POST['gender']);
-$year = MySQL::clean($_POST['year']);
-$major = MySQL::clean($_POST['major']);
-$dorm = MySQL::clean($_POST['dorm']);
-$texting = MySQL::clean($_POST['texting']);
-$hometown = MySQL::clean($_POST['hometown']);
-$phone = MySQL::clean($_POST['phone']);
-$email = MySQL::clean($_POST['email']);
+$first_name = DB::clean($_POST['first_name']);
+$last_name = DB::clean($_POST['last_name']);
+$gender = DB::clean($_POST['gender']);
+$year = DB::clean($_POST['year']);
+$major = DB::clean($_POST['major']);
+$dorm = DB::clean($_POST['dorm']);
+$texting = DB::clean($_POST['texting']);
+$hometown = DB::clean($_POST['hometown']);
+$phone = DB::clean($_POST['phone']);
+$email = DB::clean($_POST['email']);
 
 // Strip any non-numeric characters from the phone number
 $phone = preg_replace("/[^0-9]/i", '', $phone);
 
 $id = '0';
-$facebook = MySQL::clean($fb_id);
+$facebook = DB::clean($fb_id);
 $cookie = '';
 
 $sql = "INSERT INTO `{$database}`.`users` (`id`, `first_name`, `last_name`, `facebook`, `cookie`) VALUES ";
 $sql .= "('{$id}', '{$first_name}', '{$last_name}', '{$facebook}', '{$cookie}');";
-MySQL::query($sql);
+DB::query($sql);
 
 // `user-data`
-$tmp_user_id = MySQL::single("SELECT `id` FROM `{$database}`.`users` WHERE `facebook` = '{$facebook}'  LIMIT 1");
+$tmp_user_id = DB::single("SELECT `id` FROM `{$database}`.`users` WHERE `facebook` = '{$facebook}'  LIMIT 1");
 $recruit_date = '0';
 $recruit_place = '';
 $positions = '';
@@ -37,16 +37,16 @@ $notes = '';
 $sql = "INSERT INTO `{$database}`.`user-data` (`id`, `year`, `major`, `hometown`, `dorm`, `recruit_date`, `recruit_place`, `phone`, `email`, `texting`,";
 $sql .= "`positions`, `tags`, `notes`) VALUES ('{$tmp_user_id['id']}', '{$year}', '{$major}', '{$hometown}', '{$dorm}', '{$recruit_date}', '{$recruit_place}',";
 $sql .= "'{$phone}', '{$email}', '{$texting}', '{$positions}', '{$tags}', '{$notes}');";
-MySQL::query($sql);
+DB::query($sql);
 
 // Add the user to the member_database table.
 // We should first make sure they don't exist already.
 $sql = "SELECT `id` FROM `{$database}`.`member_database` WHERE `first_name` = '{$first_name}' AND `last_name` = '{$last_name}';";
-$result = MySQL::single($sql);
+$result = DB::single($sql);
 if (empty($result['id'])) {
   $sql = "INSERT INTO `{$database}`.`member_database` (`id`, `first_name`, `last_name`, `year`, `major`, `hometown`, `dorm`, `recruit_date`, `recruit_place`, `phone`, `email`, `texting`, `positions`, `tags`, `notes`)";
   $sql .= " VALUES ('0', '{$first_name}', '{$last_name}', '{$year}', '{$major}', '{$hometown}', '{$dorm}', '{$recruit_date}', '{$recruit_place}', '{$phone}', '{$email}', '{$texting}', '{$positions}', '{$tags}', '');";
-  MySQL::query($sql);
+  DB::query($sql);
 }
 
 // `user-permissions`
@@ -64,7 +64,7 @@ $view_log = 0;
 $sql = "INSERT INTO `{$database}`.`user-permissions` (`user_id`, `post_to_blog`, `access_admin_dashboard`, `view_members`, `edit_members`,";
 $sql .= " `add_events`, `list_events`, `edit_events`, `edit_event_attendance`, `edit_custom_pages`, `view_log`) VALUES ('{$tmp_user_id['id']}', '{$post_to_blog}', '{$access_admin_dashboard}',";
 $sql .= " '{$view_members}', '{$edit_members}', '{$add_events}', '{$list_events}', '{$edit_events}', '{$edit_event_attendance}', '{$edit_custom_pages}', '{$view_log}');";
-MySQL::query($sql);
+DB::query($sql);
 
 // Log the creation
 Log::create($user_id, 'register', "name:{$first_name} {$last_name}");

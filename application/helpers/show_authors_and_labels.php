@@ -4,12 +4,12 @@
  * Adam Shannon
  */
 
-function show_authors_in_sidebar() {
-  $authors_raw = MySQL::search("SELECT `user_id`,`count` FROM `" . MySQL::$database . "`.`blog-authors`");
+function show_authors_in_sidebar($database) {
+  $authors_raw = DB::search("SELECT `user_id`,`count` FROM `" . $database . "`.`blog-authors`");
   $authors = array();
   foreach ($authors_raw as $_author) {
-    $sql = 'SELECT `first_name`,`last_name` FROM `' . MySQL::$database . '`.`users` WHERE `id` = "' . $_author['user_id'] . '" LIMIT 1';
-    $_name = MySQL::single($sql);
+    $sql = 'SELECT `first_name`,`last_name` FROM `' . $database . '`.`users` WHERE `id` = "' . $_author['user_id'] . '" LIMIT 1';
+    $_name = DB::single($sql);
     $authors[] = array($_name['first_name'] . ' ' . $_name['last_name'], $_author['user_id'], $_author['count']);
   }
 
@@ -20,8 +20,8 @@ function show_authors_in_sidebar() {
   }
 }
 
-function show_labels_in_sidebar() {
-  $labels_raw = MySQL::search("SELECT `id`,`tag`,`count` FROM `" . MySQL::$database . "`.`blog-tag-names` WHERE `count` > 0");
+function show_labels_in_sidebar($database) {
+  $labels_raw = DB::search("SELECT `id`,`tag`,`count` FROM `" . $database . "`.`blog-tag-names` WHERE `count` > 0");
 
   asort($labels_raw);
 

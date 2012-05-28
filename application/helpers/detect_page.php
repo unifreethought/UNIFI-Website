@@ -4,10 +4,10 @@
  * Adam Shannon
  */
 
-function get_possible_url_stubs() {
+function get_possible_url_stubs($database) {
 
   // Pull the pages from the db.
-  $pages = MySQL::search("SELECT `url_stub` FROM `" . MySQL::$database . "`.`pages`");
+  $pages = DB::search("SELECT `url_stub` FROM `" . $database . "`.`pages`");
 
   $url_stubs = array();
 

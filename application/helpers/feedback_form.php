@@ -4,9 +4,9 @@
  * Adam Shannon
  */
 
-$name = MySQL::clean($_GET['name']);
-$email = MySQL::clean($_GET['email']);
-$comments = MySQL::clean($_GET['comments']);
+$name = DB::clean($_GET['name']);
+$email = DB::clean($_GET['email']);
+$comments = DB::clean($_GET['comments']);
 
 $headers  = "From: UNI Freethinkers and Inquirers <contact@unifreethought.com>\r\n";
 $headers .= "MIME-Version: 1.0\r\n";

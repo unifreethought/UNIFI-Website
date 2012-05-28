@@ -7,12 +7,12 @@
 include 'system/libs/user.php';
 User_Parse::set($database);
 
-$first = MySQL::clean($_POST['first_id']);
-$second = MySQL::clean($_POST['second_id']);
+$first = DB::clean($_POST['first_id']);
+$second = DB::clean($_POST['second_id']);
 
-$first_sql = MySQL::single("SELECT * FROM `{$database}`.`member_database` WHERE `id` = '{$first}' LIMIT 1;");
-$second_sql = MySQL::single("SELECT * FROM `{$database}`.`member_database` WHERE `id` = '{$second}' LIMIT 1;");
+$first_sql = DB::single("SELECT * FROM `{$database}`.`member_database` WHERE `id` = '{$first}' LIMIT 1;");
+$second_sql = DB::single("SELECT * FROM `{$database}`.`member_database` WHERE `id` = '{$second}' LIMIT 1;");
 
-$positions = MySQL::search("SELECT * FROM `{$database}`.`positions` ORDER BY `id` ASC");
-$tags = MySQL::search("SELECT * FROM `{$database}`.`tags` ORDER BY `id` ASC");
+$positions = DB::search("SELECT * FROM `{$database}`.`positions` ORDER BY `id` ASC");
+$tags = DB::search("SELECT * FROM `{$database}`.`tags` ORDER BY `id` ASC");
 

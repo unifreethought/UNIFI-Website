@@ -55,8 +55,8 @@ function get_more_fb_data($fb_id, $access_token) {
   return json_decode(curl_exec($ch), true);
 }
 
-function get_user_id_on_exist($fb_id) {
-  $result = MySQL::search("SELECT `id` FROM `" . MySQL::$database . "`.`users` WHERE `facebook` = '" . MySQL::clean($fb_id) . "' LIMIT 1");
+function get_user_id_on_exist($fb_id, $database) {
+  $result = DB::search("SELECT `id` FROM `" . $database . "`.`users` WHERE `facebook` = '" . DB::clean($fb_id) . "' LIMIT 1");
   if (!empty($result[0]['id'])) {
     return $result[0]['id'];
   } else {
@@ -73,7 +73,7 @@ $facebook = new Facebook(
 );
 
 $fb_id = $facebook->getUser();
-$user_id = get_user_id_on_exist($fb_id);
+$user_id = get_user_id_on_exist($fb_id, $database);
 $access_token = $facebook->getAccessToken();
 
   if (!$user_id && $fb_id > 0) {
