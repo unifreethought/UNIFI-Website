@@ -22,11 +22,11 @@ class SocialMedia {
   }
 
   static function googlePlus($postId) {
-    echo "<div><div class='g-plusone' data-annotation='inline' data-width='300' href='" . self::buildUrl($postId, true) . "'></div></div>";
+    echo "<div><div class='g-plusone' data-annotation='inline' data-width='300' href='" . self::buildUrl($postId) . "'></div></div>";
   }
 
   static function redditPost($postId) {
-    echo "<div id='redditButton'><script>reddit_url='" . self::buildUrl($postId, true) . "';</script></div>";
+    echo "<div id='redditButton'><script>reddit_url='" . self::buildUrl($postId) . "';</script></div>";
   }
 
 }
