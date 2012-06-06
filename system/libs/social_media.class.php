@@ -22,7 +22,7 @@ class SocialMedia {
   }
 
   static function googlePlus($postId) {
-    echo "<div><div class='g-plusone' data-annotation='inline' data-width='300' href='" . self::buildUrl($postId) . "'></div></div>";
+    echo "<g:plusone annotation='inline' href='" . self::buildUrl($postId) . "'></g:plusone>";
   }
 
   static function redditPost($postId) {
