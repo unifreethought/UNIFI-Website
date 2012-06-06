@@ -10,7 +10,7 @@ class SocialMedia {
     if ($encode == true) {
       return "http%3A%2F%2Funifreethought.com%2Findex.php%3Fpage%3Dpost%26id%3D" . $postId;
     }
-    return "http://www.unifreethought.com/index.php?page=post&id=" . $postId;
+    return "http://www.unifreethought.com/index.php?page=post&amp;id=" . $postId;
   }
 
   static function facebookLike($postId) {
