@@ -10,7 +10,7 @@ class SocialMedia {
     if ($encode == true) {
       return "http%3A%2F%2Funifreethought.com%2Findex.php%3Fpage%3Dpost%26id%3D" . $postId;
     }
-    return "http://www.unifreethought.com/index.php%3Fpage%3Dpost%26id%3D" . $postId;
+    return "http://www.unifreethought.com/index.php?page=post&id=" . $postId;
   }
 
   static function facebookLike($postId) {
@@ -22,11 +22,11 @@ class SocialMedia {
   }
 
   static function googlePlus($postId) {
-    echo "<div><div class='g-plusone' data-annotation='inline' data-width='300' href='" . self::buildUrl($postId) . "'></div></div>";
+    echo "<div><div class='g-plusone' data-annotation='inline' data-width='300' href='" . self::buildUrl($postId, true) . "'></div></div>";
   }
 
   static function redditPost($postId) {
-    echo "<div id='redditButton'><script>reddit_url='" . self::buildUrl($postId) . "';</script></div>";
+    echo "<div id='redditButton'><script>reddit_url='" . self::buildUrl($postId, true) . "';</script></div>";
   }
 
 }
