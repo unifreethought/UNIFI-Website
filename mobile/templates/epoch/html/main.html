@@ -7,7 +7,7 @@
       echo "<span class='blog-post-author'>" . BLOG_AUTHOR_PREFIX;
       echo Clean::output($authors[$post['author']]) . ' ' . Date::parse($post['timestamp']) . '</span>';
     echo '<p><span style="float:right;"><img src="templates/epoch/images/arrow.png" /></span>';
-    echo Clean::output(substr(strip_tags($post['content'], $config['allowable_mobile_tags']), 0, 400)) . '...</p><br />';
+    echo html_entity_decode(Clean::output(substr(strip_tags($post['content'], $config['allowable_mobile_tags']), 0, 400))) . '...</p><br />';
     echo "<span class='blog-post-comments'><a href='?page=post&id=" . $post['id'] . "#comments'>" . BLOG_POST_COMMENTS . "</a></span>";
     echo "</section>";
     }
