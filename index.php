@@ -24,7 +24,7 @@ require_once ('system/libs/TeraWurflRemoteClient.php');
   $data_format = TeraWurflRemoteClient::$FORMAT_JSON;
   $wurflObj->getCapabilitiesFromAgent(null, $capabilities, $data_format);
 
-if (!empty($wurflObj->capabilities['mobile_browser']) && !array_key_exists("fullsite",$arr)) {
+if (!empty($wurflObj->capabilities['mobile_browser']) && !array_key_exists("fullsite", $_GET)) {
   header("Location: mobile/" . $_SERVER['REQUEST_URI']);
   exit();
 }
