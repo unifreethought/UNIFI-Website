@@ -422,6 +422,14 @@ if ($url['post']) {
       }
     break;
 
+    case 'delete_blog_draft':
+      if (Auth::can_post_blog()) {
+        include 'application/helpers/delete_blog_draft.php';
+      } else {
+        exit(ADMIN_NOT_AUTHORIZED);
+      }
+    break;
+
     case 'create_user':
 
       if (Auth::edit_users()) {
