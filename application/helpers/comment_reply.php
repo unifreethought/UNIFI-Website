@@ -24,9 +24,13 @@ if (!empty($user_id)) {
         // Send out the emails
         $emails_raw = DB::single("SELECT `emails` from `{$database}`.`email_lists` WHERE `desc` = 'commenting_emails' LIMIT 1");
         $post_title = DB::single("SELECT `title` FROM `{$database}`.`blog-posts` WHERE `id` = '{$post}'");
+        $full_author_name = DB::single("SELECT `first_name`,`last_name`  FROM `{$database}`.`users` WHERE `id` = '{$author}' LIMIT 1");
+        $content = "By " . $full_author_name['first_name'] . ' ' . $full_author_name['last_name'] . "\n\n" . $content;
+        $content .= "\n\n<a href='http://unifreethought.com/?page=post&id=" . $post . "#comments'>View the comment</a>";
+
         $emails = explode(',', $emails_raw['emails']);
         foreach ($emails as $email) {
-          mail($email, "A new comment!: " . $post_title['title'], $content, $headers);
+          mail($email, "A new comment on\"" . $post_title['title'] . "\"", $content, $headers);
         }
 
 } else {
