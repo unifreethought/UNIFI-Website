@@ -1,373 +1,371 @@
 /**
  * UNIFI Website
- * Sample Template CSS
  * Adam Shannon
- * 2011-03-20
  */
 
 body {
-	background-color: #000000;
-	width: 99%;
+  background-color: #000000;
+  width: 99%;
 }
 
 img {
-	border: 0px;
+  border: 0px;
 }
 
 div.right {
-	float: right;
-	margin-left: 1%;
+  float: right;
+  margin-left: 1%;
 }
 
 img.right {
-	border: 0px;
-	float: right;
-	margin-right: 1%;
+  border: 0px;
+  float: right;
+  margin-right: 1%;
 }
 
 span.right {
-	float: right;
-	margin-right: 1%;
+  float: right;
+  margin-right: 1%;
 }
 
 div.no-border, div.border-top, div.border-left, div.border-bottom, div.border-right {
-	border: 0px;
+  border: 0px;
 }
 
 div.border-top {
-	border-top: 1px solid #000000;
+  border-top: 1px solid #000000;
 }
 
 div.border-right {
-	border-right: 1px solid #000000;
+  border-right: 1px solid #000000;
 }
 
 div.border-bottom {
-	border-bottom: 1px solid #000000;
+  border-bottom: 1px solid #000000;
 }
 
 div.border-left {
-	border-left: 1px solid #000000;
+  border-left: 1px solid #000000;
 }
 
 hr.no-hr {
-	line-height: 0px;
+  line-height: 0px;
 }
 
 #wrapper {
-	background-color: #FFFFFF;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 2%;
+  background-color: #FFFFFF;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
         max-width: 1200px;
-	padding: 5px;
-	width: 85%;
+  padding: 5px;
+  width: 85%;
 }
 
 header {
-	height: auto;
-	margin: 1% 0% 1% 0%;
-	width: 100%;
+  height: auto;
+  margin: 1% 0% 1% 0%;
+  width: 100%;
 }
 
-	header nav {
-		margin-left: 5%;
-		width: 90%;
-	}
+  header nav {
+    margin-left: 5%;
+    width: 90%;
+  }
 
-		header img {
-			border: 0px;
-			margin-left: 1%;
-			width: 98%;
-		}
+    header img {
+      border: 0px;
+      margin-left: 1%;
+      width: 98%;
+    }
 
-		header nav ul {
-			list-style-type: none;
-		}
+    header nav ul {
+      list-style-type: none;
+    }
 
-			header nav ul li {
-				border: 1px solid #000000;
-				cursor: pointer;
-				display: inline-block;
-				font-family: Helvetica;
-				padding: 1% 0% 1% 0%;
-				margin-top: -10px;
-				text-align: center;
-				width: 11%;
-			}
+      header nav ul li {
+        border: 1px solid #000000;
+        cursor: pointer;
+        display: inline-block;
+        font-family: Helvetica;
+        padding: 1% 0% 1% 0%;
+        margin-top: -10px;
+        text-align: center;
+        width: 11%;
+      }
 
-				header nav ul li a {
-					color: #FFFFFF;
-					text-decoration: none;
-				}
+        header nav ul li a {
+          color: #FFFFFF;
+          text-decoration: none;
+        }
 
-	#quote-and-search {
-		margin-left: 5%;
-		width: 90%;
-	}
+  #quote-and-search {
+    margin-left: 5%;
+    width: 90%;
+  }
 
-		#search {
-			float: right;
-			margin-top: -6px;
-		}
+    #search {
+      float: right;
+      margin-top: -6px;
+    }
 
-	aside {
-		float: right;
-		margin-right: 2%;
-		width: 25%;
-	}
+  aside {
+    float: right;
+    margin-right: 2%;
+    width: 25%;
+  }
 
-		aside section h3 {
-			font-family: "Arial";
-			font-size: 1.1em;
-			margin-bottom: 0px;
-		}
+    aside section h3 {
+      font-family: "Arial";
+      font-size: 1.1em;
+      margin-bottom: 0px;
+    }
 
-		aside section h4 {
-			font-family: "Helvetica";
-			font-size: 0.9em;
-			margin: 0px;
-		}
+    aside section h4 {
+      font-family: "Helvetica";
+      font-size: 0.9em;
+      margin: 0px;
+    }
 
-		aside section div {
-			border: 1px solid #000000;
-			font-family: Arial;
-			padding: 3px;
-		}
+    aside section div {
+      border: 1px solid #000000;
+      font-family: Arial;
+      padding: 3px;
+    }
 
-		aside section div div span {
-			display: block;
-			height: 20px;
-			width: 100px;
-		}
+    aside section div div span {
+      display: block;
+      height: 20px;
+      width: 100px;
+    }
 
-			aside section div div span a {
-				color: #000000;
-			}
+      aside section div div span a {
+        color: #000000;
+      }
 
-		aside section ul {
-			list-style-type: none;
-		}
+    aside section ul {
+      list-style-type: none;
+    }
 
-			aside section ul li {
-				display: inline;
-			}
+      aside section ul li {
+        display: inline;
+      }
 
-		#search input {
-			font-size: 1.5em;
-			height: 40px;
-			width: 100%;
-		}
+    #search input {
+      font-size: 1.5em;
+      height: 40px;
+      width: 100%;
+    }
 
-			#profile-box-container #profile-box span {
-				width: auto;
-			}
+      #profile-box-container #profile-box span {
+        width: auto;
+      }
 
-				#fb-button-container{
-					height: 19px;
-					overflow: hidden;
-				}
+        #fb-button-container{
+          height: 19px;
+          overflow: hidden;
+        }
 
-		#connect-with-us {
-			width: 100%;
-		}
+    #connect-with-us {
+      width: 100%;
+    }
 
-			#connect-with-us #social-media ul {
-				margin-left: -8%;
-			}
+      #connect-with-us #social-media ul {
+        margin-left: -8%;
+      }
 
-				#connect-with-us #social-media .social-media-icon {
-					height: 38px;
-					width: 38px;
-				}
+        #connect-with-us #social-media .social-media-icon {
+          height: 38px;
+          width: 38px;
+        }
 
                 #amazon-link {
                   border-bottom: 1px solid #000;
                   padding: 5px 0px 3px 30px;
                 }
 
-		#quote-and-search #quote {
-			cursor: pointer;
-			font-family: "Georgia", Times New Roman, Sans-Serif;
-			font-size: 0.9em;
-			padding-top: 5px;
-			padding-bottom: 5px;
-		}
+    #quote-and-search #quote {
+      cursor: pointer;
+      font-family: "Georgia", Times New Roman, Sans-Serif;
+      font-size: 0.9em;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
 
-			#quote-and-search #quote #quote-body:before {
-				color: #666666;
-				content: "“";
-				font-size: 1.1em;
-			}
+      #quote-and-search #quote #quote-body:before {
+        color: #666666;
+        content: "“";
+        font-size: 1.1em;
+      }
 
-			#quote-and-search #quote #quote-body:after {
-				color: #666666;
-				content: "”";
-				font-size: 1.1em;
-			}
+      #quote-and-search #quote #quote-body:after {
+        color: #666666;
+        content: "”";
+        font-size: 1.1em;
+      }
 
-		#labels-and-authors {
-			padding-left: 0%;
-			width: 100%;
-		}
+    #labels-and-authors {
+      padding-left: 0%;
+      width: 100%;
+    }
 
-			#labels-and-authors ul {
-				list-style-type: square;
-			}
+      #labels-and-authors ul {
+        list-style-type: square;
+      }
 
-				#labels-and-authors ul li {
-					display: list-item;
-					font-size: 0.8em;
-				}
+        #labels-and-authors ul li {
+          display: list-item;
+          font-size: 0.8em;
+        }
 
-					#labels-and-authors ul li a {
-						color: #000000;
-					}
+          #labels-and-authors ul li a {
+            color: #000000;
+          }
 
-		#blogroll {
-			padding: 5px;
-			padding-left: 0px;
-			width: 100%;
-		}
+    #blogroll {
+      padding: 5px;
+      padding-left: 0px;
+      width: 100%;
+    }
 
-			#blogroll ul {
-				list-style-type: none;
-				padding-left: 0px;
-			}
+      #blogroll ul {
+        list-style-type: none;
+        padding-left: 0px;
+      }
 
-				#blogroll ul li {
-					display: list-item;
-					font-size: 0.8em;
-					margin-bottom: 20px;
-				}
+        #blogroll ul li {
+          display: list-item;
+          font-size: 0.8em;
+          margin-bottom: 20px;
+        }
 
-					#blogroll ul li a {
-						color: #000000;
-					}
+          #blogroll ul li a {
+            color: #000000;
+          }
 
-			#labels-and-authors ul {
-				list-style-type: none;
-				padding-left: 10px;
-			}
+      #labels-and-authors ul {
+        list-style-type: none;
+        padding-left: 10px;
+      }
 
-				#labels-and-authors ul li {
-					margin-bottom: 2px;
-				}
+        #labels-and-authors ul li {
+          margin-bottom: 2px;
+        }
 
-			#guest-submissions a {
-				color: #000000;
-				font-size: 0.85em;
-			}
+      #guest-submissions a {
+        color: #000000;
+        font-size: 0.85em;
+      }
 
 article {
-	margin-left: 2%;
-	min-height: 1500px;
-	width: 70%;
+  margin-left: 2%;
+  min-height: 1500px;
+  width: 70%;
 }
 
-	article section {
-		width: 95%;
-	}
+  article section {
+    width: 95%;
+  }
 
-		article section.blog-post {
-			border-bottom: 1px solid #000000;
-			margin: 5px 5px 5px 5px;
-		}
+    article section.blog-post {
+      border-bottom: 1px solid #000000;
+      margin: 5px 5px 5px 5px;
+    }
 
-			article section.blog-post:last-child {
-				border-bottom: 0px;
-			}
+      article section.blog-post:last-child {
+        border-bottom: 0px;
+      }
 
-			article section.blog-post h2 {
-				font-family: "Helvetica";
-				margin-bottom: 0px;
-			}
+      article section.blog-post h2 {
+        font-family: "Helvetica";
+        margin-bottom: 0px;
+      }
 
-				article section.blog-post h2 a {
-					color: #000000;
-				}
+        article section.blog-post h2 a {
+          color: #000000;
+        }
 
-			article section.blog-post span.blog-post-author {
-				font-family: Arial;
-				font-size: 0.8em;
-				margin: 0px 0px 5px 1%;
-			}
+      article section.blog-post span.blog-post-author {
+        font-family: Arial;
+        font-size: 0.8em;
+        margin: 0px 0px 5px 1%;
+      }
 
-				article section.blog-post span.blog-post-author a {
-					color: #000000;
-					margin-right: 10px;
-				}
+        article section.blog-post span.blog-post-author a {
+          color: #000000;
+          margin-right: 10px;
+        }
 
-			article section.blog-post span.blog-post-comments {
-				font-family: Arial;
-				font-size: 0.8em;
-				margin-bottom: 5px;
-			}
+      article section.blog-post span.blog-post-comments {
+        font-family: Arial;
+        font-size: 0.8em;
+        margin-bottom: 5px;
+      }
 
-				article section.blog-post span.blog-post-comments a {
-					color: #000000;
-				}
+        article section.blog-post span.blog-post-comments a {
+          color: #000000;
+        }
 
-			article section.blog-post p {
-				font-family: Arial;
-				text-indent: 10px;
-				font-size: 12pt;
-			}
+      article section.blog-post p {
+        font-family: Arial;
+        text-indent: 10px;
+        font-size: 12pt;
+      }
 
-				article section.comment {
-					border-bottom: 1px solid #000000;
-					padding-left: 6px;
-					padding-top: 5px;
-					padding-bottom: 3px;
-				}
+        article section.comment {
+          border-bottom: 1px solid #000000;
+          padding-left: 6px;
+          padding-top: 5px;
+          padding-bottom: 3px;
+        }
 
-					article section.comment:nth-child(odd) {
-						background-color: #CCCCCC;
-					}
+          article section.comment:nth-child(odd) {
+            background-color: #CCCCCC;
+          }
 
-					#comment_reply form textarea {
-						height: 200px;
-						width: 550px;
-					}
+          #comment_reply form textarea {
+            height: 200px;
+            width: 550px;
+          }
 
 pre {
  font-family: Times New Roman;
 }
 
 footer {
-	background-color: #36317d;
-	display: block;
-	height: 50px;
+  background-color: #36317d;
+  display: block;
+  height: 50px;
 }
 
-	#copyright {
-		color: #FFFFFF;
-		padding: 15px 0% 0% 5%;
-		width: 50%;
-	}
+  #copyright {
+    color: #FFFFFF;
+    padding: 15px 0% 0% 5%;
+    width: 50%;
+  }
 
-	#footer-links {
-		padding: 15px 0% 0% 5%;
-	}
+  #footer-links {
+    padding: 15px 0% 0% 5%;
+  }
 
-		#footer-links ul {
-			list-style-type: none;
-			margin: 0px;
-			padding: 0px;
-		}
+    #footer-links ul {
+      list-style-type: none;
+      margin: 0px;
+      padding: 0px;
+    }
 
-			#footer-links ul li {
-				display: inline;
-			}
+      #footer-links ul li {
+        display: inline;
+      }
 
-				#footer-links ul li:after {
-					content: " | ";
-				}
+        #footer-links ul li:after {
+          content: " | ";
+        }
 
-				#footer-links ul li:last-child:after {
-					content: "";
-				}
+        #footer-links ul li:last-child:after {
+          content: "";
+        }
 
-				#footer-links ul li a {
-					color: #EEEEEE;
-				}
+        #footer-links ul li a {
+          color: #EEEEEE;
+        }
