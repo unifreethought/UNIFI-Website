@@ -93,6 +93,14 @@ CREATE TABLE IF NOT EXISTS `blog-drafts` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 
 --
+-- Make sure these run to update the charsets
+--
+ALTER TABLE  `blog-posts` CHANGE  `content`  `content` LONGTEXT CHARACTER SET utf8 COLLATE utf8_bin NOT NULL;
+ALTER TABLE  `blog-drafts` CHANGE  `content`  `content` LONGTEXT CHARACTER SET utf8 COLLATE utf8_bin NOT NULL;
+ALTER TABLE  `blog-posts` CHANGE  `title`  `title` LONGTEXT CHARACTER SET utf8 COLLATE utf8_bin NOT NULL;
+ALTER TABLE  `blog-drafts` CHANGE  `title`  `title` LONGTEXT CHARACTER SET utf8 COLLATE utf8_bin NOT NULL;
+
+--
 -- Table structure for table `blog-guest-submissions`
 --
 CREATE TABLE IF NOT EXISTS `blog-guest-submissions` (
