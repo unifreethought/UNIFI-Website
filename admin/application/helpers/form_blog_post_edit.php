@@ -26,11 +26,11 @@ function send_email($database) {
   $emails_raw = DB::single("SELECT `emails` FROM `{$database}`.`email_lists` WHERE `desc` = 'posting_emails' LIMIT 1");
   $emails = explode(',', $emails_raw['emails']);
   foreach ($emails as $email) {
-    mail($email, "A new blog post: " . $title, "{$content}", $headers);
+    mail($email, "A new blog post: " . $title, html_entities_decode($content), $headers);
   }
 }
 
-if (empty($id)) {
+$headers (empty($id)) {
   $time = DB::clean(@time());
   $title = DB::clean($_POST['title']);
 
