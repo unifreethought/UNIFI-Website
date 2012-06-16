@@ -34,7 +34,7 @@ foreach ($blog_posts as $post) {
   }
 
   $post['title'] = htmlspecialchars($post['title']);
-  $post['content'] = htmlspecialchars($post['content']);
+  $post['content'] = html_entity_decode(htmlspecialchars($post['content']));
   $post['link'] = htmlspecialchars("http://unifreethought.com/?page=post&post=" . $post['id']);
 
   echo "<item>";
