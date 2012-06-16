@@ -30,7 +30,7 @@ function send_email($database) {
   }
 }
 
-$headers (empty($id)) {
+if (empty($id)) {
   $time = DB::clean(@time());
   $title = DB::clean($_POST['title']);
 
