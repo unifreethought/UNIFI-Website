@@ -65,7 +65,7 @@ if (empty($id)) {
   if ($action == 'Submit') {
     $sql = "INSERT INTO `{$database}`.`blog-posts` (`id`,`author`, `timestamp`, `title`, `content`) VALUES ";
     $sql .= "('0', '{$user_id}', " .time() . ", '{$title}', '{$content}');";
-    send_email($database);
+    send_email($database, $title, $content);
   } else {
     $sql = "UPDATE `{$database}`.`{$table}` SET `title` = '{$title}', `content` =  '{$content}' WHERE  `{$table}`.`id` = '{$id}';";
   }
