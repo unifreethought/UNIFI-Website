@@ -14,7 +14,7 @@ if (empty($action)) {
   $table = 'blog-posts';
 }
 
-function send_email($database) {
+function send_email($database, $title, $content) {
   Log::create($user_id, 'new_blog_post', 'date:' . Date::parse($time) . '<br>title:' . $title);
 
   // Set the headers for the email
@@ -26,7 +26,7 @@ function send_email($database) {
   $emails_raw = DB::single("SELECT `emails` FROM `{$database}`.`email_lists` WHERE `desc` = 'posting_emails' LIMIT 1");
   $emails = explode(',', $emails_raw['emails']);
   foreach ($emails as $email) {
-    mail($email, "A new blog post: " . $title, html_entities_decode($content), $headers);
+    mail($email, "A new blog post: " . $title, html_entity_decode($content), $headers);
   }
 }
 
@@ -56,7 +56,7 @@ if (empty($id)) {
     $sql = "INSERT INTO `{$database}`.`blog-guids` (`post_id`, `guid`) VALUES ('{$new_post_id['id']}', UUID());";
     DB::query($sql);
 
-    send_email($database);
+    send_email($database, $title, $content);
   }
 
 } else {
