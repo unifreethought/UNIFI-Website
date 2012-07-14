@@ -15,11 +15,13 @@ function print_fb_script() {
       window.fbAsyncInit = function() {
            FB.init({appId: ' . FACEBOOK_APP_ID . ', status: true, cookie: true, xfbml: true});
       FB.Event.subscribe(\'auth.authResponseChange\', function(response) {
-        var html = "<h3>Admin</h3><div><div class=\'no-border\'><span><a href=\'admin/index.php\'>Dashboard</a></span></div></div>";
-        var adminBox = document.createElement(\'select\');
+        if (document.querySelector(\'#admin-box\') !== undefined) {
+          var html = "<h3>Admin</h3><div><div class=\'no-border\'><span><a href=\'admin/index.php\'>Dashboard</a></span></div></div>";
+          var adminBox = document.createElement(\'div\');
             adminBox.innerHTML = html;
             adminBox.id = \'admin-box\';
-        document.querySelector(\'#connect-with-us\').insertBefore(adminBox);
+          document.querySelector(\'#connect-with-us\').insertBefore(adminBox);
+        }
       });
       };
       (function() {
